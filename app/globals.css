@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core */
+  --color-bg:           #000000;
+  --color-surface:      #0E0E14;
+  --color-surface-2:    #16161F;
+  --color-border:       rgba(255, 255, 255, 0.07);
+  --color-primary:      #6C63FF;
+  --color-primary-dark: #5B53EE;
+  --color-accent:       #A78BFA;
+  --color-success:      #34D399;
+  --color-warning:      #F59E0B;
+  --color-danger:       #F87171;
+
+  /* Text */
+  --color-text:         #FFFFFF;
+  --color-text-2:       #888888;
+  --color-text-3:       #555555;
+  --color-text-muted:   #666666;
+
+  /* Background aliases (used by existing components) */
+  --color-bg-primary:   #000000;
+  --color-bg-secondary: #0E0E14;
+  --color-bg-card:      #111118;
+  --color-bg-elevated:  #16161F;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+::selection { background: #6C63FF; color: #fff; }
+
+/* ── Surface cards ────────────────────────────────────────────────────── */
+
+/* Clean dark surface — no tint, no blur */
+.surface {
+  background: #0E0E14;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: border-color 0.2s ease;
+}
+
+.surface:hover { border-color: rgba(255, 255, 255, 0.12); }
+
+.surface-raised {
+  background: #16161F;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Ambient orb (single, hero-only) ─────────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.10) 0%, transparent 65%);
+  pointer-events: none;
+  /* No blur — blur creates the "AI slop" bleed */
+}
+
+/* ── CTA button ───────────────────────────────────────────────────────── */
+.btn-violet {
+  background: #6C63FF;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-violet:hover {
+  background: #5B53EE;
+  transform: translateY(-1px);
+}
+
+/* ── Eyebrow labels ───────────────────────────────────────────────────── */
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+/* ── Animations (minimal) ─────────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes phone-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-phone-float {
+  animation: phone-float 8s ease-in-out infinite;
+}
+
+/* ── Blog prose ───────────────────────────────────────────────────────── */
+
+.prose h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; letter-spacing: -0.4px; }
+.prose h3 { color: #fff; font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 .75rem; }
+.prose p  { color: #888; line-height: 1.75; margin-bottom: 1.25rem; }
+.prose strong { color: #fff; font-weight: 600; }
+.prose a  { color: #6C63FF; text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: #9089FF; }
+.prose ul, .prose ol { color: #888; margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: .5rem; line-height: 1.75; }
+.prose blockquote { border-left: 2px solid #222; padding-left: 1rem; color: #666; font-style: italic; margin: 1.5rem 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.prose th, .prose td { border: 1px solid rgba(255,255,255,0.06); padding: .75rem; text-align: left; }
+.prose th { background: #0E0E14; color: #fff; font-weight: 600; }
+.prose td { color: #888; }
+.prose hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 2rem 0; }

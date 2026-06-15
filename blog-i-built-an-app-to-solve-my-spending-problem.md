@@ -1,0 +1,85 @@
+---
+title: "I Built an App to Solve My Own Spending Problem — Here's What I Learned"
+description: "How a developer who could build anything still couldn't figure out where his money was going — and what happened when he built an AI-powered expense tracker that doesn't need your bank login."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["founder story", "personal finance", "indie development", "budgeting", "building in public"]
+slug: "i-built-an-app-to-solve-my-spending-problem"
+readingTime: "8 min"
+seoTarget: "expense tracker without bank login, AI receipt scanner app, privacy budget app"
+---
+
+# I Built an App to Solve My Own Spending Problem — Here's What I Learned
+
+I'm a software developer. I've shipped production systems, worked just about every role at a modern software shop. I can architect a distributed system from scratch. But for the longest time, I had absolutely no idea where my money was going.
+
+Not in a "I'm broke" way. More in a "I make decent money and somehow there's nothing left at the end of the month" way. Every few months I'd go through the same cycle: download a budgeting app, connect my bank, stare at colorful pie charts for a week, feel bad about my spending, forget about the app, repeat.
+
+This is the story of how I broke that cycle — by building the thing I couldn't find.
+
+## The app graveyard
+
+I tried every major budgeting app. YNAB was too intense — I don't want to assign every dollar a job, I want to know why I spent $200 at Target when I went in for toothpaste. Monarch was gorgeous but felt like looking at a dashboard about someone else's life. Copilot categorized everything beautifully and then left me to figure out what to do about it.
+
+Every app did the same thing: showed me where my money went *after it was already gone*. And every single one started with the same question: "Connect your bank account."
+
+## The three problems nobody was solving
+
+After months of trying and abandoning apps, I noticed a pattern. There were three things that kept bothering me, and no app addressed all of them.
+
+**Problem 1: Manual entry kills motivation.** I've seen this echoed everywhere on Reddit — someone on r/personalfinance put it perfectly: entering transactions manually feels like homework nobody wants to do. You start with enthusiasm, then two weeks later the app is collecting dust. Bank sync supposedly solves this, but it creates problems 2 and 3.
+
+**Problem 2: Bank login is a privacy nightmare.** Every bank-synced app requires you to share your credentials through Plaid or similar. That means giving a third party read access to every transaction, every balance, every account. I work in tech. I know how data breaches work. When I asked friends about this, roughly half said the same thing: "I'd use a budget app, but I don't want to give it access to my bank." This isn't a minor UX complaint. It's a fundamental barrier to adoption.
+
+**Problem 3: One currency doesn't cut it.** I travel. I work with international clients. I deal with multiple currencies regularly. Every premium app I tried — YNAB, Monarch, Copilot — was built for Americans with American bank accounts spending American dollars. Multi-currency was either absent or bolted on as an afterthought. For anyone who's an expat, a digital nomad, or just travels a few times a year, this is a dealbreaker.
+
+## The receipt idea
+
+The breakthrough came in a grocery store parking lot, staring at a receipt. What if the input method wasn't a bank sync but a camera? You buy something, you get a receipt, you point your phone at it. Two seconds. Done.
+
+But not with traditional OCR — that tech reads text character by character and breaks on unusual fonts, wrinkled paper, or any language that isn't English. I wanted something that *understands* what a receipt is. That's when I started experimenting with AI Vision models.
+
+The difference was immediate. Traditional OCR would misread "$18.47" as "$1847" on a slightly wrinkled receipt. AI Vision understood the context — it knew this was a total, it identified the merchant, the date, the individual items and their prices. And it worked on receipts in Russian, Ukrainian, Japanese — any language — because it wasn't reading characters, it was understanding a document.
+
+I built a prototype in a weekend. The scanning worked. But I still had the original problem: okay, here's a list of my spending. Now what?
+
+## Adding the missing pieces
+
+So I kept building. Multi-currency support was next — not as an add-on, but as a core feature. Every screen, every calculation, every budget handles any currency with automatic real-time conversion. Because if your life involves multiple currencies, your budget app needs to handle that natively.
+
+Then budgets with real alerts — not just a chart that turns red after you've already overspent, but notifications that catch you *before* you go over. Savings goals with progress tracking and milestones. Analytics that actually show patterns: daily spending heatmaps, period comparisons, category breakdowns. AI-powered forecasting that predicts where your spending is heading based on your actual patterns.
+
+And Quick Actions — templates for your frequent expenses. Coffee, groceries, transport — one tap. Because even with receipt scanning, sometimes you buy a coffee and there's no receipt, and adding it should take literally one second.
+
+The entire app runs offline. Your data is stored locally on your device, encrypted with biometric security. No cloud sync, no server storing your financial history. This is a deliberate choice, not a limitation.
+
+## What I learned about money (while building a money app)
+
+Building Lumi forced me to think about personal finance in a way that no app ever did when I was just a user.
+
+**Friction is the real enemy, not ignorance.** People don't fail at budgeting because they're bad with money. They fail because the tools make it too tedious. Every second of friction — manual typing, wrong categories, bank sync errors, currency confusion — is a second closer to abandoning the app. Receipt scanning eliminates the biggest friction point. Multi-currency eliminates the second biggest for anyone who isn't US-only.
+
+**Privacy is a feature, not a compromise.** When I researched the competitive landscape (18 apps total), I found something interesting: every single top-tier app requires bank sync. It's treated as the default, the obvious choice. But a huge number of users don't want it. They're not paranoid — they're making a reasonable security decision. Building for them isn't limiting the product; it's serving an underserved market.
+
+**Scanning receipts creates a micro-awareness moment.** This surprised me. Users report that the physical act of scanning a receipt — pointing the camera, seeing the amount parsed — creates a moment of attention that automatic bank syncing doesn't provide. When transactions are pulled silently in the background, you never think about them. When you scan a receipt, you look at the number. That tiny beat of awareness changes the relationship with spending.
+
+**The multi-currency market is bigger than it looks.** Digital nomads, expats, immigrants, frequent travelers, freelancers with international clients, people who shop on international sites — this isn't a niche. It's a growing segment that premium US-focused apps are ignoring entirely.
+
+## Where Lumi is now
+
+Lumi is live on the App Store, version 2.43. It's a React Native app with AI receipt scanning via OpenAI Vision, multi-currency with automatic conversion, budgets, savings goals, analytics with forecasting, and export to PDF/CSV/JSON. It supports English, Russian, and Ukrainian.
+
+It's free to start — 10 AI scans per month, 2 budgets, basic analytics, unlimited manual entries. Premium unlocks everything.
+
+It's not perfect. The AI recommendations get better with more data, which means the first few days are less impressive than the third week. There's no cloud sync yet, so if you switch phones you need to export/import. Recurring transaction rules are on the roadmap. I'm a solo developer working on this, and I ship updates constantly.
+
+But the core loop — scan receipt, see your spending in any currency, get alerted before overspending, track your goals — that works. I use it myself every day, and for the first time in my life, I actually know where my money goes.
+
+If that sounds like something you need, give it a try. And if you have feedback, I read every single message.
+
+[Download Lumi Free on the App Store →](#)
+
+---
+
+*Questions? Found a bug? Want to tell me about a receipt the scanner couldn't read? I'm on Threads @LumiApp and I read every DM.*
