@@ -12,7 +12,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="surface rounded-3xl text-center"
-          style={{ padding: "80px 48px" }}
+          style={{ padding: "clamp(40px, 8vw, 80px) clamp(24px, 6vw, 48px)" }}
         >
           <p className="label" style={{ marginBottom: 20 }}>Start for free</p>
 

@@ -110,7 +110,7 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               className="surface rounded-2xl"
-              style={{ padding: "32px 36px" }}
+              style={{ padding: "clamp(20px, 4vw, 36px)" }}
             >
               <div style={{ color: "#555", marginBottom: 20 }}>{f.icon}</div>
 
@@ -135,8 +135,8 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Secondary features — 4 col */}
-        <div className="grid gap-4 md:grid-cols-4">
+        {/* Secondary features — 2 col mobile, 4 col desktop */}
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
           {small.map((f, i) => (
             <motion.div
               key={f.title}
