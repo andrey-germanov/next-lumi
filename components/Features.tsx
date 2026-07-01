@@ -53,6 +53,15 @@ const features = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+      </svg>
+    ),
+    title: "Voice Input",
+    desc: "Tap the mic and say \"coffee 5 euros.\" AI parses the amount, merchant, and category from natural speech — no typing.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185z" />
       </svg>
     ),
@@ -146,8 +155,8 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Secondary features — 2 col mobile, 4 col desktop */}
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+        {/* Secondary features — 2 col mobile, 5 col desktop */}
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-5">
           {small.map((f, i) => (
             <motion.div
               key={f.title}

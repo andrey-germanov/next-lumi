@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProblemSolution from "@/components/ProblemSolution";
-import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
+import Features from "@/components/Features";
+import VoiceInput from "@/components/VoiceInput";
 import Comparison from "@/components/Comparison";
-import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
-import BlogPreview from "@/components/BlogPreview";
+import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
+import BlogPreview from "@/components/BlogPreview";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/blog";
 
@@ -19,14 +20,15 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <VoiceInput />
         <ProblemSolution />
-        <Features />
         <HowItWorks />
+        <Features />
         <Comparison />
-        <Pricing />
         <Testimonials />
-        <BlogPreview posts={posts} />
+        <Pricing />
         <CTA />
+        <BlogPreview posts={posts} />
       </main>
       <Footer />
     </>

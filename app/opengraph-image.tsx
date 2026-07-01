@@ -7,6 +7,6 @@ export const contentType = "image/png";
 export default async function Image() {
   return renderOgImage(
     "AI Expense Tracker",
-    "Scan Receipts · Any Currency · No Bank Login"
+    "Scan Receipts · Speak Expenses · Any Currency · No Bank Login"
   );
 }

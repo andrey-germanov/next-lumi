@@ -69,11 +69,11 @@ html { scroll-behavior: smooth; }
 /* ── Ambient orb (single, hero-only) ─────────────────────────────────── */
 .hero-orb {
   position: absolute;
-  width: 900px;
-  height: 900px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.14) 0%, transparent 65%);
   pointer-events: none;
+  background: radial-gradient(#6c63ff61 0%, #00000000 65%);
+  border-radius: 50%;
+  width: 10000px;
+  height: 1000px;
   /* No blur — blur creates the "AI slop" bleed */
 }
 

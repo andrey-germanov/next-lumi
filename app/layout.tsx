@@ -15,11 +15,13 @@ export const metadata: Metadata = {
       "Lumi — Expense Tracker | Back Tap Logging, Apple Pay Import, AI Forecast",
   },
   description:
-    "Lumi logs expenses the moment you pay — via Apple Pay or a Back Tap on your iPhone. AI forecasts your month-end balance before you overspend. Receipt scanner, budgets, savings goals. No bank login. Privacy-first.",
+    "Lumi logs expenses the moment you pay — via Apple Pay, Back Tap, or your voice. AI forecasts your month-end balance before you overspend. Receipt scanner, budgets, savings goals. No bank login. Privacy-first.",
   keywords: [
     "expense tracker no bank login",
     "Apple Pay expense tracker",
     "Back Tap expense logging",
+    "voice expense tracker",
+    "log expenses by voice",
     "AI spending forecast",
     "receipt scanner app",
     "budget app iOS",
@@ -39,13 +41,13 @@ export const metadata: Metadata = {
     siteName: "Lumi",
     title: "Lumi — AI Expense Tracker | Scan Receipts, No Bank Login",
     description:
-      "AI scans your receipts. Track spending in any currency. No bank login required. Free to start.",
+      "AI scans receipts, listens to your voice, and imports Apple Pay automatically. Track spending in any currency — no bank login. Free to start.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Lumi — AI Expense Tracker",
     description:
-      "Snap a receipt. AI extracts everything. Track spending across currencies — no bank login needed.",
+      "Snap a receipt or say it out loud — AI logs it instantly. Track spending across currencies, no bank login needed.",
   },
   alternates: {
     canonical: SITE_URL,
@@ -83,7 +85,7 @@ export default function RootLayout({
               applicationCategory: "FinanceApplication",
               applicationSubCategory: "Personal Finance",
               description:
-                "Lumi logs expenses via Apple Pay auto-import or Back Tap gesture — no manual entry needed. AI forecasts your month-end balance 7–10 days in advance. Receipt scanner, category budgets, savings goals. No bank login. Data stored on your device.",
+                "Lumi logs expenses via Apple Pay auto-import, Back Tap gesture, or voice — no manual entry needed. AI forecasts your month-end balance 7–10 days in advance. Receipt scanner, category budgets, savings goals. No bank login. Data stored on your device.",
               url: "https://apps.apple.com/app/lumi-bills-spending-log/id6754805457",
               downloadUrl: "https://apps.apple.com/app/lumi-bills-spending-log/id6754805457",
               offers: [
@@ -103,6 +105,7 @@ export default function RootLayout({
               featureList: [
                 "Back Tap instant expense logging — no app opening needed",
                 "Apple Pay automatic expense import via iOS Shortcuts",
+                "Voice input — log expenses by speaking naturally",
                 "AI Spending Forecast — predicts month-end balance from 3-month history",
                 "AI Receipt Scanner — reads amount, merchant, category in any language",
                 "Category budget limits with live progress bars",

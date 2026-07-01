@@ -111,6 +111,14 @@ export const COMPARISON_DATA = [
     wally: "Basic OCR",
   },
   {
+    feature: "Voice input logging",
+    lumi: "✓",
+    ynab: "—",
+    monarch: "—",
+    copilot: "—",
+    wally: "—",
+  },
+  {
     feature: "Bank login required",
     lumi: "Never",
     ynab: "Required",
@@ -151,6 +159,7 @@ export const FREE_FEATURES = [
   "Unlimited manual entries",
   "Back Tap quick logging",
   "Apple Pay auto-import",
+  "Voice input logging",
   "1 primary + 1 additional currency",
 ];
 
@@ -181,6 +190,11 @@ export const FAQ = [
       "Set up a one-time iOS Shortcut that triggers when Apple Pay is used. Every contactless payment automatically creates an expense entry in Lumi with the correct amount, merchant name, and timestamp. No manual input required after setup.",
   },
   {
+    question: "Can I log expenses with my voice?",
+    answer:
+      "Yes. Tap the mic icon and say something like \"coffee 5 euros\" or \"metro 2 euros\" — Lumi's AI parses the amount, merchant, and category straight from natural speech and logs the expense instantly. No typing, no menus, works in multiple languages.",
+  },
+  {
     question: "How accurate is the AI spending forecast?",
     answer:
       "Lumi calculates your average daily spend rate from the last 3 months (excluding statistical outliers like one-off large purchases), then projects it to month-end. If you have income data entered, it also shows your projected balance. Confidence scores are shown so you always know how reliable the forecast is.",
@@ -208,7 +222,7 @@ export const FAQ = [
   {
     question: "Is Lumi free to use?",
     answer:
-      "Yes. The free plan includes 10 AI receipt scans per month, 2 budgets, Back Tap logging, Apple Pay auto-import, and basic analytics. Lumi Premium ($4.99/month or $39.99/year) unlocks unlimited scans, unlimited budgets, AI forecasting, advanced analytics, and full multi-currency support.",
+      "Yes. The free plan includes 10 AI receipt scans per month, 2 budgets, Back Tap logging, Apple Pay auto-import, voice input, and basic analytics. Lumi Premium ($4.99/month or $39.99/year) unlocks unlimited scans, unlimited budgets, AI forecasting, advanced analytics, and full multi-currency support.",
   },
   {
     question: "What makes Lumi different from YNAB, Copilot, or Monarch?",
