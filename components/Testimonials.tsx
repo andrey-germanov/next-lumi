@@ -31,10 +31,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
             Built by a solo developer.
             <br />
-            <span className="text-text-muted">
+            <span className="text-text-muted font-bold">
               Loved by people who hate spreadsheets.
             </span>
           </h2>
@@ -48,7 +48,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-white/5 bg-bg-secondary p-6"
+              className="surface rounded-2xl p-6"
             >
               <div className="mb-4">
                 <p className="italic text-text-muted">
@@ -58,7 +58,7 @@ export default function Testimonials() {
                   — {item.source}
                 </p>
               </div>
-              <div className="border-t border-white/5 pt-4">
+              <div className="border-t border-black/8 pt-4">
                 <p className="text-sm font-medium text-primary">
                   {item.response}
                 </p>

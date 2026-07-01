@@ -1,14 +1,16 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SOCIAL_LINKS, APP_STORE_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 py-12">
+    <footer className="border-t border-black/8 py-12">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-xl font-bold text-primary">
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary">
+              <Image src="/images/logo/logo.png" alt="" width={24} height={24} style={{ borderRadius: 6 }} />
               Lumi
             </Link>
             <p className="mt-2 text-sm text-text-muted">
@@ -98,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/8 pt-8 md:flex-row">
           <p className="text-xs text-text-muted">
             &copy; {new Date().getFullYear()} Lumi. All rights reserved.
           </p>
@@ -106,9 +108,9 @@ export default function Footer() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-bg-card border border-white/10 px-4 py-2 text-xs font-medium text-text-muted hover:text-text transition-colors"
+            className="text-xs font-semibold text-text hover:text-primary transition-colors"
           >
-            Download on App Store
+            Download on App Store &rarr;
           </a>
         </div>
       </div>

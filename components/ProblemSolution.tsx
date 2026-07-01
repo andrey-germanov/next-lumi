@@ -46,7 +46,7 @@ export default function ProblemSolution() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
             Tired of apps that just show you charts?
           </h2>
         </motion.div>
@@ -59,7 +59,7 @@ export default function ProblemSolution() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-white/5 bg-bg-secondary p-8"
+              className="surface rounded-2xl p-8"
             >
               <div className="mb-4 inline-flex rounded-xl bg-danger/10 p-3 text-danger">
                 {item.icon}
@@ -67,7 +67,7 @@ export default function ProblemSolution() {
               <p className="mb-4 text-sm font-medium text-danger/80">
                 &ldquo;{item.pain}&rdquo;
               </p>
-              <div className="mb-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              <div className="mb-4 h-px bg-gradient-to-r from-transparent via-black/12 to-transparent" />
               <div className="inline-flex rounded-xl bg-success/10 p-3 text-success mb-3">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />

@@ -35,13 +35,11 @@ export async function generateMetadata({
         description: post.description,
         publishedTime: post.date,
         authors: [post.author],
-        images: [{ url: post.image, width: 1200, height: 630 }],
       },
       twitter: {
         card: "summary_large_image",
         title: post.title,
         description: post.description,
-        images: [post.image],
       },
       alternates: {
         canonical: `${SITE_URL}/blog/${slug}`,
@@ -54,8 +52,8 @@ export async function generateMetadata({
 
 function ArticleCTA() {
   return (
-    <div className="my-8 rounded-2xl border border-primary/20 bg-bg-secondary p-6 text-center">
-      <p className="mb-4 font-medium">
+    <div className="surface-dark my-8 rounded-2xl p-6 text-center">
+      <p className="mb-4 font-medium" style={{ color: "#FFFFFF" }}>
         Ready to take control of your spending?
       </p>
       <AppStoreButton location="blog_inline" />
@@ -90,7 +88,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       "@type": "Organization",
       name: "Lumi",
     },
-    image: post.image,
+    image: `${SITE_URL}/blog/${slug}/opengraph-image`,
     mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
   };
 
@@ -125,14 +123,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               <span>&middot;</span>
               <span>{post.author}</span>
             </div>
-            <h1 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl" style={{ letterSpacing: "-1px" }}>
               {post.title}
             </h1>
             <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-bg-card px-3 py-1 text-xs text-text-muted"
+                  className="rounded-full bg-surface-2 px-3 py-1 text-xs text-text-muted"
                 >
                   {tag}
                 </span>

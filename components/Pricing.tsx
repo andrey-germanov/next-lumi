@@ -14,7 +14,7 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
             Start free. Upgrade when you&apos;re ready.
           </h2>
         </motion.div>
@@ -25,7 +25,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-white/5 bg-bg-secondary p-8"
+            className="surface rounded-2xl p-8"
           >
             <h3 className="text-lg font-semibold">Free</h3>
             <p className="mt-1 text-text-muted">Everything to get started</p>
@@ -67,25 +67,26 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative rounded-2xl border border-primary/30 bg-bg-secondary p-8"
+            className="surface-dark relative rounded-2xl p-8"
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-semibold text-white">
               Most Popular
             </div>
-            <h3 className="text-lg font-semibold">Premium</h3>
-            <p className="mt-1 text-text-muted">Unlock everything</p>
+            <h3 className="text-lg font-semibold" style={{ color: "#FFFFFF" }}>Premium</h3>
+            <p className="mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unlock everything</p>
             <div className="mt-6 mb-8">
-              <span className="text-4xl font-bold">Pro</span>
-              <span className="text-text-muted"> / with free trial</span>
+              <span className="text-4xl font-bold" style={{ color: "#FFFFFF" }}>Pro</span>
+              <span style={{ color: "rgba(255,255,255,0.55)" }}> / with free trial</span>
             </div>
             <ul className="space-y-3">
               {PREMIUM_FEATURES.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-3 text-sm text-text-muted"
+                  className="flex items-start gap-3 text-sm"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   <svg
-                    className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-accent"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={2}

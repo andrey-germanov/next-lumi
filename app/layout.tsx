@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "./providers";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lumi.herman-apps.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | Lumi — Expense Tracker & Spending Forecast",
     default:
@@ -33,29 +35,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lumi.herman-apps.com",
+    url: SITE_URL,
     siteName: "Lumi",
     title: "Lumi — AI Expense Tracker | Scan Receipts, No Bank Login",
     description:
       "AI scans your receipts. Track spending in any currency. No bank login required. Free to start.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Lumi — AI Expense Tracker",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lumi — AI Expense Tracker",
     description:
       "Snap a receipt. AI extracts everything. Track spending across currencies — no bank login needed.",
-    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://lumi.herman-apps.com",
+    canonical: SITE_URL,
   },
   robots: {
     index: true,
@@ -85,6 +78,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "Lumi: Bills & Spending Log",
+              image: `${SITE_URL}/images/logo/logo-512.png`,
               operatingSystem: "iOS 16.0 or later",
               applicationCategory: "FinanceApplication",
               applicationSubCategory: "Personal Finance",
@@ -126,6 +120,9 @@ export default function RootLayout({
       <body className="antialiased">
         <Providers>{children}</Providers>
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }

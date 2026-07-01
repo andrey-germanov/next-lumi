@@ -2,28 +2,28 @@
 
 @theme {
   /* Core */
-  --color-bg:           #000000;
-  --color-surface:      #0E0E14;
-  --color-surface-2:    #16161F;
-  --color-border:       rgba(255, 255, 255, 0.07);
+  --color-bg:           #FFFFFF;
+  --color-surface:      #FFFFFF;
+  --color-surface-2:    #F7F7F8;
+  --color-border:       rgba(0, 0, 0, 0.07);
   --color-primary:      #6C63FF;
   --color-primary-dark: #5B53EE;
-  --color-accent:       #A78BFA;
-  --color-success:      #34D399;
-  --color-warning:      #F59E0B;
-  --color-danger:       #F87171;
+  --color-accent:       #9C8FFF;
+  --color-success:      #0A8F5F;
+  --color-warning:      #C9780A;
+  --color-danger:       #D63B57;
 
   /* Text */
-  --color-text:         #FFFFFF;
-  --color-text-2:       #888888;
-  --color-text-3:       #555555;
-  --color-text-muted:   #666666;
+  --color-text:         #0A0A0A;
+  --color-text-2:       #63636B;
+  --color-text-3:       #8E8E93;
+  --color-text-muted:   #63636B;
 
   /* Background aliases (used by existing components) */
-  --color-bg-primary:   #000000;
-  --color-bg-secondary: #0E0E14;
-  --color-bg-card:      #111118;
-  --color-bg-elevated:  #16161F;
+  --color-bg-primary:   #FFFFFF;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-card:      #FFFFFF;
+  --color-bg-elevated:  #F7F7F8;
 }
 
 /* ── Base ─────────────────────────────────────────────────────────────── */
@@ -31,8 +31,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
-  background: #000;
-  color: #fff;
+  background: #FFFFFF;
+  color: #0A0A0A;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,21 +42,29 @@ html { scroll-behavior: smooth; }
 
 ::selection { background: #6C63FF; color: #fff; }
 
-/* ── Surface cards ────────────────────────────────────────────────────── */
+/* ── Surface cards — shadow-elevated, no borders ─────────────────────── */
 
-/* Clean dark surface — no tint, no blur */
 .surface {
-  background: #0E0E14;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: border-color 0.2s ease;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 10px 30px rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.surface:hover { border-color: rgba(255, 255, 255, 0.12); }
+.surface:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 20px 40px rgba(0,0,0,0.08); }
 
 .surface-raised {
-  background: #16161F;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #F7F7F8;
 }
+
+/* Solid black card — the "premium card" accent, used sparingly */
+.surface-dark {
+  background: #0A0A0A;
+  color: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.10), 0 20px 40px rgba(0,0,0,0.20);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.surface-dark:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.14), 0 28px 56px rgba(0,0,0,0.28); }
 
 /* ── Ambient orb (single, hero-only) ─────────────────────────────────── */
 .hero-orb {
@@ -64,7 +72,7 @@ html { scroll-behavior: smooth; }
   width: 900px;
   height: 900px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.10) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.14) 0%, transparent 65%);
   pointer-events: none;
   /* No blur — blur creates the "AI slop" bleed */
 }
@@ -86,10 +94,10 @@ html { scroll-behavior: smooth; }
 /* ── Eyebrow labels ───────────────────────────────────────────────────── */
 .label {
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #555;
+  color: #63636B;
 }
 
 /* ── Animations (minimal) ─────────────────────────────────────────────── */
@@ -114,17 +122,17 @@ html { scroll-behavior: smooth; }
 
 /* ── Blog prose ───────────────────────────────────────────────────────── */
 
-.prose h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; letter-spacing: -0.4px; }
-.prose h3 { color: #fff; font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 .75rem; }
-.prose p  { color: #888; line-height: 1.75; margin-bottom: 1.25rem; }
-.prose strong { color: #fff; font-weight: 600; }
+.prose h2 { color: #0D0D0D; font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; letter-spacing: -0.4px; }
+.prose h3 { color: #0D0D0D; font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 .75rem; }
+.prose p  { color: #63636B; line-height: 1.75; margin-bottom: 1.25rem; }
+.prose strong { color: #0D0D0D; font-weight: 600; }
 .prose a  { color: #6C63FF; text-decoration: underline; text-underline-offset: 2px; }
-.prose a:hover { color: #9089FF; }
-.prose ul, .prose ol { color: #888; margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.prose a:hover { color: #5B53EE; }
+.prose ul, .prose ol { color: #63636B; margin-bottom: 1.25rem; padding-left: 1.5rem; }
 .prose li { margin-bottom: .5rem; line-height: 1.75; }
-.prose blockquote { border-left: 2px solid #222; padding-left: 1rem; color: #666; font-style: italic; margin: 1.5rem 0; }
+.prose blockquote { border-left: 2px solid rgba(0,0,0,0.12); padding-left: 1rem; color: #63636B; font-style: italic; margin: 1.5rem 0; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-.prose th, .prose td { border: 1px solid rgba(255,255,255,0.06); padding: .75rem; text-align: left; }
-.prose th { background: #0E0E14; color: #fff; font-weight: 600; }
-.prose td { color: #888; }
-.prose hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 2rem 0; }
+.prose th, .prose td { border: 1px solid rgba(0,0,0,0.08); padding: .75rem; text-align: left; }
+.prose th { background: #F7F7F8; color: #0D0D0D; font-weight: 600; }
+.prose td { color: #63636B; }
+.prose hr { border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 2rem 0; }

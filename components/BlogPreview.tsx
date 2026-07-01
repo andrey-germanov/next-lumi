@@ -12,7 +12,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
             Learn to spend smarter
           </h2>
         </div>
@@ -22,7 +22,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group rounded-2xl border border-white/5 bg-bg-secondary p-6 transition-all hover:border-primary/20"
+              className="surface group rounded-2xl p-6 transition-all"
             >
               <div className="flex items-center gap-3 text-xs text-text-muted">
                 <time dateTime={post.date}>

@@ -24,7 +24,7 @@ export default function AppStoreButton({
     primary:
       "bg-primary hover:bg-primary-dark text-white shadow-lg shadow-primary/25 hover:shadow-primary/40",
     secondary:
-      "bg-bg-card border border-white/10 text-white hover:bg-bg-secondary hover:border-white/20",
+      "bg-transparent border-2 border-text text-text hover:bg-text hover:text-white",
   };
 
   return (

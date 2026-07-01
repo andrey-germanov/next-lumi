@@ -1,70 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
 
-function Sparkline() {
-  const actual    = "M0,28 L18,25 L36,27 L54,21 L72,23 L90,16 L108,19 L126,12";
-  const projected = "M126,12 L144,10 L162,7 L180,5";
-  const fill      = `${actual} L126,36 L0,36 Z`;
-  return (
-    <svg viewBox="0 0 180 36" className="w-full" style={{ height: 36 }} preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="sf" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#6C63FF" stopOpacity="0.22" />
-          <stop offset="100%" stopColor="#6C63FF" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path d={fill} fill="url(#sf)" />
-      <path d={actual} fill="none" stroke="#6C63FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d={projected} fill="none" stroke="#6C63FF" strokeWidth="1" strokeDasharray="3,3" strokeLinecap="round" />
-      <line x1="126" y1="0" x2="126" y2="36" stroke="#6C63FF" strokeWidth="0.5" strokeOpacity="0.35" />
-    </svg>
-  );
-}
-
 function PhoneMockup() {
-  const transactions = [
-    { icon: "🛒", name: "Whole Foods",  amount: "−$89.40", sub: "Today" },
-    { icon: "☕", name: "Blue Bottle",  amount: "−$6.50",  sub: "Today" },
-    { icon: "🍕", name: "Tony's Pizza", amount: "−$34.90", sub: "Yesterday" },
-  ];
-
   return (
     <div className="relative animate-phone-float">
-      <div style={{ width: 256, height: 536, borderRadius: 44, background: "#000", border: "1.5px solid rgba(255,255,255,0.10)", boxShadow: "0 40px 80px rgba(0,0,0,0.7)", overflow: "hidden", position: "relative" }}>
-        <div style={{ position: "absolute", inset: "1.5px", borderRadius: 43, background: "#09090B", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: 14, left: "50%", transform: "translateX(-50%)", width: 108, height: 30, borderRadius: 20, background: "#000" }} />
-          <div style={{ padding: "56px 20px 20px", display: "flex", flexDirection: "column", height: "100%" }}>
-            <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", color: "#555", textTransform: "uppercase", marginBottom: 8 }}>June 2026</p>
-            <p style={{ fontSize: 34, fontWeight: 700, letterSpacing: "-1.5px", color: "#fff", lineHeight: 1 }}>$2,847</p>
-            <p style={{ fontSize: 11, color: "#555", marginTop: 4, marginBottom: 20 }}>spent this month</p>
-            <div style={{ background: "#111118", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "12px 14px", marginBottom: 20 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                <div>
-                  <p style={{ fontSize: 10, color: "#555", fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase" }}>Forecast</p>
-                  <p style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.5px", color: "#fff", marginTop: 2 }}>~$3,420</p>
-                </div>
-                <span style={{ fontSize: 9, fontWeight: 600, color: "#34D399", background: "rgba(52,211,153,0.12)", borderRadius: 6, padding: "3px 7px" }}>On Track</span>
-              </div>
-              <Sparkline />
-            </div>
-            <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", color: "#444", textTransform: "uppercase", marginBottom: 10 }}>Recent</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {transactions.map((tx, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <div style={{ width: 30, height: 30, borderRadius: 10, background: "#111118", border: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>{tx.icon}</div>
-                    <div>
-                      <p style={{ fontSize: 11, fontWeight: 600, color: "#fff", lineHeight: 1.2 }}>{tx.name}</p>
-                      <p style={{ fontSize: 9, color: "#555" }}>{tx.sub}</p>
-                    </div>
-                  </div>
-                  <p style={{ fontSize: 12, fontWeight: 700, color: "#F87171" }}>{tx.amount}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      <div style={{ width: 256, height: 536, borderRadius: 44, background: "#1C1C1E", border: "1.5px solid rgba(0,0,0,0.15)", boxShadow: "0 30px 60px rgba(0,0,0,0.18)", overflow: "hidden", position: "relative" }}>
+        <div style={{ position: "absolute", inset: "1.5px", borderRadius: 43, overflow: "hidden" }}>
+          <Image
+            src="/images/screenshots-of-app/home-dashboard.png"
+            alt="Lumi app home screen showing balance, month forecast, and recent transactions"
+            fill
+            sizes="256px"
+            style={{ objectFit: "cover", objectPosition: "top" }}
+            priority
+          />
         </div>
       </div>
     </div>
@@ -94,15 +46,15 @@ export default function Hero() {
             <p className="label mb-5">Available on the App Store</p>
 
             <h1
-              className="font-bold text-white"
-              style={{ fontSize: "clamp(40px, 6vw, 62px)", letterSpacing: "-2.5px", lineHeight: 1.04 }}
+              className="font-extrabold"
+              style={{ fontSize: "clamp(40px, 6vw, 62px)", letterSpacing: "-2.5px", lineHeight: 1.04, color: "#0A0A0A" }}
             >
               Know your money.
               <br />
               <span style={{ color: "#6C63FF" }}>Before it&apos;s gone.</span>
             </h1>
 
-            <p style={{ fontSize: "clamp(15px, 2vw, 18px)", color: "#666", lineHeight: 1.7, maxWidth: 460, marginTop: 20, marginBottom: 28 }}>
+            <p style={{ fontSize: "clamp(15px, 2vw, 18px)", color: "#63636B", lineHeight: 1.7, maxWidth: 460, marginTop: 20, marginBottom: 28 }}>
               Back Tap your iPhone to log an expense in 2&nbsp;seconds.
               Apple Pay auto-imports the moment you pay.
               AI forecasts your month-end balance before you overspend.
@@ -111,7 +63,7 @@ export default function Hero() {
             {/* Trust tags — horizontal scroll on mobile */}
             <div style={{ display: "flex", gap: 8, marginBottom: 32, overflowX: "auto", paddingBottom: 2, WebkitOverflowScrolling: "touch" as "touch" }}>
               {["No bank login", "Data on device", "Works offline", "Free"].map((t) => (
-                <span key={t} style={{ flexShrink: 0, fontSize: 12, fontWeight: 500, color: "#555", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 8, padding: "5px 12px", whiteSpace: "nowrap" as "nowrap" }}>
+                <span key={t} style={{ flexShrink: 0, fontSize: 12, fontWeight: 500, color: "#63636B", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8, padding: "5px 12px", whiteSpace: "nowrap" as "nowrap" }}>
                   {t}
                 </span>
               ))}
@@ -142,8 +94,8 @@ export default function Hero() {
           <div className="flex lg:hidden gap-3 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" as "touch" }}>
             {stats.map((s) => (
               <div key={s.label} className="surface rounded-2xl flex-shrink-0" style={{ padding: "16px 20px", minWidth: 120 }}>
-                <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#fff", lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontSize: 11, color: "#444", marginTop: 5, lineHeight: 1.3 }}>{s.label}</p>
+                <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A", lineHeight: 1 }}>{s.value}</p>
+                <p style={{ fontSize: 11, color: "#63636B", marginTop: 5, lineHeight: 1.3 }}>{s.label}</p>
               </div>
             ))}
           </div>
@@ -152,8 +104,8 @@ export default function Hero() {
           <div className="hidden lg:grid grid-cols-4 gap-4">
             {stats.map((s) => (
               <div key={s.label} className="surface rounded-2xl" style={{ padding: "20px 24px" }}>
-                <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#fff" }}>{s.value}</p>
-                <p style={{ fontSize: 13, color: "#555", marginTop: 4 }}>{s.label}</p>
+                <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A" }}>{s.value}</p>
+                <p style={{ fontSize: 13, color: "#63636B", marginTop: 4 }}>{s.label}</p>
               </div>
             ))}
           </div>

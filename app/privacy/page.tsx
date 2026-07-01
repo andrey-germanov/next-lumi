@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Lumi Privacy Policy — how we handle your data.",
   alternates: {
-    canonical: "https://getlumi.app/privacy",
+    canonical: `${SITE_URL}/privacy`,
   },
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const features = [
@@ -26,7 +27,8 @@ const features = [
     desc: "Pay contactless. The expense appears in Lumi automatically — amount, merchant, timestamp. Zero manual entry required.",
     stat: "0 taps",
     statLabel: "manual entries",
-    accent: "#34D399",
+    accent: "#0A8F5F",
+    image: "/images/demo-apple-pay/apple-pay-confirmation.png",
     large: true,
   },
   {
@@ -87,8 +89,8 @@ export default function Features() {
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 700,
-              color: "#fff",
+              fontWeight: 800,
+              color: "#0A0A0A",
               letterSpacing: "-1.5px",
               lineHeight: 1.1,
               maxWidth: 520,
@@ -96,7 +98,7 @@ export default function Features() {
           >
             Logging that disappears
             <br />
-            <span style={{ color: "#444", fontWeight: 400 }}>when you don&apos;t need it.</span>
+            <span style={{ color: "#63636B", fontWeight: 400 }}>when you don&apos;t need it.</span>
           </h2>
         </motion.div>
 
@@ -109,26 +111,35 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="surface rounded-2xl"
+              className="surface rounded-2xl relative overflow-hidden"
               style={{ padding: "clamp(20px, 4vw, 36px)" }}
             >
-              <div style={{ color: "#555", marginBottom: 20 }}>{f.icon}</div>
+              {f.image && (
+                <div
+                  className="absolute hidden sm:block"
+                  style={{ top: 20, right: -8, width: 100, height: 100, borderRadius: 20, overflow: "hidden", boxShadow: "0 12px 28px rgba(0,0,0,0.14)", border: "1px solid rgba(0,0,0,0.06)" }}
+                >
+                  <Image src={f.image} alt="" fill sizes="100px" style={{ objectFit: "cover", objectPosition: "top" }} />
+                </div>
+              )}
+
+              <div style={{ color: "#63636B", marginBottom: 20 }}>{f.icon}</div>
 
               <h3
-                style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.5px", marginBottom: 10 }}
+                style={{ fontSize: 20, fontWeight: 700, color: "#0A0A0A", letterSpacing: "-0.5px", marginBottom: 10 }}
               >
                 {f.title}
               </h3>
-              <p style={{ fontSize: 14, color: "#666", lineHeight: 1.65, marginBottom: 24 }}>
+              <p style={{ fontSize: 14, color: "#63636B", lineHeight: 1.65, marginBottom: 24 }}>
                 {f.desc}
               </p>
 
               {f.stat && (
-                <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 20 }}>
+                <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: 20 }}>
                   <p style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-1.5px", color: f.accent }}>
                     {f.stat}
                   </p>
-                  <p style={{ fontSize: 12, color: "#444", marginTop: 2 }}>{f.statLabel}</p>
+                  <p style={{ fontSize: 12, color: "#63636B", marginTop: 2 }}>{f.statLabel}</p>
                 </div>
               )}
             </motion.div>
@@ -147,11 +158,11 @@ export default function Features() {
               className="surface rounded-2xl"
               style={{ padding: "28px 28px" }}
             >
-              <div style={{ color: "#555", marginBottom: 16 }}>{f.icon}</div>
-              <h3 style={{ fontSize: 15, fontWeight: 700, color: "#fff", letterSpacing: "-0.3px", marginBottom: 8 }}>
+              <div style={{ color: "#63636B", marginBottom: 16 }}>{f.icon}</div>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: "#0A0A0A", letterSpacing: "-0.3px", marginBottom: 8 }}>
                 {f.title}
               </h3>
-              <p style={{ fontSize: 13, color: "#555", lineHeight: 1.6 }}>
+              <p style={{ fontSize: 13, color: "#63636B", lineHeight: 1.6 }}>
                 {f.desc}
               </p>
             </motion.div>

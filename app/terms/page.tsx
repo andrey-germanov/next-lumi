@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Lumi Terms of Service.",
   alternates: {
-    canonical: "https://getlumi.app/terms",
+    canonical: `${SITE_URL}/terms`,
   },
 };
 

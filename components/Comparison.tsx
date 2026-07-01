@@ -34,7 +34,7 @@ export default function Comparison() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
             How Lumi compares to other budget apps
           </h2>
         </motion.div>
@@ -47,7 +47,7 @@ export default function Comparison() {
         >
           <table className="w-full min-w-[640px] border-collapse">
             <thead>
-              <tr className="border-b border-white/10">
+              <tr className="border-b border-black/12">
                 <th className="px-4 py-3 text-left text-sm font-medium text-text-muted">
                   Feature
                 </th>
@@ -72,7 +72,7 @@ export default function Comparison() {
               {COMPARISON_DATA.map((row) => (
                 <tr
                   key={row.feature}
-                  className="border-b border-white/5 transition-colors hover:bg-white/[0.02]"
+                  className="border-b border-black/8 transition-colors hover:bg-black/[0.03]"
                 >
                   <td className="px-4 py-3 text-sm font-medium text-text">
                     {row.feature}

@@ -1,25 +1,30 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
 
 const steps = [
   {
     step: "1",
-    title: "Point your camera at a receipt",
-    description: "Open Lumi, tap scan, and snap a photo of any receipt.",
+    title: "Tap to pay",
+    description: "Pay with Apple Pay like you always do. No extra app, no unlocking.",
+    image: "/images/demo-apple-pay/apple-pay-wallet-card.png",
+    alt: "Holding an iPhone near a contactless reader to pay with Apple Pay",
   },
   {
     step: "2",
-    title: "AI extracts everything instantly",
-    description:
-      "Amount, date, merchant, category, individual items — parsed in seconds, in any language.",
+    title: "Lumi picks it up instantly",
+    description: "The expense appears with a category already suggested — tap to confirm.",
+    image: "/images/demo-apple-pay/apple-pay-category-picker.png",
+    alt: "Lumi category picker appearing right after an Apple Pay purchase",
   },
   {
     step: "3",
-    title: "See your full picture",
-    description:
-      "Budgets, goals, analytics — your spending story, organized automatically.",
+    title: "Done",
+    description: "Saved, categorized, and added to your forecast automatically.",
+    image: "/images/demo-apple-pay/apple-pay-confirmation.png",
+    alt: "Lumi confirming a Starbucks expense was saved and categorized automatically",
   },
 ];
 
@@ -33,8 +38,8 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            3 taps. 2 seconds. Done.
+          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
+            1 tap. Seconds. Done.
           </h2>
         </motion.div>
 
@@ -54,10 +59,19 @@ export default function HowItWorks() {
               <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
               <p className="text-text-muted">{item.description}</p>
 
-              {/* Step screenshot placeholder */}
-              <div className="mx-auto mt-6 h-64 w-48 overflow-hidden rounded-2xl border border-white/5 bg-bg-secondary">
-                <div className="flex h-full items-center justify-center text-xs text-text-muted/50">
-                  Step {item.step} screenshot
+              {/* Step screenshot */}
+              <div
+                className="mx-auto mt-6 relative overflow-hidden"
+                style={{ width: 190, height: 400, borderRadius: 32, background: "#1C1C1E", border: "1.5px solid rgba(0,0,0,0.15)", boxShadow: "0 20px 40px rgba(0,0,0,0.14)" }}
+              >
+                <div className="relative" style={{ position: "absolute", inset: "1.5px", borderRadius: 31, overflow: "hidden" }}>
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="190px"
+                    style={{ objectFit: "cover", objectPosition: "top" }}
+                  />
                 </div>
               </div>
             </motion.div>
