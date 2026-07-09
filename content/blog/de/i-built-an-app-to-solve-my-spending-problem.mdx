@@ -1,0 +1,80 @@
+---
+title: "Ich habe eine App gebaut, um mein eigenes Ausgabenproblem zu lösen — das habe ich gelernt"
+description: "Wie ein Entwickler, der alles bauen konnte, trotzdem nicht herausfand, wohin sein Geld verschwand — und was passierte, als er einen KI-gestützten Ausgaben-Tracker baute, der keinen Zugang zu deinem Bankkonto braucht."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["Gründergeschichte", "persönliche Finanzen", "Indie-Entwicklung", "Budgetierung", "Building in Public"]
+---
+
+Ich bin Softwareentwickler. Ich habe Produktivsysteme ausgeliefert, in einem modernen Software-Unternehmen so ziemlich jede Rolle innegehabt. Ich kann ein verteiltes System von Grund auf entwerfen. Aber über lange Zeit hatte ich absolut keine Ahnung, wohin mein Geld verschwand.
+
+Nicht im Sinne von „Ich bin pleite“. Eher im Sinne von „Ich verdiene ordentlich und irgendwie bleibt am Monatsende nichts übrig“. Alle paar Monate durchlief ich denselben Kreislauf: eine Budget-App herunterladen, die Bank verbinden, eine Woche lang auf bunte Kreisdiagramme starren, mich schlecht wegen meiner Ausgaben fühlen, die App vergessen, das Ganze wiederholen.
+
+Das ist die Geschichte, wie ich diesen Kreislauf durchbrach — indem ich das baute, was ich nicht finden konnte.
+
+## Der App-Friedhof
+
+Ich habe jede große Budget-App ausprobiert. YNAB war zu intensiv — ich will nicht jedem Dollar eine Aufgabe zuweisen, ich will wissen, warum ich $200 bei Target ausgegeben habe, als ich nur wegen Zahnpasta rein bin. Monarch war wunderschön, fühlte sich aber an, als schaue man auf ein Dashboard über das Leben eines anderen. Copilot kategorisierte alles wunderbar und ließ mich dann allein damit, herauszufinden, was ich damit anfangen sollte.
+
+Jede App tat dasselbe: Sie zeigte mir, wohin mein Geld ging, *nachdem es bereits weg war*. Und jede einzelne begann mit derselben Frage: „Verbinde dein Bankkonto.“
+
+## Die drei Probleme, die niemand löste
+
+Nach Monaten des Ausprobierens und Aufgebens von Apps bemerkte ich ein Muster. Drei Dinge störten mich immer wieder, und keine App adressierte sie alle.
+
+**Problem 1: Manuelle Eingabe tötet die Motivation.** Ich habe das überall auf Reddit widergespiegelt gesehen — jemand auf r/personalfinance hat es perfekt formuliert: Transaktionen manuell einzugeben fühlt sich an wie Hausaufgaben, die niemand machen will. Man startet mit Enthusiasmus, und zwei Wochen später verstaubt die App. Bank-Sync soll das angeblich lösen, aber es schafft die Probleme 2 und 3.
+
+**Problem 2: Der Bank-Login ist ein Albtraum für die Privatsphäre.** Jede bankgekoppelte App verlangt, dass du deine Zugangsdaten über Plaid oder Ähnliches teilst. Das bedeutet, einem Dritten Lesezugriff auf jede Transaktion, jeden Kontostand, jedes Konto zu gewähren. Ich arbeite in der Tech-Branche. Ich weiß, wie Datenlecks funktionieren. Als ich Freunde danach fragte, sagten etwa die Hälfte dasselbe: „Ich würde eine Budget-App nutzen, aber ich will ihr keinen Zugang zu meiner Bank geben.“ Das ist keine kleine UX-Beschwerde. Es ist eine grundlegende Hürde für die Akzeptanz.
+
+**Problem 3: Eine Währung reicht nicht.** Ich reise. Ich arbeite mit internationalen Kunden. Ich habe regelmäßig mit mehreren Währungen zu tun. Jede Premium-App, die ich ausprobierte — YNAB, Monarch, Copilot — war für Amerikaner mit amerikanischen Bankkonten gebaut, die amerikanische Dollar ausgeben. Multi-Währung fehlte entweder oder war nachträglich angeflanscht. Für jeden, der Expat, digitaler Nomade ist oder einfach ein paar Mal im Jahr reist, ist das ein K.-o.-Kriterium.
+
+<ArticleCTA />
+
+## Die Kassenzettel-Idee
+
+Der Durchbruch kam auf einem Supermarkt-Parkplatz, beim Anblick eines Kassenzettels. Was wäre, wenn die Eingabemethode kein Bank-Sync wäre, sondern eine Kamera? Du kaufst etwas, bekommst einen Kassenzettel, richtest dein Handy darauf. Zwei Sekunden. Fertig.
+
+Aber nicht mit herkömmlichem OCR — diese Technik liest Text Zeichen für Zeichen und scheitert an ungewöhnlichen Schriftarten, zerknittertem Papier oder jeder Sprache außer Englisch. Ich wollte etwas, das *versteht*, was ein Kassenzettel ist. Da begann ich, mit AI-Vision-Modellen zu experimentieren.
+
+Der Unterschied war sofort spürbar. Herkömmliches OCR hätte „$18.47“ auf einem leicht zerknitterten Zettel als „$1847“ fehlgelesen. AI Vision verstand den Kontext — es wusste, dass dies eine Summe war, es erkannte den Händler, das Datum, die einzelnen Posten und ihre Preise. Und es funktionierte bei Kassenzetteln auf Russisch, Ukrainisch, Japanisch — jeder Sprache — weil es keine Zeichen las, sondern ein Dokument verstand.
+
+Ich baute an einem Wochenende einen Prototyp. Das Scannen funktionierte. Aber ich hatte immer noch das ursprüngliche Problem: Okay, hier ist eine Liste meiner Ausgaben. Und jetzt?
+
+## Die fehlenden Teile ergänzen
+
+Also baute ich weiter. Multi-Währungs-Unterstützung kam als Nächstes — nicht als Zusatz, sondern als Kernfunktion. Jeder Bildschirm, jede Berechnung, jedes Budget verarbeitet jede Währung mit automatischer Echtzeit-Umrechnung. Denn wenn dein Leben mehrere Währungen umfasst, muss deine Budget-App das nativ beherrschen.
+
+Dann Budgets mit echten Warnungen — nicht nur ein Diagramm, das rot wird, nachdem du bereits zu viel ausgegeben hast, sondern Benachrichtigungen, die dich erwischen, *bevor* du drüber gehst. Sparziele mit Fortschrittsverfolgung und Meilensteinen. Analysen, die tatsächlich Muster zeigen: Heatmaps der täglichen Ausgaben, Periodenvergleiche, Kategorie-Aufschlüsselungen. KI-gestützte Prognosen, die vorhersagen, wohin deine Ausgaben steuern, basierend auf deinen tatsächlichen Mustern.
+
+Und Quick Actions — Vorlagen für deine häufigen Ausgaben. Kaffee, Lebensmittel, Transport — ein Tipp. Denn selbst mit Kassenzettel-Scan kaufst du manchmal einen Kaffee und es gibt keinen Zettel, und das Hinzufügen sollte buchstäblich eine Sekunde dauern.
+
+Die gesamte App läuft offline. Deine Daten werden lokal auf deinem Gerät gespeichert, verschlüsselt mit biometrischer Sicherheit. Keine Cloud-Synchronisierung, kein Server, der deine Finanzgeschichte speichert. Das ist eine bewusste Entscheidung, keine Einschränkung.
+
+## Was ich über Geld gelernt habe (während ich eine Geld-App baute)
+
+Der Bau von Lumi zwang mich, über persönliche Finanzen auf eine Weise nachzudenken, wie es keine App je tat, als ich nur Nutzer war.
+
+**Reibung ist der wahre Feind, nicht Unwissenheit.** Menschen scheitern beim Budgetieren nicht, weil sie schlecht mit Geld umgehen. Sie scheitern, weil die Werkzeuge es zu mühsam machen. Jede Sekunde Reibung — manuelles Tippen, falsche Kategorien, Bank-Sync-Fehler, Währungsverwirrung — ist eine Sekunde näher am Aufgeben der App. Kassenzettel-Scan beseitigt den größten Reibungspunkt. Multi-Währung beseitigt den zweitgrößten für jeden, der nicht ausschließlich in den USA ist.
+
+**Privatsphäre ist ein Feature, kein Kompromiss.** Als ich das Wettbewerbsumfeld untersuchte (insgesamt 18 Apps), fand ich etwas Interessantes: Jede einzelne Top-App verlangt Bank-Sync. Es wird als Standard behandelt, als offensichtliche Wahl. Aber eine riesige Zahl von Nutzern will das nicht. Sie sind nicht paranoid — sie treffen eine vernünftige Sicherheitsentscheidung. Für sie zu bauen schränkt das Produkt nicht ein; es bedient einen unterversorgten Markt.
+
+**Kassenzettel zu scannen schafft einen Moment der Mikro-Achtsamkeit.** Das überraschte mich. Nutzer berichten, dass der physische Akt des Scannens eines Kassenzettels — die Kamera ausrichten, den erfassten Betrag sehen — einen Moment der Aufmerksamkeit schafft, den automatische Bank-Synchronisierung nicht bietet. Wenn Transaktionen still im Hintergrund abgerufen werden, denkt man nie über sie nach. Wenn du einen Kassenzettel scannst, schaust du auf die Zahl. Dieser winzige Moment der Achtsamkeit verändert die Beziehung zu den Ausgaben.
+
+**Der Multi-Währungs-Markt ist größer, als er aussieht.** Digitale Nomaden, Expats, Einwanderer, Vielreisende, Freelancer mit internationalen Kunden, Menschen, die auf internationalen Seiten einkaufen — das ist keine Nische. Es ist ein wachsendes Segment, das US-fokussierte Premium-Apps völlig ignorieren.
+
+## Wo Lumi jetzt steht
+
+Lumi ist im App Store live, Version 2.43. Es ist eine React-Native-App mit KI-Kassenzettel-Scan via OpenAI Vision, Multi-Währung mit automatischer Umrechnung, Budgets, Sparzielen, Analysen mit Prognose und Export nach PDF/CSV/JSON. Sie unterstützt Englisch, Russisch und Ukrainisch.
+
+Der Einstieg ist kostenlos — 10 KI-Scans pro Monat, 2 Budgets, grundlegende Analysen, unbegrenzte manuelle Einträge. Premium schaltet alles frei.
+
+Sie ist nicht perfekt. Die KI-Empfehlungen werden mit mehr Daten besser, was bedeutet, dass die ersten Tage weniger beeindruckend sind als die dritte Woche. Es gibt noch keine Cloud-Synchronisierung, also musst du beim Handywechsel exportieren/importieren. Regeln für wiederkehrende Transaktionen stehen auf der Roadmap. Ich bin ein Solo-Entwickler, der daran arbeitet, und ich veröffentliche ständig Updates.
+
+Aber die Kernschleife — Kassenzettel scannen, Ausgaben in jeder Währung sehen, vor dem Überziehen gewarnt werden, Ziele verfolgen — die funktioniert. Ich nutze sie selbst jeden Tag, und zum ersten Mal in meinem Leben weiß ich tatsächlich, wohin mein Geld geht.
+
+Wenn das nach etwas klingt, das du brauchst, probier es aus. Und wenn du Feedback hast, ich lese jede einzelne Nachricht.
+
+---
+
+*Fragen? Einen Bug gefunden? Willst du mir von einem Kassenzettel erzählen, den der Scanner nicht lesen konnte? Ich bin auf Threads @LumiApp und lese jede DM.*

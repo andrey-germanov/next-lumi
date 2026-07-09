@@ -1,0 +1,80 @@
+---
+title: "Am construit o aplicație ca să-mi rezolv propria problemă cu cheltuielile — iată ce am învățat"
+description: "Cum un dezvoltator care putea construi orice tot nu reușea să-și dea seama unde-i dispăreau banii — și ce s-a întâmplat când a construit un tracker de cheltuieli alimentat de AI care nu are nevoie de datele tale bancare."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["povestea fondatorului", "finanțe personale", "dezvoltare indie", "bugetare", "construit în public"]
+---
+
+Sunt dezvoltator de software. Am lansat sisteme în producție, am ocupat aproape fiecare rol dintr-un studio modern de software. Pot proiecta de la zero un sistem distribuit. Dar, pentru foarte multă vreme, nu aveam absolut nicio idee unde-mi dispăreau banii.
+
+Nu în sensul „sunt falit”. Mai degrabă în sensul „câștig destul de bine și cumva nu-mi rămâne nimic la sfârșitul lunii”. La fiecare câteva luni treceam prin același ciclu: descărcam o aplicație de bugetare, îmi conectam banca, mă holbam o săptămână la grafice colorate, mă simțeam prost din cauza cheltuielilor, uitam de aplicație, o luam de la capăt.
+
+Aceasta este povestea despre cum am rupt acel ciclu — construind lucrul pe care nu-l găseam.
+
+## Cimitirul de aplicații
+
+Am încercat toate aplicațiile importante de bugetare. YNAB era prea intens — nu vreau să dau fiecărui dolar o sarcină, vreau să știu de ce am cheltuit $200 la Target când intrasem după pastă de dinți. Monarch era superb, dar semăna cu privitul unui dashboard despre viața altcuiva. Copilot categoriza totul minunat și apoi mă lăsa să-mi dau singur seama ce să fac cu asta.
+
+Fiecare aplicație făcea același lucru: îmi arăta unde-mi dispăruseră banii *după ce deja se duseseră*. Și fiecare începea cu aceeași întrebare: „Conectează-ți contul bancar.”
+
+## Cele trei probleme pe care nu le rezolva nimeni
+
+După luni de încercări și aplicații abandonate, am observat un tipar. Erau trei lucruri care mă tot deranjau, iar nicio aplicație nu le rezolva pe toate.
+
+**Problema 1: introducerea manuală ucide motivația.** Am văzut asta ecouând peste tot pe Reddit — cineva pe r/personalfinance a formulat-o perfect: introducerea manuală a tranzacțiilor pare o temă pe care nimeni nu vrea s-o facă. Începi cu entuziasm, apoi două săptămâni mai târziu aplicația prinde praf. Sincronizarea bancară ar trebui teoretic să rezolve asta, dar creează problemele 2 și 3.
+
+**Problema 2: autentificarea bancară e un coșmar pentru intimitate.** Fiecare aplicație cu sincronizare bancară îți cere să-ți partajezi datele de acces prin Plaid sau ceva similar. Asta înseamnă să dai unei terțe părți acces de citire la fiecare tranzacție, fiecare sold, fiecare cont. Lucrez în tehnologie. Știu cum se produc scurgerile de date. Când i-am întrebat pe prieteni despre asta, aproximativ jumătate au spus același lucru: „Aș folosi o aplicație de buget, dar nu vreau să-i dau acces la banca mea.” Nu e o plângere minoră de UX. E o barieră fundamentală în calea adoptării.
+
+**Problema 3: o singură monedă nu e suficientă.** Călătoresc. Lucrez cu clienți internaționali. Mă ocup regulat de mai multe monede. Fiecare aplicație premium pe care am încercat-o — YNAB, Monarch, Copilot — era construită pentru americani cu conturi bancare americane care cheltuie dolari americani. Suportul multi-valută fie lipsea, fie era lipit ulterior ca o idee de moment. Pentru oricine este expat, nomad digital sau pur și simplu călătorește de câteva ori pe an, asta e un motiv de renunțare.
+
+<ArticleCTA />
+
+## Ideea cu bonul
+
+Descoperirea a venit în parcarea unui magazin alimentar, uitându-mă la un bon. Ce-ar fi dacă metoda de introducere nu ar fi o sincronizare bancară, ci o cameră? Cumperi ceva, primești un bon, îndrepți telefonul spre el. Două secunde. Gata.
+
+Dar nu cu OCR tradițional — tehnologia aceea citește textul caracter cu caracter și se blochează la fonturi neobișnuite, hârtie mototolită sau orice limbă care nu e engleza. Voiam ceva care să *înțeleagă* ce este un bon. Atunci am început să experimentez cu modele AI Vision.
+
+Diferența a fost imediată. OCR-ul tradițional ar fi citit greșit „$18.47” ca „$1847” pe un bon ușor mototolit. AI Vision înțelegea contextul — știa că acesta este un total, identifica comerciantul, data, articolele individuale și prețurile lor. Și funcționa pe bonuri în rusă, ucraineană, japoneză — orice limbă — pentru că nu citea caractere, ci înțelegea un document.
+
+Am construit un prototip într-un weekend. Scanarea funcționa. Dar tot mai aveam problema inițială: bine, iată o listă cu cheltuielile mele. Și acum?
+
+## Adăugarea pieselor lipsă
+
+Așa că am continuat să construiesc. Suportul multi-valută a urmat — nu ca un supliment, ci ca o funcție de bază. Fiecare ecran, fiecare calcul, fiecare buget gestionează orice monedă cu conversie automată în timp real. Pentru că, dacă viața ta implică mai multe monede, aplicația ta de buget trebuie să gestioneze asta nativ.
+
+Apoi bugete cu alerte reale — nu doar un grafic care se face roșu după ce ai cheltuit deja prea mult, ci notificări care te prind *înainte* să depășești. Obiective de economisire cu urmărirea progresului și repere. Analize care chiar arată tipare: hărți termice ale cheltuielilor zilnice, comparații între perioade, defalcări pe categorii. Prognoză alimentată de AI care prezice încotro se îndreaptă cheltuielile tale pe baza tiparelor tale reale.
+
+Și Quick Actions — șabloane pentru cheltuielile tale frecvente. Cafea, cumpărături, transport — o singură atingere. Pentru că, chiar și cu scanarea bonurilor, uneori cumperi o cafea și nu există bon, iar adăugarea ar trebui să dureze literalmente o secundă.
+
+Întreaga aplicație funcționează offline. Datele tale sunt stocate local pe dispozitiv, criptate cu securitate biometrică. Fără sincronizare în cloud, fără server care să-ți stocheze istoricul financiar. Aceasta este o alegere deliberată, nu o limitare.
+
+## Ce am învățat despre bani (în timp ce construiam o aplicație despre bani)
+
+Construirea Lumi m-a forțat să mă gândesc la finanțele personale într-un mod în care nicio aplicație nu m-a făcut niciodată când eram doar utilizator.
+
+**Frecarea este adevăratul dușman, nu ignoranța.** Oamenii nu eșuează la bugetare pentru că sunt slabi cu banii. Eșuează pentru că uneltele fac totul prea plictisitor. Fiecare secundă de frecare — tastare manuală, categorii greșite, erori de sincronizare bancară, confuzie valutară — este o secundă mai aproape de abandonarea aplicației. Scanarea bonurilor elimină cel mai mare punct de frecare. Multi-valuta îl elimină pe al doilea, pentru oricine nu e strict din SUA.
+
+**Intimitatea este o funcție, nu un compromis.** Când am cercetat peisajul competitiv (18 aplicații în total), am descoperit ceva interesant: fiecare aplicație de top necesită sincronizare bancară. Este tratată drept setarea implicită, alegerea evidentă. Dar un număr uriaș de utilizatori nu o vor. Nu sunt paranoici — iau o decizie rezonabilă de securitate. A construi pentru ei nu înseamnă a limita produsul; înseamnă a servi o piață neglijată.
+
+**Scanarea bonurilor creează un moment de micro-conștientizare.** Asta m-a surprins. Utilizatorii raportează că actul fizic de a scana un bon — de a îndrepta camera, de a vedea suma analizată — creează un moment de atenție pe care sincronizarea bancară automată nu-l oferă. Când tranzacțiile sunt extrase tăcut în fundal, nu te gândești niciodată la ele. Când scanezi un bon, te uiți la cifră. Acea mică bătaie de conștientizare schimbă relația cu cheltuielile.
+
+**Piața multi-valută este mai mare decât pare.** Nomazi digitali, expați, imigranți, călători frecvenți, freelanceri cu clienți internaționali, oameni care cumpără de pe site-uri internaționale — asta nu e o nișă. Este un segment în creștere pe care aplicațiile premium orientate spre SUA îl ignoră complet.
+
+## Unde este Lumi acum
+
+Lumi este disponibil în App Store, versiunea 2.43. Este o aplicație React Native cu scanare de bonuri prin OpenAI Vision, multi-valută cu conversie automată, bugete, obiective de economisire, analize cu prognoză și export în PDF/CSV/JSON. Suportă engleza, rusa și ucraineana.
+
+Poți începe gratuit — 10 scanări AI pe lună, 2 bugete, analize de bază, introduceri manuale nelimitate. Premium deblochează totul.
+
+Nu e perfectă. Recomandările AI se îmbunătățesc cu mai multe date, ceea ce înseamnă că primele câteva zile sunt mai puțin impresionante decât a treia săptămână. Încă nu există sincronizare în cloud, așa că dacă schimbi telefonul trebuie să exporți/imporți. Regulile pentru tranzacții recurente sunt pe roadmap. Sunt un dezvoltator care lucrează singur la asta și lansez actualizări constant.
+
+Dar bucla de bază — scanezi bonul, îți vezi cheltuielile în orice monedă, primești alertă înainte de depășire, îți urmărești obiectivele — aceea funcționează. O folosesc eu însumi în fiecare zi și, pentru prima dată în viața mea, chiar știu unde-mi dispar banii.
+
+Dacă sună a ceva ce ai nevoie, încearc-o. Iar dacă ai feedback, citesc fiecare mesaj în parte.
+
+---
+
+*Întrebări? Ai găsit un bug? Vrei să-mi spui despre un bon pe care scanerul nu l-a putut citi? Sunt pe Threads @LumiApp și citesc fiecare DM.*

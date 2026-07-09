@@ -220,6 +220,16 @@ export const FAQ = [
       "Point your iPhone camera at any paper or digital receipt. Lumi's AI Vision reads the total amount, date, merchant name, and assigns a spending category — even for receipts in foreign languages. The scan takes 2–3 seconds.",
   },
   {
+    question: "How do category budgets work in Lumi?",
+    answer:
+      "Set a monthly spending limit for any category — groceries, dining, transport, subscriptions, anything. Lumi tracks your spend against the limit in real time with a live progress bar and warns you as you approach it, instead of only telling you after you've overspent. Free plan includes 2 budgets; Premium is unlimited.",
+  },
+  {
+    question: "How do savings goals work in Lumi?",
+    answer:
+      "Create a savings goal with a target amount and, optionally, a deadline — a trip, an emergency fund, a big purchase. Log contributions and Lumi tracks your progress with a percentage bar, milestones, and a running total of how much is left to save. You can run multiple goals at once.",
+  },
+  {
     question: "Is Lumi free to use?",
     answer:
       "Yes. The free plan includes 10 AI receipt scans per month, 2 budgets, Back Tap logging, Apple Pay auto-import, voice input, and basic analytics. Lumi Premium ($4.99/month or $39.99/year) unlocks unlimited scans, unlimited budgets, AI forecasting, advanced analytics, and full multi-currency support.",

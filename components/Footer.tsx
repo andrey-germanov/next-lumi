@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { SOCIAL_LINKS, APP_STORE_URL } from "@/lib/constants";
+import { useLang } from "@/components/dash/i18n";
 
 export default function Footer() {
+  const { t } = useLang();
   return (
     <footer className="border-t border-black/8 py-12">
       <div className="mx-auto max-w-7xl px-6">
@@ -14,7 +18,7 @@ export default function Footer() {
               Lumi
             </Link>
             <p className="mt-2 text-sm text-text-muted">
-              AI-powered expense tracker. Privacy-first.
+              {t("lp.footerTagline")}
             </p>
           </div>
 

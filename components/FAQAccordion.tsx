@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { FAQ } from "@/lib/constants";
 
-function FAQItem({ item, index }: { item: (typeof FAQ)[number]; index: number }) {
+interface FAQEntry {
+  question: string;
+  answer: string;
+}
+
+function FAQItem({ item, index }: { item: FAQEntry; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,7 +70,7 @@ function FAQItem({ item, index }: { item: (typeof FAQ)[number]; index: number })
   );
 }
 
-export default function FAQAccordion({ items }: { items: typeof FAQ }) {
+export default function FAQAccordion({ items }: { items: FAQEntry[] }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
       {items.map((item, i) => (

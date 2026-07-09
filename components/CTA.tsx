@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
+import { useLang } from "@/components/dash/i18n";
 
 export default function CTA() {
+  const { t } = useLang();
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -14,7 +16,7 @@ export default function CTA() {
           className="surface-dark rounded-3xl text-center"
           style={{ padding: "clamp(40px, 8vw, 80px) clamp(24px, 6vw, 48px)" }}
         >
-          <p className="label" style={{ marginBottom: 20, color: "rgba(255,255,255,0.5)" }}>Start for free</p>
+          <p className="label" style={{ marginBottom: 20, color: "rgba(255,255,255,0.5)" }}>{t("lp.ctaLabel")}</p>
 
           <h2
             style={{
@@ -26,18 +28,18 @@ export default function CTA() {
               marginBottom: 16,
             }}
           >
-            Your next expense
+            {t("lp.ctaTitle1")}
             <br />
-            <span style={{ color: "#9C8FFF" }}>logs itself.</span>
+            <span style={{ color: "#9C8FFF" }}>{t("lp.ctaTitle2")}</span>
           </h2>
 
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", maxWidth: 420, margin: "0 auto 36px" }}>
-            Set up Apple Pay import once. Enable Back Tap. Then forget about manual logging forever.
+            {t("lp.ctaSubtitle")}
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
             <AppStoreButton location="final_cta" />
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>Free · No bank login · iOS 16+</p>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>{t("lp.ctaFootnote")}</p>
           </div>
         </motion.div>
       </div>

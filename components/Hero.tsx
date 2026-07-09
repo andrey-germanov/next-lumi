@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
+import { useLang } from "@/components/dash/i18n";
 
 function PhoneMockup() {
   return (
@@ -24,13 +25,16 @@ function PhoneMockup() {
 }
 
 const stats = [
-  { value: "2 sec",   label: "to log via Back Tap" },
-  { value: "0 taps",  label: "with Apple Pay" },
-  { value: "150+",    label: "currencies" },
-  { value: "0 banks", label: "connected. Ever." },
+  { value: "2 sec", labelKey: "lp.statBackTap" },
+  { value: "0 taps", labelKey: "lp.statApplePay" },
+  { value: "150+", labelKey: "lp.statCurrencies" },
+  { value: "0 banks", labelKey: "lp.statBanks" },
 ];
 
+const trustTagKeys = ["lp.tagNoBank", "lp.tagOnDevice", "lp.tagOffline", "lp.tagFree"];
+
 export default function Hero() {
+  const { t } = useLang();
   return (
     <section className="relative overflow-hidden pt-20">
       {/* Ambient orb */}
@@ -43,28 +47,26 @@ export default function Hero() {
 
           {/* Copy */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <p className="label mb-5">Available on the App Store</p>
+            <p className="label mb-5">{t("lp.heroLabel")}</p>
 
             <h1
               className="font-extrabold"
               style={{ fontSize: "clamp(40px, 6vw, 62px)", letterSpacing: "-2.5px", lineHeight: 1.04, color: "#0A0A0A" }}
             >
-              Know your money.
+              {t("lp.heroTitle1")}
               <br />
-              <span style={{ color: "#6C63FF" }}>Before it&apos;s gone.</span>
+              <span style={{ color: "#6C63FF" }}>{t("lp.heroTitle2")}</span>
             </h1>
 
             <p style={{ fontSize: "clamp(15px, 2vw, 18px)", color: "#63636B", lineHeight: 1.7, maxWidth: 460, marginTop: 20, marginBottom: 28 }}>
-              Back Tap your iPhone to log an expense in 2&nbsp;seconds.
-              Apple Pay auto-imports the moment you pay.
-              AI forecasts your month-end balance before you overspend.
+              {t("lp.heroSubtitle")}
             </p>
 
             {/* Trust tags — horizontal scroll on mobile */}
             <div style={{ display: "flex", gap: 8, marginBottom: 32, overflowX: "auto", paddingBottom: 2, WebkitOverflowScrolling: "touch" as "touch" }}>
-              {["No bank login", "Data on device", "Works offline", "Free"].map((t) => (
-                <span key={t} style={{ flexShrink: 0, fontSize: 12, fontWeight: 500, color: "#63636B", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8, padding: "5px 12px", whiteSpace: "nowrap" as "nowrap" }}>
-                  {t}
+              {trustTagKeys.map((key) => (
+                <span key={key} style={{ flexShrink: 0, fontSize: 12, fontWeight: 500, color: "#63636B", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8, padding: "5px 12px", whiteSpace: "nowrap" as "nowrap" }}>
+                  {t(key)}
                 </span>
               ))}
             </div>
@@ -93,9 +95,9 @@ export default function Hero() {
           {/* Mobile: horizontal pills */}
           <div className="flex lg:hidden gap-3 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" as "touch" }}>
             {stats.map((s) => (
-              <div key={s.label} className="surface rounded-2xl flex-shrink-0" style={{ padding: "16px 20px", minWidth: 120 }}>
+              <div key={s.labelKey} className="surface rounded-2xl flex-shrink-0" style={{ padding: "16px 20px", minWidth: 120 }}>
                 <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A", lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontSize: 11, color: "#63636B", marginTop: 5, lineHeight: 1.3 }}>{s.label}</p>
+                <p style={{ fontSize: 11, color: "#63636B", marginTop: 5, lineHeight: 1.3 }}>{t(s.labelKey)}</p>
               </div>
             ))}
           </div>
@@ -103,9 +105,9 @@ export default function Hero() {
           {/* Desktop: 4-col grid */}
           <div className="hidden lg:grid grid-cols-4 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="surface rounded-2xl" style={{ padding: "20px 24px" }}>
+              <div key={s.labelKey} className="surface rounded-2xl" style={{ padding: "20px 24px" }}>
                 <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A" }}>{s.value}</p>
-                <p style={{ fontSize: 13, color: "#63636B", marginTop: 4 }}>{s.label}</p>
+                <p style={{ fontSize: 13, color: "#63636B", marginTop: 4 }}>{t(s.labelKey)}</p>
               </div>
             ))}
           </div>

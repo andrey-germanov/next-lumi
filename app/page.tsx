@@ -1,36 +1,16 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import ProblemSolution from "@/components/ProblemSolution";
-import HowItWorks from "@/components/HowItWorks";
-import Features from "@/components/Features";
-import VoiceInput from "@/components/VoiceInput";
-import Comparison from "@/components/Comparison";
-import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing";
-import CTA from "@/components/CTA";
-import BlogPreview from "@/components/BlogPreview";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import LandingContent from "@/components/LandingContent";
 import { getAllPosts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/constants";
+import { landingLanguagesMap } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${SITE_URL}/`,
+    languages: landingLanguagesMap(SITE_URL),
+  },
+};
 
 export default function Home() {
-  const posts = getAllPosts();
-
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <VoiceInput />
-        <ProblemSolution />
-        <HowItWorks />
-        <Features />
-        <Comparison />
-        <Testimonials />
-        <Pricing />
-        <CTA />
-        <BlogPreview posts={posts} />
-      </main>
-      <Footer />
-    </>
-  );
+  return <LandingContent posts={getAllPosts()} />;
 }

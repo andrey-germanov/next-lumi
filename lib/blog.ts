@@ -17,21 +17,25 @@ export interface BlogPost {
   content: string;
 }
 
-export function getAllPosts(): BlogPost[] {
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
-
-  const posts = files.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, "");
-    return getPostBySlug(slug);
-  });
+export function getAllPosts(locale?: string): BlogPost[] {
+  const posts = getAllSlugs().map((slug) => getPostBySlug(slug, locale));
 
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
 
-export function getPostBySlug(slug: string): BlogPost {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+/** Localized MDX path if present (content/blog/<locale>/<slug>.mdx), else English. */
+function resolvePostPath(slug: string, locale?: string): string {
+  if (locale && locale !== "en") {
+    const localized = path.join(BLOG_DIR, locale, `${slug}.mdx`);
+    if (fs.existsSync(localized)) return localized;
+  }
+  return path.join(BLOG_DIR, `${slug}.mdx`);
+}
+
+export function getPostBySlug(slug: string, locale?: string): BlogPost {
+  const filePath = resolvePostPath(slug, locale);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
   const stats = readingTime(content);

@@ -1,0 +1,80 @@
+---
+title: "Ho creato un'app per risolvere il mio problema con le spese: ecco cosa ho imparato"
+description: "Come uno sviluppatore capace di costruire qualsiasi cosa non riusciva comunque a capire dove finivano i suoi soldi, e cosa è successo quando ha creato un tracker di spese basato sull'IA che non ha bisogno dell'accesso alla tua banca."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["storia del fondatore", "finanza personale", "sviluppo indie", "budgeting", "costruire in pubblico"]
+---
+
+Sono uno sviluppatore software. Ho messo in produzione dei sistemi, ho ricoperto praticamente ogni ruolo in una moderna software house. So progettare un sistema distribuito da zero. Ma per lunghissimo tempo non avevo la minima idea di dove finissero i miei soldi.
+
+Non nel senso di «sono al verde». Piuttosto nel senso di «guadagno bene e in qualche modo a fine mese non resta niente». Ogni pochi mesi ripetevo lo stesso ciclo: scaricare un'app di budget, collegare la banca, fissare grafici a torta colorati per una settimana, sentirmi in colpa per le mie spese, dimenticarmi dell'app, ricominciare da capo.
+
+Questa è la storia di come ho spezzato quel ciclo: costruendo la cosa che non riuscivo a trovare.
+
+## Il cimitero delle app
+
+Ho provato tutte le principali app di budget. YNAB era troppo intensa: non voglio assegnare un compito a ogni dollaro, voglio sapere perché ho speso $200 da Target quando ero entrato per il dentifricio. Monarch era stupenda ma sembrava guardare una dashboard sulla vita di qualcun altro. Copilot categorizzava tutto meravigliosamente e poi mi lasciava a capire da solo cosa farne.
+
+Ogni app faceva la stessa cosa: mi mostrava dove erano finiti i miei soldi *dopo che se n'erano già andati*. E ognuna iniziava con la stessa domanda: «Collega il tuo conto bancario.»
+
+## I tre problemi che nessuno stava risolvendo
+
+Dopo mesi di app provate e abbandonate, ho notato uno schema. C'erano tre cose che continuavano a darmi fastidio, e nessuna app le affrontava tutte.
+
+**Problema 1: l'inserimento manuale uccide la motivazione.** L'ho visto ripetuto ovunque su Reddit: qualcuno su r/personalfinance l'ha detto alla perfezione: inserire le transazioni a mano sembra un compito a casa che nessuno vuole fare. Inizi con entusiasmo, poi due settimane dopo l'app prende polvere. La sincronizzazione bancaria dovrebbe risolverlo, ma crea i problemi 2 e 3.
+
+**Problema 2: il login bancario è un incubo per la privacy.** Ogni app sincronizzata con la banca ti chiede di condividere le tue credenziali tramite Plaid o simili. Significa dare a terzi accesso in lettura a ogni transazione, ogni saldo, ogni conto. Lavoro nel settore tech. So come avvengono le violazioni dei dati. Quando l'ho chiesto agli amici, circa la metà ha detto la stessa cosa: «Userei un'app di budget, ma non voglio darle accesso alla mia banca.» Non è una lamentela minore sull'UX. È una barriera fondamentale all'adozione.
+
+**Problema 3: una sola valuta non basta.** Viaggio. Lavoro con clienti internazionali. Ho a che fare con più valute regolarmente. Ogni app premium che ho provato — YNAB, Monarch, Copilot — era pensata per americani con conti bancari americani che spendono dollari americani. Il supporto multivaluta o mancava del tutto o era appiccicato come un ripensamento. Per chiunque sia un expat, un nomade digitale o semplicemente viaggi qualche volta all'anno, questo è un motivo per rinunciare.
+
+<ArticleCTA />
+
+## L'idea dello scontrino
+
+La svolta è arrivata nel parcheggio di un supermercato, mentre fissavo uno scontrino. E se il metodo di inserimento non fosse una sincronizzazione bancaria ma una fotocamera? Compri qualcosa, ricevi uno scontrino, punti il telefono. Due secondi. Fatto.
+
+Ma non con l'OCR tradizionale: quella tecnologia legge il testo carattere per carattere e si blocca con font insoliti, carta stropicciata o qualsiasi lingua che non sia l'inglese. Volevo qualcosa che *capisse* cos'è uno scontrino. È allora che ho iniziato a sperimentare con i modelli AI Vision.
+
+La differenza è stata immediata. L'OCR tradizionale avrebbe letto male «$18.47» come «$1847» su uno scontrino leggermente stropicciato. AI Vision capiva il contesto: sapeva che quello era un totale, identificava l'esercente, la data, i singoli articoli e i loro prezzi. E funzionava con scontrini in russo, ucraino, giapponese — qualsiasi lingua — perché non leggeva caratteri, capiva un documento.
+
+Ho costruito un prototipo in un weekend. La scansione funzionava. Ma avevo ancora il problema originale: ok, ecco un elenco delle mie spese. E adesso?
+
+## Aggiungere i pezzi mancanti
+
+Così ho continuato a costruire. Il supporto multivaluta è stato il passo successivo: non come aggiunta, ma come funzione centrale. Ogni schermata, ogni calcolo, ogni budget gestisce qualsiasi valuta con conversione automatica in tempo reale. Perché se la tua vita coinvolge più valute, la tua app di budget deve gestirlo in modo nativo.
+
+Poi budget con avvisi veri: non solo un grafico che diventa rosso dopo che hai già speso troppo, ma notifiche che ti fermano *prima* che tu superi il limite. Obiettivi di risparmio con monitoraggio dei progressi e traguardi. Analisi che mostrano davvero gli schemi: mappe di calore delle spese giornaliere, confronti tra periodi, suddivisioni per categoria. Previsioni basate sull'IA che prevedono dove sta andando la tua spesa in base ai tuoi schemi reali.
+
+E le Quick Actions: modelli per le tue spese frequenti. Caffè, spesa, trasporti — un tocco. Perché anche con la scansione degli scontrini, a volte compri un caffè e non c'è scontrino, e aggiungerlo dovrebbe richiedere letteralmente un secondo.
+
+L'intera app funziona offline. I tuoi dati sono archiviati localmente sul tuo dispositivo, crittografati con sicurezza biometrica. Nessuna sincronizzazione cloud, nessun server che conserva la tua storia finanziaria. È una scelta deliberata, non una limitazione.
+
+## Cosa ho imparato sul denaro (mentre costruivo un'app sul denaro)
+
+Costruire Lumi mi ha costretto a pensare alla finanza personale in un modo in cui nessuna app mi aveva mai fatto pensare quando ero solo un utente.
+
+**L'attrito è il vero nemico, non l'ignoranza.** Le persone non falliscono nel budgeting perché sono incapaci con i soldi. Falliscono perché gli strumenti lo rendono troppo noioso. Ogni secondo di attrito — digitazione manuale, categorie sbagliate, errori di sincronizzazione bancaria, confusione tra valute — è un secondo più vicino all'abbandono dell'app. La scansione degli scontrini elimina il maggiore punto di attrito. Il multivaluta elimina il secondo più grande per chiunque non sia solo negli USA.
+
+**La privacy è una funzione, non un compromesso.** Quando ho analizzato il panorama competitivo (18 app in totale), ho scoperto una cosa interessante: ogni singola app di alto livello richiede la sincronizzazione bancaria. È trattata come l'impostazione predefinita, la scelta ovvia. Ma un numero enorme di utenti non la vuole. Non sono paranoici: stanno prendendo una decisione di sicurezza ragionevole. Costruire per loro non limita il prodotto; serve un mercato trascurato.
+
+**Scansionare gli scontrini crea un momento di micro-consapevolezza.** Questo mi ha sorpreso. Gli utenti riferiscono che l'atto fisico di scansionare uno scontrino — puntare la fotocamera, vedere l'importo riconosciuto — crea un momento di attenzione che la sincronizzazione bancaria automatica non offre. Quando le transazioni vengono estratte silenziosamente in background, non ci pensi mai. Quando scansioni uno scontrino, guardi la cifra. Quel minuscolo istante di consapevolezza cambia il rapporto con le spese.
+
+**Il mercato multivaluta è più grande di quanto sembri.** Nomadi digitali, expat, immigrati, viaggiatori frequenti, freelance con clienti internazionali, persone che acquistano su siti internazionali: questa non è una nicchia. È un segmento in crescita che le app premium focalizzate sugli USA ignorano completamente.
+
+## Dov'è Lumi adesso
+
+Lumi è disponibile sull'App Store, versione 2.43. È un'app React Native con scansione degli scontrini tramite OpenAI Vision, multivaluta con conversione automatica, budget, obiettivi di risparmio, analisi con previsioni ed esportazione in PDF/CSV/JSON. Supporta inglese, russo e ucraino.
+
+Iniziare è gratis: 10 scansioni IA al mese, 2 budget, analisi di base, inserimenti manuali illimitati. Premium sblocca tutto.
+
+Non è perfetta. Le raccomandazioni IA migliorano con più dati, il che significa che i primi giorni sono meno impressionanti della terza settimana. Non c'è ancora la sincronizzazione cloud, quindi se cambi telefono devi esportare/importare. Le regole per le transazioni ricorrenti sono nella roadmap. Sono uno sviluppatore solitario che ci lavora, e pubblico aggiornamenti di continuo.
+
+Ma il ciclo centrale — scansionare lo scontrino, vedere le tue spese in qualsiasi valuta, ricevere un avviso prima di sforare, monitorare i tuoi obiettivi — quello funziona. La uso io stesso ogni giorno e, per la prima volta nella mia vita, so davvero dove vanno i miei soldi.
+
+Se ti sembra qualcosa di cui hai bisogno, provala. E se hai un feedback, leggo ogni singolo messaggio.
+
+---
+
+*Domande? Trovato un bug? Vuoi parlarmi di uno scontrino che lo scanner non è riuscito a leggere? Sono su Threads @LumiApp e leggo ogni DM.*

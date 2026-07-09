@@ -1,0 +1,80 @@
+---
+title: "Zbudowałem aplikację, żeby rozwiązać własny problem z wydawaniem pieniędzy — oto czego się nauczyłem"
+description: "Jak programista, który potrafi zbudować niemal wszystko, wciąż nie umiał zrozumieć, gdzie znikają jego pieniądze — i co się stało, gdy stworzył aplikację do śledzenia wydatków opartą na AI, która nie wymaga logowania do banku."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["historia założyciela", "finanse osobiste", "niezależny development", "budżetowanie", "budowanie na oczach innych"]
+---
+
+Jestem programistą. Wdrażałem produkcyjne systemy, pracowałem chyba na każdym stanowisku w nowoczesnej firmie software'owej. Potrafię zaprojektować system rozproszony od zera. Ale przez najdłuższy czas kompletnie nie miałem pojęcia, gdzie znikają moje pieniądze.
+
+Nie w stylu „jestem spłukany”. Raczej w stylu „zarabiam przyzwoicie, a jakoś na koniec miesiąca nic nie zostaje”. Co kilka miesięcy przechodziłem ten sam cykl: pobieram aplikację budżetową, podłączam bank, przez tydzień gapię się na kolorowe wykresy kołowe, czuję się źle ze swoimi wydatkami, zapominam o aplikacji, powtarzam.
+
+To jest historia o tym, jak przerwałem ten cykl — budując to, czego nie mogłem znaleźć.
+
+## Cmentarzysko aplikacji
+
+Wypróbowałem każdą liczącą się aplikację budżetową. YNAB był zbyt wymagający — nie chcę przypisywać każdej złotówce zadania, chcę wiedzieć, dlaczego wydałem 200 dolarów w Target, skoro poszedłem tam po pastę do zębów. Monarch był przepiękny, ale czułem się, jakbym oglądał pulpit z cudzego życia. Copilot ślicznie wszystko kategoryzował, a potem zostawiał mnie samego z pytaniem, co z tym dalej zrobić.
+
+Każda aplikacja robiła to samo: pokazywała mi, gdzie poszły moje pieniądze *już po tym, jak zniknęły*. I każda bez wyjątku zaczynała od tego samego pytania: „Podłącz swoje konto bankowe”.
+
+## Trzy problemy, których nikt nie rozwiązywał
+
+Po miesiącach wypróbowywania i porzucania aplikacji zauważyłem pewien schemat. Były trzy rzeczy, które ciągle mi doskwierały, a żadna aplikacja nie zajmowała się wszystkimi naraz.
+
+**Problem 1: Ręczne wpisywanie zabija motywację.** Widziałem to powtarzane wszędzie na Reddicie — ktoś na r/personalfinance ujął to idealnie: ręczne wprowadzanie transakcji przypomina zadanie domowe, którego nikt nie chce odrabiać. Zaczynasz z entuzjazmem, a dwa tygodnie później aplikacja zbiera kurz. Synchronizacja z bankiem rzekomo to rozwiązuje, ale tworzy problemy 2 i 3.
+
+**Problem 2: Logowanie do banku to koszmar prywatności.** Każda aplikacja zsynchronizowana z bankiem wymaga udostępnienia danych logowania przez Plaid lub podobną usługę. To znaczy, że dajesz osobie trzeciej dostęp do odczytu każdej transakcji, każdego salda, każdego konta. Pracuję w branży technologicznej. Wiem, jak działają wycieki danych. Kiedy pytałem o to znajomych, mniej więcej połowa mówiła to samo: „Korzystałbym z aplikacji budżetowej, ale nie chcę dawać jej dostępu do mojego banku”. To nie jest drobna uwaga o UX. To fundamentalna bariera dla adopcji.
+
+**Problem 3: Jedna waluta to za mało.** Podróżuję. Pracuję z klientami z całego świata. Regularnie mam do czynienia z wieloma walutami. Każda aplikacja premium, którą wypróbowałem — YNAB, Monarch, Copilot — była zaprojektowana dla Amerykanów z amerykańskimi kontami bankowymi wydających amerykańskie dolary. Obsługa wielu walut była albo nieobecna, albo doczepiona po fakcie. Dla każdego, kto jest ekspatem, cyfrowym nomadą albo po prostu podróżuje kilka razy w roku, to warunek dyskwalifikujący.
+
+<ArticleCTA />
+
+## Pomysł z paragonem
+
+Przełom przyszedł na parkingu przed sklepem spożywczym, gdy wpatrywałem się w paragon. A gdyby metodą wprowadzania danych nie była synchronizacja z bankiem, tylko aparat? Kupujesz coś, dostajesz paragon, kierujesz na niego telefon. Dwie sekundy. Gotowe.
+
+Ale nie z tradycyjnym OCR — ta technologia czyta tekst znak po znaku i wykłada się na nietypowych czcionkach, pomiętym papierze albo jakimkolwiek języku innym niż angielski. Chciałem czegoś, co *rozumie*, czym jest paragon. Wtedy zacząłem eksperymentować z modelami AI Vision.
+
+Różnica była natychmiastowa. Tradycyjny OCR odczytywał „$18.47” jako „$1847” na lekko pomiętym paragonie. AI Vision rozumiało kontekst — wiedziało, że to suma, rozpoznawało sprzedawcę, datę, poszczególne pozycje i ich ceny. I działało na paragonach po rosyjsku, ukraińsku, japońsku — w każdym języku — bo nie czytało znaków, tylko rozumiało dokument.
+
+Zbudowałem prototyp w weekend. Skanowanie działało. Ale wciąż miałem pierwotny problem: dobrze, oto lista moich wydatków. I co teraz?
+
+## Dodawanie brakujących elementów
+
+Więc budowałem dalej. Następna była obsługa wielu walut — nie jako dodatek, ale jako podstawowa funkcja. Każdy ekran, każde obliczenie, każdy budżet obsługuje dowolną walutę z automatycznym przeliczaniem w czasie rzeczywistym. Bo jeśli twoje życie obejmuje wiele walut, twoja aplikacja budżetowa musi to obsługiwać natywnie.
+
+Potem budżety z prawdziwymi alertami — nie tylko wykres, który robi się czerwony, gdy już przekroczyłeś limit, ale powiadomienia, które łapią cię *zanim* przesadzisz. Cele oszczędnościowe ze śledzeniem postępów i kamieniami milowymi. Analityka, która naprawdę pokazuje wzorce: dzienne mapy cieplne wydatków, porównania okresów, zestawienia kategorii. Prognozowanie oparte na AI, które przewiduje, dokąd zmierzają twoje wydatki na podstawie twoich rzeczywistych wzorców.
+
+I Szybkie akcje — szablony dla twoich częstych wydatków. Kawa, zakupy spożywcze, transport — jedno dotknięcie. Bo nawet przy skanowaniu paragonów czasem kupujesz kawę i nie ma paragonu, a dodanie jej powinno zająć dosłownie sekundę.
+
+Cała aplikacja działa offline. Twoje dane są przechowywane lokalnie na twoim urządzeniu, zaszyfrowane zabezpieczeniem biometrycznym. Bez synchronizacji z chmurą, bez serwera przechowującego twoją historię finansową. To świadomy wybór, a nie ograniczenie.
+
+## Czego nauczyłem się o pieniądzach (budując aplikację do pieniędzy)
+
+Budowanie Lumi zmusiło mnie do myślenia o finansach osobistych w sposób, w jaki żadna aplikacja nie zmusiła mnie, gdy byłem tylko użytkownikiem.
+
+**Prawdziwym wrogiem jest tarcie, a nie niewiedza.** Ludzie nie zawodzą w budżetowaniu dlatego, że źle radzą sobie z pieniędzmi. Zawodzą, bo narzędzia są zbyt uciążliwe. Każda sekunda tarcia — ręczne wpisywanie, złe kategorie, błędy synchronizacji z bankiem, zamieszanie z walutami — to sekunda bliżej porzucenia aplikacji. Skanowanie paragonów eliminuje największy punkt tarcia. Obsługa wielu walut eliminuje drugi największy dla każdego, kto nie działa wyłącznie w USA.
+
+**Prywatność to funkcja, a nie kompromis.** Kiedy badałem konkurencję (łącznie 18 aplikacji), znalazłem coś ciekawego: każda aplikacja z najwyższej półki wymaga synchronizacji z bankiem. Traktuje się to jako domyślny, oczywisty wybór. Ale ogromna liczba użytkowników tego nie chce. Nie są paranoiczni — podejmują rozsądną decyzję dotyczącą bezpieczeństwa. Budowanie dla nich nie ogranicza produktu; obsługuje niedoceniany rynek.
+
+**Skanowanie paragonów tworzy moment mikroświadomości.** To mnie zaskoczyło. Użytkownicy zgłaszają, że fizyczna czynność skanowania paragonu — skierowanie aparatu, zobaczenie odczytanej kwoty — tworzy moment uwagi, którego automatyczna synchronizacja z bankiem nie zapewnia. Gdy transakcje są po cichu pobierane w tle, nigdy o nich nie myślisz. Gdy skanujesz paragon, patrzysz na liczbę. Ta drobna chwila świadomości zmienia relację z wydawaniem pieniędzy.
+
+**Rynek wielowalutowy jest większy, niż się wydaje.** Cyfrowi nomadzi, ekspaci, imigranci, często podróżujący, freelancerzy z międzynarodowymi klientami, ludzie robiący zakupy na zagranicznych stronach — to nie jest nisza. To rosnący segment, który aplikacje premium skoncentrowane na USA całkowicie ignorują.
+
+## Gdzie Lumi jest teraz
+
+Lumi jest dostępne w App Store, wersja 2.43. To aplikacja React Native ze skanowaniem paragonów przez AI za pomocą OpenAI Vision, obsługą wielu walut z automatycznym przeliczaniem, budżetami, celami oszczędnościowymi, analityką z prognozowaniem oraz eksportem do PDF/CSV/JSON. Obsługuje angielski, rosyjski i ukraiński.
+
+Można zacząć za darmo — 10 skanów AI miesięcznie, 2 budżety, podstawowa analityka, nieograniczona liczba ręcznych wpisów. Premium odblokowuje wszystko.
+
+Nie jest idealne. Rekomendacje AI stają się lepsze wraz z większą ilością danych, co oznacza, że pierwsze kilka dni robi mniejsze wrażenie niż trzeci tydzień. Nie ma jeszcze synchronizacji z chmurą, więc jeśli zmieniasz telefon, musisz wyeksportować/zaimportować dane. Reguły dla transakcji cyklicznych są w planach. Pracuję nad tym jako jednoosobowy deweloper i nieustannie wypuszczam aktualizacje.
+
+Ale kluczowa pętla — zeskanuj paragon, zobacz swoje wydatki w dowolnej walucie, dostań alert przed przekroczeniem budżetu, śledź swoje cele — to działa. Sam używam tego codziennie i po raz pierwszy w życiu naprawdę wiem, gdzie znikają moje pieniądze.
+
+Jeśli to brzmi jak coś, czego potrzebujesz, spróbuj. A jeśli masz uwagi, czytam każdą pojedynczą wiadomość.
+
+---
+
+*Pytania? Znalazłeś błąd? Chcesz opowiedzieć mi o paragonie, którego skaner nie potrafił odczytać? Jestem na Threads @LumiApp i czytam każdą wiadomość prywatną.*

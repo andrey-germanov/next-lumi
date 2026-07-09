@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "./providers";
+import { LanguageProvider } from "@/components/dash/i18n";
 import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
@@ -18,19 +19,33 @@ export const metadata: Metadata = {
     "Lumi logs expenses the moment you pay — via Apple Pay, Back Tap, or your voice. AI forecasts your month-end balance before you overspend. Receipt scanner, budgets, savings goals. No bank login. Privacy-first.",
   keywords: [
     "expense tracker no bank login",
+    "spending tracker no bank login",
     "Apple Pay expense tracker",
+    "Apple Pay spending tracker",
     "Back Tap expense logging",
     "voice expense tracker",
     "log expenses by voice",
     "AI spending forecast",
     "receipt scanner app",
     "budget app iOS",
+    "budgeting app iOS",
+    "spending tracker app",
     "personal finance privacy",
     "offline expense tracker",
+    "offline budgeting app",
     "multi currency budget",
+    "multi currency spending tracker",
     "spending forecast app",
     "automatic expense logging",
     "money tracker iPhone",
+    "money management app",
+    "savings goal tracker app",
+    "savings tracker iOS",
+    "financial goals app",
+    "best free budgeting app",
+    "best free expense tracker",
+    "top budgeting apps 2026",
+    "best apps for financial goals",
   ],
   authors: [{ name: "Lumi" }],
   creator: "Lumi",
@@ -121,7 +136,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <LanguageProvider>{children}</LanguageProvider>
+        </Providers>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

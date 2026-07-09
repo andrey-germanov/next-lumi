@@ -1,0 +1,80 @@
+---
+title: "Construí una app para resolver mi propio problema de gastos: esto es lo que aprendí"
+description: "Cómo un desarrollador capaz de construir cualquier cosa seguía sin poder averiguar a dónde iba su dinero, y qué pasó cuando construyó un rastreador de gastos impulsado por IA que no necesita el acceso a tu banco."
+date: "2026-03-20"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/founder-story.png"
+tags: ["historia del fundador", "finanzas personales", "desarrollo indie", "presupuestos", "construir en público"]
+---
+
+Soy desarrollador de software. He lanzado sistemas en producción, he desempeñado casi todos los roles de un estudio de software moderno. Puedo diseñar un sistema distribuido desde cero. Pero durante muchísimo tiempo no tenía ni la más mínima idea de a dónde iba mi dinero.
+
+No en plan «estoy en la ruina». Más bien en plan «gano bastante bien y, de algún modo, no queda nada a fin de mes». Cada pocos meses repetía el mismo ciclo: descargar una app de presupuestos, conectar el banco, contemplar gráficos de colores durante una semana, sentirme mal por mis gastos, olvidarme de la app, empezar de nuevo.
+
+Esta es la historia de cómo rompí ese ciclo: construyendo lo que no lograba encontrar.
+
+## El cementerio de apps
+
+Probé todas las grandes apps de presupuestos. YNAB era demasiado intensa: no quiero asignarle un trabajo a cada dólar, quiero saber por qué gasté $200 en Target cuando entré a por pasta de dientes. Monarch era preciosa, pero se sentía como mirar un panel sobre la vida de otra persona. Copilot categorizaba todo de maravilla y luego me dejaba a mí averiguar qué hacer al respecto.
+
+Todas las apps hacían lo mismo: me mostraban a dónde había ido mi dinero *después de que ya se hubiera ido*. Y todas y cada una empezaban con la misma pregunta: «Conecta tu cuenta bancaria.»
+
+## Los tres problemas que nadie estaba resolviendo
+
+Tras meses de probar y abandonar apps, noté un patrón. Había tres cosas que no dejaban de molestarme, y ninguna app las abordaba todas.
+
+**Problema 1: la entrada manual mata la motivación.** Lo he visto repetido por todas partes en Reddit; alguien en r/personalfinance lo dijo perfectamente: introducir transacciones a mano se siente como deberes que nadie quiere hacer. Empiezas con entusiasmo y, dos semanas después, la app cría polvo. Se supone que la sincronización bancaria lo resuelve, pero crea los problemas 2 y 3.
+
+**Problema 2: el acceso al banco es una pesadilla para la privacidad.** Toda app sincronizada con el banco te exige compartir tus credenciales a través de Plaid o similar. Eso significa dar a un tercero acceso de lectura a cada transacción, cada saldo, cada cuenta. Trabajo en tecnología. Sé cómo funcionan las filtraciones de datos. Cuando pregunté a mis amigos sobre esto, más o menos la mitad dijo lo mismo: «Usaría una app de presupuestos, pero no quiero darle acceso a mi banco.» No es una queja menor de UX. Es una barrera fundamental para la adopción.
+
+**Problema 3: una sola moneda no basta.** Viajo. Trabajo con clientes internacionales. Manejo varias monedas con regularidad. Todas las apps premium que probé —YNAB, Monarch, Copilot— estaban hechas para estadounidenses con cuentas bancarias estadounidenses gastando dólares estadounidenses. El soporte multidivisa o brillaba por su ausencia o estaba pegado como una ocurrencia tardía. Para cualquiera que sea expatriado, nómada digital o que simplemente viaje unas cuantas veces al año, esto es un motivo de rechazo total.
+
+<ArticleCTA />
+
+## La idea del recibo
+
+El gran hallazgo llegó en el aparcamiento de un supermercado, mirando un recibo. ¿Y si el método de entrada no fuera una sincronización bancaria, sino una cámara? Compras algo, recibes un recibo, apuntas el móvil hacia él. Dos segundos. Listo.
+
+Pero no con OCR tradicional: esa tecnología lee el texto carácter por carácter y se rompe con fuentes inusuales, papel arrugado o cualquier idioma que no sea el inglés. Yo quería algo que *entendiera* qué es un recibo. Ahí fue cuando empecé a experimentar con modelos de AI Vision.
+
+La diferencia fue inmediata. El OCR tradicional leería mal «$18.47» como «$1847» en un recibo ligeramente arrugado. AI Vision entendía el contexto: sabía que esto era un total, identificaba al comercio, la fecha, los artículos individuales y sus precios. Y funcionaba con recibos en ruso, ucraniano, japonés —cualquier idioma— porque no leía caracteres, entendía un documento.
+
+Construí un prototipo en un fin de semana. El escaneo funcionaba. Pero seguía teniendo el problema original: vale, aquí tengo una lista de mis gastos. ¿Y ahora qué?
+
+## Añadir las piezas que faltaban
+
+Así que seguí construyendo. El soporte multidivisa fue lo siguiente, no como un añadido, sino como una función central. Cada pantalla, cada cálculo, cada presupuesto maneja cualquier moneda con conversión automática en tiempo real. Porque si tu vida implica varias monedas, tu app de presupuestos tiene que manejar eso de forma nativa.
+
+Luego, presupuestos con alertas de verdad: no solo un gráfico que se pone rojo después de que ya te hayas pasado, sino notificaciones que te avisan *antes* de que te excedas. Metas de ahorro con seguimiento del progreso e hitos. Analíticas que de verdad muestran patrones: mapas de calor del gasto diario, comparaciones entre periodos, desgloses por categoría. Previsiones impulsadas por IA que predicen hacia dónde se dirige tu gasto según tus patrones reales.
+
+Y Quick Actions: plantillas para tus gastos frecuentes. Café, compra, transporte: un toque. Porque, incluso con el escaneo de recibos, a veces te compras un café y no hay recibo, y añadirlo debería tomar literalmente un segundo.
+
+Toda la app funciona sin conexión. Tus datos se almacenan localmente en tu dispositivo, cifrados con seguridad biométrica. Sin sincronización en la nube, sin ningún servidor que guarde tu historial financiero. Es una elección deliberada, no una limitación.
+
+## Lo que aprendí sobre el dinero (mientras construía una app de dinero)
+
+Construir Lumi me obligó a pensar en las finanzas personales de una forma que ninguna app logró nunca cuando yo solo era usuario.
+
+**La fricción es el verdadero enemigo, no la ignorancia.** La gente no fracasa presupuestando porque sea mala con el dinero. Fracasa porque las herramientas lo hacen demasiado tedioso. Cada segundo de fricción —teclear a mano, categorías equivocadas, errores de sincronización bancaria, confusión de divisas— es un segundo más cerca de abandonar la app. El escaneo de recibos elimina el mayor punto de fricción. La multidivisa elimina el segundo mayor para cualquiera que no esté solo en EE. UU.
+
+**La privacidad es una función, no un compromiso.** Cuando investigué el panorama competitivo (18 apps en total), encontré algo interesante: absolutamente todas las apps de primer nivel exigen sincronización bancaria. Se trata como la opción por defecto, la elección obvia. Pero un enorme número de usuarios no la quiere. No son paranoicos: están tomando una decisión de seguridad razonable. Construir para ellos no limita el producto; sirve a un mercado desatendido.
+
+**Escanear recibos crea un momento de microconciencia.** Esto me sorprendió. Los usuarios cuentan que el acto físico de escanear un recibo —apuntar la cámara, ver el importe reconocido— crea un momento de atención que la sincronización bancaria automática no proporciona. Cuando las transacciones se extraen en silencio en segundo plano, nunca piensas en ellas. Cuando escaneas un recibo, miras la cifra. Ese pequeño instante de conciencia cambia la relación con el gasto.
+
+**El mercado multidivisa es más grande de lo que parece.** Nómadas digitales, expatriados, inmigrantes, viajeros frecuentes, freelancers con clientes internacionales, gente que compra en webs internacionales: esto no es un nicho. Es un segmento en crecimiento que las apps premium centradas en EE. UU. ignoran por completo.
+
+## Dónde está Lumi ahora
+
+Lumi está disponible en la App Store, versión 2.43. Es una app React Native con escaneo de recibos por IA mediante OpenAI Vision, multidivisa con conversión automática, presupuestos, metas de ahorro, analíticas con previsión y exportación a PDF/CSV/JSON. Es compatible con inglés, ruso y ucraniano.
+
+Empezar es gratis: 10 escaneos con IA al mes, 2 presupuestos, analíticas básicas, entradas manuales ilimitadas. Premium lo desbloquea todo.
+
+No es perfecta. Las recomendaciones de IA mejoran con más datos, lo que significa que los primeros días son menos impresionantes que la tercera semana. Todavía no hay sincronización en la nube, así que si cambias de móvil tienes que exportar/importar. Las reglas de transacciones recurrentes están en la hoja de ruta. Soy un desarrollador en solitario trabajando en esto, y lanzo actualizaciones constantemente.
+
+Pero el bucle central —escanear el recibo, ver tus gastos en cualquier moneda, recibir una alerta antes de pasarte, seguir tus metas— eso funciona. Yo mismo la uso todos los días y, por primera vez en mi vida, de verdad sé a dónde va mi dinero.
+
+Si suena a algo que necesitas, pruébala. Y si tienes comentarios, leo todos y cada uno de los mensajes.
+
+---
+
+*¿Preguntas? ¿Encontraste un bug? ¿Quieres contarme sobre un recibo que el escáner no pudo leer? Estoy en Threads @LumiApp y leo todos los DM.*
