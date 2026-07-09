@@ -1,0 +1,38 @@
+{
+  "compound-interest-calculator": [
+    { "question": "What is compound interest and how does it work?", "answer": "Compound interest is interest earned on both your original money and the interest it has already earned. Because each period's gains are added to the balance, growth accelerates over time — the longer the money stays invested, the bigger the effect." },
+    { "question": "Does a monthly contribution really make that much difference?", "answer": "Yes — regular contributions are usually the biggest driver of the final balance, more than the starting amount. Adding a fixed sum every month means more money compounding for longer, so small, consistent deposits add up dramatically over years." },
+    { "question": "What interest rate should I use?", "answer": "Use a realistic rate for where the money sits: roughly 4–5% for a high-yield savings account, or a long-term average of about 7% for a diversified stock portfolio. Lower, conservative rates give you a safer estimate." },
+    { "question": "Does this account for inflation and taxes?", "answer": "No — the result is a nominal figure before inflation and taxes. For a rough real-value estimate, subtract about 2–3% from your rate, and remember that gains in a regular account may be taxed while those in a tax-advantaged account usually aren't." }
+  ],
+  "50-30-20-budget-calculator": [
+    { "question": "Do I use gross income or take-home pay?", "answer": "Use your take-home (after-tax) pay — the amount that actually lands in your account. If your taxes and retirement contributions are taken out before you get paid, base the 50/30/20 split on what's left." },
+    { "question": "What counts as a need versus a want?", "answer": "Needs are essentials you can't easily skip — rent, utilities, groceries, transport, insurance, minimum debt payments. Wants are everything else: dining out, subscriptions, travel, hobbies. Pick a category for each expense and stay consistent month to month." },
+    { "question": "What if I can't save the full 20%?", "answer": "That's fine — 50/30/20 is a guideline, not a rule. Start where you are, even at 60/30/10, and shift a little from wants to savings each month. In a high cost-of-living area a higher needs share is normal for a while." },
+    { "question": "Does paying off debt count as savings?", "answer": "Minimum debt payments are a need. Anything you pay above the minimum to clear debt faster counts toward the 20% savings bucket, since it builds your net worth just like saving does." }
+  ],
+  "emergency-fund-calculator": [
+    { "question": "How many months of expenses should I save?", "answer": "Most guidance is 3–6 months of essential expenses. Lean toward 3 if you have a stable single income and few dependents, and 6 or more if your income is variable or you support a family." },
+    { "question": "Should I use essential expenses or total spending?", "answer": "Use essential expenses — rent, utilities, groceries, transport, insurance and minimum debt payments. In a real emergency you'd cut discretionary spending, so sizing the fund to bare-bones costs keeps the target realistic." },
+    { "question": "Where should I keep my emergency fund?", "answer": "In an account that's safe and instantly accessible — a high-yield savings account or money market account. You earn some interest while keeping the cash liquid, with no risk of it dropping in value when you need it." },
+    { "question": "Should I build it before paying off debt?", "answer": "Save a small starter buffer (about one month, or a fixed amount you're comfortable with) first, so an emergency doesn't push you further into debt. Then split your effort between growing the fund and paying down high-interest debt." }
+  ],
+  "savings-goal-calculator": [
+    { "question": "How much should I save each month to reach my goal?", "answer": "Take what's left to save (goal minus what you already have) and divide by the number of months you want. This calculator does it for you and, if you add an expected return, factors in the interest your savings earn along the way." },
+    { "question": "Should I include interest or investment returns?", "answer": "If the money sits in a high-yield savings account or is invested, yes — add an expected annual return so the estimate reflects the growth. For a plain checking account, leave it at 0%." },
+    { "question": "What if I have a fixed deadline?", "answer": "Switch to the deadline mode: enter how many months you have and the calculator tells you the exact amount to set aside each month to get there on time." },
+    { "question": "Where should I keep money for a savings goal?", "answer": "For goals within about 5 years, a high-yield savings account keeps the money safe and liquid. For longer horizons, investing can earn more but adds short-term risk, so match the account to your timeline." }
+  ],
+  "debt-payoff-calculator": [
+    { "question": "How is the payoff time calculated?", "answer": "From your balance, interest rate (APR) and fixed monthly payment. Each month interest is added, your payment is subtracted, and the calculator counts how many months it takes to reach zero — plus the total interest you'll pay." },
+    { "question": "Snowball or avalanche — which is faster?", "answer": "The avalanche method (pay the highest-APR debt first) clears debt fastest and costs the least interest. The snowball method (smallest balance first) is slower but gives quick wins that help many people stay motivated." },
+    { "question": "Why does a small extra payment save so much interest?", "answer": "Every extra dollar goes straight against the principal, so you stop paying interest on it for the whole remaining life of the debt. On high-APR balances, even a modest increase can cut months and hundreds in interest." },
+    { "question": "What interest rate should I enter?", "answer": "Use the APR shown on your card or loan statement. If you're combining several debts, either run them separately or use a rough average weighted by balance." }
+  ],
+  "fire-calculator": [
+    { "question": "What is the FIRE number and the 25x rule?", "answer": "Your FIRE number is the portfolio size that can cover your yearly spending indefinitely. The common rule of thumb is 25× your annual expenses, based on the 4% safe-withdrawal guideline." },
+    { "question": "What withdrawal rate does this assume?", "answer": "About 4% a year — the level historical studies suggest a diversified portfolio can sustain over a long retirement. A more cautious 3–3.5% means a larger number (roughly 28–33× expenses)." },
+    { "question": "What return rate should I use?", "answer": "Use a conservative real (after-inflation) return of around 5%, or a nominal ~7% if your expenses already grow with inflation. Lower assumptions give a safer, later target." },
+    { "question": "Is FIRE realistic for me?", "answer": "It depends mostly on your savings rate — the share of income you keep. The calculator shows how your current savings, yearly contributions and returns compound toward the target, so you can test how a higher savings rate pulls the date closer." }
+  ]
+}

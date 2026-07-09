@@ -12,9 +12,12 @@ import { LOCALES, localePath, type Locale } from "@/lib/i18n";
 function navKey(href: string): string {
   if (href === "#features") return "lp.navFeatures";
   if (href === "#pricing") return "lp.navPricing";
+  if (href === "/tools") return "nav.tools";
   if (href === "/faq") return "lp.navFaq";
   return "lp.navBlog";
 }
+
+const LOCALIZED_PATHS = new Set(["/faq", "/blog", "/tools"]);
 
 export default function Header() {
   const { t, locale, setLocale } = useLang();
@@ -41,7 +44,7 @@ export default function Header() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={(link.href === "/faq" || link.href === "/blog") && locale !== "en" ? `/${locale}${link.href}` : link.href}
+              href={LOCALIZED_PATHS.has(link.href) && locale !== "en" ? `/${locale}${link.href}` : link.href}
               style={{ fontSize: 14, color: "#63636B", transition: "color 0.15s" }}
               className="hover:text-text"
             >

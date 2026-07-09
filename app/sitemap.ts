@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 import { PREFIXED_LOCALES, landingLanguagesMap, pageLanguagesMap } from "@/lib/i18n";
+import { TOOL_SLUGS } from "@/lib/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs();
@@ -27,6 +28,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
     alternates: { languages: blogLanguages },
   }));
+
+  // Tools hub + calculator pages (en + locales) with hreflang.
+  const toolsLanguages = pageLanguagesMap(SITE_URL, "tools");
+  const toolsHubEntries = [
+    { url: `${SITE_URL}/tools`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: toolsLanguages } },
+    ...PREFIXED_LOCALES.map((locale) => ({
+      url: `${SITE_URL}/${locale}/tools`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: { languages: toolsLanguages },
+    })),
+  ];
+  const toolEntries = TOOL_SLUGS.flatMap((slug) => {
+    const langs = pageLanguagesMap(SITE_URL, `tools/${slug}`);
+    return [
+      { url: `${SITE_URL}/tools/${slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: langs } },
+      ...PREFIXED_LOCALES.map((locale) => ({
+        url: `${SITE_URL}/${locale}/tools/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: { languages: langs },
+      })),
+    ];
+  });
 
   const languages = landingLanguagesMap(SITE_URL);
 
@@ -66,6 +93,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: faqLanguages },
     },
     ...faqLocaleEntries,
+    ...toolsHubEntries,
+    ...toolEntries,
     {
       url: `${SITE_URL}/blog`,
       lastModified: new Date(),
