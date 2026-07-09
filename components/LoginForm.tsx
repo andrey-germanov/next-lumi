@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion } from "framer-motion";
-import { auth, authErrorMessage } from "@/lib/firebase";
+import { firebaseAuth, authErrorMessage } from "@/lib/firebase";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -41,7 +41,7 @@ export default function LoginForm() {
     setError(null);
     setSubmitting(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(firebaseAuth(), email, password);
       router.push("/dashboard");
     } catch (err) {
       const code = typeof err === "object" && err !== null && "code" in err ? String((err as { code: unknown }).code) : "";

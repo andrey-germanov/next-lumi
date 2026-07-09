@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { motion } from "framer-motion";
-import { auth, authErrorMessage } from "@/lib/firebase";
+import { firebaseAuth, authErrorMessage } from "@/lib/firebase";
 
 export default function SignupForm() {
   const router = useRouter();
@@ -55,7 +55,7 @@ export default function SignupForm() {
     }
     setSubmitting(true);
     try {
-      const cred = await createUserWithEmailAndPassword(auth, email, password);
+      const cred = await createUserWithEmailAndPassword(firebaseAuth(), email, password);
       if (name.trim()) {
         await updateProfile(cred.user, { displayName: name.trim() });
       }

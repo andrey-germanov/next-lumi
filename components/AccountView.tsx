@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, signOut, type User } from "firebase/auth";
 import { motion } from "framer-motion";
-import { auth } from "@/lib/firebase";
+import { firebaseAuth } from "@/lib/firebase";
 
 export default function AccountView() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function AccountView() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
+    const unsub = onAuthStateChanged(firebaseAuth(), (u) => {
       if (!u) {
         router.replace("/login");
         return;
@@ -26,7 +26,7 @@ export default function AccountView() {
   }, [router]);
 
   async function handleSignOut() {
-    await signOut(auth);
+    await signOut(firebaseAuth());
     router.replace("/login");
   }
 

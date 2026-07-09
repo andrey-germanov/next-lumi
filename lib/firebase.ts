@@ -12,10 +12,27 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Avoid re-initializing on Next.js hot reloads / multiple imports.
-export const app: FirebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
-export const auth: Auth = getAuth(app);
-export const db: Firestore = getFirestore(app);
+// Lazy singletons. Firebase is initialized on first use (client runtime only),
+// NOT at module import — so static prerendering during the build never touches
+// it and a missing NEXT_PUBLIC_FIREBASE_* key can't crash the build.
+let appInstance: FirebaseApp | undefined;
+let authInstance: Auth | undefined;
+let dbInstance: Firestore | undefined;
+
+function firebaseApp(): FirebaseApp {
+  if (!appInstance) appInstance = getApps().length ? getApp() : initializeApp(firebaseConfig);
+  return appInstance;
+}
+
+export function firebaseAuth(): Auth {
+  if (!authInstance) authInstance = getAuth(firebaseApp());
+  return authInstance;
+}
+
+export function firebaseDb(): Firestore {
+  if (!dbInstance) dbInstance = getFirestore(firebaseApp());
+  return dbInstance;
+}
 
 /** Maps Firebase Auth error codes to friendly, user-facing messages. */
 export function authErrorMessage(code: string): string {

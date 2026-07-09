@@ -27,13 +27,13 @@ import {
   serverTimestamp,
   type Unsubscribe,
 } from "firebase/firestore";
-import { db } from "./firebase";
+import { firebaseDb } from "./firebase";
 import type { Receipt, Income, Budget, SavingsGoal, Category } from "@/types/web";
 
 export type CollName = "receipts" | "incomes" | "budgets" | "savingsGoals" | "categories";
 
-const coll = (uid: string, name: CollName) => collection(db, "users", uid, name);
-const entryDoc = (uid: string, name: CollName, id: string) => doc(db, "users", uid, name, id);
+const coll = (uid: string, name: CollName) => collection(firebaseDb(), "users", uid, name);
+const entryDoc = (uid: string, name: CollName, id: string) => doc(firebaseDb(), "users", uid, name, id);
 
 // ── Date conversion ─────────────────────────────────────────────────────────
 

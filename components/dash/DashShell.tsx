@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { onAuthStateChanged, signOut, type User } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { firebaseAuth } from "@/lib/firebase";
 import { StoreProvider, useStore } from "./store";
 import { LanguageProvider, useLang } from "./i18n";
 import { LOCALES, type Locale } from "@/lib/i18n";
@@ -173,7 +173,7 @@ export default function DashShell({ children }: { children: React.ReactNode }) {
   const [status, setStatus] = useState<"loading" | "authed" | "guest">("loading");
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
+    const unsub = onAuthStateChanged(firebaseAuth(), (u) => {
       if (u) {
         setUser(u);
         setStatus("authed");
@@ -186,7 +186,7 @@ export default function DashShell({ children }: { children: React.ReactNode }) {
   }, [router]);
 
   async function handleSignOut() {
-    await signOut(auth);
+    await signOut(firebaseAuth());
     router.replace("/login");
   }
 

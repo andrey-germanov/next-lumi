@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { motion } from "framer-motion";
-import { auth, authErrorMessage } from "@/lib/firebase";
+import { firebaseAuth, authErrorMessage } from "@/lib/firebase";
 
 export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ export default function ForgotPasswordForm() {
     setError(null);
     setSubmitting(true);
     try {
-      await sendPasswordResetEmail(auth, email);
+      await sendPasswordResetEmail(firebaseAuth(), email);
       setSent(true);
     } catch (err) {
       const code = typeof err === "object" && err !== null && "code" in err ? String((err as { code: unknown }).code) : "";
