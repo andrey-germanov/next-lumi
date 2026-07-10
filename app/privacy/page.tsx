@@ -91,7 +91,7 @@ export default function PrivacyPage() {
             <h2>Contact</h2>
             <p>
               Questions about privacy? Contact us at{" "}
-              <a href="mailto:hello@getlumi.app">hello@getlumi.app</a>.
+              <a href="mailto:ange.germanov@gmail.com">ange.germanov@gmail.com</a>.
             </p>
           </div>
         </div>

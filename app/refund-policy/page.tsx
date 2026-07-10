@@ -95,7 +95,7 @@ export default function RefundPolicyPage() {
             <h2>Contact</h2>
             <p>
               Questions about billing or refunds? Contact us at{" "}
-              <a href="mailto:hello@getlumi.app">hello@getlumi.app</a> and
+              <a href="mailto:ange.germanov@gmail.com">ange.germanov@gmail.com</a> and
               include the email or Apple ID used for the purchase.
             </p>
           </div>

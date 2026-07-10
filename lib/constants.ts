@@ -8,9 +8,7 @@ export const APP_STORE_URL =
   "https://apps.apple.com/app/lumi-bills-spending-log/id6754805457";
 
 export const SOCIAL_LINKS = {
-  threads: "https://www.threads.net/@lumiapp",
-  twitter: "https://twitter.com/LumiExpense",
-  instagram: "https://instagram.com/lumiapp",
+  threads: "https://www.threads.com/@andrey.germanov",
 };
 
 export const NAV_LINKS = [

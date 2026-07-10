@@ -85,26 +85,6 @@ export default function Footer() {
                   Threads
                 </a>
               </li>
-              <li>
-                <a
-                  href={SOCIAL_LINKS.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-text transition-colors"
-                >
-                  Twitter / X
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SOCIAL_LINKS.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-text transition-colors"
-                >
-                  Instagram
-                </a>
-              </li>
             </ul>
           </div>
         </div>
