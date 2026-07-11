@@ -1,27 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLang } from "@/components/dash/i18n";
 
 const testimonials = [
-  {
-    quote: "Manual entry is homework nobody wants to do",
-    source: "r/personalfinance",
-    response: "That's why Lumi scans receipts. Zero typing.",
-  },
-  {
-    quote: "Why do all budget apps want my bank login?",
-    source: "r/YNAB",
-    response: "Lumi doesn't. Your data stays on your phone.",
-  },
-  {
-    quote: "I travel constantly and no app handles multiple currencies well",
-    source: "r/digitalnomad",
-    response:
-      "Lumi tracks any currency with auto-conversion at real rates.",
-  },
+  { quoteKey: "lp2.testQuote1", source: "r/personalfinance", responseKey: "lp2.testResponse1" },
+  { quoteKey: "lp2.testQuote2", source: "r/YNAB", responseKey: "lp2.testResponse2" },
+  { quoteKey: "lp2.testQuote3", source: "r/digitalnomad", responseKey: "lp2.testResponse3" },
 ];
 
 export default function Testimonials() {
+  const { t } = useLang();
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -32,10 +21,10 @@ export default function Testimonials() {
           className="text-center"
         >
           <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
-            Built by a solo developer.
+            {t("lp2.testTitle1")}
             <br />
             <span className="text-text-muted font-bold">
-              Loved by people who hate spreadsheets.
+              {t("lp2.testTitle2")}
             </span>
           </h2>
         </motion.div>
@@ -52,7 +41,7 @@ export default function Testimonials() {
             >
               <div className="mb-4">
                 <p className="italic text-text-muted">
-                  &ldquo;{item.quote}&rdquo;
+                  &ldquo;{t(item.quoteKey)}&rdquo;
                 </p>
                 <p className="mt-2 text-xs text-text-muted/50">
                   — {item.source}
@@ -60,7 +49,7 @@ export default function Testimonials() {
               </div>
               <div className="border-t border-black/8 pt-4">
                 <p className="text-sm font-medium text-primary">
-                  {item.response}
+                  {t(item.responseKey)}
                 </p>
               </div>
             </motion.div>
@@ -73,8 +62,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="mt-12 text-center text-sm text-text-muted"
         >
-          Analyzed 18 competitors. Lumi is the only app combining AI scanning +
-          multi-currency + privacy.
+          {t("lp2.testFooter")}
         </motion.p>
       </div>
     </section>

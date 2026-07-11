@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]">): Prom
   };
 }
 
-export default function LocaleHome() {
-  return <LandingContent posts={getAllPosts()} />;
+export default async function LocaleHome({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
+  return <LandingContent posts={getAllPosts(locale)} />;
 }

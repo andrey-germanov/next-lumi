@@ -24,26 +24,26 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold text-text">Product</h4>
+            <h4 className="mb-3 text-sm font-semibold text-text">{t("lp2.footProduct")}</h4>
             <ul className="space-y-2 text-sm text-text-muted">
               <li>
                 <Link href="/#features" className="hover:text-text transition-colors">
-                  Features
+                  {t("lp2.footFeatures")}
                 </Link>
               </li>
               <li>
                 <Link href="/#pricing" className="hover:text-text transition-colors">
-                  Pricing
+                  {t("lp2.footPricing")}
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="hover:text-text transition-colors">
-                  FAQ
+                  {t("lp2.footFaq")}
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="hover:text-text transition-colors">
-                  Blog
+                  {t("lp2.footBlog")}
                 </Link>
               </li>
             </ul>
@@ -51,21 +51,21 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold text-text">Legal</h4>
+            <h4 className="mb-3 text-sm font-semibold text-text">{t("lp2.footLegal")}</h4>
             <ul className="space-y-2 text-sm text-text-muted">
               <li>
                 <Link href="/privacy" className="hover:text-text transition-colors">
-                  Privacy Policy
+                  {t("lp2.footPrivacy")}
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="hover:text-text transition-colors">
-                  Terms of Service
+                  {t("lp2.footTerms")}
                 </Link>
               </li>
               <li>
                 <Link href="/refund-policy" className="hover:text-text transition-colors">
-                  Refund Policy
+                  {t("lp2.footRefund")}
                 </Link>
               </li>
             </ul>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold text-text">Connect</h4>
+            <h4 className="mb-3 text-sm font-semibold text-text">{t("lp2.footConnect")}</h4>
             <ul className="space-y-2 text-sm text-text-muted">
               <li>
                 <a
@@ -91,7 +91,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/8 pt-8 md:flex-row">
           <p className="text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} Lumi. All rights reserved.
+            &copy; {new Date().getFullYear()} Lumi. {t("lp2.footRights")}
           </p>
           <a
             href={APP_STORE_URL}
@@ -99,7 +99,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-xs font-semibold text-text hover:text-primary transition-colors"
           >
-            Download on App Store &rarr;
+            {t("lp2.footDownload")} &rarr;
           </a>
         </div>
       </div>

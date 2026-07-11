@@ -1,10 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FREE_FEATURES, PREMIUM_FEATURES } from "@/lib/constants";
 import AppStoreButton from "./AppStoreButton";
+import { useLang } from "@/components/dash/i18n";
+
+const FREE_FEATURE_KEYS = [
+  "lp2.priceFree1", "lp2.priceFree2", "lp2.priceFree3", "lp2.priceFree4",
+  "lp2.priceFree5", "lp2.priceFree6", "lp2.priceFree7", "lp2.priceFree8",
+];
+const PREMIUM_FEATURE_KEYS = [
+  "lp2.pricePrem1", "lp2.pricePrem2", "lp2.pricePrem3", "lp2.pricePrem4",
+  "lp2.pricePrem5", "lp2.pricePrem6", "lp2.pricePrem7",
+];
 
 export default function Pricing() {
+  const { t } = useLang();
   return (
     <section id="pricing" className="py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -15,7 +25,7 @@ export default function Pricing() {
           className="text-center"
         >
           <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ letterSpacing: "-1px" }}>
-            Start free. Upgrade when you&apos;re ready.
+            {t("lp2.priceTitle")}
           </h2>
         </motion.div>
 
@@ -27,16 +37,16 @@ export default function Pricing() {
             viewport={{ once: true }}
             className="surface rounded-2xl p-8"
           >
-            <h3 className="text-lg font-semibold">Free</h3>
-            <p className="mt-1 text-text-muted">Everything to get started</p>
+            <h3 className="text-lg font-semibold">{t("lp2.priceFree")}</h3>
+            <p className="mt-1 text-text-muted">{t("lp2.priceFreeSub")}</p>
             <div className="mt-6 mb-8">
               <span className="text-4xl font-bold">$0</span>
-              <span className="text-text-muted"> / forever</span>
+              <span className="text-text-muted"> {t("lp2.priceForever")}</span>
             </div>
             <ul className="space-y-3">
-              {FREE_FEATURES.map((feature) => (
+              {FREE_FEATURE_KEYS.map((key) => (
                 <li
-                  key={feature}
+                  key={key}
                   className="flex items-start gap-3 text-sm text-text-muted"
                 >
                   <svg
@@ -52,7 +62,7 @@ export default function Pricing() {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  {feature}
+                  {t(key)}
                 </li>
               ))}
             </ul>
@@ -70,18 +80,18 @@ export default function Pricing() {
             className="surface-dark relative rounded-2xl p-8"
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-semibold text-white">
-              Most Popular
+              {t("lp2.priceMostPopular")}
             </div>
-            <h3 className="text-lg font-semibold" style={{ color: "#FFFFFF" }}>Premium</h3>
-            <p className="mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unlock everything</p>
+            <h3 className="text-lg font-semibold" style={{ color: "#FFFFFF" }}>{t("lp2.pricePremium")}</h3>
+            <p className="mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>{t("lp2.pricePremiumSub")}</p>
             <div className="mt-6 mb-8">
-              <span className="text-4xl font-bold" style={{ color: "#FFFFFF" }}>Pro</span>
-              <span style={{ color: "rgba(255,255,255,0.55)" }}> / with free trial</span>
+              <span className="text-4xl font-bold" style={{ color: "#FFFFFF" }}>{t("lp2.pricePro")}</span>
+              <span style={{ color: "rgba(255,255,255,0.55)" }}> {t("lp2.priceTrial")}</span>
             </div>
             <ul className="space-y-3">
-              {PREMIUM_FEATURES.map((feature) => (
+              {PREMIUM_FEATURE_KEYS.map((key) => (
                 <li
-                  key={feature}
+                  key={key}
                   className="flex items-start gap-3 text-sm"
                   style={{ color: "rgba(255,255,255,0.75)" }}
                 >
@@ -98,7 +108,7 @@ export default function Pricing() {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  {feature}
+                  {t(key)}
                 </li>
               ))}
             </ul>

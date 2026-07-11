@@ -4,6 +4,17 @@
 // match across platforms; the UI microcopy below is web-specific.
 // ============================================================================
 
+import landingEn from "@/content/landing/en.json";
+import landingRu from "@/content/landing/ru.json";
+import landingUk from "@/content/landing/uk.json";
+import landingRo from "@/content/landing/ro.json";
+import landingDe from "@/content/landing/de.json";
+import landingEs from "@/content/landing/es.json";
+import landingIt from "@/content/landing/it.json";
+import landingPl from "@/content/landing/pl.json";
+import landingJa from "@/content/landing/ja.json";
+import landingKa from "@/content/landing/ka.json";
+
 export type Locale = "en" | "ru" | "uk" | "ro" | "de" | "es" | "it" | "pl" | "ja" | "ka";
 
 export const LOCALES: { code: Locale; label: string }[] = [
@@ -404,6 +415,20 @@ export const MESSAGES: Messages = {
     ka: "ჩაიწერეთ ხარჯები წამებში Back Tap-ით ან Apple Pay-ით. AI პროგნოზირებს თვის ბოლოს ბალანსს. ბანკის წვდომის გარეშე, კონფიდენციალური. უფასო.",
   },
 };
+
+// ── Landing-page microcopy, merged from per-locale JSON files ────────────────
+// Kept in content/landing/{locale}.json so translators (and agents) can edit
+// them without touching this file. English is the source; empty locale files
+// fall back to English via translate().
+const LANDING_MESSAGES: Record<Locale, Record<string, string>> = {
+  en: landingEn, ru: landingRu, uk: landingUk, ro: landingRo, de: landingDe,
+  es: landingEs, it: landingIt, pl: landingPl, ja: landingJa, ka: landingKa,
+};
+for (const [loc, dict] of Object.entries(LANDING_MESSAGES)) {
+  for (const [key, value] of Object.entries(dict)) {
+    (MESSAGES[key] ??= {})[loc as Locale] = value;
+  }
+}
 
 // ── Category names (verbatim from the mobile app's locale files) ─────────────
 

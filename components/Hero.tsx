@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 w-full">
 
         {/* ── Main grid ─────────────────────────────────── */}
-        <div className="grid items-center gap-12 lg:grid-cols-2" style={{ paddingTop: 72, paddingBottom: 72 }}>
+        <div className="grid items-center gap-12 lg:grid-cols-2" style={{ paddingTop: 32, paddingBottom: 32 }}>
 
           {/* Copy */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -90,7 +90,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ paddingBottom: 72 }}
+          style={{ paddingBottom: 32 }}
         >
           {/* Mobile: horizontal pills */}
           <div className="flex lg:hidden gap-3 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" as "touch" }}>

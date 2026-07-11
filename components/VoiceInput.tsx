@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const benefits = [
-  "No typing, no category menus",
-  "Works in multiple languages",
-  "Logs amount, merchant, and category in one go",
-];
+import { useLang } from "@/components/dash/i18n";
 
 export default function VoiceInput() {
+  const { t } = useLang();
+  const benefits = [t("lp2.voiceBenefit1"), t("lp2.voiceBenefit2"), t("lp2.voiceBenefit3")];
+
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -19,7 +17,7 @@ export default function VoiceInput() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="label" style={{ marginBottom: 16 }}>New — Voice Input</p>
+            <p className="label" style={{ marginBottom: 16 }}>{t("lp2.voiceLabel")}</p>
             <h2
               style={{
                 fontSize: "clamp(28px, 4vw, 44px)",
@@ -30,20 +28,20 @@ export default function VoiceInput() {
                 marginBottom: 20,
               }}
             >
-              Don&apos;t type it.
+              {t("lp2.voiceTitle1")}
               <br />
-              <span style={{ color: "#6C63FF" }}>Just say it.</span>
+              <span style={{ color: "#6C63FF" }}>{t("lp2.voiceTitle2")}</span>
             </h2>
             <p style={{ fontSize: 16, color: "#63636B", lineHeight: 1.7, marginBottom: 24, maxWidth: 440 }}>
-              Tap the mic and talk like you would to a friend. Lumi&apos;s AI pulls out the amount, merchant, and category — no forms, no menus, no typing.
+              {t("lp2.voiceBody")}
             </p>
 
             <div className="surface" style={{ borderRadius: 16, padding: "16px 20px", marginBottom: 28, maxWidth: 440 }}>
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#8E8E93", marginBottom: 8 }}>
-                You say
+                {t("lp2.voiceYouSay")}
               </p>
               <p style={{ fontSize: 16, fontWeight: 600, color: "#0A0A0A", fontStyle: "italic" }}>
-                &ldquo;Coffee, five euros. Metro, two euros.&rdquo;
+                &ldquo;{t("lp2.voiceQuote")}&rdquo;
               </p>
             </div>
 

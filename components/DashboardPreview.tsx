@@ -22,7 +22,7 @@ export default function DashboardPreview() {
   const { t, tCategoryName } = useLang();
 
   return (
-    <section className="relative overflow-hidden" style={{ padding: "clamp(48px, 8vw, 96px) 0" }}>
+    <section className="relative overflow-hidden" style={{ padding: "32px 0 0 0" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <p className="label" style={{ marginBottom: 12 }}>{t("lp.previewLabel")}</p>
