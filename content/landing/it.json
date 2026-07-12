@@ -11,7 +11,6 @@
   "lp2.footConnect": "Seguici",
   "lp2.footRights": "Tutti i diritti riservati.",
   "lp2.footDownload": "Scarica sull'App Store",
-
   "lp2.voiceLabel": "Novità — Input vocale",
   "lp2.voiceTitle1": "Non scriverlo.",
   "lp2.voiceTitle2": "Dillo e basta.",
@@ -21,7 +20,6 @@
   "lp2.voiceBenefit1": "Niente digitazione, niente menu di categorie",
   "lp2.voiceBenefit2": "Funziona in più lingue",
   "lp2.voiceBenefit3": "Registra importo, esercente e categoria in un colpo solo",
-
   "lp2.probTitle": "Stanco di app che ti mostrano solo grafici?",
   "lp2.probPain1": "L'inserimento manuale è un compito che nessuno vuole fare",
   "lp2.probSolution1": "Scansiona uno scontrino in 2 sec. L'IA legge importo, data, esercente e articoli — in qualsiasi lingua.",
@@ -29,7 +27,6 @@
   "lp2.probSolution2": "Lumi non chiede mai l'accesso alla banca. I tuoi dati restano sul tuo dispositivo.",
   "lp2.probPain3": "Viaggio molto — la mia app di budget funziona solo in USD",
   "lp2.probSolution3": "Tieni traccia delle spese in dollari, euro, yen — qualsiasi valuta. Conversione automatica ai tassi reali.",
-
   "lp2.howTitle": "1 tocco. Pochi secondi. Fatto.",
   "lp2.howStep1Title": "Tocca per pagare",
   "lp2.howStep1Desc": "Paga con Apple Pay come fai sempre. Nessuna app in più, nessuno sblocco.",
@@ -37,7 +34,6 @@
   "lp2.howStep2Desc": "La spesa appare con una categoria già suggerita — tocca per confermare.",
   "lp2.howStep3Title": "Fatto",
   "lp2.howStep3Desc": "Salvata, categorizzata e aggiunta alle tue previsioni automaticamente.",
-
   "lp2.featLabel": "Cosa rende Lumi diversa",
   "lp2.featTitle1": "Una registrazione che scompare",
   "lp2.featTitle2": "quando non ti serve.",
@@ -57,7 +53,6 @@
   "lp2.featBudgetsDesc": "Imposta limiti mensili per ogni categoria. Lumi monitora i progressi in tempo reale e ti avvisa prima che tu spenda troppo — non dopo.",
   "lp2.featCurrenciesTitle": "150+ valute",
   "lp2.featCurrenciesDesc": "Conversione in tempo reale. Tieni traccia di più valute contemporaneamente. Perfetto per i viaggi o per redditi in più valute.",
-
   "lp2.compTitle": "Come si confronta Lumi con le altre app di budget",
   "lp2.compFeature": "Funzionalità",
   "lp2.compFeatBackTap": "Registrazione con Back Tap",
@@ -75,7 +70,6 @@
   "lp2.compRequired": "Richiesto",
   "lp2.compCloud": "Cloud",
   "lp2.compPriceLumi": "Gratis / $4.99/mo",
-
   "lp2.testTitle1": "Creata da uno sviluppatore indipendente.",
   "lp2.testTitle2": "Amata da chi odia i fogli di calcolo.",
   "lp2.testQuote1": "L'inserimento manuale è un compito che nessuno vuole fare",
@@ -85,7 +79,6 @@
   "lp2.testQuote3": "Viaggio di continuo e nessuna app gestisce bene più valute",
   "lp2.testResponse3": "Lumi gestisce qualsiasi valuta con conversione automatica ai tassi reali.",
   "lp2.testFooter": "Analizzati 18 concorrenti. Lumi è l'unica app che unisce scansione con IA + multivaluta + privacy.",
-
   "lp2.priceTitle": "Inizia gratis. Passa al premium quando vuoi.",
   "lp2.priceFree": "Gratis",
   "lp2.priceFreeSub": "Tutto il necessario per iniziare",
@@ -110,7 +103,9 @@
   "lp2.pricePrem5": "Analisi avanzate + confronto tra periodi",
   "lp2.pricePrem6": "Esportazione PDF / CSV / JSON",
   "lp2.pricePrem7": "Supporto prioritario",
-
   "lp2.blogTitle": "Impara a spendere in modo più intelligente",
-  "lp2.blogViewAll": "Vedi tutti gli articoli"
+  "lp2.blogViewAll": "Vedi tutti gli articoli",
+  "lp2.qrCaption": "Scansiona per scaricare su iPhone",
+  "lp2.stickyCta": "Scarica Lumi — Gratis",
+  "lp2.faqSeeAll": "Vedi tutte le domande"
 }

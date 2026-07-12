@@ -11,7 +11,6 @@
   "lp2.footConnect": "Connect",
   "lp2.footRights": "All rights reserved.",
   "lp2.footDownload": "Download on App Store",
-
   "lp2.voiceLabel": "New — Voice Input",
   "lp2.voiceTitle1": "Don't type it.",
   "lp2.voiceTitle2": "Just say it.",
@@ -21,7 +20,6 @@
   "lp2.voiceBenefit1": "No typing, no category menus",
   "lp2.voiceBenefit2": "Works in multiple languages",
   "lp2.voiceBenefit3": "Logs amount, merchant, and category in one go",
-
   "lp2.probTitle": "Tired of apps that just show you charts?",
   "lp2.probPain1": "Manual entry is homework nobody wants to do",
   "lp2.probSolution1": "Scan a receipt in 2 seconds. AI reads amount, date, merchant, items — in any language.",
@@ -29,7 +27,6 @@
   "lp2.probSolution2": "Lumi never asks for bank access. Your data stays on your device.",
   "lp2.probPain3": "I travel — my budget app only works in USD",
   "lp2.probSolution3": "Track expenses in dollars, euros, yen — any currency. Auto-conversion at real rates.",
-
   "lp2.howTitle": "1 tap. Seconds. Done.",
   "lp2.howStep1Title": "Tap to pay",
   "lp2.howStep1Desc": "Pay with Apple Pay like you always do. No extra app, no unlocking.",
@@ -37,7 +34,6 @@
   "lp2.howStep2Desc": "The expense appears with a category already suggested — tap to confirm.",
   "lp2.howStep3Title": "Done",
   "lp2.howStep3Desc": "Saved, categorized, and added to your forecast automatically.",
-
   "lp2.featLabel": "What makes Lumi different",
   "lp2.featTitle1": "Logging that disappears",
   "lp2.featTitle2": "when you don't need it.",
@@ -57,7 +53,6 @@
   "lp2.featBudgetsDesc": "Set monthly limits per category. Lumi tracks live progress and warns you before you overspend — not after.",
   "lp2.featCurrenciesTitle": "150+ currencies",
   "lp2.featCurrenciesDesc": "Real-time conversion. Track in multiple currencies simultaneously. Perfect for travel or multi-currency income.",
-
   "lp2.compTitle": "How Lumi compares to other budget apps",
   "lp2.compFeature": "Feature",
   "lp2.compFeatBackTap": "Back Tap logging",
@@ -75,7 +70,6 @@
   "lp2.compRequired": "Required",
   "lp2.compCloud": "Cloud",
   "lp2.compPriceLumi": "Free / $4.99/mo",
-
   "lp2.testTitle1": "Built by a solo developer.",
   "lp2.testTitle2": "Loved by people who hate spreadsheets.",
   "lp2.testQuote1": "Manual entry is homework nobody wants to do",
@@ -85,7 +79,6 @@
   "lp2.testQuote3": "I travel constantly and no app handles multiple currencies well",
   "lp2.testResponse3": "Lumi tracks any currency with auto-conversion at real rates.",
   "lp2.testFooter": "Analyzed 18 competitors. Lumi is the only app combining AI scanning + multi-currency + privacy.",
-
   "lp2.priceTitle": "Start free. Upgrade when you're ready.",
   "lp2.priceFree": "Free",
   "lp2.priceFreeSub": "Everything to get started",
@@ -110,7 +103,9 @@
   "lp2.pricePrem5": "Advanced analytics + period comparison",
   "lp2.pricePrem6": "PDF / CSV / JSON export",
   "lp2.pricePrem7": "Priority support",
-
   "lp2.blogTitle": "Learn to spend smarter",
-  "lp2.blogViewAll": "View all articles"
+  "lp2.blogViewAll": "View all articles",
+  "lp2.qrCaption": "Scan to download on your iPhone",
+  "lp2.stickyCta": "Get Lumi — Free",
+  "lp2.faqSeeAll": "See all questions"
 }

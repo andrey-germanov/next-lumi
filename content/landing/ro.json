@@ -11,7 +11,6 @@
   "lp2.footConnect": "Contact",
   "lp2.footRights": "Toate drepturile rezervate.",
   "lp2.footDownload": "Descarcă din App Store",
-
   "lp2.voiceLabel": "Nou — Comandă vocală",
   "lp2.voiceTitle1": "Nu scrie nimic.",
   "lp2.voiceTitle2": "Doar spune-o.",
@@ -21,7 +20,6 @@
   "lp2.voiceBenefit1": "Fără tastare, fără meniuri de categorii",
   "lp2.voiceBenefit2": "Funcționează în mai multe limbi",
   "lp2.voiceBenefit3": "Înregistrează suma, comerciantul și categoria dintr-o singură mișcare",
-
   "lp2.probTitle": "Te-ai săturat de aplicații care doar îți arată grafice?",
   "lp2.probPain1": "Introducerea manuală e o corvoadă pe care nimeni nu vrea să o facă",
   "lp2.probSolution1": "Scanează un bon în 2 sec. AI-ul citește suma, data, comerciantul și produsele — în orice limbă.",
@@ -29,7 +27,6 @@
   "lp2.probSolution2": "Lumi nu îți cere niciodată acces la bancă. Datele tale rămân pe dispozitivul tău.",
   "lp2.probPain3": "Călătoresc mult — aplicația mea de buget funcționează doar în USD",
   "lp2.probSolution3": "Urmărește cheltuielile în dolari, euro, yeni — orice monedă. Conversie automată la cursuri reale.",
-
   "lp2.howTitle": "1 atingere. Câteva secunde. Gata.",
   "lp2.howStep1Title": "Atinge pentru a plăti",
   "lp2.howStep1Desc": "Plătește cu Apple Pay exact ca de obicei. Fără altă aplicație, fără deblocare.",
@@ -37,7 +34,6 @@
   "lp2.howStep2Desc": "Cheltuiala apare cu o categorie deja sugerată — atinge pentru a confirma.",
   "lp2.howStep3Title": "Gata",
   "lp2.howStep3Desc": "Salvată, clasificată și adăugată automat în prognoza ta.",
-
   "lp2.featLabel": "Ce face Lumi diferit",
   "lp2.featTitle1": "Înregistrare care dispare",
   "lp2.featTitle2": "atunci când nu ai nevoie de ea.",
@@ -57,7 +53,6 @@
   "lp2.featBudgetsDesc": "Stabilește limite lunare pentru fiecare categorie. Lumi urmărește progresul în timp real și te avertizează înainte să cheltuiești prea mult — nu după.",
   "lp2.featCurrenciesTitle": "150+ monede",
   "lp2.featCurrenciesDesc": "Conversie în timp real. Urmărește simultan mai multe monede. Perfect pentru călătorii sau venituri în mai multe valute.",
-
   "lp2.compTitle": "Cum se compară Lumi cu alte aplicații de buget",
   "lp2.compFeature": "Funcție",
   "lp2.compFeatBackTap": "Înregistrare prin Back Tap",
@@ -75,7 +70,6 @@
   "lp2.compRequired": "Necesară",
   "lp2.compCloud": "Cloud",
   "lp2.compPriceLumi": "Gratuit / $4.99/mo",
-
   "lp2.testTitle1": "Creată de un singur dezvoltator.",
   "lp2.testTitle2": "Îndrăgită de cei care detestă tabelele.",
   "lp2.testQuote1": "Introducerea manuală e o corvoadă pe care nimeni nu vrea să o facă",
@@ -85,7 +79,6 @@
   "lp2.testQuote3": "Călătoresc constant și nicio aplicație nu gestionează bine mai multe monede",
   "lp2.testResponse3": "Lumi urmărește orice monedă, cu conversie automată la cursuri reale.",
   "lp2.testFooter": "Am analizat 18 concurenți. Lumi este singura aplicație care combină scanarea cu AI + monede multiple + confidențialitate.",
-
   "lp2.priceTitle": "Începe gratuit. Fă upgrade când ești gata.",
   "lp2.priceFree": "Gratuit",
   "lp2.priceFreeSub": "Tot ce îți trebuie pentru a începe",
@@ -110,7 +103,9 @@
   "lp2.pricePrem5": "Analize avansate + comparație pe perioade",
   "lp2.pricePrem6": "Export PDF / CSV / JSON",
   "lp2.pricePrem7": "Suport prioritar",
-
   "lp2.blogTitle": "Învață să cheltuiești mai inteligent",
-  "lp2.blogViewAll": "Vezi toate articolele"
+  "lp2.blogViewAll": "Vezi toate articolele",
+  "lp2.qrCaption": "Scanează pentru a descărca pe iPhone",
+  "lp2.stickyCta": "Descarcă Lumi — Gratuit",
+  "lp2.faqSeeAll": "Vezi toate întrebările"
 }

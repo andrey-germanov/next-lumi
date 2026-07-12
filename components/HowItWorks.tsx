@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
+import PhoneFrame from "./PhoneFrame";
 import { useLang } from "@/components/dash/i18n";
 
 const steps = [
@@ -62,20 +62,14 @@ export default function HowItWorks() {
               <p className="text-text-muted">{t(item.descKey)}</p>
 
               {/* Step screenshot */}
-              <div
-                className="mx-auto mt-6 relative overflow-hidden"
-                style={{ width: 190, height: 400, borderRadius: 32, background: "#1C1C1E", border: "1.5px solid rgba(0,0,0,0.15)", boxShadow: "0 20px 40px rgba(0,0,0,0.14)" }}
-              >
-                <div className="relative" style={{ position: "absolute", inset: "1.5px", borderRadius: 31, overflow: "hidden" }}>
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="190px"
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                  />
-                </div>
-              </div>
+              <PhoneFrame
+                src={item.image}
+                alt={item.alt}
+                width={200}
+                sizes="200px"
+                className="mx-auto mt-6"
+                style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.14))" }}
+              />
             </motion.div>
           ))}
         </div>

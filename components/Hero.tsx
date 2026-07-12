@@ -1,25 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
+import AppQR from "./AppQR";
+import PhoneFrame from "./PhoneFrame";
 import { useLang } from "@/components/dash/i18n";
 
 function PhoneMockup() {
   return (
-    <div className="relative animate-phone-float">
-      <div style={{ width: 256, height: 536, borderRadius: 44, background: "#1C1C1E", border: "1.5px solid rgba(0,0,0,0.15)", boxShadow: "0 30px 60px rgba(0,0,0,0.18)", overflow: "hidden", position: "relative" }}>
-        <div style={{ position: "absolute", inset: "1.5px", borderRadius: 43, overflow: "hidden" }}>
-          <Image
-            src="/images/screenshots-of-app/home-dashboard.png"
-            alt="Lumi app home screen showing balance, month forecast, and recent transactions"
-            fill
-            sizes="256px"
-            style={{ objectFit: "cover", objectPosition: "top" }}
-            priority
-          />
-        </div>
-      </div>
+    <div className="relative animate-phone-float" style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.18))" }}>
+      <PhoneFrame
+        src="/images/screenshots-of-app/home-dashboard.png"
+        alt="Lumi app home screen showing balance, month forecast, and recent transactions"
+        width={272}
+        sizes="272px"
+        priority
+      />
     </div>
   );
 }
@@ -71,7 +67,10 @@ export default function Hero() {
               ))}
             </div>
 
-            <AppStoreButton location="hero" />
+            <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+              <AppStoreButton location="hero" />
+              <AppQR location="hero" />
+            </div>
           </motion.div>
 
           {/* Phone — desktop only */}

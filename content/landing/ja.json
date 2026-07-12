@@ -11,7 +11,6 @@
   "lp2.footConnect": "つながる",
   "lp2.footRights": "All rights reserved.",
   "lp2.footDownload": "App Storeでダウンロード",
-
   "lp2.voiceLabel": "新機能 — 音声入力",
   "lp2.voiceTitle1": "入力しない。",
   "lp2.voiceTitle2": "話すだけ。",
@@ -21,7 +20,6 @@
   "lp2.voiceBenefit1": "入力もカテゴリー選択も不要",
   "lp2.voiceBenefit2": "複数の言語に対応",
   "lp2.voiceBenefit3": "金額・店名・カテゴリーを一度に記録",
-
   "lp2.probTitle": "グラフを見せるだけのアプリに、もう飽きていませんか?",
   "lp2.probPain1": "手入力なんて、誰もやりたくない宿題みたいなもの",
   "lp2.probSolution1": "レシートを2秒でスキャン。AIが金額・日付・店名・品目を、どんな言語でも読み取ります。",
@@ -29,7 +27,6 @@
   "lp2.probSolution2": "Lumiは銀行へのアクセスを一切求めません。あなたのデータは端末の中だけに保管されます。",
   "lp2.probPain3": "よく旅行するのに、家計簿アプリがドルにしか対応していない",
   "lp2.probSolution3": "ドル、ユーロ、円など、どんな通貨でも支出を記録。実勢レートで自動換算します。",
-
   "lp2.howTitle": "1タップ。数秒で。完了。",
   "lp2.howStep1Title": "タップして支払う",
   "lp2.howStep1Desc": "いつも通りApple Payで支払うだけ。別のアプリも、ロック解除も不要です。",
@@ -37,7 +34,6 @@
   "lp2.howStep2Desc": "カテゴリーが提案された状態で支出が表示されます。タップして確定するだけ。",
   "lp2.howStep3Title": "完了",
   "lp2.howStep3Desc": "保存・分類され、自動で予測に反映されます。",
-
   "lp2.featLabel": "Lumiが選ばれる理由",
   "lp2.featTitle1": "記録という手間が、",
   "lp2.featTitle2": "いつのまにか消えている。",
@@ -57,7 +53,6 @@
   "lp2.featBudgetsDesc": "カテゴリーごとに月間の上限を設定。Lumiが進捗をリアルタイムで追跡し、使いすぎる「前に」警告します。",
   "lp2.featCurrenciesTitle": "150+の通貨",
   "lp2.featCurrenciesDesc": "リアルタイムで換算。複数の通貨を同時に管理できます。旅行や、複数通貨での収入にも最適です。",
-
   "lp2.compTitle": "Lumiと他の家計簿アプリを比較",
   "lp2.compFeature": "機能",
   "lp2.compFeatBackTap": "Back Tapで記録",
@@ -75,7 +70,6 @@
   "lp2.compRequired": "必須",
   "lp2.compCloud": "クラウド",
   "lp2.compPriceLumi": "無料 / $4.99/mo",
-
   "lp2.testTitle1": "個人開発者がつくりました。",
   "lp2.testTitle2": "表計算が苦手な人たちに愛されています。",
   "lp2.testQuote1": "手入力なんて、誰もやりたくない宿題みたいなもの",
@@ -85,7 +79,6 @@
   "lp2.testQuote3": "いつも旅行しているけど、複数通貨をうまく扱えるアプリがない",
   "lp2.testResponse3": "Lumiはどんな通貨も、実勢レートで自動換算して記録します。",
   "lp2.testFooter": "競合18アプリを分析。AIスキャン+複数通貨+プライバシーをすべて兼ね備えるのは、Lumiだけです。",
-
   "lp2.priceTitle": "無料で始めて、必要になったらアップグレード。",
   "lp2.priceFree": "無料",
   "lp2.priceFreeSub": "始めるのに必要なすべて",
@@ -110,7 +103,9 @@
   "lp2.pricePrem5": "高度な分析 + 期間比較",
   "lp2.pricePrem6": "PDF / CSV / JSON エクスポート",
   "lp2.pricePrem7": "優先サポート",
-
   "lp2.blogTitle": "もっと賢い支出を学ぶ",
-  "lp2.blogViewAll": "すべての記事を見る"
+  "lp2.blogViewAll": "すべての記事を見る",
+  "lp2.qrCaption": "iPhoneでスキャンしてダウンロード",
+  "lp2.stickyCta": "Lumiを入手 — 無料",
+  "lp2.faqSeeAll": "すべての質問を見る"
 }

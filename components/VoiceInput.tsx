@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import PhoneFrame from "./PhoneFrame";
 import { useLang } from "@/components/dash/i18n";
 
 export default function VoiceInput() {
@@ -63,20 +63,13 @@ export default function VoiceInput() {
             viewport={{ once: true }}
             className="flex justify-center lg:justify-end"
           >
-            <div
-              className="relative"
-              style={{ width: 256, height: 536, borderRadius: 44, background: "#1C1C1E", border: "1.5px solid rgba(0,0,0,0.15)", boxShadow: "0 30px 60px rgba(0,0,0,0.18)", overflow: "hidden" }}
-            >
-              <div style={{ position: "absolute", inset: "1.5px", borderRadius: 43, overflow: "hidden" }}>
-                <Image
-                  src="/images/screenshots-of-app/voice-input.png"
-                  alt="Lumi voice input screen with a microphone button and prompt to say an expense out loud"
-                  fill
-                  sizes="256px"
-                  style={{ objectFit: "cover", objectPosition: "top" }}
-                />
-              </div>
-            </div>
+            <PhoneFrame
+              src="/images/screenshots-of-app/voice-input.png"
+              alt="Lumi voice input screen with a microphone button and prompt to say an expense out loud"
+              width={272}
+              sizes="272px"
+              style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.18))" }}
+            />
           </motion.div>
         </div>
       </div>
