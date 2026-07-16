@@ -13,7 +13,7 @@ const features = [
     ),
     titleKey: "lp2.featBackTapTitle",
     descKey: "lp2.featBackTapDesc",
-    stat: "2 sec",
+    statKey: "lp.val2sec",
     statLabelKey: "lp2.featBackTapStatLabel",
     accent: "#6C63FF",
     large: true,
@@ -26,7 +26,7 @@ const features = [
     ),
     titleKey: "lp2.featApplePayTitle",
     descKey: "lp2.featApplePayDesc",
-    stat: "0 taps",
+    statKey: "lp.val0taps",
     statLabelKey: "lp2.featApplePayStatLabel",
     accent: "#0A8F5F",
     image: "/images/demo-apple-pay/apple-pay-confirmation.png",
@@ -145,10 +145,10 @@ export default function Features() {
                 {t(f.descKey)}
               </p>
 
-              {f.stat && (
+              {f.statKey && (
                 <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: 20 }}>
                   <p style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-1.5px", color: f.accent }}>
-                    {f.stat}
+                    {t(f.statKey)}
                   </p>
                   <p style={{ fontSize: 12, color: "#63636B", marginTop: 2 }}>{f.statLabelKey ? t(f.statLabelKey) : null}</p>
                 </div>

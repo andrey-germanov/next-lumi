@@ -21,11 +21,11 @@ function PhoneMockup() {
 }
 
 const stats = [
-  { value: "2 sec", labelKey: "lp.statBackTap" },
-  { value: "0 taps", labelKey: "lp.statApplePay" },
+  { valueKey: "lp.val2sec", labelKey: "lp.statBackTap" },
+  { valueKey: "lp.val0taps", labelKey: "lp.statApplePay" },
   { value: "150+", labelKey: "lp.statCurrencies" },
-  { value: "0 banks", labelKey: "lp.statBanks" },
-];
+  { valueKey: "lp.val0banks", labelKey: "lp.statBanks" },
+] as { value?: string; valueKey?: string; labelKey: string }[];
 
 const trustTagKeys = ["lp.tagNoBank", "lp.tagOnDevice", "lp.tagOffline", "lp.tagFree"];
 
@@ -95,7 +95,7 @@ export default function Hero() {
           <div className="flex lg:hidden gap-3 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" as "touch" }}>
             {stats.map((s) => (
               <div key={s.labelKey} className="surface rounded-2xl flex-shrink-0" style={{ padding: "16px 20px", minWidth: 120 }}>
-                <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A", lineHeight: 1 }}>{s.value}</p>
+                <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A", lineHeight: 1 }}>{s.valueKey ? t(s.valueKey) : s.value}</p>
                 <p style={{ fontSize: 11, color: "#63636B", marginTop: 5, lineHeight: 1.3 }}>{t(s.labelKey)}</p>
               </div>
             ))}
@@ -105,7 +105,7 @@ export default function Hero() {
           <div className="hidden lg:grid grid-cols-4 gap-4">
             {stats.map((s) => (
               <div key={s.labelKey} className="surface rounded-2xl" style={{ padding: "20px 24px" }}>
-                <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A" }}>{s.value}</p>
+                <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A" }}>{s.valueKey ? t(s.valueKey) : s.value}</p>
                 <p style={{ fontSize: 13, color: "#63636B", marginTop: 4 }}>{t(s.labelKey)}</p>
               </div>
             ))}

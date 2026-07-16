@@ -6,11 +6,11 @@ import { useLang } from "@/components/dash/i18n";
 
 const FREE_FEATURE_KEYS = [
   "lp2.priceFree1", "lp2.priceFree2", "lp2.priceFree3", "lp2.priceFree4",
-  "lp2.priceFree5", "lp2.priceFree6", "lp2.priceFree7", "lp2.priceFree8",
+  "lp2.priceFree5", "lp2.priceFree7", "lp2.priceFree8",
 ];
 const PREMIUM_FEATURE_KEYS = [
-  "lp2.pricePrem1", "lp2.pricePrem2", "lp2.pricePrem3", "lp2.pricePrem4",
-  "lp2.pricePrem5", "lp2.pricePrem6", "lp2.pricePrem7",
+  "lp2.pricePrem8", "lp2.pricePrem1", "lp2.pricePrem2", "lp2.pricePrem3",
+  "lp2.pricePrem4", "lp2.pricePrem5", "lp2.pricePrem6", "lp2.pricePrem7",
 ];
 
 export default function Pricing() {
