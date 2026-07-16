@@ -1,0 +1,58 @@
+---
+title: "Ausgaben mit Siri-Kurzbefehlen verfolgen (Schritt für Schritt, 2026)"
+description: "Bau dir einen freihändigen Ausgaben-Logger mit Siri-Kurzbefehlen: sprachgesteuertes Erfassen, Apple-Pay-Transaktionsautomation und Back Tap — mit ehrlichen Hinweisen zu den Grenzen."
+date: "2026-07-16"
+author: "Lumi Team"
+image: "/images/blog/track-expenses-with-siri-shortcuts.png"
+tags: ["Siri-Kurzbefehle", "Ausgaben verfolgen", "Apple Pay", "Automatisierung", "iPhone-Budgetierung", "Ausgaben per Sprache erfassen"]
+---
+
+Siri-Kurzbefehle können das Erfassen von Ausgaben von einer Pflichtübung in etwas verwandeln, das fast von selbst passiert. Zwei Automationen lohnen sich: ein sprachgesteuerter Logger für manuelle Einträge und ein Transaktions-Auslöser, der automatisch feuert, wenn du mit Apple Pay bezahlst. So richtest du beide ein — plus die ehrlichen Grenzen des Selbstbau-Wegs.
+
+## Automation 1: Ausgaben erfassen, wenn du mit Apple Pay zahlst
+
+Seit iOS 17 hat die Kurzbefehle-App einen **Transaktion**-Auslöser: Er feuert in dem Moment, in dem eine Wallet-Karte benutzt wird. Kontaktlose Zahlungen können sich also selbst erfassen.
+
+1. Öffne **Kurzbefehle** und gehe zum Tab **Automation**.
+2. Tippe auf **+** und wähle **Transaktion** aus der Liste der persönlichen Automationen.
+3. Wähle die Karten, die du verfolgen willst (deine Apple-Pay-Karten), und stelle die Automation auf **Sofort ausführen**.
+4. Füge eine Aktion hinzu, die die Ausgabe schreibt. Wenn dein Tracker Kurzbefehle-Aktionen anbietet, wähle seine „Ausgabe hinzufügen"-Aktion und übergib die **Kurzbefehl-Eingabe** — sie enthält Betrag und Händler.
+5. Bezahle etwas mit Apple Pay. Die Ausgabe erscheint, ohne dass du irgendetwas öffnest.
+
+Wenn dein Tracker das nativ unterstützt, dauert das Setup zwei Minuten. Lumi zum Beispiel liefert einen fertigen Kurzbefehl mit — einmal verbinden, und Apple-Pay-Käufe importieren sich automatisch, bereits kategorisiert.
+
+## Automation 2: ein sprachgesteuerter Ausgaben-Logger
+
+Für Bargeld und alles, was Apple Pay nicht sieht, bau dir einen „Hey Siri"-Logger:
+
+1. Erstelle in **Kurzbefehle** einen neuen Kurzbefehl und nenne ihn so, wie du es natürlich sagen würdest — „Ausgabe erfassen".
+2. Füge **Nach Eingabe fragen** (Zahl) für den Betrag hinzu.
+3. Füge **Aus Menü auswählen** für deine Kategorien hinzu: Lebensmittel, Verkehr, Essen gehen, Sonstiges.
+4. Füge die Aktion hinzu, die den Eintrag schreibt — die „Ausgabe hinzufügen"-Aktion deines Trackers oder **An Notiz anhängen** / eine Tabellenzeile, wenn du manuell führst.
+5. Sag „Hey Siri, Ausgabe erfassen". Siri fragt nach Betrag, dann Kategorie, und schreibt den Eintrag.
+
+Bonus-Auslöser: Gehe zu **Einstellungen → Bedienungshilfen → Berühren → Back Tap** und lege deinen Kurzbefehl auf den Doppeltipp. Jetzt ist die Rückseite deines Handys der Erfassen-Knopf — kein Entsperren, kein Symbol-Suchen.
+
+## Die ehrlichen Grenzen des Selbstbau-Wegs
+
+Der Kurzbefehle-Dialog ist starr. Siri fragt eine Frage pro Feld, der Reihe nach; du kannst nicht einfach „Kaffee fünf Euro und ein Metroticket" sagen und es sortieren lassen. Händlernamen kommen bei manuellen Einträgen nicht durch, Kategorien sind das Menü, das du gebaut hast, und die Automation braucht nach iOS-Updates gelegentlich Reparatur. Für strukturierte Menschen, die gern bauen, ist es eine solide Lösung.
+
+Wenn du dir die Bastelei sparen willst, ist das das Argument für einen Tracker mit nativer KI-Spracheingabe — ein Satz, geparst in Betrag, Händler und Kategorie, in beliebiger Formulierung und mehreren Sprachen. Den Vergleich der Ansätze findest du in [die besten Sprach-Ausgabentracker 2026](/blog/best-voice-expense-tracker-apps-2026), das komplette Setup ohne Tastatur in [Ausgaben per Sprache erfassen auf dem iPhone](/blog/how-to-log-expenses-without-typing).
+
+Woher die Einträge auch kommen — sie sollten in einen Plan fließen. Wenn du noch keinen hast, ist der [50/30/20-Budget-Rechner](/tools/50-30-20-budget-calculator) ein Zwei-Minuten-Startpunkt.
+
+<ArticleCTA />
+
+## FAQ
+
+### Kann Kurzbefehle mein Bankkonto lesen?
+
+Nein — und das ist ein Feature. Der Transaktion-Auslöser sieht Wallet-Aktivität auf dem Gerät; nichts davon erfordert, deine Bankzugangsdaten an einen Drittanbieter zu geben. Du bekommst Automatisierung ohne den Privatsphäre-Tausch.
+
+### Erfasst der Transaktion-Auslöser jeden Kauf?
+
+Er feuert für Karten, die über Apple Pay und Wallet genutzt werden. Physische Kartenzahlungen, Bargeld und Überweisungen lösen ihn nicht aus — genau dafür ist der Sprach-Logger (oder eine App mit Spracheingabe) da.
+
+### Mein Tracker hat keine Kurzbefehle-Aktionen. Was nun?
+
+Du kannst in eine Notiz oder Tabelle als Eingangskorb schreiben und später übertragen — oder zu einem Tracker mit nativer Automatisierung wechseln. [Lumi](/) deckt beide Automationen ab Werk ab: Apple-Pay-Auto-Import plus KI-Spracheingabe, kein Bank-Login, kostenloser Einstieg.

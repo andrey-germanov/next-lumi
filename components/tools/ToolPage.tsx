@@ -8,6 +8,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import { AppIcon } from "@/components/dash/AppIcon";
 import { useLang } from "@/components/dash/i18n";
 import { localePath, type Locale } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/constants";
 import { TOOLS, getTool } from "@/lib/tools";
 import { CALCULATORS } from "./calculators";
 
@@ -33,9 +34,20 @@ export default function ToolPage({ slug, locale, faq }: { slug: string; locale: 
   const toolsBase = locale === "en" ? "/tools" : `${localePath(locale)}/tools`;
   const related = TOOLS.filter((tool) => tool.slug !== slug);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Lumi", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: t("nav.tools"), item: `${SITE_URL}${toolsBase}` },
+      { "@type": "ListItem", position: 3, name: t(meta.titleKey), item: `${SITE_URL}${toolsBase}/${slug}` },
+    ],
+  };
+
   return (
     <>
       <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <main className="pt-24">
         <div className="relative overflow-hidden">
           <div className="hero-orb pointer-events-none absolute" style={{ top: -420, left: "50%", transform: "translateX(-50%)", opacity: 0.5 }} />

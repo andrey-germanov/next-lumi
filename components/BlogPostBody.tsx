@@ -34,11 +34,22 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     inLanguage: locale,
-    author: { "@type": "Person", name: post.author },
-    publisher: { "@type": "Organization", name: "Lumi" },
+    author: { "@type": "Person", name: post.author, url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Lumi", url: SITE_URL },
     image: `${SITE_URL}/blog/${post.slug}/opengraph-image`,
     mainEntityOfPage: `${SITE_URL}${canonicalPath}`,
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Lumi", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}${blogHref}` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}${canonicalPath}` },
+    ],
   };
 
   return (
@@ -47,6 +58,7 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
       <main className="pt-24">
         <article className="mx-auto max-w-3xl px-6 py-16">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
           <Link href={blogHref} className="text-sm text-text-muted hover:text-text transition-colors">
             {t("blog.back")}

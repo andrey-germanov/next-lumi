@@ -10,6 +10,8 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  /** Optional frontmatter `updated:` — last substantive edit, used for sitemap + dateModified. */
+  updated?: string;
   author: string;
   image: string;
   tags: string[];
@@ -45,6 +47,7 @@ export function getPostBySlug(slug: string, locale?: string): BlogPost {
     title: data.title,
     description: data.description,
     date: data.date,
+    updated: data.updated,
     author: data.author,
     image: data.image,
     tags: data.tags || [],

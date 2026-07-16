@@ -1,0 +1,58 @@
+---
+title: "How to Track Expenses with Siri Shortcuts (Step-by-Step, 2026)"
+description: "Build a hands-free expense logger with Siri Shortcuts: voice-triggered logging, Apple Pay transaction automation, and Back Tap — with honest notes on the limits."
+date: "2026-07-16"
+author: "Lumi Team"
+image: "/images/blog/track-expenses-with-siri-shortcuts.png"
+tags: ["siri shortcuts", "expense tracking", "apple pay", "automation", "iphone budgeting", "log expenses by voice"]
+---
+
+Siri Shortcuts can turn expense logging from a chore into something that happens almost by itself. There are two automations worth building: a voice-triggered logger for manual entries, and a transaction trigger that fires automatically when you pay with Apple Pay. Here's how to set up both, plus the honest limits of the DIY route.
+
+## Automation 1: log expenses when you pay with Apple Pay
+
+Since iOS 17, the Shortcuts app has a **Transaction** trigger: it fires the moment a Wallet card is used. That means contactless payments can log themselves.
+
+1. Open **Shortcuts** and go to the **Automation** tab.
+2. Tap **+**, then choose **Transaction** from the list of personal automation triggers.
+3. Select the cards you want to track (your Apple Pay cards), and set the automation to **Run Immediately**.
+4. Add an action that records the expense. If your tracker exposes Shortcuts actions, pick its "add expense" action and pass in the **Shortcut Input** — it contains the amount and merchant.
+5. Pay for something with Apple Pay. The expense appears without you opening anything.
+
+If your tracker supports this natively, the setup is two minutes. Lumi, for example, ships a ready-made Shortcut — you connect it once and Apple Pay purchases import automatically, already categorized.
+
+## Automation 2: a voice-triggered expense logger
+
+For cash and everything Apple Pay doesn't see, build a "Hey Siri" logger:
+
+1. In **Shortcuts**, create a new shortcut and name it something you'd naturally say — "Log expense."
+2. Add **Ask for Input** (Number) for the amount.
+3. Add a **Choose from Menu** action for your categories: groceries, transport, eating out, other.
+4. Add the action that writes the entry — your tracker's "add expense" action, or **Append to Note** / a spreadsheet row if you track manually.
+5. Say "Hey Siri, log expense." Siri asks for the amount, then the category, and writes the entry.
+
+Bonus trigger: go to **Settings → Accessibility → Touch → Back Tap** and assign your shortcut to a double tap. Now the back of your phone is the logging button — no unlocking, no icon hunting.
+
+## The honest limits of the DIY route
+
+The Shortcuts dialogue is rigid. Siri asks one question per field, in order; you can't just say "coffee five euros and a metro ticket" and have it sort things out. Merchant names don't come through for manual entries, categories are whatever menu you built, and the automation occasionally needs repair after iOS updates. It's a solid solution for structured people who enjoy building things.
+
+If you'd rather skip the assembly, that's the case for a tracker with native AI voice input — one sentence, parsed into amount, merchant, and category, in any phrasing and multiple languages. We compared the approaches in [best voice expense tracker apps in 2026](/blog/best-voice-expense-tracker-apps-2026), and the wider no-keyboard setup lives in [how to log expenses by voice on iPhone](/blog/how-to-log-expenses-without-typing).
+
+Wherever the entries come from, they should feed a plan. If you don't have one yet, the [50/30/20 budget calculator](/tools/50-30-20-budget-calculator) is a two-minute starting point.
+
+<ArticleCTA />
+
+## FAQ
+
+### Can Shortcuts read my bank account?
+
+No — and that's a feature. The Transaction trigger sees Wallet activity on-device; nothing requires handing your bank credentials to a third-party service. You get automation without the privacy trade.
+
+### Does the Transaction trigger catch every purchase?
+
+It fires for cards used through Apple Pay and Wallet. Physical card swipes, cash, and bank transfers don't trigger it — which is exactly what the voice logger (or an app with voice input) is for.
+
+### My tracker has no Shortcuts actions. What are my options?
+
+You can log to a Notes file or spreadsheet as an inbox and re-enter later — or switch to a tracker with native automation. [Lumi](/) covers both automations out of the box: Apple Pay auto-import plus AI voice input, no bank login, free to start.

@@ -398,6 +398,93 @@ function Fire() {
   );
 }
 
+// ── Subscription cost ────────────────────────────────────────────────────────
+
+interface SubRow {
+  id: number;
+  name: string;
+  price: number;
+  yearly: boolean;
+}
+
+function SubscriptionCost() {
+  const { t, fmt } = useCalc();
+  const [rows, setRows] = useState<SubRow[]>([
+    { id: 1, name: "", price: 12.99, yearly: false },
+    { id: 2, name: "", price: 4.99, yearly: false },
+    { id: 3, name: "", price: 59.99, yearly: true },
+  ]);
+
+  const update = (id: number, patch: Partial<SubRow>) =>
+    setRows((rs) => rs.map((r) => (r.id === id ? { ...r, ...patch } : r)));
+  const remove = (id: number) => setRows((rs) => rs.filter((r) => r.id !== id));
+  const add = () => setRows((rs) => [...rs, { id: Math.max(0, ...rs.map((r) => r.id)) + 1, name: "", price: 0, yearly: false }]);
+
+  const perYear = rows.reduce((sum, r) => sum + (r.yearly ? r.price : r.price * 12), 0);
+  const perMonth = perYear / 12;
+  const perDay = perYear / 365;
+  // FV of investing the monthly amount at 7% annual for 5 years.
+  const r = 0.07 / 12;
+  const n = 60;
+  const invested = perMonth * (((1 + r) ** n - 1) / r);
+
+  return (
+    <Layout
+      inputs={
+        <>
+          {rows.map((row, i) => (
+            <div key={row.id} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10 }}>
+              <input
+                type="text"
+                placeholder={`${t("calc.subs.name")} ${i + 1}`}
+                value={row.name}
+                onChange={(e) => update(row.id, { name: e.target.value })}
+                style={{ ...fieldInput, flex: 2, minWidth: 0 }}
+              />
+              <input
+                type="number"
+                inputMode="decimal"
+                min="0"
+                step="any"
+                placeholder={t("calc.subs.price")}
+                value={Number.isFinite(row.price) && row.price !== 0 ? row.price : ""}
+                onChange={(e) => update(row.id, { price: parseFloat(e.target.value) || 0 })}
+                style={{ ...fieldInput, flex: 1, minWidth: 72 }}
+              />
+              <button
+                type="button"
+                onClick={() => update(row.id, { yearly: !row.yearly })}
+                style={{ flexShrink: 0, fontSize: 12, fontWeight: 600, padding: "8px 10px", borderRadius: 9, cursor: "pointer", background: "#F0F0F2", color: "#0A0A0A", whiteSpace: "nowrap" }}
+              >
+                {row.yearly ? t("calc.subs.perYear") : t("calc.subs.perMonth")}
+              </button>
+              <button
+                type="button"
+                aria-label="Remove"
+                onClick={() => remove(row.id)}
+                style={{ flexShrink: 0, fontSize: 16, color: "#8E8E93", cursor: "pointer", padding: "4px 6px", background: "transparent" }}
+              >
+                ×
+              </button>
+            </div>
+          ))}
+          <button type="button" onClick={add} style={{ fontSize: 13, fontWeight: 600, color: "#6C63FF", cursor: "pointer", background: "transparent", marginTop: 4 }}>
+            {t("calc.subs.add")}
+          </button>
+        </>
+      }
+      results={
+        <>
+          <ResultHero label={t("calc.subs.totalYear")} value={fmt(perYear)} color="#EC4899" />
+          <ResultRow label={t("calc.subs.totalMonth")} value={fmt(perMonth)} />
+          <ResultRow label={t("calc.subs.perDay")} value={perDay >= 1 ? fmt(perDay) : perDay.toFixed(2)} />
+          <ResultRow label={t("calc.subs.invested")} value={fmt(invested)} />
+        </>
+      }
+    />
+  );
+}
+
 export const CALCULATORS: Record<string, React.ComponentType> = {
   "compound-interest-calculator": CompoundInterest,
   "50-30-20-budget-calculator": Budget,
@@ -405,4 +492,5 @@ export const CALCULATORS: Record<string, React.ComponentType> = {
   "savings-goal-calculator": SavingsGoal,
   "debt-payoff-calculator": DebtPayoff,
   "fire-calculator": Fire,
+  "subscription-cost-calculator": SubscriptionCost,
 };

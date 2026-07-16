@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 import { PREFIXED_LOCALES, landingLanguagesMap, pageLanguagesMap } from "@/lib/i18n";
 import { TOOL_SLUGS } from "@/lib/tools";
@@ -8,11 +8,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs();
   const blogEntries = blogSlugs.flatMap((slug) => {
     const langs = pageLanguagesMap(SITE_URL, `blog/${slug}`);
+    // Real dates from frontmatter (`updated` falls back to `date`) — fake
+    // lastModified on every build erodes Google's trust in the sitemap.
+    const post = getPostBySlug(slug);
+    const lastModified = new Date(post.updated ?? post.date);
     return [
-      { url: `${SITE_URL}/blog/${slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: langs } },
+      { url: `${SITE_URL}/blog/${slug}`, lastModified, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: langs } },
       ...PREFIXED_LOCALES.map((locale) => ({
         url: `${SITE_URL}/${locale}/blog/${slug}`,
-        lastModified: new Date(),
+        lastModified,
         changeFrequency: "monthly" as const,
         priority: 0.6,
         alternates: { languages: langs },

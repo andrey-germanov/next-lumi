@@ -16,6 +16,7 @@ export const TOOLS: ToolMeta[] = [
   { slug: "savings-goal-calculator", titleKey: "calc.savings.title", descKey: "calc.savings.desc", icon: "🎯", color: "#0EA5E9" },
   { slug: "debt-payoff-calculator", titleKey: "calc.debt.title", descKey: "calc.debt.desc", icon: "💳", color: "#F87171" },
   { slug: "fire-calculator", titleKey: "calc.fire.title", descKey: "calc.fire.desc", icon: "🔥", color: "#A78BFA" },
+  { slug: "subscription-cost-calculator", titleKey: "calc.subs.title", descKey: "calc.subs.desc", icon: "🔁", color: "#EC4899" },
 ];
 
 export const TOOL_SLUGS = TOOLS.map((t) => t.slug);
