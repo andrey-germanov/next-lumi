@@ -17,6 +17,7 @@ export const TOOLS: ToolMeta[] = [
   { slug: "debt-payoff-calculator", titleKey: "calc.debt.title", descKey: "calc.debt.desc", icon: "💳", color: "#F87171" },
   { slug: "fire-calculator", titleKey: "calc.fire.title", descKey: "calc.fire.desc", icon: "🔥", color: "#A78BFA" },
   { slug: "subscription-cost-calculator", titleKey: "calc.subs.title", descKey: "calc.subs.desc", icon: "🔁", color: "#EC4899" },
+  { slug: "couple-expense-split-calculator", titleKey: "calc.split.title", descKey: "calc.split.desc", icon: "💞", color: "#FB7185" },
 ];
 
 export const TOOL_SLUGS = TOOLS.map((t) => t.slug);

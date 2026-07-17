@@ -120,5 +120,19 @@
       "question": "Wie finde ich vergessene Abos?",
       "answer": "Prüfe Apple-ID-Abos, Google Play, PayPal-Automatikzahlungen und drei Monate Kartenabrechnungen, dann durchsuche deine E-Mails nach „renewal“ und „receipt“. Unser Guide zu vergessenen Abos geht alle sechs Verstecke Schritt für Schritt durch."
     }
+  ],
+  "couple-expense-split-calculator": [
+    {
+      "question": "Sollten Paare Ausgaben 50/50 oder nach Einkommen teilen?",
+      "answer": "50/50 funktioniert bei ähnlichen Einkommen. Wenn sie sich unterscheiden, legt ein einkommensproportionaler Split beiden Partnern dieselbe prozentuale Last auf — verdienst du 60 % des Haushaltseinkommens, trägst du 60 % der gemeinsamen Kosten. Bei ungleichen Einkommen gilt proportional meist als der fairere Standard."
+    },
+    {
+      "question": "Welche Ausgaben zählen als gemeinsam?",
+      "answer": "Typischerweise Miete oder Kredit, Nebenkosten, Lebensmittel, Haushaltsbedarf, gemeinsam genutzte Abos und gemeinsame Reisen. Persönliche Abos, Hobbys und Geschenke bleiben persönlich. Eine kurze gemeinsame Liste ist leichter ehrlich zu halten — im Zweifel ist es persönlich."
+    },
+    {
+      "question": "Wie verfolgen wir, wer wirklich was ausgegeben hat?",
+      "answer": "Jeder Partner verfolgt die eigenen Ausgaben, und einmal im Monat vergleicht ihr die Summen der gemeinsamen Kategorien. Das System funktioniert nur, wenn Erfassen mühelos ist — deshalb schlagen Apps mit Spracheingabe und Apple-Pay-Auto-Import in der Praxis gemeinsame Tabellen. Siehe unseren Leitfaden zum Budgetieren als Paar mit getrennten Konten."
+    }
   ]
 }

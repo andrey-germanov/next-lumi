@@ -1,0 +1,50 @@
+---
+title: "How to See Your Apple Pay Transaction History (and Why It's Incomplete)"
+description: "Where to find Apple Pay transactions on iPhone — in Wallet, per card, and in your bank app — plus why Wallet alone can't tell you what you actually spend."
+date: "2026-07-16"
+author: "Lumi Team"
+image: "/images/blog/how-to-see-apple-pay-transaction-history.png"
+tags: ["apple pay transaction history", "apple pay", "wallet app", "expense tracking", "iphone budgeting", "spending tracker"]
+---
+
+You tapped your phone at the register, the terminal beeped, and now you're wondering where that payment actually went. Apple Pay transaction history exists — but it's scattered across places, and none of them gives you the full picture of your spending. Here's where to look, what each view can and can't show, and how to turn taps into an actual spending record.
+
+## Where to find Apple Pay transactions
+
+### In the Wallet app, per card
+
+Open **Wallet**, tap a card, and you'll see **Latest Transactions** — recent Apple Pay payments made with that card on this device. Tap a transaction for details: merchant, amount, date, and sometimes a map. Two catches: history is shown *per card*, not combined, and what appears depends on your bank — some banks feed rich detail into Wallet, others show little or nothing.
+
+### In Settings, per device
+
+Go to **Settings → Wallet & Apple Pay**, tap a card, and open the **Transactions** tab. Useful for checking what was paid from a specific device — an Apple Watch, for instance, keeps its own list.
+
+### In your bank's app — the source of truth
+
+Every Apple Pay payment is ultimately a card payment, so your bank's app or statement is the complete, authoritative record. If Wallet shows nothing for a card, this is where the money trail lives. The downside: it's mixed with all your other transactions, uncategorized or auto-categorized badly, and split across every bank you use.
+
+## Why Wallet history isn't a spending tracker
+
+Wallet answers "did this payment go through?" — it doesn't answer "how much did I spend on groceries this month?" Four structural gaps: history is fragmented per card and device rather than combined; detail depends on your bank's integration; cash, physical-card swipes, and transfers never appear at all; and there are no categories, budgets, or totals. Checking Wallet tells you about the last tap. It cannot tell you about your month.
+
+## Turn Apple Pay taps into a real spending record
+
+Since iOS 17, the Shortcuts app has a **Transaction** trigger that fires the moment a Wallet card is used — amount and merchant included. Point it at an expense tracker and every Apple Pay payment becomes a categorized entry the instant it happens.
+
+[Lumi](/) ships a ready-made Shortcut for exactly this: connect it once, and Apple Pay purchases import automatically — amount, merchant, timestamp, category suggested. No bank login, data stays on your device. For everything Apple Pay doesn't see (cash, transfers, split bills), voice input covers the gap: say "lunch twelve euros" and it's logged. Full setup in [how to track expenses with Siri Shortcuts](/blog/track-expenses-with-siri-shortcuts), and the wider comparison in [best apps to track Apple Pay spending](/blog/best-apps-to-track-apple-pay-spending-2026).
+
+<ArticleCTA />
+
+## FAQ
+
+### Can I see all my Apple Pay transactions in one list?
+
+Not natively. Wallet shows history per card, per device, with detail depending on your bank. The only combined views are your bank statements (per bank) or an expense tracker that captures each transaction as it happens via the Shortcuts Transaction trigger.
+
+### Why is a transaction missing from Wallet?
+
+Usual suspects: the card's bank doesn't share transaction data with Wallet, the payment was made on another device (Watch, iPad), or it was a physical card swipe rather than Apple Pay. The bank app will have it regardless.
+
+### Does Apple see what I buy with Apple Pay?
+
+Apple states that Apple Pay transactions aren't stored on Apple's servers in a way that's tied to you for marketing. Device-visible history is stored on your device and with your bank — one more reason the bank remains the authoritative record.

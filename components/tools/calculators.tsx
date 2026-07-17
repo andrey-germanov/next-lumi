@@ -485,6 +485,50 @@ function SubscriptionCost() {
   );
 }
 
+// ── Couple expense split ─────────────────────────────────────────────────────
+
+function CoupleSplit() {
+  const { t, fmt } = useCalc();
+  const [income1, setIncome1] = useState(3000);
+  const [income2, setIncome2] = useState(2000);
+  const [shared, setShared] = useState(1800);
+  const [prop, setProp] = useState(true);
+
+  const total = income1 + income2;
+  const ratio1 = prop ? (total > 0 ? income1 / total : 0.5) : 0.5;
+  const share1 = shared * ratio1;
+  const share2 = shared - share1;
+  const pct = (r: number) => `${Math.round(r * 100)}%`;
+
+  return (
+    <Layout
+      inputs={
+        <>
+          <Field label={t("calc.split.income1")} value={income1} onChange={setIncome1} />
+          <Field label={t("calc.split.income2")} value={income2} onChange={setIncome2} />
+          <Field label={t("calc.split.shared")} value={shared} onChange={setShared} />
+          <Segmented
+            options={[
+              { value: "prop", label: t("calc.split.modeProp") },
+              { value: "5050", label: t("calc.split.mode5050") },
+            ]}
+            value={prop ? "prop" : "5050"}
+            onChange={(v) => setProp(v === "prop")}
+          />
+        </>
+      }
+      results={
+        <>
+          <ResultHero label={`${t("calc.split.yourShare")} · ${pct(ratio1)}`} value={fmt(share1)} color="#FB7185" />
+          <ResultRow label={`${t("calc.split.partnerShare")} · ${pct(1 - ratio1)}`} value={fmt(share2)} />
+          <ResultRow label={t("calc.split.leftover1")} value={fmt(Math.max(income1 - share1, 0))} />
+          <ResultRow label={t("calc.split.leftover2")} value={fmt(Math.max(income2 - share2, 0))} />
+        </>
+      }
+    />
+  );
+}
+
 export const CALCULATORS: Record<string, React.ComponentType> = {
   "compound-interest-calculator": CompoundInterest,
   "50-30-20-budget-calculator": Budget,
@@ -493,4 +537,5 @@ export const CALCULATORS: Record<string, React.ComponentType> = {
   "debt-payoff-calculator": DebtPayoff,
   "fire-calculator": Fire,
   "subscription-cost-calculator": SubscriptionCost,
+  "couple-expense-split-calculator": CoupleSplit,
 };

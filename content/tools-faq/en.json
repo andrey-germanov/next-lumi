@@ -120,5 +120,19 @@
       "question": "How do I find subscriptions I forgot about?",
       "answer": "Check Apple ID subscriptions, Google Play, PayPal automatic payments, and three months of card statements, then search your email for 'renewal' and 'receipt'. Our guide on finding forgotten subscriptions walks through all six hiding places step by step."
     }
+  ],
+  "couple-expense-split-calculator": [
+    {
+      "question": "Should couples split expenses 50/50 or by income?",
+      "answer": "50/50 works when incomes are similar. When they differ, an income-proportional split puts the same percentage burden on both partners — if you earn 60% of the household income, you cover 60% of shared costs. Most financial advisors consider proportional the fairer default for unequal incomes."
+    },
+    {
+      "question": "Which expenses count as shared?",
+      "answer": "Typically rent or mortgage, utilities, groceries, household supplies, subscriptions you both use, and joint travel. Personal subscriptions, hobbies, and gifts stay personal. A short shared list is easier to keep honest than a long one — when in doubt, call it personal."
+    },
+    {
+      "question": "How do we track who actually spent what?",
+      "answer": "Each partner tracks their own spending, then you compare shared-category totals once a month. The system only works if logging is effortless — that's why apps with voice input and Apple Pay auto-import beat shared spreadsheets in practice. See our guide on budgeting as a couple with separate accounts."
+    }
   ]
 }
