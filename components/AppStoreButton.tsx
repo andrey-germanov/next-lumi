@@ -22,7 +22,7 @@ export default function AppStoreButton({
     "inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold transition-all duration-200 text-base";
   const variants = {
     primary:
-      "bg-primary hover:bg-primary-dark text-white shadow-lg shadow-primary/25 hover:shadow-primary/40",
+      "bg-primary !no-underline !text-[#fff] hover:bg-primary-dark text-white shadow-lg shadow-primary/25 hover:shadow-primary/40",
     secondary:
       "bg-transparent border-2 border-text text-text hover:bg-text hover:text-white",
   };

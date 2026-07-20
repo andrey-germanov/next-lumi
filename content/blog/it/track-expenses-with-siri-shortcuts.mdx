@@ -1,0 +1,58 @@
+---
+title: "Come monitorare le spese con Siri Shortcuts (guida passo passo, 2026)"
+description: "Crea un logger di spese a mani libere con Siri Shortcuts: registrazione vocale, automazione delle transazioni Apple Pay e Back Tap — con note oneste sui limiti."
+date: "2026-07-16"
+author: "Lumi Team"
+image: "/images/blog/track-expenses-with-siri-shortcuts.png"
+tags: ["siri shortcuts", "monitoraggio spese", "apple pay", "automazione", "budget su iphone", "registrare spese a voce"]
+---
+
+Siri Shortcuts può trasformare la registrazione delle spese da una scocciatura in qualcosa che succede quasi da solo. Ci sono due automazioni che vale la pena costruire: un logger attivato dalla voce per gli inserimenti manuali, e un trigger sulle transazioni che scatta automaticamente quando paghi con Apple Pay. Ecco come impostare entrambe, più i limiti onesti della strada fai-da-te.
+
+## Automazione 1: registra le spese quando paghi con Apple Pay
+
+Da iOS 17, l'app Comandi Rapidi ha un trigger **Transazione**: scatta nel momento in cui usi una carta in Wallet. Questo significa che i pagamenti contactless possono registrarsi da soli.
+
+1. Apri **Comandi Rapidi** e vai alla scheda **Automazione**.
+2. Tocca **+**, poi scegli **Transazione** dall'elenco dei trigger di automazione personale.
+3. Seleziona le carte che vuoi monitorare (le tue carte Apple Pay) e imposta l'automazione su **Esegui immediatamente**.
+4. Aggiungi un'azione che registri la spesa. Se la tua app di tracciamento espone azioni per Comandi Rapidi, scegli la sua azione "aggiungi spesa" e passa l'**Input del comando rapido** — contiene l'importo e l'esercente.
+5. Paga qualcosa con Apple Pay. La spesa compare senza che tu apra nulla.
+
+Se la tua app di tracciamento lo supporta in modo nativo, la configurazione richiede due minuti. Lumi, per esempio, include un comando rapido già pronto — lo colleghi una volta sola e gli acquisti con Apple Pay vengono importati automaticamente, già categorizzati.
+
+## Automazione 2: un logger di spese attivato dalla voce
+
+Per i contanti e tutto ciò che Apple Pay non vede, costruisci un logger "Hey Siri":
+
+1. In **Comandi Rapidi**, crea un nuovo comando e dagli un nome che diresti naturalmente — "Registra spesa".
+2. Aggiungi **Chiedi input** (Numero) per l'importo.
+3. Aggiungi un'azione **Scegli dal menu** per le tue categorie: spesa, trasporti, pasti fuori, altro.
+4. Aggiungi l'azione che scrive la voce — l'azione "aggiungi spesa" della tua app, oppure **Aggiungi a nota** / una riga di foglio di calcolo se monitori manualmente.
+5. Di' "Hey Siri, registra spesa". Siri chiede l'importo, poi la categoria, e scrive la voce.
+
+Trigger bonus: vai su **Impostazioni → Accessibilità → Tocco → Tocco posteriore** e assegna il tuo comando rapido al doppio tocco. Ora il retro del telefono è il pulsante di registrazione — niente sblocco, niente ricerca di icone.
+
+## I limiti onesti della strada fai-da-te
+
+Il dialogo di Comandi Rapidi è rigido. Siri fa una domanda per campo, in ordine; non puoi semplicemente dire "caffè cinque euro e un biglietto della metro" e aspettarti che ci pensi lui a sistemare le cose. I nomi degli esercenti non arrivano per gli inserimenti manuali, le categorie sono quelle del menu che hai costruito, e l'automazione ogni tanto va sistemata dopo gli aggiornamenti di iOS. È una soluzione solida per le persone metodiche a cui piace costruire cose.
+
+Se preferisci saltare il montaggio, è questo il caso per un'app con input vocale IA nativo — una frase, scomposta in importo, esercente e categoria, in qualsiasi formulazione e in più lingue. Abbiamo confrontato gli approcci in [le migliori app di tracciamento spese a voce nel 2026](/blog/best-voice-expense-tracker-apps-2026), e la configurazione più ampia senza tastiera si trova in [come registrare le spese a voce su iPhone](/blog/how-to-log-expenses-without-typing).
+
+Da qualunque parte arrivino le voci, devono alimentare un piano. Se non ne hai ancora uno, la [calcolatrice di budget 50/30/20](/tools/50-30-20-budget-calculator) è un punto di partenza da due minuti.
+
+<ArticleCTA />
+
+## FAQ
+
+### Comandi Rapidi può leggere il mio conto bancario?
+
+No — ed è un vantaggio. Il trigger Transazione vede l'attività di Wallet direttamente sul dispositivo; niente ti obbliga a consegnare le tue credenziali bancarie a un servizio terzo. Ottieni l'automazione senza il compromesso sulla privacy.
+
+### Il trigger Transazione cattura ogni acquisto?
+
+Scatta per le carte usate tramite Apple Pay e Wallet. Le carte fisiche strisciate, i contanti e i bonifici non lo attivano — ed è esattamente per questo che serve il logger vocale (o un'app con input vocale).
+
+### La mia app di tracciamento non ha azioni per Comandi Rapidi. Quali sono le mie opzioni?
+
+Puoi registrare in un file di Note o in un foglio di calcolo come casella temporanea e reinserire dopo — oppure passare a un'app con automazione nativa. [Lumi](/) copre entrambe le automazioni già pronte all'uso: importazione automatica di Apple Pay più input vocale IA, nessun accesso bancario richiesto, gratis per iniziare.
