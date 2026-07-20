@@ -17,20 +17,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   try {
     const post = getPostBySlug(slug);
+    // `absolute` bypasses the root layout's "%s | Lumi" template, which would
+    // otherwise add 7 characters to every blog title and push it past the
+    // ~70-character limit search engines truncate at.
+    const metaTitle = post.seoTitle ?? post.title;
     return {
-      title: post.title,
+      title: { absolute: metaTitle },
       description: post.description,
       authors: [{ name: post.author }],
       openGraph: {
         type: "article",
-        title: post.title,
+        title: metaTitle,
         description: post.description,
         publishedTime: post.date,
         authors: [post.author],
       },
       twitter: {
         card: "summary_large_image",
-        title: post.title,
+        title: metaTitle,
         description: post.description,
       },
       alternates: {

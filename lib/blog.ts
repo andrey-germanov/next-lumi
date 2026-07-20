@@ -8,6 +8,12 @@ const BLOG_DIR = path.join(process.cwd(), "content/blog");
 export interface BlogPost {
   slug: string;
   title: string;
+  /**
+   * Optional frontmatter `seoTitle:` — used for the <title> tag and og/twitter
+   * titles when the editorial `title` (the on-page H1) exceeds ~70 characters.
+   * Falls back to `title` when absent.
+   */
+  seoTitle?: string;
   description: string;
   date: string;
   /** Optional frontmatter `updated:` — last substantive edit, used for sitemap + dateModified. */
@@ -45,6 +51,7 @@ export function getPostBySlug(slug: string, locale?: string): BlogPost {
   return {
     slug,
     title: data.title,
+    seoTitle: data.seoTitle,
     description: data.description,
     date: data.date,
     updated: data.updated,

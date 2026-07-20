@@ -14,12 +14,13 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[sl
   try {
     const post = getPostBySlug(slug, locale);
     const url = `${SITE_URL}/${locale}/blog/${slug}`;
+    const metaTitle = post.seoTitle ?? post.title;
     return {
-      title: { absolute: post.title },
+      title: { absolute: metaTitle },
       description: post.description,
       authors: [{ name: post.author }],
-      openGraph: { type: "article", title: post.title, description: post.description, publishedTime: post.date, authors: [post.author], url, locale },
-      twitter: { card: "summary_large_image", title: post.title, description: post.description },
+      openGraph: { type: "article", title: metaTitle, description: post.description, publishedTime: post.date, authors: [post.author], url, locale },
+      twitter: { card: "summary_large_image", title: metaTitle, description: post.description },
       alternates: {
         canonical: url,
         languages: pageLanguagesMap(SITE_URL, `blog/${slug}`),
