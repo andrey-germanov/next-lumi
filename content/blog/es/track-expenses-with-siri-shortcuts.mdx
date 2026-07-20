@@ -1,0 +1,59 @@
+---
+title: "Cómo hacer seguimiento de gastos con Atajos de Siri (paso a paso, 2026)"
+seoTitle: "Seguimiento de gastos con Atajos de Siri (2026)"
+description: "Crea un registrador de gastos manos libres con Atajos de Siri: registro por voz, transacciones automáticas de Apple Pay y Back Tap."
+date: "2026-07-16"
+author: "Lumi Team"
+image: "/images/blog/track-expenses-with-siri-shortcuts.png"
+tags: ["atajos de siri", "seguimiento de gastos", "apple pay", "automatización", "presupuesto en iphone", "registrar gastos por voz"]
+---
+
+Los Atajos de Siri pueden convertir el registro de gastos de una tarea pesada en algo que ocurre casi solo. Hay dos automatizaciones que merece la pena montar: un registrador activado por voz para las entradas manuales, y un disparador de transacciones que se activa automáticamente cuando pagas con Apple Pay. Aquí tienes cómo configurar las dos, más los límites honestos de la vía DIY.
+
+## Automatización 1: registra gastos cuando pagas con Apple Pay
+
+Desde iOS 17, la app Atajos tiene un disparador de **Transacción**: se activa en el momento en que se usa una tarjeta de Wallet. Eso significa que los pagos sin contacto pueden registrarse solos.
+
+1. Abre **Atajos** y ve a la pestaña **Automatización**.
+2. Toca **+**, y elige **Transacción** de la lista de disparadores de automatización personal.
+3. Selecciona las tarjetas que quieres seguir (tus tarjetas de Apple Pay), y configura la automatización para que se **ejecute inmediatamente**.
+4. Añade una acción que registre el gasto. Si tu registrador de gastos expone acciones de Atajos, elige su acción de "añadir gasto" y pásale la **entrada del atajo** — contiene el importe y el comercio.
+5. Paga algo con Apple Pay. El gasto aparece sin que abras nada.
+
+Si tu registrador de gastos admite esto de forma nativa, la configuración tarda dos minutos. Lumi, por ejemplo, incluye un Atajo ya preparado — lo conectas una vez y las compras con Apple Pay se importan automáticamente, ya categorizadas.
+
+## Automatización 2: un registrador de gastos activado por voz
+
+Para el efectivo y todo lo que Apple Pay no ve, monta un registrador de "Oye, Siri":
+
+1. En **Atajos**, crea un nuevo atajo y ponle un nombre que dirías de forma natural — "Registrar gasto".
+2. Añade **Pedir entrada** (Número) para el importe.
+3. Añade una acción de **Elegir del menú** para tus categorías: compra, transporte, salir a comer, otros.
+4. Añade la acción que escribe la entrada — la acción de "añadir gasto" de tu registrador, o **Añadir a Notas** / una fila de hoja de cálculo si haces el seguimiento a mano.
+5. Di "Oye Siri, registrar gasto". Siri pregunta el importe, después la categoría, y escribe la entrada.
+
+Truco extra: ve a **Ajustes → Accesibilidad → Tacto → Tocar dos veces la parte trasera** y asigna tu atajo a un doble toque. Ahora la parte trasera de tu móvil es el botón de registro — sin desbloquear, sin buscar el icono.
+
+## Los límites honestos de la vía DIY
+
+El diálogo de Atajos es rígido. Siri pregunta un campo cada vez, en orden; no puedes simplemente decir "café cinco euros y un billete de metro" y que lo organice todo. Los nombres de comercio no llegan en las entradas manuales, las categorías son las del menú que tú construiste, y la automatización a veces necesita reparación después de las actualizaciones de iOS. Es una solución sólida para gente organizada a la que le gusta construir cosas.
+
+Si prefieres saltarte el montaje, ese es el argumento a favor de un registrador con entrada de voz nativa con IA — una sola frase, interpretada en importe, comercio y categoría, con cualquier formulación y en varios idiomas. Comparamos los enfoques en [las mejores apps de seguimiento de gastos por voz en 2026](/blog/best-voice-expense-tracker-apps-2026), y la configuración completa sin teclado vive en [cómo registrar gastos por voz en el iPhone](/blog/how-to-log-expenses-without-typing).
+
+Vengan de donde vengan las entradas, deben alimentar un plan. Si todavía no tienes uno, la [calculadora de presupuesto 50/30/20](/tools/50-30-20-budget-calculator) es un punto de partida de dos minutos.
+
+<ArticleCTA />
+
+## Preguntas frecuentes
+
+### ¿Pueden los Atajos leer mi cuenta bancaria?
+
+No — y eso es una ventaja. El disparador de Transacción ve la actividad de Wallet en el propio dispositivo; nada exige entregar tus credenciales bancarias a un servicio externo. Consigues automatización sin el sacrificio de privacidad.
+
+### ¿El disparador de Transacción capta todas las compras?
+
+Se activa para las tarjetas usadas a través de Apple Pay y Wallet. Los cobros con tarjeta física, el efectivo y las transferencias bancarias no lo activan — exactamente para eso sirve el registrador por voz (o una app con entrada de voz).
+
+### Mi registrador de gastos no tiene acciones de Atajos. ¿Qué opciones tengo?
+
+Puedes registrar en un archivo de Notas o una hoja de cálculo como bandeja de entrada y volver a introducirlo más tarde — o cambiar a un registrador con automatización nativa. [Lumi](/) cubre ambas automatizaciones de fábrica: importación automática de Apple Pay más entrada de voz con IA, sin acceso bancario, gratis para empezar.
