@@ -54,6 +54,24 @@ export function pageLanguagesMap(siteUrl: string, path = ""): Record<string, str
   return map;
 }
 
+/**
+ * hreflang map for a blog post, restricted to locales that actually have a
+ * translation. `availableLocales` comes from `translatedLocales(slug)`.
+ *
+ * Unlike `pageLanguagesMap`, this never claims a localized version exists just
+ * because the route resolves — the route falls back to English content, and
+ * advertising that as a translation is what produces duplicate content.
+ */
+export function postLanguagesMap(siteUrl: string, slug: string, availableLocales: string[]): Record<string, string> {
+  const enUrl = `${siteUrl}/blog/${slug}`;
+  const map: Record<string, string> = { "x-default": enUrl, en: enUrl };
+  for (const code of availableLocales) {
+    if (code === "en") continue;
+    map[code] = `${siteUrl}/${code}/blog/${slug}`;
+  }
+  return map;
+}
+
 /** hreflang map for the landing (kept for existing callers). */
 export function landingLanguagesMap(siteUrl: string): Record<string, string> {
   return pageLanguagesMap(siteUrl, "");

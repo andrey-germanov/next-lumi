@@ -21,10 +21,26 @@ function makeCta(label: string) {
   };
 }
 
+/**
+ * Keeps readers inside their language. MDX bodies author internal links
+ * unprefixed (`/blog/how-to-budget`) so the same source works for every locale;
+ * without this override a reader on /de/blog/x clicks through to English.
+ * External links, anchors, and mailto are left alone.
+ */
+function makeAnchor(locale: Locale) {
+  return function MdxAnchor({ href = "", ...props }: React.ComponentPropsWithoutRef<"a">) {
+    const isInternal = href.startsWith("/") && !href.startsWith("//");
+    if (!isInternal) return <a href={href} {...props} />;
+    const prefixed = locale === "en" ? href : `${localePath(locale)}${href}`;
+    return <Link href={prefixed} {...props} />;
+  };
+}
+
 export default function BlogPostBody({ post, locale }: { post: BlogPost; locale: Locale }) {
   const t = (k: string) => translate(locale, k);
   const intl = INTL_LOCALE[locale];
   const ArticleCTA = makeCta(t("blog.cta"));
+  const a = makeAnchor(locale);
   const blogHref = locale === "en" ? "/blog" : `${localePath(locale)}/blog`;
   const canonicalPath = locale === "en" ? `/blog/${post.slug}` : `${localePath(locale)}/blog/${post.slug}`;
 
@@ -87,7 +103,7 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
           <div className="prose mt-12">
             <MDXRemote
               source={post.content}
-              components={{ ArticleCTA }}
+              components={{ ArticleCTA, a }}
               options={{
                 mdxOptions: {
                   remarkPlugins: [remarkGfm],

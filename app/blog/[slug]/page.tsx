@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostBody from "@/components/BlogPostBody";
-import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import { getPostBySlug, getAllSlugs, translatedLocales } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
-import { pageLanguagesMap } from "@/lib/i18n";
+import { postLanguagesMap } from "@/lib/i18n";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
       alternates: {
         canonical: `${SITE_URL}/blog/${slug}`,
-        languages: pageLanguagesMap(SITE_URL, `blog/${slug}`),
+        languages: postLanguagesMap(SITE_URL, slug, translatedLocales(slug)),
       },
     };
   } catch {

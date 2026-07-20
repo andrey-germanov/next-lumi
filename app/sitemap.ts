@@ -1,20 +1,24 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, hasTranslation } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
-import { PREFIXED_LOCALES, landingLanguagesMap, pageLanguagesMap } from "@/lib/i18n";
+import { PREFIXED_LOCALES, landingLanguagesMap, pageLanguagesMap, postLanguagesMap } from "@/lib/i18n";
 import { TOOL_SLUGS } from "@/lib/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs();
   const blogEntries = blogSlugs.flatMap((slug) => {
-    const langs = pageLanguagesMap(SITE_URL, `blog/${slug}`);
+    // Only locales with a real translation file. A missing translation still
+    // renders (English fallback), but listing it here — and in hreflang — would
+    // advertise English content as localized.
+    const localesWithTranslation = PREFIXED_LOCALES.filter((locale) => hasTranslation(slug, locale));
+    const langs = postLanguagesMap(SITE_URL, slug, localesWithTranslation);
     // Real dates from frontmatter (`updated` falls back to `date`) — fake
     // lastModified on every build erodes Google's trust in the sitemap.
     const post = getPostBySlug(slug);
     const lastModified = new Date(post.updated ?? post.date);
     return [
       { url: `${SITE_URL}/blog/${slug}`, lastModified, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: langs } },
-      ...PREFIXED_LOCALES.map((locale) => ({
+      ...localesWithTranslation.map((locale) => ({
         url: `${SITE_URL}/${locale}/blog/${slug}`,
         lastModified,
         changeFrequency: "monthly" as const,

@@ -42,6 +42,43 @@ function resolvePostPath(slug: string, locale?: string): string {
   return path.join(BLOG_DIR, `${slug}.mdx`);
 }
 
+/**
+ * Slugs that have a real translation file, per locale. Built once at module
+ * load — the content directory does not change at runtime.
+ */
+const translatedSlugs: Map<string, Set<string>> = (() => {
+  const map = new Map<string, Set<string>>();
+  for (const entry of fs.readdirSync(BLOG_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const slugs = fs
+      .readdirSync(path.join(BLOG_DIR, entry.name))
+      .filter((f) => f.endsWith(".mdx"))
+      .map((f) => f.replace(/\.mdx$/, ""));
+    map.set(entry.name, new Set(slugs));
+  }
+  return map;
+})();
+
+/**
+ * True when `slug` has an actual translation for `locale`.
+ *
+ * `getPostBySlug` falls back to the English file when a translation is missing,
+ * which is fine for rendering but must NOT be treated as a localized page: the
+ * sitemap, hreflang, and canonical all need to know the difference, otherwise
+ * we advertise English content as if it were localized.
+ */
+export function hasTranslation(slug: string, locale?: string): boolean {
+  if (!locale || locale === "en") return true;
+  return translatedSlugs.get(locale)?.has(slug) ?? false;
+}
+
+/** Locales (excluding "en") that have a real translation of `slug`. */
+export function translatedLocales(slug: string): string[] {
+  return [...translatedSlugs.entries()]
+    .filter(([, slugs]) => slugs.has(slug))
+    .map(([locale]) => locale);
+}
+
 export function getPostBySlug(slug: string, locale?: string): BlogPost {
   const filePath = resolvePostPath(slug, locale);
   const fileContent = fs.readFileSync(filePath, "utf-8");
