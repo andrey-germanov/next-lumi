@@ -134,5 +134,239 @@
       "question": "Wie verfolgen wir, wer wirklich was ausgegeben hat?",
       "answer": "Jeder Partner verfolgt die eigenen Ausgaben, und einmal im Monat vergleicht ihr die Summen der gemeinsamen Kategorien. Das System funktioniert nur, wenn Erfassen mühelos ist — deshalb schlagen Apps mit Spracheingabe und Apple-Pay-Auto-Import in der Praxis gemeinsame Tabellen. Siehe unseren Leitfaden zum Budgetieren als Paar mit getrennten Konten."
     }
+  ],
+  "loan-calculator": [
+    {
+      "question": "Wie wird meine monatliche Kreditrate berechnet?",
+      "answer": "Es gilt die Standard-Annuitätenformel: Rate = P·r / (1 − (1 + r)^−n), wobei P der Kreditbetrag, r der monatliche Zinssatz (Jahreszins ÷ 12) und n die Anzahl der Monate ist. Jede Rate deckt zuerst die Monatszinsen, der Rest tilgt den Saldo."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Zinssatz und effektivem Jahreszins?",
+      "answer": "Der Zinssatz sind die Kosten für das geliehene Kapital. Der effektive Jahreszins berücksichtigt zusätzlich bestimmte Gebühren, ist daher meist etwas höher und besser zum Vergleichen von Angeboten geeignet."
+    },
+    {
+      "question": "Hilft es, mehr als die Monatsrate zu zahlen?",
+      "answer": "Ja. Jeder Betrag über der geplanten Rate fließt direkt in die Tilgung, senkt den Saldo schneller und reduziert die Gesamtzinsen über die Laufzeit."
+    },
+    {
+      "question": "Ist der Kreditrechner kostenlos?",
+      "answer": "Ja, er ist völlig kostenlos und eignet sich für Privatkredite und die meisten Ratenkredite mit festem Zinssatz. Es wird nichts gespeichert, keine Anmeldung nötig."
+    }
+  ],
+  "monthly-budget-calculator": [
+    {
+      "question": "Wie erstelle ich ein Monatsbudget?",
+      "answer": "Beginne mit deinem Nettoeinkommen und liste dann feste und variable Ausgaben auf — Wohnen, Essen, Transport und den Rest. Ziehe die Ausgaben vom Einkommen ab, um zu sehen, was übrig bleibt. Halte den Überschuss positiv und lege ihn zur Seite."
+    },
+    {
+      "question": "Was ist eine gute Sparquote?",
+      "answer": "Viele Ratgeber empfehlen, mindestens 20% des Nettoeinkommens zu sparen, aber jeder positive Wert ist ein Fortschritt. Der Rechner zeigt deine Quote in Prozent, damit du ein Ziel setzen und verfolgen kannst."
+    },
+    {
+      "question": "Was, wenn meine Ausgaben höher sind als mein Einkommen?",
+      "answer": "Ein negatives Ergebnis bedeutet, dass du mehr ausgibst, als du hast. Sieh dir zuerst die größten Kategorien an — meist Wohnen und Essen — kürze variable Ausgaben oder erhöhe dein Einkommen, bis der Wert positiv wird."
+    },
+    {
+      "question": "Wie hilft mir Lumi, das Budget einzuhalten?",
+      "answer": "Lumi erfasst jede Ausgabe in Sekunden per Sprache, Back Tap oder Apple Pay und prognostiziert deinen Monatsendsaldo, sodass deine realen Ausgaben im Plan bleiben."
+    }
+  ],
+  "salary-calculator": [
+    {
+      "question": "Wie rechne ich Stundenlohn in ein Jahresgehalt um?",
+      "answer": "Multipliziere den Stundenlohn mit den Wochenstunden und dann mit 52 Wochen. Beispiel: 25 pro Stunde bei 40 Stunden/Woche = 25 × 40 × 52 = 52.000 pro Jahr. Monats- und Wochenwerte sind dieser Jahreswert geteilt durch 12 oder 52."
+    },
+    {
+      "question": "Wie viele Arbeitsstunden hat ein Jahr?",
+      "answer": "Eine gängige Annahme: 40 Stunden/Woche × 52 Wochen = 2.080 Stunden pro Jahr. Der Rechner lässt dich die Wochenstunden ändern, damit Teilzeit oder Überstunden korrekt bleiben."
+    },
+    {
+      "question": "Ist das brutto oder netto?",
+      "answer": "Diese Werte sind brutto, also vor Steuern und Abzügen. Dein Nettobetrag ist niedriger und hängt von Land, Region und deiner Steuersituation ab."
+    },
+    {
+      "question": "Kann ich ein Monatsgehalt in einen Stundenlohn umrechnen?",
+      "answer": "Ja. Gib den Betrag ein, wähle als Zeitraum „Monat“ und setze deine Wochenstunden — der Rechner zeigt sofort den entsprechenden Stunden-, Wochen- und Jahreslohn."
+    }
+  ],
+  "inflation-calculator": [
+    {
+      "question": "Wie wirkt sich Inflation auf den Geldwert aus?",
+      "answer": "Inflation lässt die Preise mit der Zeit steigen, sodass derselbe Betrag weniger kauft. Bei durchschnittlich 3% pro Jahr kostet etwas, das heute 100 kostet, in zehn Jahren rund 134, und 100 ungenutzt haben dann etwa die Kaufkraft von 74."
+    },
+    {
+      "question": "Wie wird der künftige Preis berechnet?",
+      "answer": "Der Betrag wird pro Jahr mit der Inflationsrate aufgezinst: künftige Kosten = Betrag × (1 + Rate)^Jahre. Die Kaufkraft ist der Kehrwert: Betrag ÷ (1 + Rate)^Jahre."
+    },
+    {
+      "question": "Welche Inflationsrate soll ich verwenden?",
+      "answer": "Viele langfristige Pläne nutzen 2–3%, nahe dem Ziel der meisten Zentralbanken. Für einen bestimmten Zeitraum kannst du die tatsächliche Durchschnittsrate eingeben, die du erwartest oder beobachtet hast."
+    },
+    {
+      "question": "Warum ist es wichtig, die Inflation zu schlagen?",
+      "answer": "Wenn deine Ersparnisse langsamer wachsen als die Inflation, verlierst du Kaufkraft, selbst wenn der Saldo steigt. Deshalb wird Geld oft investiert statt auf einem zinslosen Konto gehalten."
+    }
+  ],
+  "discount-calculator": [
+    {
+      "question": "Wie berechne ich einen prozentualen Rabatt?",
+      "answer": "Multipliziere den Ursprungspreis mit dem Rabattprozentsatz, um die Ersparnis zu erhalten, und ziehe sie vom Preis ab. 25% Rabatt auf 120 sparen 30, du zahlst also 90."
+    },
+    {
+      "question": "Wie ermittle ich schnell den Aktionspreis?",
+      "answer": "Aktionspreis = Ursprungspreis × (1 − Rabatt ÷ 100). Bei 25% ist das Preis × 0,75. Der Rechner macht das sofort und zeigt auch den genauen Sparbetrag."
+    },
+    {
+      "question": "Kann ich zwei Rabatte addieren?",
+      "answer": "Gestaffelte Rabatte gelten nacheinander, nicht addiert. 20% und dann 10% sind nicht 30%, sondern 0,8 × 0,9 = 0,72, also 28% vom Ursprungspreis. Wende jeden Rabatt der Reihe nach an."
+    },
+    {
+      "question": "Ist die Umsatzsteuer enthalten?",
+      "answer": "Nein — hier steht der Aktionspreis vor Steuer. Nutze den Umsatzsteuer- oder Mehrwertsteuerrechner, um die Steuer auf den reduzierten Betrag zu addieren und den Endpreis an der Kasse zu erhalten."
+    }
+  ],
+  "vat-calculator": [
+    {
+      "question": "Wie füge ich Mehrwertsteuer zu einem Preis hinzu?",
+      "answer": "Multipliziere den Nettopreis mit dem MwSt.-Satz, um die Steuer zu erhalten, und addiere sie. Bei 20% MwSt. ergibt ein Nettopreis von 100 eine MwSt. von 20 und einen Bruttopreis von 120."
+    },
+    {
+      "question": "Wie rechne ich die MwSt. aus einem Bruttopreis heraus?",
+      "answer": "Teile den Bruttopreis durch 1 plus den Satz. Bei 20% MwSt. ergibt Brutto ÷ 1,20 den Nettopreis, und die Differenz ist die enthaltene MwSt. Ein Bruttopreis von 120 sind 100 netto + 20 MwSt."
+    },
+    {
+      "question": "Welchen MwSt.-Satz soll ich verwenden?",
+      "answer": "Er hängt von Land und Produkt ab — die Standardsätze in Europa liegen meist zwischen 17% und 27%, für manche Waren gibt es ermäßigte Sätze. Gib den Satz ein, der für deinen Kauf oder deine Region gilt."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen MwSt. und Verkaufssteuer?",
+      "answer": "Die MwSt. wird auf jeder Produktionsstufe erhoben und ist meist im Preis enthalten — üblich in Europa und vielen Regionen. Die Verkaufssteuer wird einmal an der Kasse addiert und ist typisch für die USA. Nutze den passenden Rechner für deine Region."
+    }
+  ],
+  "sales-tax-calculator": [
+    {
+      "question": "Wie berechne ich die Verkaufssteuer auf einen Einkauf?",
+      "answer": "Multipliziere den Preis vor Steuer mit dem Steuersatz als Dezimalzahl. Bei 8% hat ein Artikel für 100 eine Steuer von 8 und einen Gesamtbetrag von 108."
+    },
+    {
+      "question": "Ist die Verkaufssteuer überall gleich?",
+      "answer": "Nein. In den USA hängt sie von Bundesstaat, Bezirk und Stadt ab, sodass die kombinierten Sätze von Ort zu Ort variieren. Gib deinen kombinierten lokalen Satz für einen genauen Gesamtbetrag ein."
+    },
+    {
+      "question": "Wie ermittle ich den Preis vor Steuer?",
+      "answer": "Teile den Gesamtbetrag durch 1 plus den Steuersatz. Ein Gesamtbetrag von 108 bei 8% Steuer sind 108 ÷ 1,08 = 100 vor Steuer."
+    },
+    {
+      "question": "Gilt die Verkaufssteuer für jeden Artikel?",
+      "answer": "Nicht immer — mancherorts sind Lebensmittel, Medikamente oder Kleidung befreit oder werden ermäßigt besteuert. Prüfe die lokalen Regeln für den jeweiligen Artikel."
+    }
+  ],
+  "simple-interest-calculator": [
+    {
+      "question": "Was sind einfache Zinsen?",
+      "answer": "Einfache Zinsen werden nur auf das ursprüngliche Kapital berechnet, nicht auf bereits erhaltene Zinsen. Die Formel lautet Zinsen = Kapital × Satz × Zeit, sodass die Summe linear und nicht beschleunigt wächst."
+    },
+    {
+      "question": "Wie unterscheiden sich einfache von Zinseszinsen?",
+      "answer": "Einfache Zinsen ignorieren zuvor erhaltene Zinsen, während Zinseszinsen sie dem Saldo hinzufügen, sodass künftige Zinsen höher sind. Über lange Zeiträume ergibt der Zinseszins ein deutlich höheres Ergebnis."
+    },
+    {
+      "question": "Wann werden einfache Zinsen verwendet?",
+      "answer": "Sie kommen bei manchen kurzfristigen Krediten, Autokrediten und bestimmten Anleihen oder Einlagen vor. Viele alltägliche Spar- und Anlageformen nutzen stattdessen Zinseszins."
+    },
+    {
+      "question": "Wie berechne ich den Gesamtwert?",
+      "answer": "Addiere die Zinsen zum Kapital: Gesamt = Kapital + (Kapital × Satz × Zeit). Der Rechner zeigt sowohl die erzielten Zinsen als auch den Endbetrag."
+    }
+  ],
+  "auto-loan-calculator": [
+    {
+      "question": "Wie wird die Autokreditrate berechnet?",
+      "answer": "Der finanzierte Betrag — Fahrzeugpreis minus Anzahlung und Inzahlungnahme — wird über die Laufzeit zu deinem Zinssatz getilgt. Der Rechner liefert die Monatsrate und die Gesamtzinsen."
+    },
+    {
+      "question": "Wie verändert eine Anzahlung die Rate?",
+      "answer": "Eine höhere Anzahlung senkt den finanzierten Betrag, was Monatsrate und Gesamtzinsen reduziert und dir zu einem besseren Zinssatz verhelfen kann."
+    },
+    {
+      "question": "Sollte ich eine längere Laufzeit wählen?",
+      "answer": "Eine längere Laufzeit senkt die Monatsrate, erhöht aber die Gesamtzinsen und kann dazu führen, dass du mehr schuldest, als das Auto wert ist. Eine kürzere Laufzeit kostet monatlich mehr, insgesamt aber weniger."
+    },
+    {
+      "question": "Sind Steuern und Gebühren enthalten?",
+      "answer": "Nein — gerechnet wird mit dem eingegebenen finanzierten Betrag. Füge Steuern, Zulassung und Händlergebühren zuerst zum Fahrzeugpreis hinzu, wenn du sie mitfinanzieren willst."
+    }
+  ],
+  "rent-affordability-calculator": [
+    {
+      "question": "Wie viel meines Einkommens sollte für Miete draufgehen?",
+      "answer": "Eine weit verbreitete Faustregel sind etwa 30% des monatlichen Bruttoeinkommens, wobei 25% komfortabler und bis zu 35% ambitioniert sind. Der Rechner zeigt alle drei, damit du die passende Variante wählst."
+    },
+    {
+      "question": "Basiert die 30%-Regel auf Brutto oder Netto?",
+      "answer": "Die klassische Regel nutzt das Bruttoeinkommen (vor Steuern). Sind Steuern oder andere Schulden hoch, ergibt die Rechnung mit dem Nettolohn eine realistischere und meist niedrigere Zahl."
+    },
+    {
+      "question": "Was sollte ich neben der Miete noch einplanen?",
+      "answer": "Berücksichtige Nebenkosten, Hausratversicherung, Internet, den Arbeitsweg und die Kaution. Das summiert sich, daher lässt eine Miete unter dem Maximum Spielraum für den Rest."
+    },
+    {
+      "question": "Wie behalte ich Miete und andere Ausgaben im Blick?",
+      "answer": "Mit Lumi erfasst du Miete und jede andere Ausgabe in Sekunden und siehst eine Prognose deines Monatsendsaldos, sodass klar wird, ob die Wohnkosten wirklich ins Budget passen."
+    }
+  ],
+  "debt-consolidation-calculator": [
+    {
+      "question": "Was ist eine Schuldenkonsolidierung?",
+      "answer": "Sie fasst mehrere Schulden zu einem Kredit zusammen, idealerweise zu einem niedrigeren Zinssatz. Du zahlst eine einzige Monatsrate, was das Budget vereinfacht und die Gesamtzinsen senken kann."
+    },
+    {
+      "question": "Wie viel kann mir eine Konsolidierung sparen?",
+      "answer": "Das hängt vom Abstand zwischen deinem aktuellen und dem neuen Zinssatz sowie von der neuen Laufzeit ab. Der Rechner vergleicht die Zinsen deiner aktuellen Schulden mit einem Konsolidierungskredit und zeigt die geschätzte Ersparnis."
+    },
+    {
+      "question": "Bedeutet eine niedrigere Rate immer Ersparnis?",
+      "answer": "Nicht unbedingt. Eine längere Laufzeit senkt die Monatsrate, erhöht aber die Gesamtzinsen. Vergleiche die Gesamtzinsen, nicht nur die Rate."
+    },
+    {
+      "question": "Wann lohnt sich eine Konsolidierung nicht?",
+      "answer": "Wenn der neue Zinssatz nicht deutlich niedriger ist oder Gebühren die Ersparnis aufzehren, kann die Konsolidierung teurer werden. Sie hilft nur, wenn du die alten Salden nicht wieder auflädst."
+    }
+  ],
+  "retirement-calculator": [
+    {
+      "question": "Wie viel habe ich bis zur Rente gespart?",
+      "answer": "Der Rechner verzinst deine aktuellen Ersparnisse plus monatliche Beiträge mit deiner erwarteten Rendite bis zum Renteneintrittsalter. Kleine Monatsbeträge wachsen dank jahrzehntelangem Zinseszins erheblich."
+    },
+    {
+      "question": "Was ist die 4%-Regel?",
+      "answer": "Eine Faustregel, nach der du im ersten Jahr etwa 4% deiner Altersvorsorge entnehmen kannst, danach inflationsangepasst, mit guter Chance, dass das Geld rund 30 Jahre reicht. Der Rechner schätzt damit dein Monatseinkommen."
+    },
+    {
+      "question": "Welche Rendite soll ich annehmen?",
+      "answer": "Langfristige Prognosen nutzen für ein diversifiziertes Portfolio oft vorsichtige 5–7% vor Inflation. Niedrigere Annahmen ergeben eine sicherere, vorsichtigere Schätzung."
+    },
+    {
+      "question": "Ist ein früher Start wirklich so wichtig?",
+      "answer": "Ja — durch den Zinseszins können Beiträge Anfang zwanzig weit stärker wachsen als dieselben Beträge später. Früh anzufangen ist meist wirkungsvoller als später größere Summen zu sparen."
+    }
+  ],
+  "roi-calculator": [
+    {
+      "question": "Wie berechne ich die Kapitalrendite?",
+      "answer": "ROI = (Endwert − investierter Betrag) ÷ investierter Betrag × 100. Wenn du 10.000 investierst und sie auf 13.500 wachsen, beträgt dein ROI 35%."
+    },
+    {
+      "question": "Was ist die annualisierte Rendite?",
+      "answer": "Die annualisierte Rendite verteilt den Gesamtgewinn gleichmäßig auf die Haltejahre: (Endwert ÷ investiert)^(1/Jahre) − 1. So lassen sich Investitionen unterschiedlicher Dauer fair vergleichen."
+    },
+    {
+      "question": "Ist ein höherer ROI immer besser?",
+      "answer": "Für sich genommen nicht: Ein hoher ROI über viele Jahre kann schlechter sein als ein moderater über kurze Zeit. Sieh dir die annualisierte Rendite an und berücksichtige das eingegangene Risiko."
+    },
+    {
+      "question": "Berücksichtigt der ROI Gebühren und Steuern?",
+      "answer": "Die einfache Berechnung nicht. Für ein realistisches Bild nimm den Betrag nach Gebühren und Steuern als Endwert, damit der ROI zeigt, was dir tatsächlich bleibt."
+    }
   ]
 }

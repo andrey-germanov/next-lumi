@@ -134,5 +134,239 @@
       "question": "How do we track who actually spent what?",
       "answer": "Each partner tracks their own spending, then you compare shared-category totals once a month. The system only works if logging is effortless — that's why apps with voice input and Apple Pay auto-import beat shared spreadsheets in practice. See our guide on budgeting as a couple with separate accounts."
     }
+  ],
+  "loan-calculator": [
+    {
+      "question": "How is my monthly loan payment calculated?",
+      "answer": "It uses the standard amortization formula: payment = P·r / (1 − (1 + r)^−n), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12), and n is the number of months. Each payment covers that month's interest first, and the rest reduces the balance."
+    },
+    {
+      "question": "What's the difference between the interest rate and APR?",
+      "answer": "The interest rate is the cost of borrowing the principal. APR (annual percentage rate) also folds in certain fees, so it's usually slightly higher and is a better number for comparing loan offers side by side."
+    },
+    {
+      "question": "Does paying more than the monthly payment help?",
+      "answer": "Yes. Any amount above the scheduled payment goes straight to the principal, which shrinks the balance faster and cuts the total interest you pay over the life of the loan."
+    },
+    {
+      "question": "Is this loan calculator free to use?",
+      "answer": "Yes, it's completely free and works for personal loans, fixed-rate loans, and most instalment loans. Nothing is stored and no sign-up is needed."
+    }
+  ],
+  "monthly-budget-calculator": [
+    {
+      "question": "How do I make a monthly budget?",
+      "answer": "Start with your take-home income, then list your fixed and variable expenses — housing, food, transport, and everything else. Subtract expenses from income to see what's left. Aim to keep a positive gap and direct it to savings."
+    },
+    {
+      "question": "What is a good savings rate?",
+      "answer": "Many planners suggest saving at least 20% of after-tax income, but any positive rate is progress. The calculator shows your rate as a percentage so you can set a target and track it month to month."
+    },
+    {
+      "question": "What if my expenses are higher than my income?",
+      "answer": "A negative result means you're overspending. Look at the largest categories first — usually housing and food — and trim variable spending, or find ways to raise income until the gap turns positive."
+    },
+    {
+      "question": "How can Lumi help me stick to this budget?",
+      "answer": "Lumi tracks every expense in seconds by voice, Back Tap, or Apple Pay and forecasts your month-end balance, so your real spending stays in line with the plan you set here."
+    }
+  ],
+  "salary-calculator": [
+    {
+      "question": "How do you convert hourly pay to an annual salary?",
+      "answer": "Multiply the hourly rate by hours worked per week, then by 52 weeks. For example, $25/hour at 40 hours a week is $25 × 40 × 52 = $52,000 per year. Monthly and weekly figures are that annual number divided by 12 or 52."
+    },
+    {
+      "question": "How many work hours are in a year?",
+      "answer": "A common assumption is 40 hours a week × 52 weeks = 2,080 hours a year. The calculator lets you change the hours per week so part-time or overtime schedules stay accurate."
+    },
+    {
+      "question": "Is this gross or net salary?",
+      "answer": "These figures are gross pay, before taxes and deductions. Your take-home amount will be lower and depends on your country, region, and personal tax situation."
+    },
+    {
+      "question": "Can I convert a monthly salary to hourly?",
+      "answer": "Yes. Enter the amount, choose 'Month' as the period, and set your weekly hours — the calculator instantly shows the equivalent hourly, weekly, and annual pay."
+    }
+  ],
+  "inflation-calculator": [
+    {
+      "question": "How does inflation affect the value of money?",
+      "answer": "Inflation raises prices over time, so the same amount buys less in the future. If inflation averages 3% a year, something that costs $100 today costs about $134 in ten years, and $100 saved under a mattress buys roughly $74 worth of goods."
+    },
+    {
+      "question": "How is the future cost calculated?",
+      "answer": "It compounds the amount by the inflation rate for each year: future cost = amount × (1 + rate)^years. Buying power is the reverse: amount ÷ (1 + rate)^years."
+    },
+    {
+      "question": "What inflation rate should I use?",
+      "answer": "Many long-term plans use 2–3%, close to the target of most central banks. For a specific period you can enter the actual average rate you expect or have observed."
+    },
+    {
+      "question": "Why does beating inflation matter for savings?",
+      "answer": "If your savings grow slower than inflation, you lose purchasing power even as the balance rises. That's why money is often invested rather than left in a zero-interest account."
+    }
+  ],
+  "discount-calculator": [
+    {
+      "question": "How do I calculate a percentage discount?",
+      "answer": "Multiply the original price by the discount percentage to get the amount saved, then subtract it from the price. A 25% discount on $120 saves $30, so you pay $90."
+    },
+    {
+      "question": "How do I work out the final sale price quickly?",
+      "answer": "Final price = original price × (1 − discount ÷ 100). For 25% off, that's price × 0.75. The calculator does this instantly and also shows the exact amount you save."
+    },
+    {
+      "question": "Can I add two discounts together?",
+      "answer": "Stacked discounts apply one after another, not added. A 20% then 10% off isn't 30% off — it's 0.8 × 0.9 = 0.72, i.e. 28% off the original. Apply each discount in turn to be accurate."
+    },
+    {
+      "question": "Does this include sales tax?",
+      "answer": "No — this shows the pre-tax sale price. Use the Sales Tax or VAT calculator to add tax to the discounted amount for the final checkout total."
+    }
+  ],
+  "vat-calculator": [
+    {
+      "question": "How do I add VAT to a price?",
+      "answer": "Multiply the net price by the VAT rate to get the tax, then add it. At 20% VAT, a €100 net price has €20 VAT and a €120 gross price."
+    },
+    {
+      "question": "How do I remove VAT from a gross price?",
+      "answer": "Divide the gross price by 1 plus the rate. For 20% VAT, gross ÷ 1.20 gives the net price, and the difference is the VAT included. A €120 gross price is €100 net + €20 VAT."
+    },
+    {
+      "question": "What VAT rate should I use?",
+      "answer": "It varies by country and product — common standard rates range from about 17% to 27% in Europe, with reduced rates for some goods. Enter the rate that applies to your purchase or region."
+    },
+    {
+      "question": "What's the difference between VAT and sales tax?",
+      "answer": "VAT is charged at each stage of production and is usually included in the displayed price, common in Europe and many other regions. Sales tax is added once at checkout and is typical in the US. Use the matching calculator for your region."
+    }
+  ],
+  "sales-tax-calculator": [
+    {
+      "question": "How do I calculate sales tax on a purchase?",
+      "answer": "Multiply the pre-tax price by the tax rate as a decimal. At an 8% rate, a $100 item has $8 of tax and a $108 total."
+    },
+    {
+      "question": "Is sales tax the same everywhere?",
+      "answer": "No. In the US it varies by state, county, and city, so combined rates differ from place to place. Enter your local combined rate for an accurate total."
+    },
+    {
+      "question": "How do I find the price before tax?",
+      "answer": "Divide the total by 1 plus the tax rate. A $108 total at 8% tax is $108 ÷ 1.08 = $100 before tax."
+    },
+    {
+      "question": "Does sales tax apply to every item?",
+      "answer": "Not always — some places exempt groceries, medicine, or clothing, or tax them at a lower rate. Check your local rules for the specific item."
+    }
+  ],
+  "simple-interest-calculator": [
+    {
+      "question": "What is simple interest?",
+      "answer": "Simple interest is calculated only on the original principal, not on interest already earned. The formula is interest = principal × rate × time, so it grows in a straight line rather than accelerating."
+    },
+    {
+      "question": "How is simple interest different from compound interest?",
+      "answer": "Simple interest ignores previously earned interest, while compound interest adds it back to the balance so future interest is larger. Over long periods compounding produces a much bigger total."
+    },
+    {
+      "question": "When is simple interest used?",
+      "answer": "It's common on some short-term loans, car loans, and certain bonds or deposits. Many everyday savings and investments use compound interest instead."
+    },
+    {
+      "question": "How do I calculate the total value?",
+      "answer": "Add the interest to the principal: total = principal + (principal × rate × time). The calculator shows both the interest earned and the final total."
+    }
+  ],
+  "auto-loan-calculator": [
+    {
+      "question": "How is a car loan payment calculated?",
+      "answer": "The amount financed — vehicle price minus down payment and trade-in — is amortized over the loan term at your interest rate. The calculator returns the monthly payment and the total interest you'll pay."
+    },
+    {
+      "question": "How does a down payment change the payment?",
+      "answer": "A larger down payment reduces the amount financed, which lowers both the monthly payment and the total interest, and can help you qualify for a better rate."
+    },
+    {
+      "question": "Should I choose a longer loan term?",
+      "answer": "A longer term lowers the monthly payment but increases total interest, and can leave you owing more than the car is worth. A shorter term costs more per month but less overall."
+    },
+    {
+      "question": "Does this include taxes and fees?",
+      "answer": "No — it calculates the loan on the financed amount you enter. Add any taxes, registration, or dealer fees to the vehicle price first if you want them financed."
+    }
+  ],
+  "rent-affordability-calculator": [
+    {
+      "question": "How much of my income should go to rent?",
+      "answer": "A widely used guideline is about 30% of gross monthly income, though 25% is more comfortable and up to 35% is a stretch. The calculator shows all three so you can pick what fits your situation."
+    },
+    {
+      "question": "Is the 30% rule based on gross or net income?",
+      "answer": "The classic rule uses gross (pre-tax) income. If your taxes or other debts are high, budgeting against take-home pay gives a more realistic and often lower figure."
+    },
+    {
+      "question": "What else should I budget for besides rent?",
+      "answer": "Factor in utilities, renters insurance, internet, commuting, and a security deposit. These add up, so keeping rent below the maximum leaves room for the rest."
+    },
+    {
+      "question": "How can I track rent and other spending?",
+      "answer": "Lumi lets you log rent and every other expense in seconds and forecasts your month-end balance, so you can see whether your housing cost really fits your budget."
+    }
+  ],
+  "debt-consolidation-calculator": [
+    {
+      "question": "What is debt consolidation?",
+      "answer": "It's combining several debts into one loan, ideally at a lower interest rate. You make a single monthly payment, which can simplify budgeting and reduce the total interest you pay."
+    },
+    {
+      "question": "How much could consolidation save me?",
+      "answer": "It depends on the gap between your current rate and the new one, and the new term. The calculator compares the interest on your current debt with a consolidation loan and shows the estimated saving."
+    },
+    {
+      "question": "Does a lower monthly payment always mean saving money?",
+      "answer": "Not necessarily. Stretching a loan over a longer term can lower the monthly payment while increasing total interest. Compare the total interest, not just the payment."
+    },
+    {
+      "question": "When is consolidation not worth it?",
+      "answer": "If the new rate isn't meaningfully lower, or fees eat up the savings, consolidating may cost more. It also helps only if you avoid running the old balances back up."
+    }
+  ],
+  "retirement-calculator": [
+    {
+      "question": "How much will I have saved by retirement?",
+      "answer": "The calculator compounds your current savings plus monthly contributions at your expected return until your retirement age. Small monthly amounts grow substantially thanks to decades of compounding."
+    },
+    {
+      "question": "What is the 4% rule?",
+      "answer": "It's a rule of thumb that you can withdraw about 4% of your retirement savings in the first year, adjusting for inflation after, with a good chance the money lasts around 30 years. The calculator uses it to estimate monthly income."
+    },
+    {
+      "question": "What return rate should I assume?",
+      "answer": "Long-term projections often use a conservative 5–7% for a diversified portfolio, before inflation. Lower assumptions give a safer, more cautious estimate."
+    },
+    {
+      "question": "Does starting earlier really matter that much?",
+      "answer": "Yes — because returns compound, contributions made in your twenties can grow far more than the same amounts added later. Starting early is usually more powerful than saving larger sums later on."
+    }
+  ],
+  "roi-calculator": [
+    {
+      "question": "How do I calculate return on investment?",
+      "answer": "ROI = (final value − amount invested) ÷ amount invested × 100. If you invest $10,000 and it grows to $13,500, your ROI is 35%."
+    },
+    {
+      "question": "What is annualized return?",
+      "answer": "Annualized return spreads the total gain evenly across the years held: (final ÷ invested)^(1/years) − 1. It lets you compare investments of different lengths on equal footing."
+    },
+    {
+      "question": "Is a higher ROI always better?",
+      "answer": "Not on its own — a high ROI over many years can be worse than a modest one over a short period. Check the annualized return and consider the risk taken to earn it."
+    },
+    {
+      "question": "Does ROI account for fees and taxes?",
+      "answer": "This basic calculation doesn't. For a true picture, use the net amount after fees and taxes as your final value so the ROI reflects what you actually keep."
+    }
   ]
 }

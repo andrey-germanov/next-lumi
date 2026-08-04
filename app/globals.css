@@ -36,6 +36,9 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Safety net: keep any wide/absolutely-positioned decoration (e.g. the hero
+     orb) from producing a horizontal scrollbar on narrow screens. */
+  overflow-x: hidden;
 }
 
 html { scroll-behavior: smooth; }

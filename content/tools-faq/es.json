@@ -1,38 +1,372 @@
 {
   "compound-interest-calculator": [
-    { "question": "¿Qué es el interés compuesto y cómo funciona?", "answer": "El interés compuesto es el interés que se gana tanto sobre tu dinero original como sobre los intereses que ya has acumulado. Como las ganancias de cada periodo se suman al saldo, el crecimiento se acelera con el tiempo: cuanto más tiempo permanezca invertido el dinero, mayor será el efecto." },
-    { "question": "¿De verdad marca tanta diferencia una aportación mensual?", "answer": "Sí: las aportaciones periódicas suelen ser el principal factor del saldo final, más que la cantidad inicial. Añadir una suma fija cada mes significa que más dinero se compone durante más tiempo, así que depósitos pequeños y constantes suman muchísimo con los años." },
-    { "question": "¿Qué tasa de interés debería usar?", "answer": "Usa una tasa realista según dónde esté el dinero: alrededor del 4–5% para una cuenta de ahorro de alto rendimiento, o un promedio a largo plazo de cerca del 7% para una cartera de acciones diversificada. Tasas más bajas y conservadoras te dan una estimación más prudente." },
-    { "question": "¿Esto tiene en cuenta la inflación y los impuestos?", "answer": "No: el resultado es una cifra nominal antes de inflación e impuestos. Para una estimación aproximada del valor real, resta alrededor del 2–3% a tu tasa, y recuerda que las ganancias en una cuenta normal pueden tributar, mientras que las de una cuenta con ventajas fiscales normalmente no lo hacen." }
+    {
+      "question": "¿Qué es el interés compuesto y cómo funciona?",
+      "answer": "El interés compuesto es el interés que se gana tanto sobre tu dinero original como sobre los intereses que ya has acumulado. Como las ganancias de cada periodo se suman al saldo, el crecimiento se acelera con el tiempo: cuanto más tiempo permanezca invertido el dinero, mayor será el efecto."
+    },
+    {
+      "question": "¿De verdad marca tanta diferencia una aportación mensual?",
+      "answer": "Sí: las aportaciones periódicas suelen ser el principal factor del saldo final, más que la cantidad inicial. Añadir una suma fija cada mes significa que más dinero se compone durante más tiempo, así que depósitos pequeños y constantes suman muchísimo con los años."
+    },
+    {
+      "question": "¿Qué tasa de interés debería usar?",
+      "answer": "Usa una tasa realista según dónde esté el dinero: alrededor del 4–5% para una cuenta de ahorro de alto rendimiento, o un promedio a largo plazo de cerca del 7% para una cartera de acciones diversificada. Tasas más bajas y conservadoras te dan una estimación más prudente."
+    },
+    {
+      "question": "¿Esto tiene en cuenta la inflación y los impuestos?",
+      "answer": "No: el resultado es una cifra nominal antes de inflación e impuestos. Para una estimación aproximada del valor real, resta alrededor del 2–3% a tu tasa, y recuerda que las ganancias en una cuenta normal pueden tributar, mientras que las de una cuenta con ventajas fiscales normalmente no lo hacen."
+    }
   ],
   "50-30-20-budget-calculator": [
-    { "question": "¿Uso el ingreso bruto o el ingreso neto?", "answer": "Usa tu ingreso neto (después de impuestos): la cantidad que realmente llega a tu cuenta. Si tus impuestos y aportaciones a la jubilación se descuentan antes de cobrar, basa el reparto 50/30/20 en lo que queda." },
-    { "question": "¿Qué cuenta como necesidad y qué como deseo?", "answer": "Las necesidades son gastos esenciales que no puedes evitar fácilmente: alquiler, servicios, comida, transporte, seguros, pagos mínimos de deudas. Los deseos son todo lo demás: salir a comer, suscripciones, viajes, aficiones. Asigna una categoría a cada gasto y mantén la coherencia mes a mes." },
-    { "question": "¿Y si no puedo ahorrar el 20% completo?", "answer": "No pasa nada: 50/30/20 es una guía, no una regla. Empieza desde donde estés, aunque sea en 60/30/10, y traslada cada mes un poco de los deseos al ahorro. En una zona con alto coste de vida, una mayor proporción de necesidades es normal durante un tiempo." },
-    { "question": "¿Pagar deudas cuenta como ahorro?", "answer": "Los pagos mínimos de deudas son una necesidad. Todo lo que pagues por encima del mínimo para saldar la deuda más rápido cuenta dentro del 20% de ahorro, ya que aumenta tu patrimonio neto igual que ahorrar." }
+    {
+      "question": "¿Uso el ingreso bruto o el ingreso neto?",
+      "answer": "Usa tu ingreso neto (después de impuestos): la cantidad que realmente llega a tu cuenta. Si tus impuestos y aportaciones a la jubilación se descuentan antes de cobrar, basa el reparto 50/30/20 en lo que queda."
+    },
+    {
+      "question": "¿Qué cuenta como necesidad y qué como deseo?",
+      "answer": "Las necesidades son gastos esenciales que no puedes evitar fácilmente: alquiler, servicios, comida, transporte, seguros, pagos mínimos de deudas. Los deseos son todo lo demás: salir a comer, suscripciones, viajes, aficiones. Asigna una categoría a cada gasto y mantén la coherencia mes a mes."
+    },
+    {
+      "question": "¿Y si no puedo ahorrar el 20% completo?",
+      "answer": "No pasa nada: 50/30/20 es una guía, no una regla. Empieza desde donde estés, aunque sea en 60/30/10, y traslada cada mes un poco de los deseos al ahorro. En una zona con alto coste de vida, una mayor proporción de necesidades es normal durante un tiempo."
+    },
+    {
+      "question": "¿Pagar deudas cuenta como ahorro?",
+      "answer": "Los pagos mínimos de deudas son una necesidad. Todo lo que pagues por encima del mínimo para saldar la deuda más rápido cuenta dentro del 20% de ahorro, ya que aumenta tu patrimonio neto igual que ahorrar."
+    }
   ],
   "emergency-fund-calculator": [
-    { "question": "¿Cuántos meses de gastos debería ahorrar?", "answer": "La mayoría de las recomendaciones son de 3–6 meses de gastos esenciales. Inclínate por 3 si tienes un único ingreso estable y pocas personas a tu cargo, y por 6 o más si tu ingreso es variable o mantienes a una familia." },
-    { "question": "¿Uso los gastos esenciales o el gasto total?", "answer": "Usa los gastos esenciales: alquiler, servicios, comida, transporte, seguros y pagos mínimos de deudas. En una emergencia real recortarías el gasto discrecional, así que dimensionar el fondo según los costes básicos mantiene el objetivo realista." },
-    { "question": "¿Dónde debería guardar mi fondo de emergencia?", "answer": "En una cuenta segura y de acceso inmediato: una cuenta de ahorro de alto rendimiento o una cuenta del mercado monetario. Ganas algo de interés mientras mantienes el dinero líquido, sin riesgo de que pierda valor cuando lo necesites." },
-    { "question": "¿Debería formarlo antes de pagar mis deudas?", "answer": "Ahorra primero un pequeño colchón inicial (alrededor de un mes, o una cantidad fija con la que te sientas cómodo) para que una emergencia no te hunda más en las deudas. Luego reparte tu esfuerzo entre hacer crecer el fondo y reducir las deudas de alto interés." }
+    {
+      "question": "¿Cuántos meses de gastos debería ahorrar?",
+      "answer": "La mayoría de las recomendaciones son de 3–6 meses de gastos esenciales. Inclínate por 3 si tienes un único ingreso estable y pocas personas a tu cargo, y por 6 o más si tu ingreso es variable o mantienes a una familia."
+    },
+    {
+      "question": "¿Uso los gastos esenciales o el gasto total?",
+      "answer": "Usa los gastos esenciales: alquiler, servicios, comida, transporte, seguros y pagos mínimos de deudas. En una emergencia real recortarías el gasto discrecional, así que dimensionar el fondo según los costes básicos mantiene el objetivo realista."
+    },
+    {
+      "question": "¿Dónde debería guardar mi fondo de emergencia?",
+      "answer": "En una cuenta segura y de acceso inmediato: una cuenta de ahorro de alto rendimiento o una cuenta del mercado monetario. Ganas algo de interés mientras mantienes el dinero líquido, sin riesgo de que pierda valor cuando lo necesites."
+    },
+    {
+      "question": "¿Debería formarlo antes de pagar mis deudas?",
+      "answer": "Ahorra primero un pequeño colchón inicial (alrededor de un mes, o una cantidad fija con la que te sientas cómodo) para que una emergencia no te hunda más en las deudas. Luego reparte tu esfuerzo entre hacer crecer el fondo y reducir las deudas de alto interés."
+    }
   ],
   "savings-goal-calculator": [
-    { "question": "¿Cuánto debería ahorrar cada mes para alcanzar mi meta?", "answer": "Toma lo que te falta por ahorrar (la meta menos lo que ya tienes) y divídelo entre el número de meses que quieras. Esta calculadora lo hace por ti y, si añades una rentabilidad esperada, tiene en cuenta los intereses que tus ahorros generan por el camino." },
-    { "question": "¿Debería incluir intereses o rendimientos de inversión?", "answer": "Si el dinero está en una cuenta de ahorro de alto rendimiento o invertido, sí: añade una rentabilidad anual esperada para que la estimación refleje el crecimiento. Para una simple cuenta corriente, déjalo en 0%." },
-    { "question": "¿Y si tengo una fecha límite fija?", "answer": "Cambia al modo de fecha límite: introduce cuántos meses tienes y la calculadora te dice la cantidad exacta que debes apartar cada mes para llegar a tiempo." },
-    { "question": "¿Dónde debería guardar el dinero para una meta de ahorro?", "answer": "Para metas dentro de unos 5 años, una cuenta de ahorro de alto rendimiento mantiene el dinero seguro y líquido. Para horizontes más largos, invertir puede rendir más pero añade riesgo a corto plazo, así que ajusta la cuenta a tu plazo." }
+    {
+      "question": "¿Cuánto debería ahorrar cada mes para alcanzar mi meta?",
+      "answer": "Toma lo que te falta por ahorrar (la meta menos lo que ya tienes) y divídelo entre el número de meses que quieras. Esta calculadora lo hace por ti y, si añades una rentabilidad esperada, tiene en cuenta los intereses que tus ahorros generan por el camino."
+    },
+    {
+      "question": "¿Debería incluir intereses o rendimientos de inversión?",
+      "answer": "Si el dinero está en una cuenta de ahorro de alto rendimiento o invertido, sí: añade una rentabilidad anual esperada para que la estimación refleje el crecimiento. Para una simple cuenta corriente, déjalo en 0%."
+    },
+    {
+      "question": "¿Y si tengo una fecha límite fija?",
+      "answer": "Cambia al modo de fecha límite: introduce cuántos meses tienes y la calculadora te dice la cantidad exacta que debes apartar cada mes para llegar a tiempo."
+    },
+    {
+      "question": "¿Dónde debería guardar el dinero para una meta de ahorro?",
+      "answer": "Para metas dentro de unos 5 años, una cuenta de ahorro de alto rendimiento mantiene el dinero seguro y líquido. Para horizontes más largos, invertir puede rendir más pero añade riesgo a corto plazo, así que ajusta la cuenta a tu plazo."
+    }
   ],
   "debt-payoff-calculator": [
-    { "question": "¿Cómo se calcula el tiempo de pago?", "answer": "A partir de tu saldo, la tasa de interés (APR) y el pago mensual fijo. Cada mes se añaden los intereses, se resta tu pago y la calculadora cuenta cuántos meses se tarda en llegar a cero, además del total de intereses que pagarás." },
-    { "question": "Bola de nieve o avalancha, ¿cuál es más rápido?", "answer": "El método de avalancha (pagar primero la deuda con el APR más alto) salda la deuda más rápido y cuesta menos intereses. El método de bola de nieve (primero el saldo más pequeño) es más lento, pero da victorias rápidas que ayudan a muchas personas a mantenerse motivadas." },
-    { "question": "¿Por qué un pequeño pago extra ahorra tantos intereses?", "answer": "Cada euro extra va directo contra el capital, así que dejas de pagar intereses sobre él durante toda la vida restante de la deuda. En saldos con APR alto, incluso un aumento modesto puede recortar meses y cientos en intereses." },
-    { "question": "¿Qué tasa de interés debería introducir?", "answer": "Usa el APR que aparece en el extracto de tu tarjeta o préstamo. Si estás combinando varias deudas, calcúlalas por separado o usa un promedio aproximado ponderado por saldo." }
+    {
+      "question": "¿Cómo se calcula el tiempo de pago?",
+      "answer": "A partir de tu saldo, la tasa de interés (APR) y el pago mensual fijo. Cada mes se añaden los intereses, se resta tu pago y la calculadora cuenta cuántos meses se tarda en llegar a cero, además del total de intereses que pagarás."
+    },
+    {
+      "question": "Bola de nieve o avalancha, ¿cuál es más rápido?",
+      "answer": "El método de avalancha (pagar primero la deuda con el APR más alto) salda la deuda más rápido y cuesta menos intereses. El método de bola de nieve (primero el saldo más pequeño) es más lento, pero da victorias rápidas que ayudan a muchas personas a mantenerse motivadas."
+    },
+    {
+      "question": "¿Por qué un pequeño pago extra ahorra tantos intereses?",
+      "answer": "Cada euro extra va directo contra el capital, así que dejas de pagar intereses sobre él durante toda la vida restante de la deuda. En saldos con APR alto, incluso un aumento modesto puede recortar meses y cientos en intereses."
+    },
+    {
+      "question": "¿Qué tasa de interés debería introducir?",
+      "answer": "Usa el APR que aparece en el extracto de tu tarjeta o préstamo. Si estás combinando varias deudas, calcúlalas por separado o usa un promedio aproximado ponderado por saldo."
+    }
   ],
   "fire-calculator": [
-    { "question": "¿Qué es el número FIRE y la regla del 25×?", "answer": "Tu número FIRE es el tamaño de cartera que puede cubrir tu gasto anual de forma indefinida. La regla general habitual es 25× tus gastos anuales, basada en la pauta de retiro seguro del 4%." },
-    { "question": "¿Qué tasa de retiro se supone aquí?", "answer": "Alrededor del 4% al año: el nivel que los estudios históricos sugieren que una cartera diversificada puede sostener durante una jubilación larga. Un 3–3,5% más prudente implica un número mayor (aproximadamente 28–33× los gastos)." },
-    { "question": "¿Qué tasa de rentabilidad debería usar?", "answer": "Usa una rentabilidad real (descontada la inflación) conservadora de alrededor del 5%, o un ~7% nominal si tus gastos ya crecen con la inflación. Supuestos más bajos dan un objetivo más prudente y más tardío." },
-    { "question": "¿Es FIRE realista para mí?", "answer": "Depende sobre todo de tu tasa de ahorro: la parte de los ingresos que conservas. La calculadora muestra cómo tus ahorros actuales, aportaciones anuales y rendimientos se componen hacia el objetivo, para que puedas comprobar cómo una tasa de ahorro más alta acerca la fecha." }
+    {
+      "question": "¿Qué es el número FIRE y la regla del 25×?",
+      "answer": "Tu número FIRE es el tamaño de cartera que puede cubrir tu gasto anual de forma indefinida. La regla general habitual es 25× tus gastos anuales, basada en la pauta de retiro seguro del 4%."
+    },
+    {
+      "question": "¿Qué tasa de retiro se supone aquí?",
+      "answer": "Alrededor del 4% al año: el nivel que los estudios históricos sugieren que una cartera diversificada puede sostener durante una jubilación larga. Un 3–3,5% más prudente implica un número mayor (aproximadamente 28–33× los gastos)."
+    },
+    {
+      "question": "¿Qué tasa de rentabilidad debería usar?",
+      "answer": "Usa una rentabilidad real (descontada la inflación) conservadora de alrededor del 5%, o un ~7% nominal si tus gastos ya crecen con la inflación. Supuestos más bajos dan un objetivo más prudente y más tardío."
+    },
+    {
+      "question": "¿Es FIRE realista para mí?",
+      "answer": "Depende sobre todo de tu tasa de ahorro: la parte de los ingresos que conservas. La calculadora muestra cómo tus ahorros actuales, aportaciones anuales y rendimientos se componen hacia el objetivo, para que puedas comprobar cómo una tasa de ahorro más alta acerca la fecha."
+    }
+  ],
+  "loan-calculator": [
+    {
+      "question": "¿Cómo se calcula mi cuota mensual del préstamo?",
+      "answer": "Usa la fórmula estándar de amortización: cuota = P·r / (1 − (1 + r)^−n), donde P es el importe, r el tipo mensual (anual ÷ 12) y n el número de meses. Cada cuota cubre primero los intereses del mes y el resto reduce el capital."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre el tipo de interés y la TAE?",
+      "answer": "El tipo de interés es el coste de pedir el capital. La TAE incluye además ciertas comisiones, por lo que suele ser algo mayor y es mejor para comparar ofertas."
+    },
+    {
+      "question": "¿Sirve de algo pagar más que la cuota mensual?",
+      "answer": "Sí. Cualquier cantidad por encima de la cuota prevista va directa al capital, lo que reduce el saldo más rápido y recorta los intereses totales del préstamo."
+    },
+    {
+      "question": "¿La calculadora de préstamos es gratis?",
+      "answer": "Sí, es totalmente gratuita y sirve para préstamos personales y la mayoría de préstamos a plazos con tipo fijo. No se guarda nada ni hace falta registrarse."
+    }
+  ],
+  "monthly-budget-calculator": [
+    {
+      "question": "¿Cómo hago un presupuesto mensual?",
+      "answer": "Empieza por tus ingresos netos y luego enumera los gastos fijos y variables: vivienda, comida, transporte y lo demás. Resta los gastos de los ingresos para ver lo que queda. Intenta mantener un margen positivo y destinarlo al ahorro."
+    },
+    {
+      "question": "¿Qué tasa de ahorro es buena?",
+      "answer": "Muchos expertos sugieren ahorrar al menos el 20% de los ingresos netos, pero cualquier porcentaje positivo es un avance. La calculadora muestra tu tasa en porcentaje para que fijes un objetivo y lo sigas."
+    },
+    {
+      "question": "¿Y si mis gastos superan mis ingresos?",
+      "answer": "Un resultado negativo significa que gastas de más. Revisa primero las categorías más grandes —normalmente vivienda y comida—, recorta gastos variables o aumenta ingresos hasta que el margen sea positivo."
+    },
+    {
+      "question": "¿Cómo me ayuda Lumi a cumplir el presupuesto?",
+      "answer": "Lumi registra cada gasto en segundos por voz, Back Tap o Apple Pay y prevé tu saldo de fin de mes, para que tu gasto real se mantenga dentro del plan."
+    }
+  ],
+  "salary-calculator": [
+    {
+      "question": "¿Cómo convierto el pago por hora en salario anual?",
+      "answer": "Multiplica la tarifa por hora por las horas semanales y luego por 52 semanas. Por ejemplo, 25 por hora a 40 horas semanales: 25 × 40 × 52 = 52.000 al año. Las cifras mensual y semanal son ese anual dividido entre 12 o 52."
+    },
+    {
+      "question": "¿Cuántas horas laborables hay en un año?",
+      "answer": "Una suposición común es 40 horas semanales × 52 semanas = 2.080 horas al año. La calculadora permite cambiar las horas por semana para que el tiempo parcial o las horas extra sean exactos."
+    },
+    {
+      "question": "¿Es salario bruto o neto?",
+      "answer": "Estas cifras son brutas, antes de impuestos y deducciones. Tu importe neto será menor y depende de tu país, región y situación fiscal."
+    },
+    {
+      "question": "¿Puedo convertir un salario mensual a por hora?",
+      "answer": "Sí. Introduce la cantidad, elige el periodo «Mes» y fija tus horas semanales: la calculadora muestra al instante el equivalente por hora, semana y año."
+    }
+  ],
+  "inflation-calculator": [
+    {
+      "question": "¿Cómo afecta la inflación al valor del dinero?",
+      "answer": "La inflación sube los precios con el tiempo, así que la misma cantidad compra menos. Con una inflación media del 3% anual, algo que hoy cuesta 100 cuesta unos 134 en diez años, y 100 guardados sin más comprarán bienes por valor de unos 74."
+    },
+    {
+      "question": "¿Cómo se calcula el coste futuro?",
+      "answer": "La cantidad se capitaliza por la tasa de inflación cada año: coste futuro = cantidad × (1 + tasa)^años. El poder adquisitivo es lo inverso: cantidad ÷ (1 + tasa)^años."
+    },
+    {
+      "question": "¿Qué tasa de inflación debo usar?",
+      "answer": "Muchos planes a largo plazo usan 2–3%, cerca del objetivo de la mayoría de bancos centrales. Para un periodo concreto puedes introducir la tasa media real que esperes o hayas observado."
+    },
+    {
+      "question": "¿Por qué importa superar la inflación?",
+      "answer": "Si tus ahorros crecen más despacio que la inflación, pierdes poder adquisitivo aunque el saldo suba. Por eso el dinero suele invertirse en lugar de dejarlo en una cuenta sin intereses."
+    }
+  ],
+  "discount-calculator": [
+    {
+      "question": "¿Cómo calculo un descuento porcentual?",
+      "answer": "Multiplica el precio original por el porcentaje de descuento para obtener el ahorro y réstalo del precio. Un 25% de descuento sobre 120 ahorra 30, así que pagas 90."
+    },
+    {
+      "question": "¿Cómo saco rápido el precio rebajado?",
+      "answer": "Precio final = precio original × (1 − descuento ÷ 100). Para un 25% es precio × 0,75. La calculadora lo hace al instante y también muestra el ahorro exacto."
+    },
+    {
+      "question": "¿Puedo sumar dos descuentos?",
+      "answer": "Los descuentos encadenados se aplican uno tras otro, no se suman. Un 20% y luego un 10% no es 30%, sino 0,8 × 0,9 = 0,72, es decir un 28% sobre el original. Aplica cada descuento por turnos."
+    },
+    {
+      "question": "¿Incluye el impuesto sobre ventas?",
+      "answer": "No: aquí se muestra el precio rebajado sin impuestos. Usa la calculadora de impuesto sobre ventas o de IVA para añadir el impuesto al importe con descuento y obtener el total en caja."
+    }
+  ],
+  "vat-calculator": [
+    {
+      "question": "¿Cómo añado IVA a un precio?",
+      "answer": "Multiplica el precio neto por el tipo de IVA para obtener el impuesto y súmalo. Con un IVA del 20%, un precio neto de 100 tiene 20 de IVA y un precio bruto de 120."
+    },
+    {
+      "question": "¿Cómo extraigo el IVA de un precio bruto?",
+      "answer": "Divide el precio bruto entre 1 más el tipo. Con un IVA del 20%, bruto ÷ 1,20 da el precio neto, y la diferencia es el IVA incluido. Un precio bruto de 120 son 100 netos + 20 de IVA."
+    },
+    {
+      "question": "¿Qué tipo de IVA debo usar?",
+      "answer": "Depende del país y del producto: los tipos generales en Europa suelen ir del 17% al 27%, con tipos reducidos para algunos bienes. Introduce el tipo que se aplique a tu compra o región."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre IVA e impuesto sobre ventas?",
+      "answer": "El IVA se cobra en cada etapa de producción y suele ir incluido en el precio, habitual en Europa y muchas regiones. El impuesto sobre ventas se añade una vez en caja y es típico de EE. UU. Usa la calculadora que corresponda a tu región."
+    }
+  ],
+  "sales-tax-calculator": [
+    {
+      "question": "¿Cómo calculo el impuesto sobre ventas de una compra?",
+      "answer": "Multiplica el precio sin impuestos por el tipo impositivo en decimal. A un tipo del 8%, un artículo de 100 tiene 8 de impuesto y un total de 108."
+    },
+    {
+      "question": "¿El impuesto sobre ventas es igual en todas partes?",
+      "answer": "No. En EE. UU. varía según el estado, el condado y la ciudad, así que los tipos combinados cambian de un sitio a otro. Introduce tu tipo local combinado para un total exacto."
+    },
+    {
+      "question": "¿Cómo obtengo el precio antes de impuestos?",
+      "answer": "Divide el total entre 1 más el tipo impositivo. Un total de 108 con un 8% de impuesto es 108 ÷ 1,08 = 100 antes de impuestos."
+    },
+    {
+      "question": "¿El impuesto sobre ventas se aplica a todo artículo?",
+      "answer": "No siempre: en algunos lugares se eximen alimentos, medicinas o ropa, o se gravan a un tipo menor. Consulta las normas locales para el artículo concreto."
+    }
+  ],
+  "simple-interest-calculator": [
+    {
+      "question": "¿Qué es el interés simple?",
+      "answer": "El interés simple se calcula solo sobre el capital inicial, no sobre los intereses ya generados. La fórmula es interés = capital × tasa × tiempo, así que crece de forma lineal y no acelerada."
+    },
+    {
+      "question": "¿En qué se diferencia del interés compuesto?",
+      "answer": "El interés simple ignora los intereses ya generados, mientras que el compuesto los añade al saldo, de modo que los intereses futuros son mayores. A largo plazo el compuesto produce un total mucho mayor."
+    },
+    {
+      "question": "¿Cuándo se usa el interés simple?",
+      "answer": "Es común en algunos préstamos a corto plazo, préstamos de coche y ciertos bonos o depósitos. Muchos ahorros e inversiones cotidianos usan interés compuesto."
+    },
+    {
+      "question": "¿Cómo calculo el valor total?",
+      "answer": "Suma el interés al capital: total = capital + (capital × tasa × tiempo). La calculadora muestra tanto el interés generado como el total final."
+    }
+  ],
+  "auto-loan-calculator": [
+    {
+      "question": "¿Cómo se calcula la cuota del préstamo de coche?",
+      "answer": "El importe financiado —precio del vehículo menos entrada y vehículo entregado— se amortiza durante el plazo a tu tipo de interés. La calculadora devuelve la cuota mensual y los intereses totales."
+    },
+    {
+      "question": "¿Cómo cambia la cuota una entrada mayor?",
+      "answer": "Una entrada mayor reduce el importe financiado, lo que baja tanto la cuota mensual como los intereses totales y puede ayudarte a lograr un mejor tipo."
+    },
+    {
+      "question": "¿Conviene elegir un plazo más largo?",
+      "answer": "Un plazo más largo baja la cuota mensual pero aumenta los intereses totales y puede dejarte debiendo más de lo que vale el coche. Un plazo más corto cuesta más al mes pero menos en total."
+    },
+    {
+      "question": "¿Incluye impuestos y comisiones?",
+      "answer": "No: calcula el préstamo sobre el importe financiado que introduces. Añade primero impuestos, matriculación y comisiones del concesionario al precio del vehículo si quieres financiarlos."
+    }
+  ],
+  "rent-affordability-calculator": [
+    {
+      "question": "¿Qué parte de mis ingresos debería ir al alquiler?",
+      "answer": "Una guía muy usada es alrededor del 30% del ingreso bruto mensual, aunque el 25% es más cómodo y hasta el 35% ya es forzado. La calculadora muestra las tres para que elijas la que encaje contigo."
+    },
+    {
+      "question": "¿La regla del 30% se basa en el ingreso bruto o neto?",
+      "answer": "La regla clásica usa el ingreso bruto (antes de impuestos). Si tus impuestos u otras deudas son altos, calcular sobre el sueldo neto da una cifra más realista y por lo general menor."
+    },
+    {
+      "question": "¿Qué más debo presupuestar además del alquiler?",
+      "answer": "Ten en cuenta los suministros, el seguro de inquilino, internet, el transporte y la fianza. Todo suma, así que un alquiler por debajo del máximo deja margen para el resto."
+    },
+    {
+      "question": "¿Cómo puedo controlar el alquiler y otros gastos?",
+      "answer": "Lumi te permite registrar el alquiler y cualquier otro gasto en segundos y prevé tu saldo de fin de mes, para que veas si el coste de la vivienda encaja de verdad en tu presupuesto."
+    }
+  ],
+  "debt-consolidation-calculator": [
+    {
+      "question": "¿Qué es la consolidación de deudas?",
+      "answer": "Es reunir varias deudas en un único préstamo, idealmente a un tipo de interés más bajo. Haces un solo pago mensual, lo que simplifica el presupuesto y puede reducir los intereses totales."
+    },
+    {
+      "question": "¿Cuánto puedo ahorrar consolidando?",
+      "answer": "Depende de la diferencia entre tu tipo actual y el nuevo y del nuevo plazo. La calculadora compara los intereses de tu deuda actual con un préstamo de consolidación y muestra el ahorro estimado."
+    },
+    {
+      "question": "¿Una cuota menor siempre significa ahorrar?",
+      "answer": "No necesariamente. Alargar el préstamo a un plazo mayor baja la cuota pero aumenta los intereses totales. Compara los intereses totales, no solo la cuota."
+    },
+    {
+      "question": "¿Cuándo no compensa consolidar?",
+      "answer": "Si el nuevo tipo no es claramente más bajo o las comisiones se comen el ahorro, consolidar puede salir más caro. Además solo ayuda si evitas volver a acumular los saldos antiguos."
+    }
+  ],
+  "retirement-calculator": [
+    {
+      "question": "¿Cuánto habré ahorrado al jubilarme?",
+      "answer": "La calculadora capitaliza tus ahorros actuales más las aportaciones mensuales a la rentabilidad esperada hasta tu edad de jubilación. Las pequeñas cantidades mensuales crecen mucho gracias a décadas de interés compuesto."
+    },
+    {
+      "question": "¿Qué es la regla del 4%?",
+      "answer": "Es una regla práctica según la cual puedes retirar en torno al 4% de tus ahorros el primer año, ajustando luego por inflación, con buenas probabilidades de que el dinero dure unos 30 años. La calculadora la usa para estimar el ingreso mensual."
+    },
+    {
+      "question": "¿Qué rentabilidad debo suponer?",
+      "answer": "Las proyecciones a largo plazo suelen usar un prudente 5–7% para una cartera diversificada, antes de inflación. Suposiciones más bajas dan una estimación más segura y cauta."
+    },
+    {
+      "question": "¿De verdad importa tanto empezar antes?",
+      "answer": "Sí: como los rendimientos se componen, las aportaciones hechas a los veintipocos pueden crecer mucho más que las mismas cantidades añadidas después. Empezar pronto suele ser más potente que ahorrar sumas mayores más tarde."
+    }
+  ],
+  "roi-calculator": [
+    {
+      "question": "¿Cómo calculo el retorno de la inversión?",
+      "answer": "ROI = (valor final − cantidad invertida) ÷ cantidad invertida × 100. Si inviertes 10.000 y crecen a 13.500, tu ROI es del 35%."
+    },
+    {
+      "question": "¿Qué es la rentabilidad anualizada?",
+      "answer": "La rentabilidad anualizada reparte la ganancia total de forma uniforme entre los años mantenidos: (final ÷ invertido)^(1/años) − 1. Permite comparar inversiones de distinta duración en igualdad de condiciones."
+    },
+    {
+      "question": "¿Un ROI más alto siempre es mejor?",
+      "answer": "Por sí solo no: un ROI alto a lo largo de muchos años puede ser peor que uno moderado en poco tiempo. Mira la rentabilidad anualizada y ten en cuenta el riesgo asumido."
+    },
+    {
+      "question": "¿El ROI tiene en cuenta comisiones e impuestos?",
+      "answer": "El cálculo básico no. Para una imagen fiel, usa el importe neto tras comisiones e impuestos como valor final, de modo que el ROI refleje lo que realmente conservas."
+    }
+  ],
+  "subscription-cost-calculator": [
+    {
+      "question": "¿Cuánto gasta de media una persona en suscripciones?",
+      "answer": "La mayoría de los estudios sitúan entre 60 y 220 al mes una vez que cuentas streaming, software, almacenamiento en la nube, gimnasio y membresías de entrega — y lo que la gente estima por su cuenta ronda la mitad de la cifra real. Suma las tuyas en esta calculadora; el total anual suele ser la sorpresa."
+    },
+    {
+      "question": "¿Por qué mostrar cuánto valdría el dinero invertido?",
+      "answer": "Porque el precio real de una suscripción es su coste de oportunidad. 30 al mes parecen poco; esos mismos 30 invertidos a un 7% de rentabilidad media son unos 2.150 al cabo de cinco años. No es un argumento contra las suscripciones que usas, sino una etiqueta de precio justa para las que no."
+    },
+    {
+      "question": "¿Cómo encuentro suscripciones que olvidé?",
+      "answer": "Revisa las suscripciones de tu Apple ID, Google Play, los pagos automáticos de PayPal y tres meses de extractos de la tarjeta, y luego busca «renovación» y «recibo» en tu correo. Nuestra guía para encontrar suscripciones olvidadas repasa los seis escondites paso a paso."
+    }
+  ],
+  "couple-expense-split-calculator": [
+    {
+      "question": "¿Las parejas deben dividir los gastos 50/50 o por ingresos?",
+      "answer": "El 50/50 funciona cuando los ingresos son similares. Cuando difieren, un reparto proporcional a los ingresos pone la misma carga porcentual sobre ambos: si ganas el 60% del ingreso del hogar, cubres el 60% de los gastos comunes. La mayoría de asesores considera el reparto proporcional la opción más justa cuando los ingresos son desiguales."
+    },
+    {
+      "question": "¿Qué gastos cuentan como comunes?",
+      "answer": "Normalmente el alquiler o la hipoteca, los suministros, la compra, los productos del hogar, las suscripciones que usáis los dos y los viajes juntos. Las suscripciones personales, las aficiones y los regalos siguen siendo personales. Una lista común corta es más fácil de mantener honesta que una larga: en caso de duda, cuéntalo como personal."
+    },
+    {
+      "question": "¿Cómo controlamos quién gastó qué realmente?",
+      "answer": "Cada persona registra sus propios gastos y luego comparáis los totales de las categorías comunes una vez al mes. El sistema solo funciona si registrar es sencillo: por eso las apps con entrada por voz e importación automática de Apple Pay ganan a las hojas de cálculo compartidas en la práctica. Consulta nuestra guía sobre presupuesto en pareja con cuentas separadas."
+    }
   ]
 }

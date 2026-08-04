@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { NAV_LINKS, APP_STORE_URL } from "@/lib/constants";
 import { trackAppStoreClick } from "@/lib/posthog";
 import { useLang } from "@/components/dash/i18n";
@@ -22,6 +22,20 @@ const LOCALIZED_PATHS = new Set(["/faq", "/blog", "/tools"]);
 export default function Header() {
   const { t, locale, setLocale } = useLang();
   const router = useRouter();
+  const pathname = usePathname();
+
+  // The landing lives at "/" (en) or "/{locale}". Anchor links (#features,
+  // #pricing) only exist there, so when we're on another page they must point
+  // back to the landing + hash instead of just appending a hash to the URL.
+  const homePath = localePath(locale);
+  const onHome = pathname === homePath;
+
+  function resolveHref(href: string): string {
+    if (href.startsWith("#")) {
+      return onHome ? href : `${homePath}${href}`;
+    }
+    return LOCALIZED_PATHS.has(href) && locale !== "en" ? `/${locale}${href}` : href;
+  }
 
   // Switching language navigates to the localized landing (SEO-crawlable URL)
   // and persists the choice for other pages.
@@ -44,7 +58,7 @@ export default function Header() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
-              href={LOCALIZED_PATHS.has(link.href) && locale !== "en" ? `/${locale}${link.href}` : link.href}
+              href={resolveHref(link.href)}
               style={{ fontSize: 14, color: "#63636B", transition: "color 0.15s" }}
               className="hover:text-text"
             >

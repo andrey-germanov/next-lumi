@@ -47,7 +47,7 @@ export default function Hero() {
 
             <h1
               className="font-extrabold"
-              style={{ fontSize: "clamp(40px, 6vw, 62px)", letterSpacing: "-2.5px", lineHeight: 1.04, color: "#0A0A0A" }}
+              style={{ fontSize: "clamp(32px, 8vw, 62px)", letterSpacing: "-0.035em", lineHeight: 1.05, color: "#0A0A0A", overflowWrap: "break-word", hyphens: "auto" }}
             >
               {t("lp.heroTitle1")}
               <br />

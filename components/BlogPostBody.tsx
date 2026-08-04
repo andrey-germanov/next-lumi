@@ -100,6 +100,17 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
             </div>
           </header>
 
+          {post.image && (
+            <img
+              src={post.image}
+              alt={post.title}
+              width={1200}
+              height={630}
+              className="mt-8 w-full rounded-2xl border border-black/5"
+              style={{ aspectRatio: "1200 / 630", objectFit: "cover" }}
+            />
+          )}
+
           <div className="prose mt-12">
             <MDXRemote
               source={post.content}

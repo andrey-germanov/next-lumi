@@ -1,38 +1,372 @@
 {
   "compound-interest-calculator": [
-    { "question": "Czym jest procent składany i jak działa?", "answer": "Procent składany to odsetki naliczane zarówno od pierwotnie zainwestowanych pieniędzy, jak i od odsetek, które już zarobiłeś. Ponieważ zyski z każdego okresu doliczane są do salda, wzrost z czasem przyspiesza — im dłużej pieniądze pozostają zainwestowane, tym większy efekt." },
-    { "question": "Czy comiesięczna wpłata naprawdę robi aż taką różnicę?", "answer": "Tak — regularne wpłaty są zwykle najważniejszym czynnikiem wpływającym na końcowe saldo, ważniejszym niż kwota początkowa. Dokładanie stałej sumy co miesiąc oznacza, że więcej pieniędzy pracuje na procent składany przez dłuższy czas, więc małe, systematyczne wpłaty przez lata sumują się w imponujący sposób." },
-    { "question": "Jakiej stopy procentowej powinienem użyć?", "answer": "Użyj realistycznej stopy odpowiedniej dla miejsca, w którym trzymasz pieniądze: około 4–5% dla wysoko oprocentowanego konta oszczędnościowego lub długoterminowej średniej na poziomie około 7% dla zdywersyfikowanego portfela akcji. Niższe, ostrożne stopy dają bezpieczniejsze szacunki." },
-    { "question": "Czy uwzględnia to inflację i podatki?", "answer": "Nie — wynik to wartość nominalna, przed uwzględnieniem inflacji i podatków. Aby z grubsza oszacować wartość realną, odejmij od swojej stopy około 2–3% i pamiętaj, że zyski na zwykłym koncie mogą być opodatkowane, podczas gdy te na koncie z ulgą podatkową zwykle nie są." }
+    {
+      "question": "Czym jest procent składany i jak działa?",
+      "answer": "Procent składany to odsetki naliczane zarówno od pierwotnie zainwestowanych pieniędzy, jak i od odsetek, które już zarobiłeś. Ponieważ zyski z każdego okresu doliczane są do salda, wzrost z czasem przyspiesza — im dłużej pieniądze pozostają zainwestowane, tym większy efekt."
+    },
+    {
+      "question": "Czy comiesięczna wpłata naprawdę robi aż taką różnicę?",
+      "answer": "Tak — regularne wpłaty są zwykle najważniejszym czynnikiem wpływającym na końcowe saldo, ważniejszym niż kwota początkowa. Dokładanie stałej sumy co miesiąc oznacza, że więcej pieniędzy pracuje na procent składany przez dłuższy czas, więc małe, systematyczne wpłaty przez lata sumują się w imponujący sposób."
+    },
+    {
+      "question": "Jakiej stopy procentowej powinienem użyć?",
+      "answer": "Użyj realistycznej stopy odpowiedniej dla miejsca, w którym trzymasz pieniądze: około 4–5% dla wysoko oprocentowanego konta oszczędnościowego lub długoterminowej średniej na poziomie około 7% dla zdywersyfikowanego portfela akcji. Niższe, ostrożne stopy dają bezpieczniejsze szacunki."
+    },
+    {
+      "question": "Czy uwzględnia to inflację i podatki?",
+      "answer": "Nie — wynik to wartość nominalna, przed uwzględnieniem inflacji i podatków. Aby z grubsza oszacować wartość realną, odejmij od swojej stopy około 2–3% i pamiętaj, że zyski na zwykłym koncie mogą być opodatkowane, podczas gdy te na koncie z ulgą podatkową zwykle nie są."
+    }
   ],
   "50-30-20-budget-calculator": [
-    { "question": "Czy stosować dochód brutto, czy wynagrodzenie na rękę?", "answer": "Użyj wynagrodzenia na rękę (po opodatkowaniu) — kwoty, która faktycznie trafia na Twoje konto. Jeśli podatki i składki emerytalne są potrącane, zanim otrzymasz wypłatę, oprzyj podział 50/30/20 na tym, co zostaje." },
-    { "question": "Co liczy się jako potrzeba, a co jako zachcianka?", "answer": "Potrzeby to niezbędne wydatki, których nie da się łatwo pominąć — czynsz, media, zakupy spożywcze, transport, ubezpieczenie, minimalne spłaty zadłużenia. Zachcianki to cała reszta: jedzenie na mieście, subskrypcje, podróże, hobby. Przypisz każdą wydatkowaną złotówkę do kategorii i trzymaj się tego konsekwentnie z miesiąca na miesiąc." },
-    { "question": "Co, jeśli nie mogę zaoszczędzić pełnych 20%?", "answer": "To w porządku — 50/30/20 to wskazówka, a nie sztywna reguła. Zacznij od miejsca, w którym jesteś, choćby od 60/30/10, i co miesiąc przesuwaj trochę z zachcianek na oszczędności. W miejscu o wysokich kosztach życia wyższy udział potrzeb jest przez pewien czas czymś normalnym." },
-    { "question": "Czy spłata długu liczy się jako oszczędności?", "answer": "Minimalne spłaty zadłużenia to potrzeba. Wszystko, co spłacasz ponad minimum, aby szybciej pozbyć się długu, wlicza się do koszyka oszczędności wynoszącego 20%, ponieważ buduje Twój majątek netto dokładnie tak samo jak oszczędzanie." }
+    {
+      "question": "Czy stosować dochód brutto, czy wynagrodzenie na rękę?",
+      "answer": "Użyj wynagrodzenia na rękę (po opodatkowaniu) — kwoty, która faktycznie trafia na Twoje konto. Jeśli podatki i składki emerytalne są potrącane, zanim otrzymasz wypłatę, oprzyj podział 50/30/20 na tym, co zostaje."
+    },
+    {
+      "question": "Co liczy się jako potrzeba, a co jako zachcianka?",
+      "answer": "Potrzeby to niezbędne wydatki, których nie da się łatwo pominąć — czynsz, media, zakupy spożywcze, transport, ubezpieczenie, minimalne spłaty zadłużenia. Zachcianki to cała reszta: jedzenie na mieście, subskrypcje, podróże, hobby. Przypisz każdą wydatkowaną złotówkę do kategorii i trzymaj się tego konsekwentnie z miesiąca na miesiąc."
+    },
+    {
+      "question": "Co, jeśli nie mogę zaoszczędzić pełnych 20%?",
+      "answer": "To w porządku — 50/30/20 to wskazówka, a nie sztywna reguła. Zacznij od miejsca, w którym jesteś, choćby od 60/30/10, i co miesiąc przesuwaj trochę z zachcianek na oszczędności. W miejscu o wysokich kosztach życia wyższy udział potrzeb jest przez pewien czas czymś normalnym."
+    },
+    {
+      "question": "Czy spłata długu liczy się jako oszczędności?",
+      "answer": "Minimalne spłaty zadłużenia to potrzeba. Wszystko, co spłacasz ponad minimum, aby szybciej pozbyć się długu, wlicza się do koszyka oszczędności wynoszącego 20%, ponieważ buduje Twój majątek netto dokładnie tak samo jak oszczędzanie."
+    }
   ],
   "emergency-fund-calculator": [
-    { "question": "Na ile miesięcy wydatków powinienem odłożyć?", "answer": "Najczęstsza wskazówka to 3–6 miesięcy niezbędnych wydatków. Skłaniaj się ku 3, jeśli masz stabilny, pojedynczy dochód i niewielu bliskich na utrzymaniu, a ku 6 lub więcej, jeśli Twój dochód jest zmienny lub utrzymujesz rodzinę." },
-    { "question": "Powinienem użyć niezbędnych wydatków czy całkowitych wydatków?", "answer": "Użyj niezbędnych wydatków — czynsz, media, zakupy spożywcze, transport, ubezpieczenie i minimalne spłaty zadłużenia. W prawdziwej sytuacji awaryjnej ograniczyłbyś wydatki uznaniowe, więc dopasowanie funduszu do absolutnie podstawowych kosztów sprawia, że cel pozostaje realistyczny." },
-    { "question": "Gdzie powinienem trzymać fundusz awaryjny?", "answer": "Na koncie, które jest bezpieczne i natychmiast dostępne — wysoko oprocentowanym koncie oszczędnościowym lub koncie rynku pieniężnego. Zyskujesz pewne odsetki, zachowując płynność gotówki i bez ryzyka spadku jej wartości, gdy będzie Ci potrzebna." },
-    { "question": "Powinienem go zbudować przed spłatą długów?", "answer": "Najpierw odłóż mały bufor początkowy (około jednego miesiąca lub stałą kwotę, przy której czujesz się komfortowo), aby nagły wydatek nie wepchnął Cię głębiej w długi. Następnie rozdziel wysiłek między powiększanie funduszu a spłatę wysoko oprocentowanego zadłużenia." }
+    {
+      "question": "Na ile miesięcy wydatków powinienem odłożyć?",
+      "answer": "Najczęstsza wskazówka to 3–6 miesięcy niezbędnych wydatków. Skłaniaj się ku 3, jeśli masz stabilny, pojedynczy dochód i niewielu bliskich na utrzymaniu, a ku 6 lub więcej, jeśli Twój dochód jest zmienny lub utrzymujesz rodzinę."
+    },
+    {
+      "question": "Powinienem użyć niezbędnych wydatków czy całkowitych wydatków?",
+      "answer": "Użyj niezbędnych wydatków — czynsz, media, zakupy spożywcze, transport, ubezpieczenie i minimalne spłaty zadłużenia. W prawdziwej sytuacji awaryjnej ograniczyłbyś wydatki uznaniowe, więc dopasowanie funduszu do absolutnie podstawowych kosztów sprawia, że cel pozostaje realistyczny."
+    },
+    {
+      "question": "Gdzie powinienem trzymać fundusz awaryjny?",
+      "answer": "Na koncie, które jest bezpieczne i natychmiast dostępne — wysoko oprocentowanym koncie oszczędnościowym lub koncie rynku pieniężnego. Zyskujesz pewne odsetki, zachowując płynność gotówki i bez ryzyka spadku jej wartości, gdy będzie Ci potrzebna."
+    },
+    {
+      "question": "Powinienem go zbudować przed spłatą długów?",
+      "answer": "Najpierw odłóż mały bufor początkowy (około jednego miesiąca lub stałą kwotę, przy której czujesz się komfortowo), aby nagły wydatek nie wepchnął Cię głębiej w długi. Następnie rozdziel wysiłek między powiększanie funduszu a spłatę wysoko oprocentowanego zadłużenia."
+    }
   ],
   "savings-goal-calculator": [
-    { "question": "Ile powinienem oszczędzać każdego miesiąca, aby osiągnąć swój cel?", "answer": "Weź kwotę, która pozostała do odłożenia (cel minus to, co już masz), i podziel ją przez liczbę miesięcy, jaką sobie zakładasz. Ten kalkulator zrobi to za Ciebie, a jeśli dodasz oczekiwaną stopę zwrotu, uwzględni odsetki, które Twoje oszczędności zarobią po drodze." },
-    { "question": "Czy powinienem uwzględnić odsetki lub zyski z inwestycji?", "answer": "Jeśli pieniądze leżą na wysoko oprocentowanym koncie oszczędnościowym lub są zainwestowane, to tak — dodaj oczekiwaną roczną stopę zwrotu, aby szacunek odzwierciedlał ten wzrost. W przypadku zwykłego konta osobistego pozostaw 0%." },
-    { "question": "Co, jeśli mam ustalony termin?", "answer": "Przełącz się na tryb terminu: wpisz, ile miesięcy Ci pozostało, a kalkulator poda Ci dokładną kwotę, jaką trzeba odkładać co miesiąc, aby zdążyć na czas." },
-    { "question": "Gdzie powinienem trzymać pieniądze na cel oszczędnościowy?", "answer": "W przypadku celów w perspektywie do około 5 lat wysoko oprocentowane konto oszczędnościowe utrzymuje pieniądze bezpieczne i płynne. Przy dłuższych horyzontach inwestowanie może przynieść więcej, ale dokłada krótkoterminowego ryzyka, więc dopasuj konto do swojego horyzontu czasowego." }
+    {
+      "question": "Ile powinienem oszczędzać każdego miesiąca, aby osiągnąć swój cel?",
+      "answer": "Weź kwotę, która pozostała do odłożenia (cel minus to, co już masz), i podziel ją przez liczbę miesięcy, jaką sobie zakładasz. Ten kalkulator zrobi to za Ciebie, a jeśli dodasz oczekiwaną stopę zwrotu, uwzględni odsetki, które Twoje oszczędności zarobią po drodze."
+    },
+    {
+      "question": "Czy powinienem uwzględnić odsetki lub zyski z inwestycji?",
+      "answer": "Jeśli pieniądze leżą na wysoko oprocentowanym koncie oszczędnościowym lub są zainwestowane, to tak — dodaj oczekiwaną roczną stopę zwrotu, aby szacunek odzwierciedlał ten wzrost. W przypadku zwykłego konta osobistego pozostaw 0%."
+    },
+    {
+      "question": "Co, jeśli mam ustalony termin?",
+      "answer": "Przełącz się na tryb terminu: wpisz, ile miesięcy Ci pozostało, a kalkulator poda Ci dokładną kwotę, jaką trzeba odkładać co miesiąc, aby zdążyć na czas."
+    },
+    {
+      "question": "Gdzie powinienem trzymać pieniądze na cel oszczędnościowy?",
+      "answer": "W przypadku celów w perspektywie do około 5 lat wysoko oprocentowane konto oszczędnościowe utrzymuje pieniądze bezpieczne i płynne. Przy dłuższych horyzontach inwestowanie może przynieść więcej, ale dokłada krótkoterminowego ryzyka, więc dopasuj konto do swojego horyzontu czasowego."
+    }
   ],
   "debt-payoff-calculator": [
-    { "question": "Jak obliczany jest czas spłaty?", "answer": "Na podstawie Twojego salda, stopy procentowej (APR) i stałej miesięcznej raty. Co miesiąc doliczane są odsetki, odejmowana jest Twoja rata, a kalkulator zlicza, ile miesięcy zajmie osiągnięcie zera — a także podaje łączną kwotę odsetek, jaką zapłacisz." },
-    { "question": "Kula śnieżna czy lawina — co jest szybsze?", "answer": "Metoda lawiny (najpierw spłacaj dług o najwyższym APR) pozwala pozbyć się zadłużenia najszybciej i kosztuje najmniej odsetek. Metoda kuli śnieżnej (najpierw najmniejsze saldo) jest wolniejsza, ale daje szybkie sukcesy, które pomagają wielu osobom zachować motywację." },
-    { "question": "Dlaczego niewielka dodatkowa wpłata pozwala zaoszczędzić tak dużo na odsetkach?", "answer": "Każda dodatkowa złotówka idzie prosto na kapitał, więc przestajesz płacić od niej odsetki przez cały pozostały okres trwania długu. Przy saldach o wysokim APR nawet skromny wzrost raty może skrócić spłatę o miesiące i zaoszczędzić setki na odsetkach." },
-    { "question": "Jaką stopę procentową powinienem wpisać?", "answer": "Użyj APR podanego na wyciągu z karty lub kredytu. Jeśli łączysz kilka długów, albo policz je osobno, albo użyj przybliżonej średniej ważonej saldem." }
+    {
+      "question": "Jak obliczany jest czas spłaty?",
+      "answer": "Na podstawie Twojego salda, stopy procentowej (APR) i stałej miesięcznej raty. Co miesiąc doliczane są odsetki, odejmowana jest Twoja rata, a kalkulator zlicza, ile miesięcy zajmie osiągnięcie zera — a także podaje łączną kwotę odsetek, jaką zapłacisz."
+    },
+    {
+      "question": "Kula śnieżna czy lawina — co jest szybsze?",
+      "answer": "Metoda lawiny (najpierw spłacaj dług o najwyższym APR) pozwala pozbyć się zadłużenia najszybciej i kosztuje najmniej odsetek. Metoda kuli śnieżnej (najpierw najmniejsze saldo) jest wolniejsza, ale daje szybkie sukcesy, które pomagają wielu osobom zachować motywację."
+    },
+    {
+      "question": "Dlaczego niewielka dodatkowa wpłata pozwala zaoszczędzić tak dużo na odsetkach?",
+      "answer": "Każda dodatkowa złotówka idzie prosto na kapitał, więc przestajesz płacić od niej odsetki przez cały pozostały okres trwania długu. Przy saldach o wysokim APR nawet skromny wzrost raty może skrócić spłatę o miesiące i zaoszczędzić setki na odsetkach."
+    },
+    {
+      "question": "Jaką stopę procentową powinienem wpisać?",
+      "answer": "Użyj APR podanego na wyciągu z karty lub kredytu. Jeśli łączysz kilka długów, albo policz je osobno, albo użyj przybliżonej średniej ważonej saldem."
+    }
   ],
   "fire-calculator": [
-    { "question": "Czym jest liczba FIRE oraz reguła 25×?", "answer": "Twoja liczba FIRE to wielkość portfela, która jest w stanie w nieskończoność pokrywać Twoje roczne wydatki. Powszechna reguła kciuka to 25× Twoich rocznych wydatków, oparta na wytycznej bezpiecznego wypłacania 4%." },
-    { "question": "Jaką stopę wypłat to zakłada?", "answer": "Około 4% rocznie — poziom, który według badań historycznych zdywersyfikowany portfel jest w stanie utrzymać przez długą emeryturę. Ostrożniejsze 3–3,5% oznacza wyższą liczbę (mniej więcej 28–33× wydatków)." },
-    { "question": "Jakiej stopy zwrotu powinienem użyć?", "answer": "Użyj ostrożnej realnej (po uwzględnieniu inflacji) stopy zwrotu na poziomie około 5% lub nominalnej ~7%, jeśli Twoje wydatki już rosną wraz z inflacją. Niższe założenia dają bezpieczniejszy, dalszy w czasie cel." },
-    { "question": "Czy FIRE jest realne dla mnie?", "answer": "Zależy to głównie od Twojej stopy oszczędzania — części dochodu, którą zatrzymujesz. Kalkulator pokazuje, jak Twoje obecne oszczędności, roczne wpłaty i zwroty składają się w kierunku celu, dzięki czemu możesz sprawdzić, jak wyższa stopa oszczędzania przybliża tę datę." }
+    {
+      "question": "Czym jest liczba FIRE oraz reguła 25×?",
+      "answer": "Twoja liczba FIRE to wielkość portfela, która jest w stanie w nieskończoność pokrywać Twoje roczne wydatki. Powszechna reguła kciuka to 25× Twoich rocznych wydatków, oparta na wytycznej bezpiecznego wypłacania 4%."
+    },
+    {
+      "question": "Jaką stopę wypłat to zakłada?",
+      "answer": "Około 4% rocznie — poziom, który według badań historycznych zdywersyfikowany portfel jest w stanie utrzymać przez długą emeryturę. Ostrożniejsze 3–3,5% oznacza wyższą liczbę (mniej więcej 28–33× wydatków)."
+    },
+    {
+      "question": "Jakiej stopy zwrotu powinienem użyć?",
+      "answer": "Użyj ostrożnej realnej (po uwzględnieniu inflacji) stopy zwrotu na poziomie około 5% lub nominalnej ~7%, jeśli Twoje wydatki już rosną wraz z inflacją. Niższe założenia dają bezpieczniejszy, dalszy w czasie cel."
+    },
+    {
+      "question": "Czy FIRE jest realne dla mnie?",
+      "answer": "Zależy to głównie od Twojej stopy oszczędzania — części dochodu, którą zatrzymujesz. Kalkulator pokazuje, jak Twoje obecne oszczędności, roczne wpłaty i zwroty składają się w kierunku celu, dzięki czemu możesz sprawdzić, jak wyższa stopa oszczędzania przybliża tę datę."
+    }
+  ],
+  "loan-calculator": [
+    {
+      "question": "Jak obliczana jest miesięczna rata kredytu?",
+      "answer": "Stosuje standardowy wzór annuitetowy: rata = P·r / (1 − (1 + r)^−n), gdzie P to kwota, r to miesięczne oprocentowanie (roczne ÷ 12), a n to liczba miesięcy. Każda rata najpierw pokrywa odsetki za miesiąc, reszta spłaca kapitał."
+    },
+    {
+      "question": "Jaka jest różnica między oprocentowaniem a RRSO?",
+      "answer": "Oprocentowanie to koszt pożyczonego kapitału. RRSO uwzględnia dodatkowo niektóre opłaty, więc jest zwykle nieco wyższe i lepiej nadaje się do porównywania ofert."
+    },
+    {
+      "question": "Czy nadpłacanie ponad ratę pomaga?",
+      "answer": "Tak. Każda kwota ponad zaplanowaną ratę idzie prosto na kapitał, co szybciej zmniejsza saldo i obniża łączne odsetki w całym okresie."
+    },
+    {
+      "question": "Czy kalkulator kredytu jest darmowy?",
+      "answer": "Tak, jest całkowicie darmowy i działa dla kredytów gotówkowych oraz większości kredytów ratalnych o stałym oprocentowaniu. Nic nie jest zapisywane, rejestracja nie jest potrzebna."
+    }
+  ],
+  "monthly-budget-calculator": [
+    {
+      "question": "Jak ułożyć budżet miesięczny?",
+      "answer": "Zacznij od dochodu na rękę, potem wypisz wydatki stałe i zmienne — mieszkanie, jedzenie, transport i resztę. Odejmij wydatki od dochodu, aby zobaczyć, ile zostaje. Staraj się utrzymać dodatnią różnicę i kierować ją na oszczędności."
+    },
+    {
+      "question": "Jaka stopa oszczędzania jest dobra?",
+      "answer": "Wielu doradców sugeruje odkładanie co najmniej 20% dochodu netto, ale każdy dodatni procent to postęp. Kalkulator pokazuje Twoją stopę w procentach, byś mógł ustalić cel i go śledzić."
+    },
+    {
+      "question": "Co, jeśli wydatki przewyższają dochód?",
+      "answer": "Wynik ujemny oznacza, że wydajesz za dużo. Sprawdź najpierw największe kategorie — zwykle mieszkanie i jedzenie — ogranicz wydatki zmienne lub zwiększ dochód, aż różnica będzie dodatnia."
+    },
+    {
+      "question": "Jak Lumi pomaga trzymać się budżetu?",
+      "answer": "Lumi zapisuje każdy wydatek w sekundy głosem, przez Back Tap lub Apple Pay i prognozuje saldo na koniec miesiąca, dzięki czemu realne wydatki mieszczą się w planie."
+    }
+  ],
+  "salary-calculator": [
+    {
+      "question": "Jak przeliczyć stawkę godzinową na roczne wynagrodzenie?",
+      "answer": "Pomnóż stawkę godzinową przez godziny w tygodniu, a potem przez 52 tygodnie. Na przykład 25 za godzinę przy 40 godzinach tygodniowo: 25 × 40 × 52 = 52 000 rocznie. Kwoty miesięczna i tygodniowa to ta roczna podzielona przez 12 lub 52."
+    },
+    {
+      "question": "Ile godzin pracy jest w roku?",
+      "answer": "Częste założenie to 40 godzin tygodniowo × 52 tygodnie = 2080 godzin rocznie. Kalkulator pozwala zmienić godziny w tygodniu, aby część etatu lub nadgodziny były dokładne."
+    },
+    {
+      "question": "Czy to kwota brutto czy netto?",
+      "answer": "Te kwoty są brutto, przed podatkami i potrąceniami. Kwota na rękę będzie niższa i zależy od kraju, regionu i Twojej sytuacji podatkowej."
+    },
+    {
+      "question": "Czy mogę przeliczyć pensję miesięczną na godzinową?",
+      "answer": "Tak. Wpisz kwotę, wybierz okres „Miesiąc” i ustaw godziny w tygodniu — kalkulator od razu pokaże równowartość godzinową, tygodniową i roczną."
+    }
+  ],
+  "inflation-calculator": [
+    {
+      "question": "Jak inflacja wpływa na wartość pieniądza?",
+      "answer": "Inflacja z czasem podnosi ceny, więc ta sama kwota kupuje mniej. Przy średniej inflacji 3% rocznie coś, co dziś kosztuje 100, za dziesięć lat kosztuje około 134, a 100 leżące bezczynnie kupi towary warte około 74."
+    },
+    {
+      "question": "Jak obliczany jest przyszły koszt?",
+      "answer": "Kwota jest kapitalizowana stopą inflacji co roku: przyszły koszt = kwota × (1 + stopa)^lata. Siła nabywcza to odwrotność: kwota ÷ (1 + stopa)^lata."
+    },
+    {
+      "question": "Jakiej stopy inflacji użyć?",
+      "answer": "Wiele planów długoterminowych stosuje 2–3%, blisko celu większości banków centralnych. Dla konkretnego okresu możesz wpisać rzeczywistą średnią stopę, której oczekujesz lub którą zaobserwowałeś."
+    },
+    {
+      "question": "Dlaczego warto wyprzedzać inflację?",
+      "answer": "Jeśli oszczędności rosną wolniej niż inflacja, tracisz siłę nabywczą, nawet gdy saldo rośnie. Dlatego pieniądze często się inwestuje, zamiast trzymać na nieoprocentowanym koncie."
+    }
+  ],
+  "discount-calculator": [
+    {
+      "question": "Jak obliczyć rabat procentowy?",
+      "answer": "Pomnóż cenę początkową przez procent rabatu, aby uzyskać oszczędność, a następnie odejmij ją od ceny. Rabat 25% od 120 oszczędza 30, więc płacisz 90."
+    },
+    {
+      "question": "Jak szybko obliczyć cenę po rabacie?",
+      "answer": "Cena końcowa = cena początkowa × (1 − rabat ÷ 100). Dla 25% to cena × 0,75. Kalkulator liczy to natychmiast i pokazuje też dokładną oszczędność."
+    },
+    {
+      "question": "Czy można zsumować dwa rabaty?",
+      "answer": "Rabaty łączone stosuje się po kolei, a nie dodaje. 20%, a potem 10% to nie 30%, lecz 0,8 × 0,9 = 0,72, czyli 28% ceny początkowej. Zastosuj każdy rabat po kolei."
+    },
+    {
+      "question": "Czy uwzględnia podatek od sprzedaży?",
+      "answer": "Nie — pokazana jest cena po rabacie bez podatku. Użyj kalkulatora podatku od sprzedaży lub VAT, aby dodać podatek do kwoty po rabacie i uzyskać sumę przy kasie."
+    }
+  ],
+  "vat-calculator": [
+    {
+      "question": "Jak dodać VAT do ceny?",
+      "answer": "Pomnóż cenę netto przez stawkę VAT, aby uzyskać podatek, i dodaj go. Przy VAT 20% cena netto 100 daje 20 VAT i cenę brutto 120."
+    },
+    {
+      "question": "Jak wyodrębnić VAT z ceny brutto?",
+      "answer": "Podziel cenę brutto przez 1 plus stawka. Przy VAT 20% brutto ÷ 1,20 daje cenę netto, a różnica to zawarty VAT. Cena brutto 120 to 100 netto + 20 VAT."
+    },
+    {
+      "question": "Jakiej stawki VAT użyć?",
+      "answer": "Zależy od kraju i produktu — stawki podstawowe w Europie to zwykle od 17% do 27%, dla części towarów są obniżone. Wpisz stawkę obowiązującą dla Twojego zakupu lub regionu."
+    },
+    {
+      "question": "Jaka jest różnica między VAT a podatkiem od sprzedaży?",
+      "answer": "VAT nalicza się na każdym etapie produkcji i zwykle jest wliczony w cenę — powszechny w Europie i wielu regionach. Podatek od sprzedaży dodaje się raz przy kasie i jest typowy dla USA. Użyj kalkulatora właściwego dla swojego regionu."
+    }
+  ],
+  "sales-tax-calculator": [
+    {
+      "question": "Jak obliczyć podatek od sprzedaży dla zakupu?",
+      "answer": "Pomnóż cenę bez podatku przez stawkę w postaci ułamka dziesiętnego. Przy stawce 8% artykuł za 100 ma 8 podatku i sumę 108."
+    },
+    {
+      "question": "Czy podatek od sprzedaży jest wszędzie taki sam?",
+      "answer": "Nie. W USA zależy od stanu, hrabstwa i miasta, więc łączne stawki różnią się w zależności od miejsca. Wpisz swoją łączną lokalną stawkę, aby uzyskać dokładną sumę."
+    },
+    {
+      "question": "Jak obliczyć cenę przed podatkiem?",
+      "answer": "Podziel sumę przez 1 plus stawka podatku. Suma 108 przy podatku 8% to 108 ÷ 1,08 = 100 przed podatkiem."
+    },
+    {
+      "question": "Czy podatek od sprzedaży dotyczy każdego artykułu?",
+      "answer": "Nie zawsze — w niektórych miejscach żywność, leki lub odzież są zwolnione albo opodatkowane niższą stawką. Sprawdź lokalne przepisy dla konkretnego artykułu."
+    }
+  ],
+  "simple-interest-calculator": [
+    {
+      "question": "Czym są odsetki proste?",
+      "answer": "Odsetki proste nalicza się tylko od początkowego kapitału, a nie od już uzyskanych odsetek. Wzór to odsetki = kapitał × stopa × czas, więc suma rośnie liniowo, bez przyspieszania."
+    },
+    {
+      "question": "Czym różnią się od odsetek składanych?",
+      "answer": "Odsetki proste pomijają wcześniej uzyskane odsetki, a składane dodają je do salda, więc przyszłe odsetki są większe. W długim okresie kapitalizacja daje znacznie wyższą sumę."
+    },
+    {
+      "question": "Kiedy stosuje się odsetki proste?",
+      "answer": "Występują w niektórych pożyczkach krótkoterminowych, kredytach samochodowych i wybranych obligacjach lub lokatach. Wiele codziennych oszczędności i inwestycji korzysta z odsetek składanych."
+    },
+    {
+      "question": "Jak obliczyć wartość całkowitą?",
+      "answer": "Dodaj odsetki do kapitału: suma = kapitał + (kapitał × stopa × czas). Kalkulator pokazuje zarówno uzyskane odsetki, jak i sumę końcową."
+    }
+  ],
+  "auto-loan-calculator": [
+    {
+      "question": "Jak obliczana jest rata kredytu samochodowego?",
+      "answer": "Kwota finansowania — cena pojazdu minus wpłata własna i wartość auta w rozliczeniu — jest amortyzowana przez okres kredytu według Twojego oprocentowania. Kalkulator podaje ratę miesięczną i łączne odsetki."
+    },
+    {
+      "question": "Jak wpłata własna zmienia ratę?",
+      "answer": "Większa wpłata własna zmniejsza kwotę finansowania, co obniża zarówno ratę miesięczną, jak i łączne odsetki, a także może pomóc uzyskać lepsze oprocentowanie."
+    },
+    {
+      "question": "Czy wybrać dłuższy okres kredytu?",
+      "answer": "Dłuższy okres obniża ratę miesięczną, ale zwiększa łączne odsetki i może sprawić, że będziesz winien więcej, niż auto jest warte. Krótszy okres kosztuje więcej miesięcznie, ale mniej łącznie."
+    },
+    {
+      "question": "Czy uwzględnia podatki i opłaty?",
+      "answer": "Nie — liczy kredyt od wpisanej kwoty finansowania. Jeśli chcesz je sfinansować, najpierw dodaj podatki, rejestrację i opłaty dealera do ceny pojazdu."
+    }
+  ],
+  "rent-affordability-calculator": [
+    {
+      "question": "Jaka część dochodu powinna iść na czynsz?",
+      "answer": "Szeroko stosowana wskazówka to około 30% miesięcznego dochodu brutto, przy czym 25% jest wygodniejsze, a do 35% to już na styk. Kalkulator pokazuje wszystkie trzy, byś wybrał wariant pasujący do sytuacji."
+    },
+    {
+      "question": "Czy reguła 30% opiera się na dochodzie brutto czy netto?",
+      "answer": "Klasyczna reguła używa dochodu brutto (przed podatkiem). Jeśli podatki lub inne długi są wysokie, liczenie od kwoty na rękę daje bardziej realistyczną i zwykle niższą wartość."
+    },
+    {
+      "question": "Co jeszcze uwzględnić w budżecie oprócz czynszu?",
+      "answer": "Weź pod uwagę media, ubezpieczenie najemcy, internet, dojazdy i kaucję. To wszystko się sumuje, więc czynsz poniżej maksimum zostawia zapas na resztę."
+    },
+    {
+      "question": "Jak śledzić czynsz i inne wydatki?",
+      "answer": "Lumi pozwala zapisać czynsz i każdy inny wydatek w sekundy oraz prognozuje saldo na koniec miesiąca, dzięki czemu widzisz, czy koszt mieszkania naprawdę mieści się w budżecie."
+    }
+  ],
+  "debt-consolidation-calculator": [
+    {
+      "question": "Czym jest konsolidacja długów?",
+      "answer": "To połączenie kilku długów w jeden kredyt, najlepiej o niższym oprocentowaniu. Płacisz jedną miesięczną ratę, co upraszcza budżet i może obniżyć łączne odsetki."
+    },
+    {
+      "question": "Ile mogę zaoszczędzić na konsolidacji?",
+      "answer": "Zależy od różnicy między obecnym a nowym oprocentowaniem oraz od nowego okresu. Kalkulator porównuje odsetki obecnego długu z kredytem konsolidacyjnym i pokazuje szacowaną oszczędność."
+    },
+    {
+      "question": "Czy niższa rata zawsze oznacza oszczędność?",
+      "answer": "Niekoniecznie. Rozłożenie kredytu na dłuższy okres obniża ratę, ale zwiększa łączne odsetki. Porównuj łączne odsetki, a nie tylko ratę."
+    },
+    {
+      "question": "Kiedy konsolidacja się nie opłaca?",
+      "answer": "Jeśli nowe oprocentowanie nie jest wyraźnie niższe albo opłaty zjadają oszczędność, konsolidacja może kosztować więcej. Pomaga też tylko wtedy, gdy nie zadłużysz ponownie starych sald."
+    }
+  ],
+  "retirement-calculator": [
+    {
+      "question": "Ile uzbieram na emeryturę?",
+      "answer": "Kalkulator kapitalizuje obecne oszczędności plus miesięczne składki według oczekiwanego zwrotu aż do wieku emerytalnego. Małe kwoty miesięczne rosną znacząco dzięki dekadom procentu składanego."
+    },
+    {
+      "question": "Czym jest reguła 4%?",
+      "answer": "To praktyczna zasada, że w pierwszym roku możesz wypłacić około 4% oszczędności emerytalnych, potem korygując o inflację, z dużą szansą, że pieniądze wystarczą na około 30 lat. Kalkulator używa jej do oszacowania miesięcznego dochodu."
+    },
+    {
+      "question": "Jaki zwrot założyć?",
+      "answer": "Prognozy długoterminowe często przyjmują ostrożne 5–7% dla zdywersyfikowanego portfela, przed inflacją. Niższe założenia dają bezpieczniejsze, ostrożniejsze oszacowanie."
+    },
+    {
+      "question": "Czy wcześniejszy start naprawdę tak wiele znaczy?",
+      "answer": "Tak — dzięki kapitalizacji składki wpłacone po dwudziestce mogą urosnąć znacznie bardziej niż te same kwoty dodane później. Wczesny start jest zwykle skuteczniejszy niż odkładanie większych sum w przyszłości."
+    }
+  ],
+  "roi-calculator": [
+    {
+      "question": "Jak obliczyć zwrot z inwestycji?",
+      "answer": "ROI = (wartość końcowa − zainwestowana kwota) ÷ zainwestowana kwota × 100. Jeśli zainwestujesz 10 000, a urośnie do 13 500, Twój ROI wynosi 35%."
+    },
+    {
+      "question": "Czym jest zannualizowana stopa zwrotu?",
+      "answer": "Zannualizowana stopa zwrotu rozkłada całkowity zysk równomiernie na lata trzymania: (końcowa ÷ zainwestowana)^(1/lata) − 1. Pozwala porównywać inwestycje o różnej długości na równych zasadach."
+    },
+    {
+      "question": "Czy wyższy ROI zawsze jest lepszy?",
+      "answer": "Sam w sobie nie: wysoki ROI przez wiele lat może być gorszy niż umiarkowany w krótkim czasie. Sprawdź zannualizowaną stopę zwrotu i uwzględnij podjęte ryzyko."
+    },
+    {
+      "question": "Czy ROI uwzględnia opłaty i podatki?",
+      "answer": "Podstawowe obliczenie nie. Dla rzetelnego obrazu użyj kwoty netto po opłatach i podatkach jako wartości końcowej, aby ROI odzwierciedlał to, co faktycznie zostaje."
+    }
+  ],
+  "subscription-cost-calculator": [
+    {
+      "question": "Ile przeciętna osoba wydaje na subskrypcje?",
+      "answer": "Większość badań wskazuje od 60 do 220 miesięcznie, gdy policzysz streaming, oprogramowanie, chmurę, fitness i abonamenty dostaw — a samodzielne szacunki są zwykle o połowę niższe od rzeczywistości. Zsumuj swoje w tym kalkulatorze; niespodzianką zwykle jest suma roczna."
+    },
+    {
+      "question": "Po co pokazywać, ile te pieniądze byłyby warte zainwestowane?",
+      "answer": "Bo prawdziwą ceną subskrypcji jest jej koszt alternatywny. 30 miesięcznie wydaje się niewiele; te same 30 zainwestowane przy średnim zwrocie 7% to około 2150 po pięciu latach. To nie argument przeciw subskrypcjom, których używasz — to uczciwa metka dla tych, których nie używasz."
+    },
+    {
+      "question": "Jak znaleźć zapomniane subskrypcje?",
+      "answer": "Sprawdź subskrypcje Apple ID, Google Play, płatności automatyczne PayPal i trzy miesiące wyciągów z karty, a potem wyszukaj w poczcie „odnowienie” i „paragon”. Nasz przewodnik po znajdowaniu zapomnianych subskrypcji krok po kroku omawia wszystkie sześć kryjówek."
+    }
+  ],
+  "couple-expense-split-calculator": [
+    {
+      "question": "Czy pary powinny dzielić wydatki 50/50 czy według dochodu?",
+      "answer": "50/50 sprawdza się, gdy dochody są podobne. Gdy się różnią, podział proporcjonalny do dochodu nakłada takie samo procentowe obciążenie na oboje: jeśli zarabiasz 60% dochodu gospodarstwa, pokrywasz 60% wspólnych kosztów. Większość doradców uznaje podział proporcjonalny za uczciwszy przy nierównych dochodach."
+    },
+    {
+      "question": "Które wydatki liczą się jako wspólne?",
+      "answer": "Zwykle czynsz lub kredyt, media, zakupy spożywcze, artykuły domowe, subskrypcje używane przez oboje i wspólne podróże. Subskrypcje osobiste, hobby i prezenty pozostają osobiste. Krótką wspólną listę łatwiej utrzymać uczciwie niż długą — w razie wątpliwości uznaj wydatek za osobisty."
+    },
+    {
+      "question": "Jak śledzić, kto naprawdę co wydał?",
+      "answer": "Każde z was zapisuje własne wydatki, a raz w miesiącu porównujecie sumy wspólnych kategorii. System działa tylko wtedy, gdy zapisywanie jest bezwysiłkowe — dlatego aplikacje z wprowadzaniem głosowym i automatycznym importem Apple Pay w praktyce wygrywają z współdzielonymi arkuszami. Zobacz nasz przewodnik po budżecie w parze z osobnymi kontami."
+    }
   ]
 }

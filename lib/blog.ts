@@ -85,6 +85,16 @@ export function getPostBySlug(slug: string, locale?: string): BlogPost {
   const { data, content } = matter(fileContent);
   const stats = readingTime(content);
 
+  // Only surface a cover image the site can actually render: a local
+  // /images/... path whose file exists under public/. Missing files (many
+  // legacy posts reference covers that were never added) resolve to "" so the
+  // article page can safely skip the hero instead of showing a broken image.
+  const rawImage: string = data.image ?? "";
+  const image =
+    rawImage.startsWith("/") && !fs.existsSync(path.join(process.cwd(), "public", rawImage))
+      ? ""
+      : rawImage;
+
   return {
     slug,
     title: data.title,
@@ -93,7 +103,7 @@ export function getPostBySlug(slug: string, locale?: string): BlogPost {
     date: data.date,
     updated: data.updated,
     author: data.author,
-    image: data.image,
+    image,
     tags: data.tags || [],
     readingTime: stats.text,
     content,
