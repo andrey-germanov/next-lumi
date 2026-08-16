@@ -2,81 +2,12 @@
   "version": 1,
   "announcements": [
     {
-      "id": "telegram_channel",
-      "tag": "community",
-      "date": "2026-08-16",
-      "visual": "telegram",
-      "caption": "Lumi News",
-      "action": { "type": "url", "value": "https://t.me/+UgCFGWh14DhkMTNi" },
-      "copy": {
-        "de": {
-          "title": "Lumi hat jetzt einen Telegram-Kanal",
-          "subtitle": "News, Updates und Finanztipps – aus erster Hand.",
-          "body": "Wir stellen jede neue Funktion vor, bevor sie im Änderungsprotokoll landet, teilen, woran wir als Nächstes arbeiten, und veröffentlichen kurze Anleitungen, wie du mehr aus Lumi herausholst. Fragen und Ideen sind in den Kommentaren willkommen.",
-          "cta": "Auf Telegram abonnieren"
-        },
-        "en": {
-          "title": "Lumi now has a Telegram channel",
-          "subtitle": "News, updates and money tips — first hand.",
-          "body": "We post every new feature before it reaches the changelog, share what we're building next, and drop short guides on getting more out of Lumi. Questions and ideas are welcome in the comments.",
-          "cta": "Subscribe on Telegram"
-        },
-        "es": {
-          "title": "Lumi ahora tiene un canal de Telegram",
-          "subtitle": "Noticias, novedades y consejos sobre dinero, de primera mano.",
-          "body": "Publicamos cada nueva función antes de que llegue al registro de cambios, compartimos en qué estamos trabajando y publicamos guías cortas para sacarle más partido a Lumi. Las preguntas e ideas son bienvenidas en los comentarios.",
-          "cta": "Suscribirse en Telegram"
-        },
-        "it": {
-          "title": "Lumi ha ora un canale Telegram",
-          "subtitle": "Notizie, aggiornamenti e consigli sul denaro, in anteprima.",
-          "body": "Pubblichiamo ogni nuova funzione prima che arrivi nel changelog, condividiamo cosa stiamo preparando e pubblichiamo brevi guide per sfruttare al meglio Lumi. Domande e idee sono benvenute nei commenti.",
-          "cta": "Iscriviti su Telegram"
-        },
-        "ja": {
-          "title": "Lumiに公式Telegramチャンネルが登場",
-          "subtitle": "最新情報やお金のヒントをいち早くお届け。",
-          "body": "新機能は更新履歴に載る前にここで紹介し、開発中の内容や、Lumiをもっと活用するための短いガイドも共有します。質問やアイデアはコメントでお気軽にどうぞ。",
-          "cta": "Telegramで購読する"
-        },
-        "ka": {
-          "title": "Lumi-ს ახლა Telegram არხი ჰყავს",
-          "subtitle": "სიახლეები, განახლებები და ფინანსური რჩევები — პირველწყაროდან.",
-          "body": "ყოველ ახალ ფუნქციას გაცნობთ ჯერ კიდევ ცვლილებების ჩამონათვალში მოხვედრამდე, ვიზიარებთ, რაზეც ვმუშაობთ და ვაქვეყნებთ მოკლე გზამკვლევებს, როგორ გამოიყენოთ Lumi მაქსიმალურად. კითხვები და იდეები კომენტარებში მისასალმებელია.",
-          "cta": "გამოწერა Telegram-ზე"
-        },
-        "pl": {
-          "title": "Lumi ma teraz kanał na Telegramie",
-          "subtitle": "Nowości, aktualizacje i porady finansowe z pierwszej ręki.",
-          "body": "Publikujemy każdą nową funkcję, zanim trafi do listy zmian, dzielimy się tym, nad czym pracujemy, i wrzucamy krótkie poradniki, jak wycisnąć z Lumi jeszcze więcej. Pytania i pomysły mile widziane w komentarzach.",
-          "cta": "Subskrybuj na Telegramie"
-        },
-        "ro": {
-          "title": "Lumi are acum un canal de Telegram",
-          "subtitle": "Noutăți, actualizări și sfaturi despre bani, de la sursă.",
-          "body": "Publicăm fiecare funcție nouă înainte să ajungă în jurnalul de modificări, spunem la ce lucrăm și postăm ghiduri scurte pentru a profita la maximum de Lumi. Întrebările și ideile sunt binevenite la comentarii.",
-          "cta": "Abonează-te pe Telegram"
-        },
-        "ru": {
-          "title": "У Lumi появился Telegram-канал",
-          "subtitle": "Новости, обновления и советы о деньгах — из первых рук.",
-          "body": "Рассказываем о новых функциях раньше, чем они попадают в список обновлений, делимся планами и публикуем короткие гайды, как выжать из Lumi максимум. Вопросы и идеи — в комментарии.",
-          "cta": "Подписаться в Telegram"
-        },
-        "uk": {
-          "title": "У Lumi з'явився Telegram-канал",
-          "subtitle": "Новини, оновлення та поради про гроші — з перших вуст.",
-          "body": "Розповідаємо про нові функції ще до того, як вони потраплять у список оновлень, ділимося планами та публікуємо короткі гайди, як отримати від Lumi максимум. Запитання та ідеї вітаються в коментарях.",
-          "cta": "Підписатися в Telegram"
-        }
-      }
-    },
-    {
       "id": "web_app",
       "tag": "new",
       "date": "2026-08-16",
       "visual": "web",
       "caption": "lumi.herman-apps.com",
+      "image": "https://lumi.herman-apps.com/news/web_app.png",
       "action": { "type": "url", "value": "https://lumi.herman-apps.com/" },
       "copy": {
         "de": {
@@ -138,6 +69,77 @@
           "subtitle": "Веб-версія вже доступна — ваші фінанси на великому екрані.",
           "body": "Увійдіть у той самий акаунт — і все синхронізується миттєво: транзакції, бюджети, цілі та аналітика. Додавайте витрати з ноутбука, переглядайте місяць на великих графіках і продовжуйте з того самого місця, де зупинилися на телефоні.",
           "cta": "Відкрити веб-версію"
+        }
+      }
+    },
+    {
+      "id": "telegram_channel",
+      "tag": "community",
+      "date": "2026-08-16",
+      "visual": "telegram",
+      "caption": "Lumi News",
+      "image": "https://lumi.herman-apps.com/news/telegram_channel.png",
+      "action": { "type": "url", "value": "https://t.me/+UgCFGWh14DhkMTNi" },
+      "copy": {
+        "de": {
+          "title": "Lumi hat jetzt einen Telegram-Kanal",
+          "subtitle": "News, Updates und Finanztipps – aus erster Hand.",
+          "body": "Wir stellen jede neue Funktion vor, bevor sie im Änderungsprotokoll landet, teilen, woran wir als Nächstes arbeiten, und veröffentlichen kurze Anleitungen, wie du mehr aus Lumi herausholst. Fragen und Ideen sind in den Kommentaren willkommen.",
+          "cta": "Auf Telegram abonnieren"
+        },
+        "en": {
+          "title": "Lumi now has a Telegram channel",
+          "subtitle": "News, updates and money tips — first hand.",
+          "body": "We post every new feature before it reaches the changelog, share what we're building next, and drop short guides on getting more out of Lumi. Questions and ideas are welcome in the comments.",
+          "cta": "Subscribe on Telegram"
+        },
+        "es": {
+          "title": "Lumi ahora tiene un canal de Telegram",
+          "subtitle": "Noticias, novedades y consejos sobre dinero, de primera mano.",
+          "body": "Publicamos cada nueva función antes de que llegue al registro de cambios, compartimos en qué estamos trabajando y publicamos guías cortas para sacarle más partido a Lumi. Las preguntas e ideas son bienvenidas en los comentarios.",
+          "cta": "Suscribirse en Telegram"
+        },
+        "it": {
+          "title": "Lumi ha ora un canale Telegram",
+          "subtitle": "Notizie, aggiornamenti e consigli sul denaro, in anteprima.",
+          "body": "Pubblichiamo ogni nuova funzione prima che arrivi nel changelog, condividiamo cosa stiamo preparando e pubblichiamo brevi guide per sfruttare al meglio Lumi. Domande e idee sono benvenute nei commenti.",
+          "cta": "Iscriviti su Telegram"
+        },
+        "ja": {
+          "title": "Lumiに公式Telegramチャンネルが登場",
+          "subtitle": "最新情報やお金のヒントをいち早くお届け。",
+          "body": "新機能は更新履歴に載る前にここで紹介し、開発中の内容や、Lumiをもっと活用するための短いガイドも共有します。質問やアイデアはコメントでお気軽にどうぞ。",
+          "cta": "Telegramで購読する"
+        },
+        "ka": {
+          "title": "Lumi-ს ახლა Telegram არხი ჰყავს",
+          "subtitle": "სიახლეები, განახლებები და ფინანსური რჩევები — პირველწყაროდან.",
+          "body": "ყოველ ახალ ფუნქციას გაცნობთ ჯერ კიდევ ცვლილებების ჩამონათვალში მოხვედრამდე, ვიზიარებთ, რაზეც ვმუშაობთ და ვაქვეყნებთ მოკლე გზამკვლევებს, როგორ გამოიყენოთ Lumi მაქსიმალურად. კითხვები და იდეები კომენტარებში მისასალმებელია.",
+          "cta": "გამოწერა Telegram-ზე"
+        },
+        "pl": {
+          "title": "Lumi ma teraz kanał na Telegramie",
+          "subtitle": "Nowości, aktualizacje i porady finansowe z pierwszej ręki.",
+          "body": "Publikujemy każdą nową funkcję, zanim trafi do listy zmian, dzielimy się tym, nad czym pracujemy, i wrzucamy krótkie poradniki, jak wycisnąć z Lumi jeszcze więcej. Pytania i pomysły mile widziane w komentarzach.",
+          "cta": "Subskrybuj na Telegramie"
+        },
+        "ro": {
+          "title": "Lumi are acum un canal de Telegram",
+          "subtitle": "Noutăți, actualizări și sfaturi despre bani, de la sursă.",
+          "body": "Publicăm fiecare funcție nouă înainte să ajungă în jurnalul de modificări, spunem la ce lucrăm și postăm ghiduri scurte pentru a profita la maximum de Lumi. Întrebările și ideile sunt binevenite la comentarii.",
+          "cta": "Abonează-te pe Telegram"
+        },
+        "ru": {
+          "title": "У Lumi появился Telegram-канал",
+          "subtitle": "Новости, обновления и советы о деньгах — из первых рук.",
+          "body": "Рассказываем о новых функциях раньше, чем они попадают в список обновлений, делимся планами и публикуем короткие гайды, как выжать из Lumi максимум. Вопросы и идеи — в комментарии.",
+          "cta": "Подписаться в Telegram"
+        },
+        "uk": {
+          "title": "У Lumi з'явився Telegram-канал",
+          "subtitle": "Новини, оновлення та поради про гроші — з перших вуст.",
+          "body": "Розповідаємо про нові функції ще до того, як вони потраплять у список оновлень, ділимося планами та публікуємо короткі гайди, як отримати від Lumi максимум. Запитання та ідеї вітаються в коментарях.",
+          "cta": "Підписатися в Telegram"
         }
       }
     }

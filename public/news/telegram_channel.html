@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --ink-soft:      #181D30;
+
+  --glass:         rgba(255, 255, 255, 0.09);
+  --glass-strong:  rgba(255, 255, 255, 0.15);
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Community tag: cooler, darker lean on the same brand tokens (no lavender). */
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--violet-deep) 55%, var(--violet) 100%);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(4px);
+}
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.14); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(108,99,255,0.28); }
+
+.stage {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+.badge {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 20px 44px rgba(11,13,30,0.32);
+}
+.badge svg { width: 150px; height: 150px; display: block; }
+
+.pill {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: rgba(11,13,30,0.45);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+      <div class="badge">
+        <!-- Flat paper-plane glyph — the channel's mark, drawn geometric to match the app's idiom. -->
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28 112 L208 40 C216 37 223 44 220 52 L182 204 C179 214 166 216 161 207 L124 145 L86 172 C81 176 74 174 73 168 L64 122 L28 112 Z"
+                fill="#ffffff" fill-opacity="0.95"/>
+          <path d="M64 122 L184 56 L100 140" stroke="#4C46B8" stroke-opacity="0.45" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="pill">Telegram</div>
+  </div>
+</body>
+</html>

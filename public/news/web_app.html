@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --ink-soft:      #181D30;
+
+  --glass:         rgba(255, 255, 255, 0.09);
+  --glass-strong:  rgba(255, 255, 255, 0.15);
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep) 0%, var(--violet) 50%, var(--lavender) 100%);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(4px);
+}
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.16); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(52,211,153,0.20); }
+
+.stage {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+.browser {
+  width: 720px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(11,13,30,0.62);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 30px 60px rgba(11,13,30,0.38);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 18px;
+  background: rgba(255,255,255,0.10);
+}
+.light { width: 12px; height: 12px; border-radius: 50%; }
+.light.r { background: var(--coral); }
+.light.y { background: var(--amber); }
+.light.g { background: var(--mint); }
+.address {
+  flex: 1;
+  margin-left: 12px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+}
+.browser-body { display: flex; height: 300px; }
+.sidebar {
+  width: 92px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.sidebar i { height: 10px; border-radius: 5px; background: rgba(255,255,255,0.22); }
+.sidebar i.on { background: rgba(255,255,255,0.75); }
+.pane { flex: 1; padding: 26px 30px; }
+.pane .big { width: 58%; height: 22px; border-radius: 11px; background: rgba(255,255,255,0.85); }
+.pane .small { width: 34%; height: 11px; border-radius: 6px; background: rgba(255,255,255,0.35); margin-top: 12px; }
+.bars { display: flex; align-items: flex-end; gap: 14px; height: 130px; margin-top: 32px; }
+.bars b { width: 22px; border-radius: 11px; background: rgba(255,255,255,0.32); }
+.bars b.hot { background: var(--mint); }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+      <div class="browser">
+        <div class="browser-bar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <div class="address">lumi.herman-apps.com</div>
+        </div>
+        <div class="browser-body">
+          <div class="sidebar"><i class="on"></i><i></i><i></i><i></i></div>
+          <div class="pane">
+            <div class="big"></div>
+            <div class="small"></div>
+            <div class="bars">
+              <b style="height:36%"></b><b style="height:56%"></b><b style="height:42%"></b>
+              <b class="hot" style="height:100%"></b><b style="height:62%"></b>
+              <b style="height:80%"></b><b style="height:50%"></b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
