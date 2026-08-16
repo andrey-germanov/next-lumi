@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "announcements": [
+    {
+      "id": "telegram_channel",
+      "tag": "community",
+      "date": "2026-08-16",
+      "visual": "telegram",
+      "caption": "Lumi News",
+      "action": { "type": "url", "value": "https://t.me/+UgCFGWh14DhkMTNi" },
+      "copy": {
+        "de": {
+          "title": "Lumi hat jetzt einen Telegram-Kanal",
+          "subtitle": "News, Updates und Finanztipps – aus erster Hand.",
+          "body": "Wir stellen jede neue Funktion vor, bevor sie im Änderungsprotokoll landet, teilen, woran wir als Nächstes arbeiten, und veröffentlichen kurze Anleitungen, wie du mehr aus Lumi herausholst. Fragen und Ideen sind in den Kommentaren willkommen.",
+          "cta": "Auf Telegram abonnieren"
+        },
+        "en": {
+          "title": "Lumi now has a Telegram channel",
+          "subtitle": "News, updates and money tips — first hand.",
+          "body": "We post every new feature before it reaches the changelog, share what we're building next, and drop short guides on getting more out of Lumi. Questions and ideas are welcome in the comments.",
+          "cta": "Subscribe on Telegram"
+        },
+        "es": {
+          "title": "Lumi ahora tiene un canal de Telegram",
+          "subtitle": "Noticias, novedades y consejos sobre dinero, de primera mano.",
+          "body": "Publicamos cada nueva función antes de que llegue al registro de cambios, compartimos en qué estamos trabajando y publicamos guías cortas para sacarle más partido a Lumi. Las preguntas e ideas son bienvenidas en los comentarios.",
+          "cta": "Suscribirse en Telegram"
+        },
+        "it": {
+          "title": "Lumi ha ora un canale Telegram",
+          "subtitle": "Notizie, aggiornamenti e consigli sul denaro, in anteprima.",
+          "body": "Pubblichiamo ogni nuova funzione prima che arrivi nel changelog, condividiamo cosa stiamo preparando e pubblichiamo brevi guide per sfruttare al meglio Lumi. Domande e idee sono benvenute nei commenti.",
+          "cta": "Iscriviti su Telegram"
+        },
+        "ja": {
+          "title": "Lumiに公式Telegramチャンネルが登場",
+          "subtitle": "最新情報やお金のヒントをいち早くお届け。",
+          "body": "新機能は更新履歴に載る前にここで紹介し、開発中の内容や、Lumiをもっと活用するための短いガイドも共有します。質問やアイデアはコメントでお気軽にどうぞ。",
+          "cta": "Telegramで購読する"
+        },
+        "ka": {
+          "title": "Lumi-ს ახლა Telegram არხი ჰყავს",
+          "subtitle": "სიახლეები, განახლებები და ფინანსური რჩევები — პირველწყაროდან.",
+          "body": "ყოველ ახალ ფუნქციას გაცნობთ ჯერ კიდევ ცვლილებების ჩამონათვალში მოხვედრამდე, ვიზიარებთ, რაზეც ვმუშაობთ და ვაქვეყნებთ მოკლე გზამკვლევებს, როგორ გამოიყენოთ Lumi მაქსიმალურად. კითხვები და იდეები კომენტარებში მისასალმებელია.",
+          "cta": "გამოწერა Telegram-ზე"
+        },
+        "pl": {
+          "title": "Lumi ma teraz kanał na Telegramie",
+          "subtitle": "Nowości, aktualizacje i porady finansowe z pierwszej ręki.",
+          "body": "Publikujemy każdą nową funkcję, zanim trafi do listy zmian, dzielimy się tym, nad czym pracujemy, i wrzucamy krótkie poradniki, jak wycisnąć z Lumi jeszcze więcej. Pytania i pomysły mile widziane w komentarzach.",
+          "cta": "Subskrybuj na Telegramie"
+        },
+        "ro": {
+          "title": "Lumi are acum un canal de Telegram",
+          "subtitle": "Noutăți, actualizări și sfaturi despre bani, de la sursă.",
+          "body": "Publicăm fiecare funcție nouă înainte să ajungă în jurnalul de modificări, spunem la ce lucrăm și postăm ghiduri scurte pentru a profita la maximum de Lumi. Întrebările și ideile sunt binevenite la comentarii.",
+          "cta": "Abonează-te pe Telegram"
+        },
+        "ru": {
+          "title": "У Lumi появился Telegram-канал",
+          "subtitle": "Новости, обновления и советы о деньгах — из первых рук.",
+          "body": "Рассказываем о новых функциях раньше, чем они попадают в список обновлений, делимся планами и публикуем короткие гайды, как выжать из Lumi максимум. Вопросы и идеи — в комментарии.",
+          "cta": "Подписаться в Telegram"
+        },
+        "uk": {
+          "title": "У Lumi з'явився Telegram-канал",
+          "subtitle": "Новини, оновлення та поради про гроші — з перших вуст.",
+          "body": "Розповідаємо про нові функції ще до того, як вони потраплять у список оновлень, ділимося планами та публікуємо короткі гайди, як отримати від Lumi максимум. Запитання та ідеї вітаються в коментарях.",
+          "cta": "Підписатися в Telegram"
+        }
+      }
+    },
+    {
+      "id": "web_app",
+      "tag": "new",
+      "date": "2026-08-16",
+      "visual": "web",
+      "caption": "lumi.herman-apps.com",
+      "action": { "type": "url", "value": "https://lumi.herman-apps.com/" },
+      "copy": {
+        "de": {
+          "title": "Lumi funktioniert jetzt auch im Browser",
+          "subtitle": "Die Webversion ist da – deine Finanzen auf dem großen Bildschirm.",
+          "body": "Melde dich mit demselben Konto an, und alles synchronisiert sich sofort: Transaktionen, Budgets, Ziele und Auswertungen. Erfasse Ausgaben vom Laptop aus, analysiere den Monat auf großformatigen Diagrammen und mach genau dort weiter, wo du auf dem Handy aufgehört hast.",
+          "cta": "Webversion öffnen"
+        },
+        "en": {
+          "title": "Lumi now works in your browser",
+          "subtitle": "The web version is live — your money on the big screen.",
+          "body": "Sign in with the same account and everything syncs instantly: transactions, budgets, goals and analytics. Add expenses from your laptop, review the month on full-size charts, and pick up right where you left off on your phone.",
+          "cta": "Open the web version"
+        },
+        "es": {
+          "title": "Lumi ya funciona en tu navegador",
+          "subtitle": "La versión web ya está aquí: tus finanzas en la pantalla grande.",
+          "body": "Inicia sesión con la misma cuenta y todo se sincroniza al instante: transacciones, presupuestos, metas y análisis. Añade gastos desde tu portátil, revisa el mes en gráficos a pantalla completa y continúa justo donde lo dejaste en el teléfono.",
+          "cta": "Abrir la versión web"
+        },
+        "it": {
+          "title": "Lumi ora funziona anche nel browser",
+          "subtitle": "La versione web è online: le tue finanze sullo schermo grande.",
+          "body": "Accedi con lo stesso account e tutto si sincronizza all'istante: transazioni, budget, obiettivi e analisi. Aggiungi spese dal computer, rivedi il mese su grafici a schermo intero e riprendi esattamente da dove hai lasciato sul telefono.",
+          "cta": "Apri la versione web"
+        },
+        "ja": {
+          "title": "Lumiがブラウザでも使えるようになりました",
+          "subtitle": "ウェブ版が登場 — 大画面でお金を管理。",
+          "body": "同じアカウントでログインするだけで、取引、予算、目標、分析データがすぐに同期されます。パソコンから支出を追加したり、大きなグラフで月の内容を確認したり、スマホでの続きをそのまま操作できます。",
+          "cta": "ウェブ版を開く"
+        },
+        "ka": {
+          "title": "Lumi ახლა ბრაუზერშიც მუშაობს",
+          "subtitle": "ვებ-ვერსია უკვე ხელმისაწვდომია — თქვენი ფინანსები დიდ ეკრანზე.",
+          "body": "შედით იმავე ანგარიშით და ყველაფერი მყისიერად სინქრონიზდება: ტრანზაქციები, ბიუჯეტები, მიზნები და ანალიტიკა. დაამატეთ ხარჯები ლეპტოპიდან, გაანალიზეთ თვე დიდი გრაფიკებით და გააგრძელეთ ზუსტად იქიდან, სადაც ტელეფონზე გაჩერდით.",
+          "cta": "ვებ-ვერსიის გახსნა"
+        },
+        "pl": {
+          "title": "Lumi działa teraz też w przeglądarce",
+          "subtitle": "Wersja webowa już dostępna — twoje finanse na dużym ekranie.",
+          "body": "Zaloguj się na to samo konto, a wszystko zsynchronizuje się natychmiast: transakcje, budżety, cele i analizy. Dodawaj wydatki z laptopa, przeglądaj miesiąc na dużych wykresach i kontynuuj dokładnie tam, gdzie skończyłeś na telefonie.",
+          "cta": "Otwórz wersję webową"
+        },
+        "ro": {
+          "title": "Lumi funcționează acum și în browser",
+          "subtitle": "Versiunea web este live — banii tăi pe ecran mare.",
+          "body": "Conectează-te cu același cont și totul se sincronizează instant: tranzacții, bugete, obiective și analize. Adaugă cheltuieli de pe laptop, treci în revistă luna pe grafice la scară mare și continuă exact de unde ai rămas pe telefon.",
+          "cta": "Deschide versiunea web"
+        },
+        "ru": {
+          "title": "Lumi теперь работает в браузере",
+          "subtitle": "Веб-версия уже доступна — ваши финансы на большом экране.",
+          "body": "Войдите в тот же аккаунт — и всё синхронизируется мгновенно: траты, бюджеты, цели и аналитика. Добавляйте расходы с ноутбука, разбирайте месяц на больших графиках и продолжайте с того же места на телефоне.",
+          "cta": "Открыть веб-версию"
+        },
+        "uk": {
+          "title": "Lumi тепер працює у браузері",
+          "subtitle": "Веб-версія вже доступна — ваші фінанси на великому екрані.",
+          "body": "Увійдіть у той самий акаунт — і все синхронізується миттєво: транзакції, бюджети, цілі та аналітика. Додавайте витрати з ноутбука, переглядайте місяць на великих графіках і продовжуйте з того самого місця, де зупинилися на телефоні.",
+          "cta": "Відкрити веб-версію"
+        }
+      }
+    }
+  ]
+}
