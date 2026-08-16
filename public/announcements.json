@@ -2,6 +2,75 @@
   "version": 1,
   "announcements": [
     {
+      "id": "family_sharing",
+      "tag": "new",
+      "date": "2026-08-16",
+      "image": "https://lumi.herman-apps.com/news/family_sharing.png",
+      "action": { "type": "app", "value": "lumi://settings" },
+      "copy": {
+        "de": {
+          "title": "Teile Lumi mit deinem Partner",
+          "subtitle": "Gemeinsam budgetieren erhöht deinen Erfolg um 20 %.",
+          "body": "Lade eine weitere Person zu deinem Premium-Abo ein – günstiger als zwei getrennte Abos. Jede Transaktion wird mit dem Namen der Person markiert, die sie hinzugefügt hat, damit du immer weißt, wer was ausgegeben hat, ohne nachzufragen.",
+          "cta": "Family Sharing aktivieren"
+        },
+        "en": {
+          "title": "Share Lumi with your partner",
+          "subtitle": "Budgeting together boosts your success by 20%.",
+          "body": "Invite one more person to your Premium plan — for less than two separate subscriptions. Every transaction gets tagged with who added it, so you always know who spent what, without asking.",
+          "cta": "Turn on Family Sharing"
+        },
+        "es": {
+          "title": "Comparte Lumi con tu pareja",
+          "subtitle": "Llevar el presupuesto juntos aumenta el éxito un 20 %.",
+          "body": "Invita a una persona más a tu plan Premium, por menos que dos suscripciones por separado. Cada transacción queda etiquetada con quién la añadió, así siempre sabes quién gastó qué, sin tener que preguntar.",
+          "cta": "Activar el acceso familiar"
+        },
+        "it": {
+          "title": "Condividi Lumi con il tuo partner",
+          "subtitle": "Gestire il budget insieme aumenta il successo del 20%.",
+          "body": "Invita un'altra persona al tuo piano Premium, a un prezzo inferiore rispetto a due abbonamenti separati. Ogni transazione viene etichettata con chi l'ha aggiunta, così sai sempre chi ha speso cosa, senza doverlo chiedere.",
+          "cta": "Attiva la condivisione familiare"
+        },
+        "ja": {
+          "title": "パートナーとLumiをシェア",
+          "subtitle": "一緒に家計管理をすると、成功率が20%アップ。",
+          "body": "Premiumプランにもう一人招待できます。別々に契約するよりお得な料金で。追加した人の名前が自動でタグ付けされるので、誰が何を使ったか、聞かなくてもすぐわかります。",
+          "cta": "ファミリー共有をオンにする"
+        },
+        "ka": {
+          "title": "გაუზიარეთ Lumi პარტნიორს",
+          "subtitle": "ერთად ბიუჯეტირება წარმატებას 20%-ით ზრდის.",
+          "body": "მოიწვიეთ კიდევ ერთი ადამიანი თქვენს Premium გეგმაში — ორ ცალკე გამოწერაზე იაფად. ყოველი ტრანზაქცია მონიშნულია იმის სახელით, ვინც დაამატა, ასე რომ ყოველთვის იცით, ვინც რა დახარჯა, კითხვის გარეშე.",
+          "cta": "ჩართეთ ოჯახური წვდომა"
+        },
+        "pl": {
+          "title": "Udostępnij Lumi swojemu partnerowi",
+          "subtitle": "Wspólne budżetowanie zwiększa skuteczność o 20%.",
+          "body": "Zaproś jeszcze jedną osobę do swojego planu Premium — taniej niż dwie osobne subskrypcje. Każda transakcja jest oznaczana imieniem osoby, która ją dodała, więc zawsze wiesz, kto na co wydał, bez pytania.",
+          "cta": "Włącz udostępnianie rodzinne"
+        },
+        "ro": {
+          "title": "Distribuie Lumi partenerului tău",
+          "subtitle": "Bugetarea în doi crește șansele de succes cu 20%.",
+          "body": "Invită încă o persoană în planul tău Premium — mai ieftin decât două abonamente separate. Fiecare tranzacție este etichetată cu numele celui care a adăugat-o, așa că știi mereu cine ce a cheltuit, fără să întrebi.",
+          "cta": "Activează accesul partajat"
+        },
+        "ru": {
+          "title": "Делите Lumi с партнёром",
+          "subtitle": "Вместе вести бюджет — на 20% эффективнее.",
+          "body": "Пригласите ещё одного человека в свой Premium — это дешевле двух отдельных подписок. Каждая транзакция помечается именем того, кто её добавил, так что вы всегда знаете, кто на что потратил, не спрашивая.",
+          "cta": "Включить семейный доступ"
+        },
+        "uk": {
+          "title": "Поділіться Lumi з партнером",
+          "subtitle": "Разом вести бюджет — на 20% ефективніше.",
+          "body": "Запросіть ще одну людину до свого Premium — це дешевше за дві окремі підписки. Кожна транзакція позначається іменем того, хто її додав, тож ви завжди знаєте, хто на що витратив, не питаючи.",
+          "cta": "Увімкнути спільний доступ"
+        }
+      }
+    },
+    {
       "id": "web_app",
       "tag": "new",
       "date": "2026-08-16",
