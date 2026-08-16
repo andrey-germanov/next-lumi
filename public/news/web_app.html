@@ -97,11 +97,11 @@ body {
 }
 .sidebar i { height: 10px; border-radius: 5px; background: rgba(255,255,255,0.22); }
 .sidebar i.on { background: rgba(255,255,255,0.75); }
-.pane { flex: 1; padding: 26px 30px; }
+.pane { flex: 1; padding: 26px 30px; display: flex; flex-direction: column; }
 .pane .big { width: 58%; height: 22px; border-radius: 11px; background: rgba(255,255,255,0.85); }
 .pane .small { width: 34%; height: 11px; border-radius: 6px; background: rgba(255,255,255,0.35); margin-top: 12px; }
-.bars { display: flex; align-items: flex-end; gap: 14px; height: 130px; margin-top: 32px; }
-.bars b { width: 22px; border-radius: 11px; background: rgba(255,255,255,0.32); }
+.bars { flex: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: 28px; }
+.bars b { flex: 1; border-radius: 11px 11px 4px 4px; background: rgba(255,255,255,0.32); }
 .bars b.hot { background: var(--mint); }
 </style>
 </head>
