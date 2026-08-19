@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 w-full">
 
         {/* ── Main grid ─────────────────────────────────── */}
-        <div className="grid items-center gap-12 lg:grid-cols-2" style={{ paddingTop: 32, paddingBottom: 32 }}>
+        <div className="grid items-center gap-12 grid-cols-1 lg:grid-cols-2" style={{ paddingTop: 32, paddingBottom: 32 }}>
 
           {/* Copy */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

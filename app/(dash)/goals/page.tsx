@@ -5,6 +5,7 @@ import { useStore } from "@/components/dash/store";
 import { useLang } from "@/components/dash/i18n";
 import { PageHeader, Card, Money, PrimaryButton, fieldLabel, fieldInput } from "@/components/dash/ui";
 import { AppIcon } from "@/components/dash/AppIcon";
+import GoalHistoryModal from "@/components/dash/GoalHistoryModal";
 import type { SavingsGoalCategory, SavingsGoalPriority } from "@/types/web";
 import type { CurrencyCode } from "@/utils/currencyUtils";
 
@@ -26,6 +27,7 @@ export default function GoalsPage() {
   const { goals, currency, addGoal, updateGoal, deleteGoal, contributeToGoal } = useStore();
   const { t, formatDate } = useLang();
   const [open, setOpen] = useState(false);
+  const [historyId, setHistoryId] = useState<string | null>(null);
   const cur: CurrencyCode = currency.primary;
 
   const [editId, setEditId] = useState<string | null>(null);
@@ -158,6 +160,7 @@ export default function GoalsPage() {
                   </div>
                   <div style={{ display: "flex", gap: 4 }}>
                     {g.isCompleted && <span style={{ fontSize: 11, fontWeight: 700, color: "#0A8F5F", background: "rgba(10,143,95,0.1)", padding: "4px 8px", borderRadius: 999, alignSelf: "center" }}>{t("goal.done")}</span>}
+                    <button onClick={() => setHistoryId(g.id)} title={t("goal.history")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-primary">🕘</button>
                     <button onClick={() => startEdit(g)} title={t("common.edit")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-primary">✎</button>
                     <button onClick={() => handleDelete(g.id)} title={t("common.delete")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-danger">✕</button>
                   </div>
@@ -207,6 +210,11 @@ export default function GoalsPage() {
           })}
         </div>
       )}
+
+      {historyId && (() => {
+        const g = goals.find((x) => x.id === historyId);
+        return g ? <GoalHistoryModal goal={g} onClose={() => setHistoryId(null)} /> : null;
+      })()}
     </>
   );
 }

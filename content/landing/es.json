@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "Ver todos los artículos",
   "lp2.qrCaption": "Escanea para descargar en tu iPhone",
   "lp2.stickyCta": "Consigue Lumi — Gratis",
-  "lp2.faqSeeAll": "Ver todas las preguntas"
+  "lp2.faqSeeAll": "Ver todas las preguntas",
+  "lp2.familyLabel": "Compartir en familia",
+  "lp2.familyTitle1": "Gestiona mejor tu presupuesto,",
+  "lp2.familyTitle2": "junto a tu pareja.",
+  "lp2.familySubtitle": "Invita a tu pareja a Lumi Premium. Cada transacción queda etiquetada con quién la añadió, así siempre sabes quién gastó qué, sin preguntar.",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "más probabilidades de alcanzar juntos las metas de ahorro",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "más rápido hacia las metas compartidas",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "menos discusiones sobre dinero",
+  "lp2.familyStat4Value": "5 min",
+  "lp2.familyStat4Label": "para configurarlo y empezar juntos",
+  "lp2.familyDisclaimer": "Cifras ilustrativas, sin resultados garantizados.",
+  "lp2.familyCta": "Ver planes Premium"
 }

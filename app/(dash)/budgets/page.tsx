@@ -5,6 +5,7 @@ import { useStore } from "@/components/dash/store";
 import { useLang } from "@/components/dash/i18n";
 import { PageHeader, Card, Money, PrimaryButton, CategoryDot, fieldLabel, fieldInput } from "@/components/dash/ui";
 import { Select } from "@/components/dash/Select";
+import CategoryTransactionsModal from "@/components/dash/CategoryTransactionsModal";
 import { getBudgetProgress } from "@/lib/finance";
 import type { BudgetPeriod } from "@/types/web";
 import type { CurrencyCode } from "@/utils/currencyUtils";
@@ -16,6 +17,7 @@ export default function BudgetsPage() {
   const [editId, setEditId] = useState<string | null>(null);
   const [editAmount, setEditAmount] = useState("");
   const [editPeriod, setEditPeriod] = useState<BudgetPeriod>("monthly");
+  const [historyId, setHistoryId] = useState<string | null>(null);
 
   function startEdit(id: string, amount: number, period: BudgetPeriod) {
     setEditId(id);
@@ -112,6 +114,7 @@ export default function BudgetsPage() {
                     <p style={{ fontSize: 12, color: "#8E8E93" }}>{periodLabel(b.period)}</p>
                   </div>
                   <div style={{ display: "flex", gap: 4 }}>
+                    <button onClick={() => setHistoryId(b.id)} title={t("goal.history")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-primary">🕘</button>
                     <button onClick={() => startEdit(b.id, b.amount, b.period)} title={t("common.edit")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-primary">✎</button>
                     <button onClick={() => deleteBudget(b.id)} title={t("common.delete")} style={{ fontSize: 13, color: "#8E8E93", cursor: "pointer", padding: 4 }} className="hover:text-danger">✕</button>
                   </div>
@@ -151,6 +154,22 @@ export default function BudgetsPage() {
           })}
         </div>
       )}
+
+      {historyId && (() => {
+        const b = budgets.find((x) => x.id === historyId);
+        const c = b ? cat(b.categoryId) : undefined;
+        return b ? (
+          <CategoryTransactionsModal
+            type="expense"
+            categoryId={b.categoryId}
+            categoryName={tCategoryName(b.categoryId, c?.name ?? b.categoryId)}
+            categoryIcon={c?.icon ?? "📦"}
+            categoryColor={c?.color ?? "#8E8E93"}
+            refDate={new Date()}
+            onClose={() => setHistoryId(null)}
+          />
+        ) : null;
+      })()}
     </>
   );
 }

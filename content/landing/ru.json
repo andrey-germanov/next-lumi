@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "Все статьи",
   "lp2.qrCaption": "Отсканируйте, чтобы установить на iPhone",
   "lp2.stickyCta": "Установить Lumi — бесплатно",
-  "lp2.faqSeeAll": "Все вопросы"
+  "lp2.faqSeeAll": "Все вопросы",
+  "lp2.familyLabel": "Семейный доступ",
+  "lp2.familyTitle1": "Ведите бюджет лучше —",
+  "lp2.familyTitle2": "вместе с партнёром.",
+  "lp2.familySubtitle": "Пригласите партнёра в Lumi Premium. Каждая транзакция помечается тем, кто её добавил — вы всегда знаете, кто и сколько потратил, не спрашивая.",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "выше шанс достичь цели по накоплениям вместе",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "быстрее к общим целям при совместном учёте",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "реже спорят о деньгах",
+  "lp2.familyStat4Value": "5 мин",
+  "lp2.familyStat4Label": "чтобы настроить и начать вести бюджет вместе",
+  "lp2.familyDisclaimer": "Ориентировочные цифры, не гарантия результата.",
+  "lp2.familyCta": "Смотреть тарифы Premium"
 }

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* ───────────────────────────────────────────────────────────────────────────
+   Lumi announcement hero — 1200×675 (16:9), rendered at @2x by render.sh.
+
+   Tokens below are the app's real palette (src/contexts/ThemeContext.tsx).
+   Don't invent new colours; if a visual needs one, it probably needs a
+   different composition instead.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --ink-soft:      #181D30;
+
+  /* Glass, straight from colors.glass.* */
+  --glass:         rgba(255, 255, 255, 0.09);
+  --glass-strong:  rgba(255, 255, 255, 0.15);
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The canvas. Swap the gradient per accent — violet for `new`,
+   teal-ish for `improvement`, blue for `community`. */
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep) 0%, var(--violet) 50%, var(--lavender) 100%);
+}
+
+/* Soft light blooms — the same trick GlassmorphicBackground uses in-app.
+   Two is plenty; three starts to look like a lava lamp. */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(4px);
+}
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.16); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(52,211,153,0.20); }
+
+/* ── Safe area ──────────────────────────────────────────────────────────────
+   The app clips this image to an 18px-radius card. Keep anything that must
+   not be cropped inside .stage — never bleed text to the raw edge. */
+.stage {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+/* ── Building blocks ────────────────────────────────────────────────────────
+   Pick one subject. A hero with two competing subjects reads as a collage. */
+
+/* Headline — use when the news is a statement, not a screen. */
+.headline {
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: -2.5px;
+  line-height: 1.05;
+  max-width: 760px;
+  text-align: center;
+  text-shadow: 0 4px 24px rgba(11,13,30,0.28);
+}
+.headline .accent { color: var(--mint); }
+
+/* macOS-style browser window — for anything about the web app. */
+.browser {
+  width: 720px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(11,13,30,0.62);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 30px 60px rgba(11,13,30,0.38);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 18px;
+  background: rgba(255,255,255,0.10);
+}
+.light { width: 12px; height: 12px; border-radius: 50%; }
+.light.r { background: var(--coral); }
+.light.y { background: var(--amber); }
+.light.g { background: var(--mint); }
+.address {
+  flex: 1;
+  margin-left: 12px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+}
+.browser-body { display: flex; height: 300px; }
+.sidebar {
+  width: 92px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.sidebar i { height: 10px; border-radius: 5px; background: rgba(255,255,255,0.22); }
+.sidebar i.on { background: rgba(255,255,255,0.75); }
+.pane { flex: 1; padding: 26px 30px; }
+.pane .big { width: 58%; height: 22px; border-radius: 11px; background: rgba(255,255,255,0.85); }
+.pane .small { width: 34%; height: 11px; border-radius: 6px; background: rgba(255,255,255,0.35); margin-top: 12px; }
+.bars { display: flex; align-items: flex-end; gap: 14px; height: 130px; margin-top: 32px; }
+.bars b { width: 22px; border-radius: 11px; background: rgba(255,255,255,0.32); }
+.bars b.hot { background: var(--mint); }
+
+/* iPhone frame — for anything about an in-app screen. Drop a real
+   simulator screenshot inside as <img class="shot">. */
+.phone {
+  width: 300px;
+  height: 620px;
+  border-radius: 46px;
+  padding: 10px;
+  background: rgba(11,13,30,0.72);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 30px 60px rgba(11,13,30,0.40);
+}
+.phone .shot { width: 100%; height: 100%; object-fit: cover; border-radius: 36px; display: block; }
+
+/* Glass badge — for a logo/glyph subject (a partner mark, a channel icon). */
+.badge {
+  /* Deliberately large: the card renders ~350pt wide, so a 190px badge in this
+     canvas shrinks to a thumbnail nobody can read. */
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 20px 44px rgba(11,13,30,0.32);
+}
+.badge img { width: 158px; height: 158px; object-fit: contain; }
+
+/* Caption pill — a domain, a handle, a channel name. Optional. */
+.pill {
+  position: absolute;
+  bottom: 56px;   /* inside the safe area — the card clips the corners */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: rgba(11,13,30,0.45);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+      <!-- ── Replace everything inside .stage with ONE subject ────────────── -->
+      <div class="browser">
+        <div class="browser-bar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <div class="address">lumi.herman-apps.com</div>
+        </div>
+        <div class="browser-body">
+          <div class="sidebar"><i class="on"></i><i></i><i></i><i></i></div>
+          <div class="pane">
+            <div class="big"></div>
+            <div class="small"></div>
+            <div class="bars">
+              <b style="height:36%"></b><b style="height:56%"></b><b style="height:42%"></b>
+              <b class="hot" style="height:100%"></b><b style="height:62%"></b>
+              <b style="height:80%"></b><b style="height:50%"></b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="pill">lumi.herman-apps.com</div> -->
+  </div>
+</body>
+</html>

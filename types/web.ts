@@ -82,6 +82,8 @@ export interface Receipt {
   frequency?: RecurringFrequency;
   recurringDay?: number;
   recurringMonth?: number; // 1-12 for yearly
+  /** Name of the person (on a shared/family account) who added this transaction. */
+  authorName?: string;
   createdAt: ISODateTimeString;
   updatedAt: ISODateTimeString;
 }
@@ -107,6 +109,8 @@ export interface Income {
   tags?: string[];
   location?: GeoLocation;
   isImpulsive?: boolean;
+  /** Name of the person (on a shared/family account) who added this transaction. */
+  authorName?: string;
   createdAt: ISODateTimeString;
   updatedAt: ISODateTimeString;
 }
@@ -319,4 +323,12 @@ export interface PeriodSummary {
   totalExpenses: number;
   net: number; // income - expenses
   byCategory: CategorySpend[];
+}
+
+/** Spend breakdown by who added the transaction (shared/family accounts). */
+export interface AuthorSpend {
+  authorName?: string; // undefined = no author tag on the transaction
+  total: number;
+  percentage: number; // 0-100 of total spend
+  transactionCount: number;
 }

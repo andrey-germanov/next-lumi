@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ProblemSolution from "@/components/ProblemSolution";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
+import FamilySharing from "@/components/FamilySharing";
 import VoiceInput from "@/components/VoiceInput";
 import Comparison from "@/components/Comparison";
 import Testimonials from "@/components/Testimonials";
@@ -26,6 +27,7 @@ export default function LandingContent({ posts }: { posts: BlogPost[] }) {
         <ProblemSolution />
         <HowItWorks />
         <Features />
+        <FamilySharing />
         <VoiceInput />
         <DashboardPreview />
         <Comparison />

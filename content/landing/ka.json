@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "ყველა სტატიის ნახვა",
   "lp2.qrCaption": "დაასკანერეთ iPhone-ზე ჩამოსატვირთად",
   "lp2.stickyCta": "მიიღეთ Lumi — უფასოდ",
-  "lp2.faqSeeAll": "ყველა კითხვის ნახვა"
+  "lp2.faqSeeAll": "ყველა კითხვის ნახვა",
+  "lp2.familyLabel": "ოჯახური გაზიარება",
+  "lp2.familyTitle1": "მართეთ ბიუჯეტი უკეთესად,",
+  "lp2.familyTitle2": "პარტნიორთან ერთად.",
+  "lp2.familySubtitle": "მოიწვიეთ პარტნიორი Lumi Premium-ში. ყველა ტრანზაქციას აღინიშნება ვინც დაამატა — ყოველთვის იცით ვინ რამდენი დახარჯა, კითხვის გარეშე.",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "მეტი შანსი ერთად მიაღწიოთ დანაზოგის მიზნებს",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "უფრო სწრაფად საერთო მიზნებამდე",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "ნაკლები კამათი ფულზე",
+  "lp2.familyStat4Value": "5 წთ",
+  "lp2.familyStat4Label": "რომ დააკონფიგურიროთ და დაიწყოთ ერთად",
+  "lp2.familyDisclaimer": "საილუსტრაციო მაჩვენებლები, შედეგი არ არის გარანტირებული.",
+  "lp2.familyCta": "იხილეთ Premium გეგმები"
 }

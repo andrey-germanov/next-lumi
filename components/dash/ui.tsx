@@ -139,3 +139,37 @@ export function CategoryDot({ icon, color, size = 40 }: { icon: string; color: s
     </span>
   );
 }
+
+// ── Avatar (initials, deterministic color) ──────────────────────────────────
+
+const AVATAR_COLORS = ["#6C63FF", "#F472B6", "#0EA5E9", "#F59E0B", "#0A8F5F", "#F87171", "#9C8FFF", "#34D399"];
+
+export function avatarColor(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  return AVATAR_COLORS[hash % AVATAR_COLORS.length];
+}
+
+export function Avatar({ name, size = 40 }: { name: string; size?: number }) {
+  const color = avatarColor(name);
+  const initial = name.trim().charAt(0).toUpperCase() || "?";
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        background: `${color}1A`,
+        color,
+        fontSize: Math.round(size * 0.42),
+        fontWeight: 700,
+        flexShrink: 0,
+      }}
+    >
+      {initial}
+    </span>
+  );
+}

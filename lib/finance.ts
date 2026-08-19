@@ -6,6 +6,7 @@ import type {
   UnifiedTransaction,
   CategorySpend,
   PeriodSummary,
+  AuthorSpend,
   CurrencyCode,
 } from "@/types/web";
 import { convert } from "./exchangeRate";
@@ -111,6 +112,34 @@ export function getPeriodSummary(
     net: totalIncome - totalExpenses,
     byCategory,
   };
+}
+
+// ── Spend breakdown by author (shared/family accounts) ──────────────────────
+
+export function getSpendByAuthor(
+  receipts: Receipt[],
+  currency: CurrencyCode,
+  ref: Date = new Date(),
+): AuthorSpend[] {
+  const { from, to } = monthBounds(ref);
+  const monthReceipts = receipts.filter((r) => inRange(r.date, from, to));
+  const total = monthReceipts.reduce((s, r) => s + convert(r.total, (r.currency || currency) as CurrencyCode, currency), 0);
+
+  const map = new Map<string, AuthorSpend>();
+  for (const r of monthReceipts) {
+    const amount = convert(r.total, (r.currency || currency) as CurrencyCode, currency);
+    const key = r.authorName ?? "";
+    const existing = map.get(key);
+    if (existing) {
+      existing.total += amount;
+      existing.transactionCount += 1;
+    } else {
+      map.set(key, { authorName: r.authorName, total: amount, percentage: 0, transactionCount: 1 });
+    }
+  }
+  return [...map.values()]
+    .map((a) => ({ ...a, percentage: total > 0 ? (a.total / total) * 100 : 0 }))
+    .sort((a, b) => b.total - a.total);
 }
 
 // ── Income breakdown by category (for donut / modal) ────────────────────────

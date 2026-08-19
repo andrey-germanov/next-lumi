@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "View all articles",
   "lp2.qrCaption": "Scan to download on your iPhone",
   "lp2.stickyCta": "Get Lumi — Free",
-  "lp2.faqSeeAll": "See all questions"
+  "lp2.faqSeeAll": "See all questions",
+  "lp2.familyLabel": "Family Sharing",
+  "lp2.familyTitle1": "Budget better,",
+  "lp2.familyTitle2": "with your partner.",
+  "lp2.familySubtitle": "Invite your partner to Lumi Premium. Every transaction gets tagged with who added it — so you always know who spent what, without asking.",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "more likely to hit savings goals together",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "faster progress toward shared goals",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "report fewer arguments about money",
+  "lp2.familyStat4Value": "5 min",
+  "lp2.familyStat4Label": "to set up and start budgeting together",
+  "lp2.familyDisclaimer": "Illustrative figures, not guaranteed results.",
+  "lp2.familyCta": "See Premium plans"
 }

@@ -4,11 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { useStore } from "@/components/dash/store";
 import { useLang } from "@/components/dash/i18n";
-import { Card, Money, PageHeader, PrimaryButton, CategoryDot } from "@/components/dash/ui";
+import { Card, Money, PageHeader, PrimaryButton, CategoryDot, Avatar, avatarColor } from "@/components/dash/ui";
 import InsightCard from "@/components/dash/InsightCard";
 import DashboardCharts, { type CategorySelection } from "@/components/dash/Charts";
 import CategoryTransactionsModal from "@/components/dash/CategoryTransactionsModal";
-import { getPeriodSummary, toUnified } from "@/lib/finance";
+import AuthorTransactionsModal from "@/components/dash/AuthorTransactionsModal";
+import { getPeriodSummary, getSpendByAuthor, toUnified } from "@/lib/finance";
 import { computeCurrentMonthForecast } from "@/lib/currentMonthForecast";
 import { calculateBalance } from "@/lib/balance";
 
@@ -20,12 +21,15 @@ export default function DashboardPage() {
   const [monthOffset, setMonthOffset] = useState(0);
   const [selected, setSelected] = useState<CategorySelection | null>(null);
   const [showAllCats, setShowAllCats] = useState(false);
+  const [selectedAuthor, setSelectedAuthor] = useState<{ authorName?: string } | null>(null);
   const now = new Date();
   const refDate = new Date(now.getFullYear(), now.getMonth() + monthOffset, 15);
   const isCurrent = monthOffset === 0;
   const viewMonthName = formatMonth(refDate);
 
   const summary = getPeriodSummary(receipts, incomes, primary, refDate);
+  const byAuthor = getSpendByAuthor(receipts, primary, refDate);
+  const hasAuthorData = byAuthor.some((a) => a.authorName);
   const forecast = computeCurrentMonthForecast(receipts, incomes, primary);
   const balance = calculateBalance(receipts, incomes, primary);
   const transactions = toUnified(receipts, incomes).slice(0, 8);
@@ -176,6 +180,38 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* Spending by partner (shared/family accounts only) */}
+      {hasAuthorData && (
+        <Card style={{ marginTop: 20 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 18 }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, color: "#0A0A0A" }}>{t("dash.byPartner")}</h2>
+            <span style={{ fontSize: 13, color: "#8E8E93" }}>{viewMonthName}</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {byAuthor.map((a) => {
+              const label = a.authorName || t("dash.unassignedAuthor");
+              return (
+                <button
+                  key={label}
+                  onClick={() => setSelectedAuthor({ authorName: a.authorName })}
+                  style={{ display: "block", width: "100%", textAlign: "left", cursor: "pointer", background: "transparent", borderRadius: 8 }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                    <Avatar name={label} size={32} />
+                    <span style={{ fontSize: 14, fontWeight: 500, color: "#0A0A0A", flex: 1 }}>{label}</span>
+                    <Money amount={a.total} currency={primary} style={{ fontSize: 14, fontWeight: 600, color: "#0A0A0A" }} />
+                    <span style={{ fontSize: 12, color: "#8E8E93", width: 40, textAlign: "right" }}>{a.percentage.toFixed(0)}%</span>
+                  </div>
+                  <div style={{ height: 6, background: "#F0F0F2", borderRadius: 999, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${Math.min(a.percentage, 100)}%`, background: avatarColor(label), borderRadius: 999 }} />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </Card>
+      )}
+
       {/* Charts */}
       <DashboardCharts refDate={refDate} isCurrent={isCurrent} onSelectCategory={setSelected} />
 
@@ -188,6 +224,14 @@ export default function DashboardPage() {
           categoryColor={selected.cat.categoryColor}
           refDate={refDate}
           onClose={() => setSelected(null)}
+        />
+      )}
+
+      {selectedAuthor && (
+        <AuthorTransactionsModal
+          authorName={selectedAuthor.authorName}
+          refDate={refDate}
+          onClose={() => setSelectedAuthor(null)}
         />
       )}
     </>

@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "Alle Artikel ansehen",
   "lp2.qrCaption": "Scannen zum Laden aufs iPhone",
   "lp2.stickyCta": "Lumi holen — kostenlos",
-  "lp2.faqSeeAll": "Alle Fragen ansehen"
+  "lp2.faqSeeAll": "Alle Fragen ansehen",
+  "lp2.familyLabel": "Familienfreigabe",
+  "lp2.familyTitle1": "Besser budgetieren,",
+  "lp2.familyTitle2": "gemeinsam mit deinem Partner.",
+  "lp2.familySubtitle": "Lade deinen Partner zu Lumi Premium ein. Jede Transaktion wird markiert, wer sie hinzugefügt hat — du weißt immer, wer wie viel ausgegeben hat, ohne zu fragen.",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "höhere Chance, Sparziele gemeinsam zu erreichen",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "schneller zu gemeinsamen Zielen",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "weniger Streit ums Geld",
+  "lp2.familyStat4Value": "5 Min.",
+  "lp2.familyStat4Label": "um gemeinsam loszulegen",
+  "lp2.familyDisclaimer": "Beispielhafte Werte, keine garantierten Ergebnisse.",
+  "lp2.familyCta": "Premium-Pläne ansehen"
 }

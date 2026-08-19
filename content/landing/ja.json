@@ -107,5 +107,19 @@
   "lp2.blogViewAll": "すべての記事を見る",
   "lp2.qrCaption": "iPhoneでスキャンしてダウンロード",
   "lp2.stickyCta": "Lumiを入手 — 無料",
-  "lp2.faqSeeAll": "すべての質問を見る"
+  "lp2.faqSeeAll": "すべての質問を見る",
+  "lp2.familyLabel": "ファミリー共有",
+  "lp2.familyTitle1": "もっと上手に家計管理を、",
+  "lp2.familyTitle2": "パートナーと一緒に。",
+  "lp2.familySubtitle": "パートナーをLumi Premiumに招待しましょう。すべての取引に追加した人が記録されるので、聞かなくても誰が何にいくら使ったかがわかります。",
+  "lp2.familyStat1Value": "+20%",
+  "lp2.familyStat1Label": "二人で貯蓄目標を達成しやすくなる",
+  "lp2.familyStat2Value": "2×",
+  "lp2.familyStat2Label": "共有目標への到達が早くなる",
+  "lp2.familyStat3Value": "68%",
+  "lp2.familyStat3Label": "お金に関する言い争いが減る",
+  "lp2.familyStat4Value": "5分",
+  "lp2.familyStat4Label": "設定して一緒に始めるまでの時間",
+  "lp2.familyDisclaimer": "参考値であり、結果を保証するものではありません。",
+  "lp2.familyCta": "Premiumプランを見る"
 }

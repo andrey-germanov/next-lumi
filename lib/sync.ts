@@ -90,6 +90,7 @@ function receiptToDoc(r: Receipt) {
     tags: r.tags,
     location: r.location,
     isImpulsive: r.isImpulsive,
+    authorName: r.authorName,
     createdAt: tsFromISO(r.createdAt),
     updatedAt: serverTimestamp(),
   });
@@ -109,6 +110,7 @@ function receiptFromDoc(data: Record<string, unknown>): Receipt {
     tags: data.tags as string[] | undefined,
     location: data.location as Receipt["location"],
     isImpulsive: (data.isImpulsive as boolean) ?? false,
+    authorName: data.authorName as string | undefined,
     createdAt: isoFromTS(data.createdAt) ?? nowISO(),
     updatedAt: isoFromTS(data.updatedAt) ?? nowISO(),
   };
@@ -131,6 +133,7 @@ function incomeToDoc(i: Income) {
     tags: i.tags,
     location: i.location,
     isImpulsive: i.isImpulsive,
+    authorName: i.authorName,
     createdAt: tsFromISO(i.createdAt),
     updatedAt: serverTimestamp(),
   });
@@ -151,6 +154,7 @@ function incomeFromDoc(data: Record<string, unknown>): Income {
     tags: data.tags as string[] | undefined,
     location: data.location as Income["location"],
     isImpulsive: (data.isImpulsive as boolean) ?? false,
+    authorName: data.authorName as string | undefined,
     createdAt: isoFromTS(data.createdAt) ?? nowISO(),
     updatedAt: isoFromTS(data.updatedAt) ?? nowISO(),
   };
