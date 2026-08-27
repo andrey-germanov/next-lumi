@@ -6,6 +6,7 @@ import Link from "next/link";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { motion } from "framer-motion";
 import { firebaseAuth, authErrorMessage } from "@/lib/firebase";
+import { trackEvent } from "@/lib/posthog";
 
 export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -29,11 +30,14 @@ export default function ForgotPasswordForm() {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
+    trackEvent("password_reset_requested", { method: "email" });
     try {
       await sendPasswordResetEmail(firebaseAuth(), email);
       setSent(true);
+      trackEvent("password_reset_sent", { method: "email" });
     } catch (err) {
       const code = typeof err === "object" && err !== null && "code" in err ? String((err as { code: unknown }).code) : "";
+      trackEvent("password_reset_failed", { method: "email", code });
       setError(authErrorMessage(code));
     } finally {
       setSubmitting(false);

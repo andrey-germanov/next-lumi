@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { motion } from "framer-motion";
 import { firebaseAuth, authErrorMessage } from "@/lib/firebase";
+import { trackEvent, identifyUser } from "@/lib/posthog";
 
 export default function SignupForm() {
   const router = useRouter();
@@ -54,14 +55,18 @@ export default function SignupForm() {
       return;
     }
     setSubmitting(true);
+    trackEvent("signup_attempt", { method: "email" });
     try {
       const cred = await createUserWithEmailAndPassword(firebaseAuth(), email, password);
       if (name.trim()) {
         await updateProfile(cred.user, { displayName: name.trim() });
       }
+      identifyUser(cred.user.uid, { email: cred.user.email ?? email, name: name.trim() || undefined });
+      trackEvent("user_signed_up", { method: "email" });
       router.push("/dashboard");
     } catch (err) {
       const code = typeof err === "object" && err !== null && "code" in err ? String((err as { code: unknown }).code) : "";
+      trackEvent("signup_failed", { method: "email", code });
       setError(authErrorMessage(code));
       setSubmitting(false);
     }

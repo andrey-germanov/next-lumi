@@ -31,6 +31,7 @@ import {
   deleteEntry,
   clearAll,
 } from "@/lib/sync";
+import { trackEvent } from "@/lib/posthog";
 
 const CURRENCY_KEY = "lumi-currency-pref";
 
@@ -144,6 +145,7 @@ export function StoreProvider({ uid: userId, children }: { uid: string; children
       updatedAt: nowISO(),
     };
     upsertReceipt(userId, receipt).catch(() => {});
+    trackEvent("transaction_created", { kind: "expense", category_id: input.categoryId, currency: input.currency });
   }, [userId, findExpenseCat]);
 
   const addIncome = useCallback<StoreValue["addIncome"]>((input) => {
@@ -160,6 +162,7 @@ export function StoreProvider({ uid: userId, children }: { uid: string; children
       updatedAt: nowISO(),
     };
     upsertIncome(userId, income).catch(() => {});
+    trackEvent("transaction_created", { kind: "income", category_id: input.categoryId, currency: input.currency });
   }, [userId, incomeCategories]);
 
   const addBudget = useCallback<StoreValue["addBudget"]>((input) => {
@@ -175,6 +178,7 @@ export function StoreProvider({ uid: userId, children }: { uid: string; children
       updatedAt: now,
     };
     upsertBudget(userId, budget).catch(() => {});
+    trackEvent("budget_created", { period: input.period, currency: input.currency });
   }, [userId]);
 
   const updateBudget = useCallback<StoreValue["updateBudget"]>((id, patch) => {
@@ -215,6 +219,7 @@ export function StoreProvider({ uid: userId, children }: { uid: string; children
       updatedAt: now,
     };
     upsertGoal(userId, goal).catch(() => {});
+    trackEvent("savings_goal_created", { category: input.category, currency: input.currency });
   }, [userId]);
 
   const updateGoal = useCallback<StoreValue["updateGoal"]>((id, patch) => {
@@ -273,6 +278,7 @@ export function StoreProvider({ uid: userId, children }: { uid: string; children
       isCustom: true,
     };
     upsertCategory(userId, category).catch(() => {});
+    trackEvent("category_created", {});
   }, [userId]);
 
   const deleteExpenseCategory = useCallback<StoreValue["deleteExpenseCategory"]>((id) => {

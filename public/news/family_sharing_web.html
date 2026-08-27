@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --ink-soft:      #181D30;
+
+  --glass:         rgba(255, 255, 255, 0.09);
+  --glass-strong:  rgba(255, 255, 255, 0.15);
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep) 0%, var(--violet) 50%, var(--lavender) 100%);
+}
+
+.orb { position: absolute; border-radius: 50%; filter: blur(4px); }
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.16); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(52,211,153,0.20); }
+
+.stage { position: relative; width: 1000px; height: 500px; }
+
+/* ── Dominant subject (~70%): Family Sharing — two people, linked, goal reached ── */
+.trio {
+  position: absolute;
+  top: 44%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 46px;
+}
+.badge {
+  flex-shrink: 0;
+  width: 264px;
+  height: 264px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 22px 46px rgba(11,13,30,0.34);
+}
+.badge svg { width: 150px; height: 150px; display: block; }
+.link { flex-shrink: 0; width: 58px; height: 58px; opacity: 0.85; }
+
+.pill {
+  position: absolute;
+  top: calc(44% + 168px);
+  left: 40%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: rgba(11,13,30,0.45);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+/* ── Secondary subject (~30%): the web app, tucked in the corner ── */
+.web-card {
+  position: absolute;
+  right: -10px;
+  bottom: 4px;
+  width: 322px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(11,13,30,0.60);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 26px 52px rgba(11,13,30,0.36);
+}
+.web-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 13px;
+  background: rgba(255,255,255,0.10);
+}
+.web-bar .dot { width: 8px; height: 8px; border-radius: 50%; }
+.web-bar .dot.r { background: var(--coral); }
+.web-bar .dot.y { background: var(--amber); }
+.web-bar .dot.g { background: var(--mint); }
+.web-bar .addr {
+  flex: 1;
+  margin-left: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+.web-body { display: flex; height: 132px; }
+.web-side {
+  width: 40px;
+  padding: 12px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.web-side i { height: 6px; border-radius: 3px; background: rgba(255,255,255,0.22); }
+.web-side i.on { background: rgba(255,255,255,0.75); }
+.web-pane { flex: 1; padding: 14px 16px; }
+.web-pane .big { width: 62%; height: 12px; border-radius: 6px; background: rgba(255,255,255,0.85); }
+.web-pane .small { width: 38%; height: 7px; border-radius: 4px; background: rgba(255,255,255,0.35); margin-top: 8px; }
+.web-bars { display: flex; align-items: flex-end; gap: 6px; height: 54px; margin-top: 12px; }
+.web-bars b { flex: 1; border-radius: 5px 5px 2px 2px; background: rgba(255,255,255,0.30); }
+.web-bars b.hot { background: var(--mint); }
+
+.web-label {
+  position: absolute;
+  right: 6px;
+  bottom: -40px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: -0.2px;
+}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+      <div class="trio">
+        <div class="badge">
+          <!-- Two overlapping flat person glyphs — sharing one account. -->
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="92" cy="86" r="32" fill="#ffffff" fill-opacity="0.55"/>
+            <path d="M40 208 C40 148 63 122 92 122 C121 122 144 148 144 208 Z" fill="#ffffff" fill-opacity="0.55"/>
+            <circle cx="152" cy="98" r="36" fill="#ffffff" fill-opacity="0.95"/>
+            <path d="M92 216 C92 150 118 128 152 128 C186 128 212 150 212 216 Z" fill="#ffffff" fill-opacity="0.95"/>
+          </svg>
+        </div>
+
+        <svg class="link" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="28" r="13" stroke="#ffffff" stroke-width="5"/>
+          <circle cx="36" cy="28" r="13" stroke="#ffffff" stroke-width="5"/>
+        </svg>
+
+        <div class="badge">
+          <!-- Target rings + checkmark — the goal, reached, together. -->
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" r="92" stroke="#ffffff" stroke-opacity="0.30" stroke-width="14"/>
+            <circle cx="120" cy="120" r="60" stroke="#ffffff" stroke-opacity="0.55" stroke-width="14"/>
+            <circle cx="120" cy="120" r="34" fill="var(--mint)"/>
+            <path d="M103 121 L116 135 L142 103" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="pill">Family Sharing</div>
+
+      <div class="web-card">
+        <div class="web-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <div class="addr">lumi.herman-apps.com</div>
+        </div>
+        <div class="web-body">
+          <div class="web-side"><i class="on"></i><i></i><i></i><i></i></div>
+          <div class="web-pane">
+            <div class="big"></div>
+            <div class="small"></div>
+            <div class="web-bars">
+              <b style="height:38%"></b><b style="height:58%"></b><b style="height:44%"></b>
+              <b class="hot" style="height:100%"></b><b style="height:64%"></b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="web-label">Now on Web</div>
+    </div>
+  </div>
+</body>
+</html>
