@@ -1,11 +1,22 @@
 name: IndexNow
 
 on:
-  deployment_status
+  # 1. Immediately after a successful production deploy (if Vercel posts GitHub deployment statuses)
+  deployment_status:
+  # 2. Manual "Run workflow" button — use to submit the whole sitemap on demand
+  workflow_dispatch:
+  # 3. Weekly safety net so the full sitemap is resubmitted even if deploy events never fire
+  schedule:
+    - cron: '17 6 * * 1'
 
 jobs:
   submit:
-    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Production'
+    # For deployment_status events, only run on a successful Production deploy.
+    # For workflow_dispatch and schedule, always run.
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       contains(fromJSON('["Production","production"]'), github.event.deployment_status.environment))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
