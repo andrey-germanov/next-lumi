@@ -8,7 +8,7 @@ import { useLang } from "@/components/dash/i18n";
 export default function Footer() {
   const { t } = useLang();
   return (
-    <footer className="border-t border-black/8 py-12">
+    <footer className="border-t border-black/8 py-12 text-center">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
@@ -103,6 +103,9 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      <a href="https://saasgrow.app?ref=lumi.herman-apps.com" target="_blank" rel="noopener">
+        <img src="https://saasgrow.app/api/badge?type=top&style=dark" alt="Lumi: Spending Auto Tracker on SaaSGrow" width="240" height="54" />
+      </a>
     </footer>
   );
 }
