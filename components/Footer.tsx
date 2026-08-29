@@ -103,9 +103,14 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <a href="https://saasgrow.app?ref=lumi.herman-apps.com" target="_blank" rel="noopener">
-        <img src="https://saasgrow.app/api/badge?type=top&style=dark" alt="Lumi: Spending Auto Tracker on SaaSGrow" width="240" height="54" />
-      </a>
+      <div className="mx-auto max-w-7xl px-6 flex gap-4">
+        <a href="https://saasgrow.app?ref=lumi.herman-apps.com" target="_blank" rel="noopener">
+          <img src="https://saasgrow.app/api/badge?type=top&style=dark" alt="Lumi: Spending Auto Tracker on SaaSGrow" width="240" height="54" />
+        </a>
+        <a href="https://startuptrusted.com?ref=lumi.herman-apps.com" target="_blank" rel="noopener">
+          <img src="https://startuptrusted.com/api/badge?type=top&style=light" alt="Lumi AI: Expense AutoTracker on StartupTrusted" width="240" height="54" />
+        </a>
+      </div>
     </footer>
   );
 }
