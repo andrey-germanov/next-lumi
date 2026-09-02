@@ -2,11 +2,72 @@
   "version": 1,
   "announcements": [
     {
+      "id": "recurring_payments",
+      "tag": "new",
+      "date": "2026-09-02",
+      "image": "https://lumi.herman-apps.com/news/recurring_payments.png",
+      "copy": {
+        "de": {
+          "title": "Wiederkehrende Zahlungen im Griff",
+          "subtitle": "Wird direkt beim Erfassen einer Ausgabe oder Einnahme eingerichtet.",
+          "body": "Markiere eine Ausgabe oder Einnahme beim Erfassen als wiederkehrend, und Lumi bereitet jede zukünftige Buchung rechtzeitig vor. Bestätige oder lehne jede einzelne ab – nichts wird gebucht, ohne dass du es weißt."
+        },
+        "en": {
+          "title": "Recurring payments, sorted",
+          "subtitle": "Set it up when you add an expense or income.",
+          "body": "Mark any expense or income as recurring right when you add it, and Lumi lines up every future occurrence before it's due. Confirm or reject each one — nothing gets logged without you knowing."
+        },
+        "es": {
+          "title": "Pagos recurrentes, controlados",
+          "subtitle": "Se configura al crear un gasto o ingreso.",
+          "body": "Marca cualquier gasto o ingreso como recurrente justo al añadirlo, y Lumi preparará cada futura aparición antes de que venza. Confirma o rechaza cada una; nada se registra sin que lo sepas."
+        },
+        "it": {
+          "title": "Pagamenti ricorrenti sotto controllo",
+          "subtitle": "Si imposta direttamente quando aggiungi una spesa o un'entrata.",
+          "body": "Contrassegna qualsiasi spesa o entrata come ricorrente proprio mentre la aggiungi, e Lumi preparerà ogni occorrenza futura prima della scadenza. Conferma o rifiuta ciascuna; niente viene registrato senza che tu lo sappia."
+        },
+        "ja": {
+          "title": "定期支払いをまとめて管理",
+          "subtitle": "支出や収入を登録するときに設定します。",
+          "body": "支出や収入を追加する際に「繰り返し」を設定するだけで、Lumiが次回分を期日前に用意します。ひとつずつ承認・却下でき、知らないうちに記録されることはありません。"
+        },
+        "ka": {
+          "title": "განმეორებადი გადახდები კონტროლის ქვეშ",
+          "subtitle": "ირთვება ხარჯის ან შემოსავლის დამატებისას.",
+          "body": "მონიშნეთ ნებისმიერი ხარჯი ან შემოსავალი როგორც განმეორებადი პირდაპირ დამატებისას, და Lumi წინასწარ მოამზადებს ყოველ მომდევნო შემთხვევას. დაადასტურეთ ან უარყავით თითოეული — ვერაფერი ჩაიწერება თქვენი ცოდნის გარეშე."
+        },
+        "pl": {
+          "title": "Płatności cykliczne pod kontrolą",
+          "subtitle": "Ustawiasz to od razu przy dodawaniu wydatku lub przychodu.",
+          "body": "Oznacz dowolny wydatek lub przychód jako cykliczny już przy jego dodawaniu, a Lumi przygotuje każde kolejne wystąpienie z wyprzedzeniem. Zatwierdź lub odrzuć każdą pozycję — nic nie trafi do budżetu bez Twojej wiedzy."
+        },
+        "ro": {
+          "title": "Plățile recurente, sub control",
+          "subtitle": "Se configurează direct la adăugarea unei cheltuieli sau a unui venit.",
+          "body": "Marchează orice cheltuială sau venit ca recurent chiar la adăugare, iar Lumi pregătește fiecare apariție viitoare înainte de scadență. Confirmă sau respinge fiecare — nimic nu este înregistrat fără să știi."
+        },
+        "ru": {
+          "title": "Регулярные платежи под контролем",
+          "subtitle": "Настраивается прямо при создании расхода или дохода.",
+          "body": "Отметьте любую операцию как повторяющуюся сразу при добавлении — и Lumi заранее подготовит каждое будущее списание. Подтверждайте или отклоняйте каждое — ничего не попадёт в бюджет без вашего ведома."
+        },
+        "uk": {
+          "title": "Регулярні платежі під контролем",
+          "subtitle": "Налаштовується одразу при створенні витрати чи доходу.",
+          "body": "Позначте будь-яку операцію як повторювану одразу при додаванні — і Lumi заздалегідь підготує кожне майбутнє списання. Підтверджуйте або відхиляйте кожне — нічого не потрапить у бюджет без вашого відома."
+        }
+      }
+    },
+    {
       "id": "family_sharing",
       "tag": "new",
       "date": "2026-08-16",
       "image": "https://lumi.herman-apps.com/news/family_sharing.png",
-      "action": { "type": "app", "value": "lumi://settings" },
+      "action": {
+        "type": "app",
+        "value": "lumi://settings"
+      },
       "copy": {
         "de": {
           "title": "Teile Lumi mit deinem Partner",
@@ -77,7 +138,10 @@
       "visual": "web",
       "caption": "lumi.herman-apps.com",
       "image": "https://lumi.herman-apps.com/news/web_app.png",
-      "action": { "type": "url", "value": "https://lumi.herman-apps.com/" },
+      "action": {
+        "type": "url",
+        "value": "https://lumi.herman-apps.com/"
+      },
       "copy": {
         "de": {
           "title": "Lumi funktioniert jetzt auch im Browser",
@@ -148,7 +212,10 @@
       "visual": "telegram",
       "caption": "Lumi News",
       "image": "https://lumi.herman-apps.com/news/telegram_channel.png",
-      "action": { "type": "url", "value": "https://t.me/+UgCFGWh14DhkMTNi" },
+      "action": {
+        "type": "url",
+        "value": "https://t.me/+UgCFGWh14DhkMTNi"
+      },
       "copy": {
         "de": {
           "title": "Lumi hat jetzt einen Telegram-Kanal",
