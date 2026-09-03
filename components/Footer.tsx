@@ -111,6 +111,9 @@ export default function Footer() {
           <img src="https://startuptrusted.com/api/badge?type=top&style=light" alt="Lumi AI: Expense AutoTracker on StartupTrusted" width="240" height="54" />
         </a>
         <a href="https://fazier.com/launches/lumi.herman-apps.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=neutral" width="250" alt="Fazier badge" /></a>
+        <a href="https://www.foundrlist.com/product/lumi?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener">
+          <img src="https://www.foundrlist.com/api/badge/lumi" alt="Featured on FoundrList" width="150" height="48" />
+        </a>
       </div>
     </footer>
   );
