@@ -103,7 +103,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-6 flex gap-4">
+      <div className="mx-auto max-w-7xl px-6 mt-8 flex flex-wrap items-center justify-center gap-4">
         <a href="https://saasgrow.app?ref=lumi.herman-apps.com" target="_blank" rel="noopener">
           <img src="https://saasgrow.app/api/badge?type=top&style=dark" alt="Lumi: Spending Auto Tracker on SaaSGrow" width="240" height="54" />
         </a>
@@ -113,6 +113,9 @@ export default function Footer() {
         <a href="https://fazier.com/launches/lumi.herman-apps.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=neutral" width="250" alt="Fazier badge" /></a>
         <a href="https://www.foundrlist.com/product/lumi?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener">
           <img src="https://www.foundrlist.com/api/badge/lumi" alt="Featured on FoundrList" width="150" height="48" />
+        </a>
+        <a href="https://startupfa.me/s/lumi.herman-apps.com-937?utm_source=lumi.herman-apps.com" target="_blank" rel="noopener">
+          <img src="https://startupfa.me/badges/featured/default.webp" alt="Featured on Startup Fame" width="171" height="54" />
         </a>
       </div>
     </footer>
