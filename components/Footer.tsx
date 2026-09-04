@@ -117,6 +117,9 @@ export default function Footer() {
         <a href="https://startupfa.me/s/lumi.herman-apps.com-937?utm_source=lumi.herman-apps.com" target="_blank" rel="noopener">
           <img src="https://startupfa.me/badges/featured/default.webp" alt="Featured on Startup Fame" width="171" height="54" />
         </a>
+        <a href="https://twelve.tools" target="_blank" rel="noopener">
+          <img src="https://twelve.tools/badge1-light.svg" alt="Featured on Twelve Tools" width="200" height="54" />
+        </a>
       </div>
     </footer>
   );
