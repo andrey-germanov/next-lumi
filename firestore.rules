@@ -1,13 +1,110 @@
 rules_version = '2';
 
-// Lumi — Firestore security rules.
-// Each user can read/write only their own data under users/{uid}/…
-// The recursive wildcard covers the web sync document at
-// users/{uid}/sync/snapshot as well as any other per-user subcollections.
+// Lumi — Firestore security rules. THIS FILE IS THE SOURCE OF TRUTH (deployed
+// from next-lumi); money-tracker/firestore.rules is only a mirror.
+//
+// users/{uid}/…      — personal data, owner only. Covers the web sync document
+//                      at users/{uid}/sync/snapshot, push tokens, group prefs
+//                      and every other per-user subcollection.
+// groups/{groupId}    — shared-expense groups. Membership, creation, deletion,
+//                      invites, public links and the active/frozen/archived
+//                      status are written ONLY by the next-lumi API (Admin SDK
+//                      bypasses rules). Members write expenses + activity.
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
     match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read, write: if signedIn() && request.auth.uid == userId;
+    }
+
+    function group(groupId) {
+      return get(/databases/$(database)/documents/groups/$(groupId)).data;
+    }
+
+    function isMember(groupId) {
+      return signedIn() && request.auth.uid in group(groupId).memberUids;
+    }
+
+    // Frozen = the owner's Premium lapsed and this isn't their one active
+    // group: view + debt settlements only.
+    function canCreateKind(groupId, kind) {
+      return group(groupId).status == 'active'
+        || (group(groupId).status == 'frozen' && kind == 'settlement');
+    }
+
+    function validExpense() {
+      let d = request.resource.data;
+      return d.kind in ['expense', 'refund', 'settlement']
+        && d.amountMinor is int && d.amountMinor > 0 && d.amountMinor < 100000000000
+        && d.currency is string && d.currency.size() == 3
+        && d.rateToBase is number && d.rateToBase > 0
+        && d.paidBy is string
+        && d.splits is map && d.splits.size() > 0 && d.splits.size() <= 50
+        && d.title is string && d.title.size() <= 80
+        && d.date is string && d.date.size() == 10;
+    }
+
+    match /groups/{groupId} {
+      allow read: if signedIn() && request.auth.uid in resource.data.memberUids;
+      allow create, delete: if false;
+      allow update: if signedIn()
+        && request.auth.uid in resource.data.memberUids
+        && resource.data.status != 'archived'
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['name', 'emoji', 'settings', 'baseCurrency', 'currencyLocked', 'updatedAt', 'lastActivityAt'])
+        // Base currency can't change once the first expense locked it; the lock is one-way.
+        && (request.resource.data.baseCurrency == resource.data.baseCurrency || resource.data.currencyLocked == false)
+        && (request.resource.data.currencyLocked == resource.data.currencyLocked || request.resource.data.currencyLocked == true)
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 40;
+
+      match /expenses/{expenseId} {
+        allow read: if isMember(groupId);
+        allow create: if isMember(groupId)
+          && validExpense()
+          && canCreateKind(groupId, request.resource.data.kind)
+          && request.resource.data.createdByUid == request.auth.uid
+          && request.resource.data.updatedByUid == request.auth.uid
+          && request.resource.data.version == 1;
+        allow update: if isMember(groupId)
+          && validExpense()
+          && group(groupId).status == 'active'
+          && request.resource.data.updatedByUid == request.auth.uid
+          && request.resource.data.createdByUid == resource.data.createdByUid
+          && request.resource.data.version == resource.data.version + 1;
+        allow delete: if false; // soft delete via deletedAt, so it can be undone
+      }
+
+      match /activity/{activityId} {
+        allow read: if isMember(groupId);
+        allow create: if isMember(groupId)
+          && request.resource.data.actorUid == request.auth.uid
+          && (group(groupId).status == 'active'
+              || (group(groupId).status == 'frozen' && request.resource.data.type == 'settlement_added'));
+        allow update: if isMember(groupId)
+          && group(groupId).status == 'active'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['undoneBy', 'undoneAt']);
+        allow delete: if false;
+      }
+    }
+
+    // Server-only bookkeeping.
+    match /userGroups/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+    match /invites/{code} {
+      allow read, write: if false;
+    }
+    match /publicLinks/{token} {
+      allow read, write: if false;
+    }
+    match /groupNotify/{id} {
+      allow read, write: if false;
     }
   }
 }

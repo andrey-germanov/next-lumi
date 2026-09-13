@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["4RNN6K7R2K.com.andrey5454germanov.money-tracker"],
+        "components": [
+          { "/": "/j/*", "comment": "Shared-expense group invitations open in Lumi" }
+        ]
+      }
+    ]
+  }
+}
