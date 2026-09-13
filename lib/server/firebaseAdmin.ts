@@ -9,6 +9,14 @@ import { getFirestore, type Firestore } from "firebase-admin/firestore";
 
 let app: App | undefined;
 
+/** Server misconfiguration (env), surfaced by `handle` as 503 so it's obvious from the client. */
+export class AdminConfigError extends Error {
+  constructor(public readonly reason: "missing" | "invalid_json" | "missing_fields") {
+    super(`FIREBASE_SERVICE_ACCOUNT ${reason}`);
+    this.name = "AdminConfigError";
+  }
+}
+
 function adminApp(): App {
   if (app) return app;
   const existing = getApps()[0];
@@ -17,14 +25,23 @@ function adminApp(): App {
     return app;
   }
   const raw = process.env.FIREBASE_SERVICE_ACCOUNT;
-  if (!raw) throw new Error("FIREBASE_SERVICE_ACCOUNT is not configured");
-  const json = raw.trim().startsWith("{") ? raw : Buffer.from(raw, "base64").toString("utf8");
-  const serviceAccount = JSON.parse(json) as { project_id: string; client_email: string; private_key: string };
+  if (!raw?.trim()) throw new AdminConfigError("missing");
+  let serviceAccount: { project_id?: string; client_email?: string; private_key?: string };
+  try {
+    const json = raw.trim().startsWith("{") ? raw : Buffer.from(raw, "base64").toString("utf8");
+    serviceAccount = JSON.parse(json);
+  } catch {
+    throw new AdminConfigError("invalid_json");
+  }
+  if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
+    throw new AdminConfigError("missing_fields");
+  }
   app = initializeApp({
     credential: cert({
       projectId: serviceAccount.project_id,
       clientEmail: serviceAccount.client_email,
-      privateKey: serviceAccount.private_key,
+      // Pasted env values sometimes keep literal \n sequences instead of newlines.
+      privateKey: serviceAccount.private_key.replace(/\\n/g, "\n"),
     }),
     projectId: serviceAccount.project_id,
   });

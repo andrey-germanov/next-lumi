@@ -1,4 +1,4 @@
-import { adminAuth } from "./firebaseAdmin";
+import { AdminConfigError, adminAuth } from "./firebaseAdmin";
 
 export class HttpError extends Error {
   constructor(
@@ -26,7 +26,8 @@ async function userFromHeader(req: Request): Promise<AuthedUser | null> {
   try {
     const token = await adminAuth().verifyIdToken(header.slice(7));
     return { uid: token.uid, name: token.name as string | undefined, email: token.email };
-  } catch {
+  } catch (error) {
+    if (error instanceof AdminConfigError) throw error;
     return null;
   }
 }
@@ -55,6 +56,10 @@ export async function handle(fn: () => Promise<Response>): Promise<Response> {
   } catch (error) {
     if (error instanceof HttpError) {
       return json({ error: error.code, ...(error.details ?? {}) }, error.status);
+    }
+    if (error instanceof AdminConfigError) {
+      console.error("[groups api] server not configured:", error.reason);
+      return json({ error: "server_not_configured", reason: error.reason }, 503);
     }
     console.error("[groups api] unexpected error", error);
     return json({ error: "internal" }, 500);
