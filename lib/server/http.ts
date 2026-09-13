@@ -62,6 +62,10 @@ export async function handle(fn: () => Promise<Response>): Promise<Response> {
       return json({ error: "server_not_configured", reason: error.reason }, 503);
     }
     console.error("[groups api] unexpected error", error);
-    return json({ error: "internal" }, 500);
+    // Firestore/Auth error codes (e.g. 7 PERMISSION_DENIED, 16 UNAUTHENTICATED,
+    // "app/invalid-credential") carry no secrets and make prod failures diagnosable.
+    const code = (error as { code?: unknown } | null)?.code;
+    const safeCode = typeof code === "number" || (typeof code === "string" && code.length <= 60) ? code : undefined;
+    return json({ error: "internal", ...(safeCode !== undefined ? { code: safeCode } : {}) }, 500);
   }
 }

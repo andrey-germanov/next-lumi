@@ -11,7 +11,7 @@ let app: App | undefined;
 
 /** Server misconfiguration (env), surfaced by `handle` as 503 so it's obvious from the client. */
 export class AdminConfigError extends Error {
-  constructor(public readonly reason: "missing" | "invalid_json" | "missing_fields") {
+  constructor(public readonly reason: "missing" | "invalid_json" | "missing_fields" | "invalid_key") {
     super(`FIREBASE_SERVICE_ACCOUNT ${reason}`);
     this.name = "AdminConfigError";
   }
@@ -36,15 +36,18 @@ function adminApp(): App {
   if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
     throw new AdminConfigError("missing_fields");
   }
-  app = initializeApp({
-    credential: cert({
+  let credential;
+  try {
+    credential = cert({
       projectId: serviceAccount.project_id,
       clientEmail: serviceAccount.client_email,
       // Pasted env values sometimes keep literal \n sequences instead of newlines.
       privateKey: serviceAccount.private_key.replace(/\\n/g, "\n"),
-    }),
-    projectId: serviceAccount.project_id,
-  });
+    });
+  } catch {
+    throw new AdminConfigError("invalid_key");
+  }
+  app = initializeApp({ credential, projectId: serviceAccount.project_id });
   return app;
 }
 
