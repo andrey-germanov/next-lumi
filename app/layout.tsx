@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "./providers";
 import { LanguageProvider } from "@/components/dash/i18n";
-import { SITE_URL } from "@/lib/constants";
+import { BRAND_ENTITY_NAME, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              name: "Lumi: Budget & Expense Tracker",
+              name: BRAND_ENTITY_NAME,
               alternateName: "Lumi — Voice Money Manager",
               image: `${SITE_URL}/images/logo/logo-512.png`,
               operatingSystem: "iOS 16.0 or later",

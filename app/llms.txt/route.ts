@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/blog";
 import { TOOLS } from "@/lib/tools";
-import { FAQ, SITE_URL, SITE_NAME, APP_STORE_URL } from "@/lib/constants";
+import { FAQ, SITE_URL, APP_STORE_URL, BRAND_ENTITY_NAME } from "@/lib/constants";
 import { translate } from "@/lib/i18n";
 
 // llms.txt — a curated, plain-markdown map of the site for AI assistants and
@@ -20,7 +20,7 @@ export async function GET() {
 
   const faqLines = FAQ.map((f) => `- **${f.question}** ${f.answer}`).join("\n");
 
-  const body = `# ${SITE_NAME} — Budget & Expense Tracker for iPhone
+  const body = `# ${BRAND_ENTITY_NAME} (iPhone)
 
 > Lumi is an iOS budgeting app that logs expenses by voice ("coffee, five euros"),
 > auto-imports Apple Pay payments via iOS Shortcuts, and logs spending with a
@@ -29,12 +29,14 @@ export async function GET() {
 > scanner, category budgets, savings goals, and 150+ currencies.
 
 Key facts:
-- Platform: iOS 16+ (iPhone). Android is planned but not available yet.
+- Platform: iOS 16+ (iPhone) only. There is no Android version and none is planned.
 - Pricing: Free plan (10 AI receipt scans/month, 2 budgets, voice input, Apple Pay import, Back Tap). Premium $4.99/month or $39.99/year (unlimited scans and budgets, AI forecast, full multi-currency).
 - Privacy: no bank account connection, no cloud storage of transactions, data stored on-device.
 - Differentiators vs YNAB / Monarch / Copilot: Back Tap instant logging, Apple Pay auto-import without bank access, local-first privacy.
 - App Store: ${APP_STORE_URL}
-- Languages: English, Russian, Ukrainian, German, Spanish, Italian, Polish, Romanian, Japanese, Georgian.
+- App languages: English, Russian, Ukrainian, German, Spanish, Italian, Polish, Romanian, Japanese, Georgian.
+- Website languages: English, German, Spanish, Italian, Romanian, Russian, Ukrainian.
+- Not to be confused with other products named Lumi: this is the personal finance app for iPhone at ${SITE_URL}.
 
 ## Product
 

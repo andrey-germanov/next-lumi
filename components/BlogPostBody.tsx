@@ -6,9 +6,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppStoreButton from "@/components/AppStoreButton";
-import { SITE_URL } from "@/lib/constants";
+import { APP_STORE_URL, BRAND_ENTITY_NAME, SITE_URL } from "@/lib/constants";
 import { translate, INTL_LOCALE, localePath, type Locale } from "@/lib/i18n";
-import type { BlogPost } from "@/lib/blog";
+import { hasTranslation, type BlogPost } from "@/lib/blog";
 
 function makeCta(label: string) {
   return function ArticleCTA() {
@@ -31,9 +31,35 @@ function makeAnchor(locale: Locale) {
   return function MdxAnchor({ href = "", ...props }: React.ComponentPropsWithoutRef<"a">) {
     const isInternal = href.startsWith("/") && !href.startsWith("//");
     if (!isInternal) return <a href={href} {...props} />;
-    const prefixed = locale === "en" ? href : `${localePath(locale)}${href}`;
+    // An untranslated post renders an English fallback that is noindexed and
+    // canonicalized to /blog/<slug>; link straight there instead.
+    const postSlug = href.match(/^\/blog\/([^/?#]+)/)?.[1];
+    const keepEnglish = locale === "en" || (postSlug !== undefined && !hasTranslation(postSlug, locale));
+    const prefixed = keepEnglish ? href : `${localePath(locale)}${href}`;
     return <Link href={prefixed} {...props} />;
   };
+}
+
+/** Row of phone screenshots with step captions, used as <Screenshots><Screenshot … /></Screenshots> in MDX. */
+function Screenshots({ children }: { children: React.ReactNode }) {
+  return <div className="not-prose my-8 grid grid-cols-3 gap-3 sm:gap-5">{children}</div>;
+}
+
+function Screenshot({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="m-0">
+      <img
+        src={src}
+        alt={alt}
+        width={540}
+        height={1168}
+        loading="lazy"
+        className="w-full rounded-2xl border border-black/5"
+        style={{ aspectRatio: "540 / 1168", objectFit: "cover" }}
+      />
+      {caption && <figcaption className="mt-2 text-center text-xs text-text-muted sm:text-sm">{caption}</figcaption>}
+    </figure>
+  );
 }
 
 export default function BlogPostBody({ post, locale }: { post: BlogPost; locale: Locale }) {
@@ -52,8 +78,11 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
     inLanguage: locale,
-    author: { "@type": "Person", name: post.author, url: SITE_URL },
-    publisher: { "@type": "Organization", name: "Lumi", url: SITE_URL },
+    author: { "@type": "Organization", name: post.author, url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Lumi", url: SITE_URL, logo: `${SITE_URL}/images/logo/logo-512.png` },
+    // Same entity name as the root SoftwareApplication schema, so answer
+    // engines resolve "Lumi" to this app rather than other products named Lumi.
+    about: { "@type": "SoftwareApplication", name: BRAND_ENTITY_NAME, operatingSystem: "iOS", applicationCategory: "FinanceApplication", url: APP_STORE_URL },
     image: `${SITE_URL}/blog/${post.slug}/opengraph-image`,
     mainEntityOfPage: `${SITE_URL}${canonicalPath}`,
   };
@@ -114,7 +143,7 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
           <div className="prose mt-12">
             <MDXRemote
               source={post.content}
-              components={{ ArticleCTA, a }}
+              components={{ ArticleCTA, a, Screenshots, Screenshot }}
               options={{
                 mdxOptions: {
                   remarkPlugins: [remarkGfm],
@@ -127,6 +156,11 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
           <div className="mt-12">
             <ArticleCTA />
           </div>
+
+          <aside className="mt-8 rounded-2xl border border-black/5 bg-surface-2 p-6 text-sm text-text-muted">
+            <p className="mb-2 font-semibold text-text">{t("blog.aboutTitle")}</p>
+            <p>{t("blog.aboutBody")}</p>
+          </aside>
         </article>
       </main>
       <Footer />

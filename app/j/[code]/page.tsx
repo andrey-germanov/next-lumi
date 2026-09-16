@@ -1,5 +1,5 @@
 // Group invitation landing: https://lumi.herman-apps.com/j/<code>
-// With Lumi installed, iOS/Android open the app directly (universal link /
+// With Lumi installed, iOS opens the app directly (universal link /
 // app link) and this page is never shown. Without it: preview + install steps
 // + the code to type in manually.
 import type { Metadata } from "next";

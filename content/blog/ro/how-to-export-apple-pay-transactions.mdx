@@ -1,0 +1,83 @@
+---
+title: "Cum exporți tranzacțiile Apple Pay (în CSV, tabel sau o aplicație de buget)"
+seoTitle: "Cum exporți tranzacțiile Apple Pay în CSV sau Excel (2026)"
+description: "Wallet nu are buton de export pentru Apple Pay. Patru metode care funcționează: CSV de la bancă, extrase Apple Card, o scurtătură gratuită sau o aplicație."
+date: "2026-09-17"
+author: "Lumi Team"
+image: "/images/blog/how-to-export-apple-pay-transactions.png"
+tags: ["export tranzacții apple pay", "apple pay csv", "istoric apple pay excel", "apple pay tabel", "aplicația wallet", "evidența cheltuielilor", "buget pe iphone"]
+---
+
+Vrei plățile Apple Pay într-un tabel: pentru buget, declarația fiscală, un decont de cheltuieli sau doar ca să vezi unde s-a dus luna. Deschizi Wallet, cauți un buton de export și nu există. Apple Pay nu oferă o metodă generală de export al tranzacțiilor. Datele există, dar sunt la banca ta, nu în Apple Pay. Iată cele patru metode care chiar funcționează, de la cea mai completă la cea mai automată.
+
+## Se pot exporta direct tranzacțiile Apple Pay?
+
+Pentru majoritatea cardurilor, nu. Wallet arată o listă cu tranzacțiile recente pentru fiecare card, dar pentru cardurile obișnuite de debit și de credit nu există partajare, descărcare sau export. În plus, cât de completă e lista depinde de bancă: unele bănci trimit în Wallet toate detaliile, altele aproape nimic.
+
+Singura excepție este **Apple Card**, care are propriul export al extraselor (vezi mai jos). Pentru orice alt card, Apple Pay e doar modul în care plătești. Înregistrarea plății aparține emitentului cardului.
+
+## Metoda 1: exportul de la bancă (istoricul complet)
+
+Fiecare plată Apple Pay apare în extras ca o plată obișnuită cu cardul, așa că banca are tot istoricul, inclusiv plățile făcute cu Apple Watch sau iPad.
+
+De obicei merge așa:
+- Intră în **internet banking din browser**, nu din aplicație. Acolo opțiunile de export sunt mai des întâlnite.
+- Deschide contul sau cardul, alege perioada și caută **Export**, **Descarcă** sau **Extrase de cont**.
+- Alege **CSV** dacă vrei un tabel. Extrasele PDF sunt bune de arhivat, dar greu de analizat.
+
+Dezavantajele, spuse sincer: plățile Apple Pay sunt amestecate cu toate celelalte tranzacții ale cardului, numele comercianților sunt adesea coduri greu de citit, iar dacă ai mai multe bănci, ai și mai multe fișiere de combinat. Pentru declarația fiscală, totuși, asta e versiunea pe care o păstrezi, pentru că e documentul oficial.
+
+## Metoda 2: cine folosește Apple Card exportă direct din Wallet
+
+Dacă plătești cu Apple Card (disponibil în Statele Unite), Wallet poate exporta tranzacțiile:
+
+1. Deschide **Wallet** și atinge **Apple Card**.
+2. Atinge **Soldul cardului**.
+3. Alege un extras lunar și atinge **Exportă tranzacțiile**.
+4. Alege un format, de exemplu **CSV** pentru un tabel sau **OFX** pentru programe financiare.
+
+Exportul funcționează pentru fiecare extras lunar încheiat, deci tranzacțiile din luna curentă apar abia după închiderea extrasului. Și acoperă doar Apple Card, nu și celelalte carduri din Wallet.
+
+## Metoda 3: înregistrezi fiecare plată într-un fișier cu o scurtătură gratuită
+
+Începând cu iOS 17, aplicația Scurtături are automatizarea **Tranzacție**, care pornește când plătești cu un card din Wallet și transmite suma și comerciantul. Așa îți construiești exportul pe parcurs:
+
+1. Deschide **Scurtături**, mergi la **Automatizare** și atinge **+**.
+2. Alege **Tranzacție**, selectează cardurile și setează **Rulează imediat**.
+3. Adaugă acțiunea **Adaugă la fișier text** și scrie câte un rând pentru fiecare plată, de exemplu data, comerciantul și suma, separate prin punct și virgulă.
+4. Salvează fișierul în iCloud Drive ca `apple-pay.csv`. Se deschide în Numbers, Excel sau Google Sheets.
+
+E gratuit și privat, iar fișierul se completează de azi înainte. Limitele sunt reale: nu importă tranzacțiile trecute, vede doar plățile făcute de pe acel iPhone, nu știe de rambursări, iar suma vine ca text cu simbolul monedei, pe care s-ar putea să trebuiască să-l cureți în tabel. Pentru mai multe despre automatizări, ghidul [cum înregistrezi cheltuieli cu Scurtături](/blog/track-expenses-with-siri-shortcuts) explică pașii în detaliu.
+
+## Metoda 4: înregistrezi automat Apple Pay într-o aplicație de cheltuieli
+
+Majoritatea celor care caută cum să exporte tranzacțiile Apple Pay nu vor de fapt un fișier CSV. Vor să știe cât au cheltuit și pe ce. Să exporți, să cureți și să categorisești un tabel în fiecare lună e drumul cel mai lent până la răspuns.
+
+O aplicație de cheltuieli care folosește aceeași automatizare Tranzacție sare complet peste export. [Lumi](/), de exemplu, înregistrează fiecare plată Apple Pay printr-o scurtătură iOS în momentul în care plătești: sumă, comerciant, oră și o categorie sugerată, fără logare la bancă. Numerarul și transferurile, pe care Apple Pay nu le vede, le adaugi cu vocea în câteva secunde, astfel încât luna e completă, nu doar partea plătită cu cardul. Pentru o comparație între astfel de aplicații, vezi [cele mai bune aplicații pentru cheltuielile Apple Pay](/blog/best-apps-to-track-apple-pay-spending-2026).
+
+## Ce metodă ți se potrivește
+
+| Scopul tău | Cea mai bună metodă | Limita principală |
+|---|---|---|
+| Document oficial pentru taxe sau contabilitate | Export de la bancă (CSV sau PDF) | Amestecat cu alte plăți, nume de comercianți neclare |
+| Plătești mai ales cu Apple Card | Exportul extraselor din Wallet | Doar Apple Card, doar luni încheiate |
+| Un tabel gratuit cu plățile viitoare | Automatizarea Tranzacție din Scurtături | Fără date vechi, curățare manuală |
+| Să știi unde se duc banii în fiecare lună | Aplicație de cheltuieli cu preluare Apple Pay | Începe de la configurare, nu retroactiv |
+
+Mulți combină două metode: exportul de la bancă drept document oficial și preluarea automată pentru cheltuielile de zi cu zi. Dacă trebuie doar să găsești o singură plată, [cum vezi istoricul tranzacțiilor Apple Pay](/blog/how-to-see-apple-pay-transaction-history) arată unde o păstrează Wallet, Configurările și banca.
+
+<ArticleCTA />
+
+## Întrebări frecvente
+
+### Pot descărca istoricul Apple Pay din Apple Account?
+
+Nu. Istoricul achizițiilor din Apple Account cuprinde App Store, abonamente și servicii Apple, nu plățile Apple Pay din magazine. Plățile cu cardul făcute prin Apple Pay sunt înregistrate de bancă, deci de acolo le descarci.
+
+### Cât de mult în urmă merge istoricul tranzacțiilor Apple Pay?
+
+Wallet arată doar tranzacțiile recente, iar câte depinde de bancă. Pentru plățile mai vechi folosește extrasele bancare, care de obicei acoperă o perioadă mult mai lungă, sau extrasele Apple Card dacă îl folosești.
+
+### Pot exporta tranzacțiile Apple Pay în Excel?
+
+Da, indirect. Exportă un CSV de la bancă sau din extrasele Apple Card și deschide-l în Excel. Dacă îți construiești fișierul cu automatizarea Tranzacție din Scurtături, salvează-l ca `.csv` și se deschide la fel în Excel.

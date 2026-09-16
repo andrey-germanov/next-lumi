@@ -1,5 +1,7 @@
 export const SITE_URL = "https://lumi.herman-apps.com";
 export const SITE_NAME = "Lumi";
+/** One canonical product name for schema, llms.txt and brand copy — keep it identical everywhere the app is named. */
+export const BRAND_ENTITY_NAME = "Lumi: Budget & Expense Tracker";
 export const SITE_TITLE = "Lumi — Expense Tracker & Spending Forecast";
 export const SITE_DESCRIPTION =
   "Lumi logs expenses the moment you pay — via Apple Pay or a Back Tap on your iPhone. AI forecasts your month-end balance before you overspend. Receipt scanner, budgets, savings goals. No bank login. Privacy-first.";
@@ -201,7 +203,7 @@ export const FAQ = [
   {
     question: "Is Lumi available on Android?",
     answer:
-      "Currently Lumi is iOS only. Back Tap and Apple Pay integrations are iOS-native features. An Android version is on the roadmap.",
+      "No. Lumi is an iPhone app and there are no plans for an Android version. Back Tap, Apple Pay auto-import, and Shortcuts are iOS features, and Lumi is built around them.",
   },
   {
     question: "What currencies does Lumi support?",

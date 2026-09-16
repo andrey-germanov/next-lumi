@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { INTL_LOCALE, type Locale } from "@/lib/i18n";
 import { fromMinor } from "@/lib/groupMath";
-import { APP_STORE_URL, CATEGORY_EMOJI, GOOGLE_PLAY_URL, fill, groupsCopy } from "@/lib/groupsWebI18n";
+import { APP_STORE_URL, CATEGORY_EMOJI, GROUPS_INTL, fill, groupsCopy, type GroupsLocale } from "@/lib/groupsWebI18n";
 
 export interface PublicTrip {
   name: string;
@@ -41,11 +41,11 @@ export default function LiveTrip({
 }: {
   token: string;
   initial: PublicTrip | null;
-  locale: Locale;
+  locale: GroupsLocale;
   memberId: string | null;
 }) {
   const copy = groupsCopy(locale);
-  const intl = INTL_LOCALE[locale] ?? "en-US";
+  const intl = INTL_LOCALE[locale as Locale] ?? GROUPS_INTL[locale] ?? "en-US";
   const [trip, setTrip] = useState<PublicTrip | null>(initial);
   const [inactive, setInactive] = useState(initial === null);
   const [lastUpdated, setLastUpdated] = useState(() => initial?.updatedAt ?? Date.now());
@@ -283,9 +283,6 @@ export default function LiveTrip({
         <div className="flex gap-3">
           <a href={APP_STORE_URL} className="btn-violet" style={{ flex: 1, textAlign: "center", padding: "12px 14px", fontSize: 14 }}>
             {copy.appStore}
-          </a>
-          <a href={GOOGLE_PLAY_URL} className="btn-violet" style={{ flex: 1, textAlign: "center", padding: "12px 14px", fontSize: 14 }}>
-            {copy.googlePlay}
           </a>
         </div>
       </div>

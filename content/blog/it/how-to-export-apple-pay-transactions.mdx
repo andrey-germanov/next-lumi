@@ -1,0 +1,83 @@
+---
+title: "Come esportare le transazioni Apple Pay (CSV, foglio di calcolo o app di budget)"
+seoTitle: "Come esportare le transazioni Apple Pay in CSV o Excel (2026)"
+description: "Wallet non ha un pulsante per esportare Apple Pay. Quattro metodi che funzionano: CSV della banca, estratti Apple Card, un comando rapido gratuito o un'app."
+date: "2026-09-17"
+author: "Lumi Team"
+image: "/images/blog/how-to-export-apple-pay-transactions.png"
+tags: ["esportare transazioni apple pay", "apple pay csv", "esportare storico apple pay", "apple pay excel", "app wallet", "monitorare le spese", "budget su iphone"]
+---
+
+Vuoi i tuoi pagamenti Apple Pay in un foglio di calcolo: per il budget, la dichiarazione dei redditi, una nota spese o solo per capire dove è finito il mese. Apri Wallet, cerchi un pulsante per esportare e non c'è. Apple Pay non offre un'esportazione generale delle transazioni. I dati esistono, ma stanno nella tua banca, non in Apple Pay. Ecco i quattro metodi che funzionano davvero, dal più completo al più automatico.
+
+## Si possono esportare direttamente le transazioni Apple Pay?
+
+Per la maggior parte delle carte, no. Wallet mostra un elenco delle transazioni recenti per ogni carta, ma per le normali carte di debito e di credito non c'è condivisione, download o esportazione. Quanto è completo quell'elenco dipende poi dalla banca: alcune inviano a Wallet tutti i dettagli, altre quasi nulla.
+
+L'unica eccezione è **Apple Card**, che ha un'esportazione propria degli estratti conto (vedi sotto). Per tutte le altre carte Apple Pay è solo il modo in cui paghi. Il registro del pagamento appartiene all'emittente della carta.
+
+## Metodo 1: esporta dalla banca (il registro completo)
+
+Ogni pagamento Apple Pay è un normale pagamento con carta nell'estratto conto, quindi la banca ha lo storico completo, compresi i pagamenti fatti con Apple Watch o iPad.
+
+Di solito funziona così:
+- Accedi all'**home banking dal browser** invece che dall'app. Lì le opzioni di esportazione sono più frequenti.
+- Apri il conto o la carta, scegli un periodo e cerca **Esporta**, **Scarica** o **Estratti conto**.
+- Scegli **CSV** se vuoi un foglio di calcolo. Gli estratti in PDF vanno bene da archiviare, ma sono difficili da analizzare.
+
+I limiti, detti onestamente: i pagamenti Apple Pay sono mescolati a tutti gli altri movimenti della carta, i nomi degli esercenti sono spesso codici poco leggibili e, se usi più banche, hai più file da unire. Per la dichiarazione dei redditi resta comunque la versione da conservare, perché è il documento ufficiale.
+
+## Metodo 2: chi usa Apple Card può esportare da Wallet
+
+Se paghi con Apple Card (disponibile negli Stati Uniti), Wallet può esportare le transazioni:
+
+1. Apri **Wallet** e tocca **Apple Card**.
+2. Tocca **Saldo carta**.
+3. Scegli un estratto mensile e tocca **Esporta transazioni**.
+4. Scegli un formato, ad esempio **CSV** per un foglio di calcolo oppure **OFX** per un software di finanza.
+
+L'esportazione funziona per ogni estratto mensile chiuso, quindi le transazioni del mese in corso compaiono solo quando l'estratto si chiude. E riguarda solo Apple Card, non le altre carte in Wallet.
+
+## Metodo 3: registra ogni pagamento in un file con un comando rapido gratuito
+
+Da iOS 17 l'app Comandi rapidi ha l'automazione **Transazione**, che parte quando paghi con una carta di Wallet e passa importo ed esercente. Così puoi costruire la tua esportazione man mano:
+
+1. Apri **Comandi rapidi**, vai su **Automazione** e tocca **+**.
+2. Scegli **Transazione**, seleziona le carte e imposta **Esegui immediatamente**.
+3. Aggiungi l'azione **Aggiungi a file di testo** e scrivi una riga per ogni pagamento, per esempio data, esercente e importo separati da punto e virgola.
+4. Salva il file su iCloud Drive come `apple-pay.csv`. Si apre in Numbers, Excel o Google Sheets.
+
+È gratuito e privato, e riempie il file da oggi in poi. I limiti sono concreti: non importa le transazioni passate, vede solo i pagamenti fatti con quell'iPhone, non conosce i rimborsi e l'importo arriva come testo con il simbolo della valuta, che potresti dover sistemare nel foglio. Per andare oltre con le automazioni, la guida su [come registrare le spese con i Comandi rapidi](/blog/track-expenses-with-siri-shortcuts) spiega la configurazione nel dettaglio.
+
+## Metodo 4: registra Apple Pay in automatico in un'app per le spese
+
+La maggior parte di chi cerca come esportare le transazioni Apple Pay non vuole davvero un file CSV. Vuole sapere quanto ha speso e per cosa. Esportare, pulire e categorizzare un foglio ogni mese è la strada più lenta per arrivarci.
+
+Un'app per le spese che usa la stessa automazione Transazione salta del tutto l'esportazione. [Lumi](/), per esempio, registra ogni pagamento Apple Pay tramite un comando rapido di iOS nel momento in cui paghi: importo, esercente, ora e una categoria suggerita, senza accesso alla banca. Contanti e bonifici, che Apple Pay non vede, si aggiungono a voce in pochi secondi, così il mese è completo e non solo la parte pagata con la carta. Per un confronto tra app di questo tipo, leggi [le migliori app per monitorare le spese Apple Pay](/blog/best-apps-to-track-apple-pay-spending-2026).
+
+## Quale metodo fa per te
+
+| Il tuo obiettivo | Metodo migliore | Limite principale |
+|---|---|---|
+| Documento ufficiale per tasse o contabilità | Esportazione dalla banca (CSV o PDF) | Mescolato ad altri movimenti, nomi esercenti poco chiari |
+| Paghi soprattutto con Apple Card | Esportazione degli estratti in Wallet | Solo Apple Card, solo mesi chiusi |
+| Un foglio gratuito dei pagamenti futuri | Automazione Transazione in Comandi rapidi | Niente dati passati, pulizia manuale |
+| Sapere dove vanno i tuoi soldi ogni mese | App per le spese con acquisizione Apple Pay | Parte dalla configurazione, non è retroattiva |
+
+Molti combinano due metodi: l'esportazione dalla banca come documento ufficiale e l'acquisizione automatica per le spese di tutti i giorni. Se devi solo ritrovare un singolo pagamento, [come vedere la cronologia delle transazioni Apple Pay](/blog/how-to-see-apple-pay-transaction-history) spiega dove la conservano Wallet, Impostazioni e banca.
+
+<ArticleCTA />
+
+## FAQ
+
+### Posso scaricare lo storico Apple Pay dal mio Apple Account?
+
+No. La cronologia acquisti dell'Apple Account riguarda App Store, abbonamenti e servizi Apple, non i pagamenti Apple Pay nei negozi. I pagamenti con carta fatti con Apple Pay li registra la banca, quindi è lì che li scarichi.
+
+### Quanto indietro arriva lo storico delle transazioni Apple Pay?
+
+Wallet mostra solo le transazioni recenti, e quante dipende dalla banca. Per i pagamenti più vecchi usa gli estratti conto, che di solito arrivano molto più indietro, oppure gli estratti Apple Card se la usi.
+
+### Posso esportare le transazioni Apple Pay in Excel?
+
+Sì, in modo indiretto. Esporta un CSV dalla banca o dagli estratti Apple Card e aprilo in Excel. Se crei un file con l'automazione Transazione dei Comandi rapidi, salvalo come `.csv` e si apre in Excel allo stesso modo.

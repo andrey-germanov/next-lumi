@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { Locale } from "@/lib/i18n";
-import { APP_STORE_URL, GOOGLE_PLAY_URL, fill, groupsCopy } from "@/lib/groupsWebI18n";
+import { APP_STORE_URL, fill, groupsCopy, type GroupsLocale } from "@/lib/groupsWebI18n";
 
 export interface InvitePreview {
   groupId: string;
@@ -24,7 +23,7 @@ const initials = (name: string) =>
     .slice(0, 2)
     .toUpperCase();
 
-function StoreButtons({ locale }: { locale: Locale }) {
+function StoreButtons({ locale }: { locale: GroupsLocale }) {
   const copy = groupsCopy(locale);
   const style: React.CSSProperties = {
     flex: 1,
@@ -41,14 +40,11 @@ function StoreButtons({ locale }: { locale: Locale }) {
       <a href={APP_STORE_URL} style={style}>
          {copy.appStore}
       </a>
-      <a href={GOOGLE_PLAY_URL} style={style}>
-        ▶ {copy.googlePlay}
-      </a>
     </div>
   );
 }
 
-export default function InviteLanding({ preview, code, locale }: { preview: InvitePreview | null; code: string; locale: Locale }) {
+export default function InviteLanding({ preview, code, locale }: { preview: InvitePreview | null; code: string; locale: GroupsLocale }) {
   const copy = groupsCopy(locale);
   const [copied, setCopied] = useState(false);
   const prettyCode = code.length === 8 ? `${code.slice(0, 4)}-${code.slice(4)}` : code;

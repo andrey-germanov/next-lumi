@@ -2,10 +2,16 @@
 // live link). Kept separate from lib/i18n.ts, which serves the landing site.
 import type { Locale } from "./i18n";
 
+// Invite/trip pages serve app users (any app language), so they keep locales
+// the marketing site no longer ships.
+export type GroupsLocale = Locale | "pl" | "ja" | "ka";
+
+/** Intl tags for the group-only locales (site locales use INTL_LOCALE). */
+export const GROUPS_INTL: Partial<Record<GroupsLocale, string>> = { pl: "pl-PL", ja: "ja-JP", ka: "ka-GE" };
+
 export interface GroupsCopy {
   getLumi: string;
   appStore: string;
-  googlePlay: string;
   invite: {
     eyebrow: string;
     title: string;
@@ -49,12 +55,12 @@ export interface GroupsCopy {
   };
 }
 
-const COPY: Record<Locale, GroupsCopy> = {
+const COPY: Record<GroupsLocale, GroupsCopy> = {
   en: {
-    getLumi: "Get Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Get Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Invitation", title: "{owner} invites you to join", members: "{count} members", openInApp: "Open in Lumi",
-      howTitle: "Don't have Lumi yet?", step1: "Install Lumi from the App Store or Google Play.",
+      howTitle: "Don't have Lumi yet?", step1: "Install Lumi from the App Store.",
       step2: "Come back to this page and tap “Open in Lumi”.", codeLabel: "Or enter this code in Lumi → Shared expenses",
       copy: "Copy code", copied: "Copied", invalidTitle: "This invitation is no longer valid",
       invalidBody: "Ask the person who invited you for a new link.", full: "This group is full.",
@@ -71,10 +77,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   ru: {
-    getLumi: "Скачать Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Скачать Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Приглашение", title: "{owner} приглашает вас в группу", members: "Участников: {count}", openInApp: "Открыть в Lumi",
-      howTitle: "Ещё нет Lumi?", step1: "Установите Lumi из App Store или Google Play.",
+      howTitle: "Ещё нет Lumi?", step1: "Установите Lumi из App Store.",
       step2: "Вернитесь на эту страницу и нажмите «Открыть в Lumi».", codeLabel: "Или введите код в Lumi → Совместные траты",
       copy: "Скопировать код", copied: "Скопировано", invalidTitle: "Приглашение больше не действует",
       invalidBody: "Попросите у пригласившего новую ссылку.", full: "В группе уже максимум участников.",
@@ -91,10 +97,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   uk: {
-    getLumi: "Завантажити Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Завантажити Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Запрошення", title: "{owner} запрошує вас до групи", members: "Учасників: {count}", openInApp: "Відкрити в Lumi",
-      howTitle: "Ще немає Lumi?", step1: "Встановіть Lumi з App Store або Google Play.",
+      howTitle: "Ще немає Lumi?", step1: "Встановіть Lumi з App Store.",
       step2: "Поверніться на цю сторінку й натисніть «Відкрити в Lumi».", codeLabel: "Або введіть код у Lumi → Спільні витрати",
       copy: "Скопіювати код", copied: "Скопійовано", invalidTitle: "Запрошення більше не діє",
       invalidBody: "Попросіть у того, хто запросив, нове посилання.", full: "У групі вже максимум учасників.",
@@ -111,10 +117,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   ro: {
-    getLumi: "Descarcă Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Descarcă Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Invitație", title: "{owner} te invită în grup", members: "{count} membri", openInApp: "Deschide în Lumi",
-      howTitle: "Nu ai încă Lumi?", step1: "Instalează Lumi din App Store sau Google Play.",
+      howTitle: "Nu ai încă Lumi?", step1: "Instalează Lumi din App Store.",
       step2: "Revino pe această pagină și atinge „Deschide în Lumi”.", codeLabel: "Sau introdu codul în Lumi → Cheltuieli comune",
       copy: "Copiază codul", copied: "Copiat", invalidTitle: "Invitația nu mai este valabilă",
       invalidBody: "Cere un link nou persoanei care te-a invitat.", full: "Grupul este plin.",
@@ -131,10 +137,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   de: {
-    getLumi: "Lumi holen", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Lumi holen", appStore: "App Store",
     invite: {
       eyebrow: "Einladung", title: "{owner} lädt dich in die Gruppe ein", members: "{count} Mitglieder", openInApp: "In Lumi öffnen",
-      howTitle: "Noch kein Lumi?", step1: "Installiere Lumi aus dem App Store oder von Google Play.",
+      howTitle: "Noch kein Lumi?", step1: "Installiere Lumi aus dem App Store.",
       step2: "Komm auf diese Seite zurück und tippe auf „In Lumi öffnen“.", codeLabel: "Oder gib diesen Code in Lumi → Geteilte Ausgaben ein",
       copy: "Code kopieren", copied: "Kopiert", invalidTitle: "Diese Einladung ist nicht mehr gültig",
       invalidBody: "Bitte die Person, die dich eingeladen hat, um einen neuen Link.", full: "Diese Gruppe ist voll.",
@@ -151,10 +157,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   es: {
-    getLumi: "Descargar Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Descargar Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Invitación", title: "{owner} te invita al grupo", members: "{count} miembros", openInApp: "Abrir en Lumi",
-      howTitle: "¿Aún no tienes Lumi?", step1: "Instala Lumi desde App Store o Google Play.",
+      howTitle: "¿Aún no tienes Lumi?", step1: "Instala Lumi desde App Store.",
       step2: "Vuelve a esta página y toca «Abrir en Lumi».", codeLabel: "O introduce este código en Lumi → Gastos compartidos",
       copy: "Copiar código", copied: "Copiado", invalidTitle: "Esta invitación ya no es válida",
       invalidBody: "Pide un enlace nuevo a quien te invitó.", full: "Este grupo está completo.",
@@ -171,10 +177,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   it: {
-    getLumi: "Scarica Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Scarica Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Invito", title: "{owner} ti invita nel gruppo", members: "{count} membri", openInApp: "Apri in Lumi",
-      howTitle: "Non hai ancora Lumi?", step1: "Installa Lumi da App Store o Google Play.",
+      howTitle: "Non hai ancora Lumi?", step1: "Installa Lumi da App Store.",
       step2: "Torna su questa pagina e tocca «Apri in Lumi».", codeLabel: "Oppure inserisci il codice in Lumi → Spese condivise",
       copy: "Copia codice", copied: "Copiato", invalidTitle: "Questo invito non è più valido",
       invalidBody: "Chiedi un nuovo link a chi ti ha invitato.", full: "Questo gruppo è al completo.",
@@ -191,10 +197,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   pl: {
-    getLumi: "Pobierz Lumi", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Pobierz Lumi", appStore: "App Store",
     invite: {
       eyebrow: "Zaproszenie", title: "{owner} zaprasza cię do grupy", members: "Członków: {count}", openInApp: "Otwórz w Lumi",
-      howTitle: "Nie masz jeszcze Lumi?", step1: "Zainstaluj Lumi z App Store lub Google Play.",
+      howTitle: "Nie masz jeszcze Lumi?", step1: "Zainstaluj Lumi z App Store.",
       step2: "Wróć na tę stronę i dotknij „Otwórz w Lumi”.", codeLabel: "Albo wpisz kod w Lumi → Wspólne wydatki",
       copy: "Kopiuj kod", copied: "Skopiowano", invalidTitle: "To zaproszenie jest już nieważne",
       invalidBody: "Poproś osobę, która cię zaprosiła, o nowy link.", full: "Ta grupa jest pełna.",
@@ -211,10 +217,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   ja: {
-    getLumi: "Lumiを入手", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Lumiを入手", appStore: "App Store",
     invite: {
       eyebrow: "招待", title: "{owner}さんがグループに招待しています", members: "メンバー {count}人", openInApp: "Lumiで開く",
-      howTitle: "まだLumiをお持ちでないですか？", step1: "App StoreまたはGoogle PlayからLumiをインストール。",
+      howTitle: "まだLumiをお持ちでないですか？", step1: "App StoreからLumiをインストール。",
       step2: "このページに戻り「Lumiで開く」をタップ。", codeLabel: "またはLumi → 共有の支出 でこのコードを入力",
       copy: "コードをコピー", copied: "コピーしました", invalidTitle: "この招待は無効になりました",
       invalidBody: "招待した人に新しいリンクを依頼してください。", full: "このグループは満員です。",
@@ -231,10 +237,10 @@ const COPY: Record<Locale, GroupsCopy> = {
     },
   },
   ka: {
-    getLumi: "Lumi-ს ჩამოტვირთვა", appStore: "App Store", googlePlay: "Google Play",
+    getLumi: "Lumi-ს ჩამოტვირთვა", appStore: "App Store",
     invite: {
       eyebrow: "მოწვევა", title: "{owner} გიწვევთ ჯგუფში", members: "{count} წევრი", openInApp: "Lumi-ში გახსნა",
-      howTitle: "ჯერ არ გაქვთ Lumi?", step1: "დააინსტალირეთ Lumi App Store-დან ან Google Play-დან.",
+      howTitle: "ჯერ არ გაქვთ Lumi?", step1: "დააინსტალირეთ Lumi App Store-დან.",
       step2: "დაბრუნდით ამ გვერდზე და დააჭირეთ „Lumi-ში გახსნა“.", codeLabel: "ან შეიყვანეთ კოდი Lumi → საერთო ხარჯები",
       copy: "კოდის კოპირება", copied: "კოპირებულია", invalidTitle: "მოწვევა აღარ მოქმედებს",
       invalidBody: "სთხოვეთ მომწვევს ახალი ბმული.", full: "ჯგუფი სავსეა.",
@@ -252,16 +258,16 @@ const COPY: Record<Locale, GroupsCopy> = {
   },
 };
 
-export const GROUP_LOCALES = Object.keys(COPY) as Locale[];
+export const GROUP_LOCALES = Object.keys(COPY) as GroupsLocale[];
 
-export function pickLocale(acceptLanguage: string | null | undefined): Locale {
+export function pickLocale(acceptLanguage: string | null | undefined): GroupsLocale {
   const wanted = (acceptLanguage ?? "")
     .split(",")
     .map((part) => part.split(";")[0].trim().slice(0, 2).toLowerCase());
-  return (wanted.find((code) => (GROUP_LOCALES as string[]).includes(code)) as Locale | undefined) ?? "en";
+  return (wanted.find((code) => (GROUP_LOCALES as string[]).includes(code)) as GroupsLocale | undefined) ?? "en";
 }
 
-export function groupsCopy(locale: Locale): GroupsCopy {
+export function groupsCopy(locale: GroupsLocale): GroupsCopy {
   return COPY[locale] ?? COPY.en;
 }
 
@@ -269,7 +275,6 @@ export const fill = (template: string, vars: Record<string, string | number>): s
   template.replace(/\{(\w+)\}/g, (_, key: string) => String(vars[key] ?? ""));
 
 export const APP_STORE_URL = "https://apps.apple.com/app/lumi-bills-spending-log/id6754805457";
-export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.andrey5454germanov.moneytracker";
 
 export const CATEGORY_EMOJI: Record<string, string> = {
   food: "🍽️", groceries: "🛒", transport: "🚗", accommodation: "🏨", travel: "✈️", entertainment: "🎬",

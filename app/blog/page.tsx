@@ -4,9 +4,9 @@ import { SITE_URL } from "@/lib/constants";
 import { pageLanguagesMap } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Budgeting & Expense Tracking Blog",
   description:
-    "Tips on personal finance, budgeting, expense tracking, and making the most of your money. From the team behind Lumi.",
+    "Practical guides on budgeting, tracking expenses, Apple Pay spending, and saving by age. Written by the team behind Lumi, the iPhone expense tracker.",
   alternates: {
     canonical: `${SITE_URL}/blog`,
     languages: pageLanguagesMap(SITE_URL, "blog"),

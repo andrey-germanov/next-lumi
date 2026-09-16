@@ -119,7 +119,7 @@ for (const locale of locales) {
 
     // Internal links stay unprefixed in MDX; BlogPostBody adds the locale at
     // render time. A hardcoded prefix here would double up (/de/de/blog/...).
-    const prefixed = loc.content.match(/\]\(\/(de|es|it|ja|ka|pl|ro|ru|uk)\//g);
+    const prefixed = loc.content.match(/\]\(\/(de|es|it|ro|ru|uk)\//g);
     if (prefixed) err(label, `${prefixed.length} locale-prefixed internal link(s) — leave hrefs unprefixed`);
   }
 }
