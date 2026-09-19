@@ -47,8 +47,13 @@ export async function isPremium(uid: string): Promise<boolean> {
 
   let value = false;
   if (response.status !== 404) {
-    if (!response.ok) throw new HttpError(503, "premium_check_failed");
-    const body = (await response.json()) as { data?: { access_levels?: AdaptyAccessLevel[] }; access_levels?: AdaptyAccessLevel[] };
+    if (!response.ok) {
+      console.error("[premium] Adapty responded", response.status);
+      throw new HttpError(503, "premium_check_failed");
+    }
+    const body = (await response.json().catch(() => {
+      throw new HttpError(503, "premium_check_failed");
+    })) as { data?: { access_levels?: AdaptyAccessLevel[] }; access_levels?: AdaptyAccessLevel[] };
     const levels = body.data?.access_levels ?? body.access_levels ?? [];
     const now = Date.now();
     value = levels.some((level) => isActiveLevel(level, now));
