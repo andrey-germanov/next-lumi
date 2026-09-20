@@ -2,6 +2,79 @@
   "version": 1,
   "announcements": [
     {
+      "id": "apple_pay_ios27",
+      "tag": "improvement",
+      "date": "2026-09-20",
+      "icon": "💳",
+      "platform": "ios",
+      "action": {
+        "type": "url",
+        "value": "https://www.icloud.com/shortcuts/8d8984d098eb4899bce00c1506500fa8"
+      },
+      "copy": {
+        "de": {
+          "title": "Apple Pay Auto-Tracking unter iOS 27",
+          "subtitle": "Schon eingerichtet? Alles gut. Wenn nicht, tippe für den neuen Link.",
+          "body": "Unter iOS 27 braucht Apple Pay Auto-Tracking einen neuen Einrichtungslink.\n\nVor dem Update auf iOS 27 eingerichtet? Dann ist alles gut - es funktioniert weiter, du musst nichts tun.\n\nNoch nicht eingerichtet? Tippe unten auf den Button und hol dir den neuen Link.\n\nDer Button \"Kurzbefehl hinzufügen\" in den Einstellungen öffnet noch den alten Link, den für iOS-Versionen unter 27. Das beheben wir am Dienstag.",
+          "cta": "Neuen Link holen"
+        },
+        "en": {
+          "title": "Apple Pay auto-tracking on iOS 27",
+          "subtitle": "Already set up? All good. If not - tap for the new link.",
+          "body": "On iOS 27, Apple Pay auto-tracking needs a new setup link.\n\nSet it up before updating to iOS 27? You're all good - it keeps working, nothing to do.\n\nHaven't set it up yet? Tap the button below to get the new link.\n\nThe \"Add Shortcut\" button in Settings still opens the old link, the one for iOS below 27. We'll fix it on Tuesday.",
+          "cta": "Get the new link"
+        },
+        "es": {
+          "title": "Rastreo automático de Apple Pay en iOS 27",
+          "subtitle": "¿Ya lo configuraste? Todo bien. Si no, toca para ver el enlace nuevo.",
+          "body": "En iOS 27, el rastreo automático de Apple Pay necesita un enlace de configuración nuevo.\n\n¿Lo configuraste antes de actualizar a iOS 27? Todo bien: sigue funcionando, no tienes que hacer nada.\n\n¿Aún no lo has configurado? Toca el botón de abajo para obtener el enlace nuevo.\n\nEl botón \"Agregar atajo\" en Ajustes todavía abre el enlace anterior, el de las versiones anteriores a iOS 27. Lo arreglamos el martes.",
+          "cta": "Obtener el enlace nuevo"
+        },
+        "it": {
+          "title": "Tracciamento automatico Apple Pay su iOS 27",
+          "subtitle": "Già configurato? Tutto ok. Altrimenti tocca per il nuovo link.",
+          "body": "Su iOS 27 il tracciamento automatico Apple Pay richiede un nuovo link di configurazione.\n\nL'hai configurato prima di passare a iOS 27? Tutto ok: continua a funzionare, non devi fare nulla.\n\nNon l'hai ancora configurato? Tocca il pulsante qui sotto per ottenere il nuovo link.\n\nIl pulsante \"Aggiungi scorciatoia\" nelle Impostazioni apre ancora il vecchio link, quello per le versioni precedenti a iOS 27. Lo sistemiamo martedì.",
+          "cta": "Ottieni il nuovo link"
+        },
+        "ja": {
+          "title": "iOS 27でのApple Pay自動追跡",
+          "subtitle": "設定済みならそのままOK。未設定の方はタップして新しいリンクへ。",
+          "body": "iOS 27では、Apple Pay自動追跡の設定に新しいリンクが必要です。\n\niOS 27にアップデートする前に設定済みですか？そのまま使えます。何もする必要はありません。\n\nまだ設定していない場合は、下のボタンから新しいリンクを開いてください。\n\n設定内の「ショートカットを追加」ボタンは、まだiOS 27未満向けの古いリンクを開きます。火曜日に修正します。",
+          "cta": "新しいリンクを開く"
+        },
+        "ka": {
+          "title": "Apple Pay-ის ავტო-თვალყური iOS 27-ზე",
+          "subtitle": "უკვე დაყენებული გაქვთ? ყველაფერი რიგზეა. თუ არა, შეეხეთ ახალი ბმულისთვის.",
+          "body": "iOS 27-ზე Apple Pay-ის ავტო-თვალყურს დაყენებისთვის ახალი ბმული სჭირდება.\n\niOS 27-ზე განახლებამდე დააყენეთ? ყველაფერი რიგზეა - ის კვლავ იმუშავებს, არაფრის გაკეთება არ გჭირდებათ.\n\nჯერ არ დაგიყენებიათ? ახალი ბმულის მისაღებად დააჭირეთ ქვემოთ მოცემულ ღილაკს.\n\nპარამეტრებში ღილაკი \"მალსახმობის დამატება\" ჯერ კიდევ ძველ ბმულს ხსნის - iOS 27-მდე ვერსიებისთვის განკუთვნილს. სამშაბათს გავასწორებთ.",
+          "cta": "ახალი ბმულის მიღება"
+        },
+        "pl": {
+          "title": "Auto-śledzenie Apple Pay na iOS 27",
+          "subtitle": "Już skonfigurowane? Wszystko gra. Jeśli nie, dotknij, by dostać nowy link.",
+          "body": "Na iOS 27 auto-śledzenie Apple Pay wymaga nowego linku do konfiguracji.\n\nSkonfigurowałeś je przed aktualizacją do iOS 27? Wszystko gra - nadal działa, nie musisz nic robić.\n\nJeszcze nie? Dotknij przycisku poniżej, żeby dostać nowy link.\n\nPrzycisk \"Dodaj skrót\" w ustawieniach nadal otwiera stary link, ten dla wersji poniżej iOS 27. Naprawimy to we wtorek.",
+          "cta": "Pobierz nowy link"
+        },
+        "ro": {
+          "title": "Urmărirea automată Apple Pay pe iOS 27",
+          "subtitle": "Ai configurat-o deja? Totul e ok. Dacă nu, atinge pentru linkul nou.",
+          "body": "Pe iOS 27, urmărirea automată Apple Pay are nevoie de un link nou de configurare.\n\nAi configurat-o înainte de actualizarea la iOS 27? Totul e ok - funcționează în continuare, nu trebuie să faci nimic.\n\nNu ai configurat-o încă? Atinge butonul de mai jos ca să iei linkul nou.\n\nButonul \"Adaugă comanda rapidă\" din setări deschide încă linkul vechi, cel pentru versiunile sub iOS 27. Îl reparăm marți.",
+          "cta": "Ia linkul nou"
+        },
+        "ru": {
+          "title": "Автоучёт Apple Pay на iOS 27",
+          "subtitle": "Уже настроили? Всё ок. Если нет - нажмите за новой ссылкой.",
+          "body": "На iOS 27 для автоучёта Apple Pay нужна новая ссылка для установки.\n\nНастроили до обновления на iOS 27? Всё ок - он продолжит работать, ничего делать не нужно.\n\nЕщё не настраивали? Нажмите кнопку ниже, чтобы получить новую ссылку.\n\nКнопка \"Добавить шорткат\" в настройках пока открывает старую ссылку - ту, что для версий ниже 27. Исправим во вторник.",
+          "cta": "Получить новую ссылку"
+        },
+        "uk": {
+          "title": "Автооблік Apple Pay на iOS 27",
+          "subtitle": "Вже налаштували? Все ок. Якщо ні - натисніть по нове посилання.",
+          "body": "На iOS 27 для автообліку Apple Pay потрібне нове посилання для встановлення.\n\nНалаштували до оновлення на iOS 27? Все ок - він продовжить працювати, робити нічого не потрібно.\n\nЩе не налаштовували? Натисніть кнопку нижче, щоб отримати нове посилання.\n\nКнопка \"Додати шорткат\" у налаштуваннях поки відкриває старе посилання - те, що для версій нижче 27. Виправимо у вівторок.",
+          "cta": "Отримати нове посилання"
+        }
+      }
+    },
+    {
       "id": "recurring_payments",
       "tag": "new",
       "date": "2026-09-02",
