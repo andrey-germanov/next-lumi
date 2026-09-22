@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep) 0%, var(--violet) 50%, var(--lavender) 100%);
+}
+
+.orb { position: absolute; border-radius: 50%; filter: blur(4px); }
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.16); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(52,211,153,0.20); }
+
+.stage {
+  position: relative;
+  width: 1090px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.head { width: 350px; flex-shrink: 0; }
+.head .eyebrow {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+  margin-bottom: 16px;
+}
+.head h1 {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -2px;
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(11,13,30,0.25);
+}
+.head h1 .accent { color: var(--mint); }
+
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 20px;
+  min-height: 92px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.13);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 16px 32px rgba(11,13,30,0.20);
+}
+.item.hero {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.42);
+}
+
+.chip {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item.hero .chip { background: var(--mint); }
+.chip svg { width: 28px; height: 28px; display: block; }
+
+.item .d {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.74);
+  margin-top: 5px;
+}
+.item .t {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.4px;
+}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+      <div class="head">
+        <div class="eyebrow">Lumi update</div>
+        <h1>Features<br>you've been<br><span class="accent">waiting for</span></h1>
+      </div>
+
+      <div class="grid">
+        <div class="item hero">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0B0D1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3"/>
+              <path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+              <circle cx="17.5" cy="9" r="2.5"/>
+              <path d="M16.5 14.2c2.9 0 4.8 2 4.8 4.8"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">Split bills with friends</div><div class="d">Trips, flats, events</div></div>
+        </div>
+
+        <div class="item">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="15" r="4"/>
+              <path d="M11 12l9-9"/>
+              <path d="M16 7l3 3"/>
+              <path d="M13.5 9.5l2 2"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">Sign in with Apple or Google</div><div class="d">One tap, or link in Settings</div></div>
+        </div>
+
+        <div class="item">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12"/>
+              <path d="M7 10l5 5 5-5"/>
+              <path d="M4 17v3h16v-3"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">Import from CSV</div><div class="d">Bring your history over</div></div>
+        </div>
+
+        <div class="item">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+              <path d="M7 9.5h6"/>
+              <path d="M7 13h10"/>
+              <path d="M7 16h7"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">News right on Home</div><div class="d">Updates and tips as banners</div></div>
+        </div>
+
+        <div class="item">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L4.5 13.5H11L10 22l9-12h-6.5L13 2z"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">Faster with big histories</div><div class="d">Loads and syncs quicker</div></div>
+        </div>
+
+        <div class="item">
+          <div class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/>
+              <path d="M8.5 12l2.5 2.5 5-5"/>
+            </svg>
+          </div>
+          <div class="txt"><div class="t">Safer account switching</div><div class="d">Backed up before any switch</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

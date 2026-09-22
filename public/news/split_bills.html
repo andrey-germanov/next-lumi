@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --violet:        #6C63FF;
+  --violet-deep:   #4C46B8;
+  --lavender:      #A78BFA;
+  --mint:          #34D399;
+  --coral:         #F87171;
+  --amber:         #F59E0B;
+  --ink:           #0B0D1E;
+  --glass-border:  rgba(255, 255, 255, 0.22);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 1200px;
+  height: 675px;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet-deep) 0%, var(--violet) 50%, var(--lavender) 100%);
+}
+
+.orb { position: absolute; border-radius: 50%; filter: blur(4px); }
+.orb-a { width: 620px; height: 620px; top: -220px; right: -140px; background: rgba(255,255,255,0.16); }
+.orb-b { width: 520px; height: 520px; bottom: -240px; left: -120px; background: rgba(52,211,153,0.20); }
+
+.stage { position: relative; width: 1000px; height: 500px; }
+
+/* Both are real screenshot crops (no status bar) — shown as floating cards, not phone screens */
+.card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(11,13,30,0.36);
+  border: 1.5px solid var(--glass-border);
+}
+.card img { width: 100%; display: block; }
+
+.card.onboarding {
+  width: 320px;
+  left: calc(50% - 150px); top: 50%; transform: translate(-28%, -50%);
+  z-index: 2;
+}
+.card.home {
+  width: 300px;
+  left: calc(50% - 150px); top: 50%; transform: translate(-128%, -50%) rotate(-6deg);
+  z-index: 1;
+}
+
+/* Copy panel */
+.copy { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 340px; }
+.copy .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+.copy h2 { font-size: 36px; font-weight: 800; line-height: 1.12; letter-spacing: -0.9px; margin: 0 0 16px; }
+.copy p { font-size: 17px; line-height: 1.5; color: rgba(255,255,255,0.85); margin: 0; }
+.copy .stat { display: inline-block; color: var(--mint); font-weight: 800; }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <div class="stage">
+
+      <div class="card home">
+        <img src="split_bills_src_home.jpg" alt="">
+      </div>
+
+      <div class="card onboarding">
+        <img src="split_bills_src_onboarding.jpg" alt="">
+      </div>
+
+      <div class="copy">
+        <div class="eyebrow">Split Bills</div>
+        <h2>Split bills,<br>keep the friendship.</h2>
+        <p>Create a group for a trip, a flat or an event. Friends join with a link — or just add them by name. <span class="stat">Lumi keeps track</span> of who owes who.</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
