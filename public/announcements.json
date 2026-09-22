@@ -6,7 +6,6 @@
       "tag": "community",
       "date": "2026-09-22",
       "icon": "⚠️",
-      "published": false,
       "action": {
         "type": "url",
         "value": "https://t.me/andrey_germanov"
