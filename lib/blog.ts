@@ -116,3 +116,104 @@ export function getAllSlugs(): string[] {
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => f.replace(/\.mdx$/, ""));
 }
+
+/**
+ * Posts kept live (existing links, citations) but out of the index: the
+ * cost-of-living city pages rank 60–80 in GSC and pull traffic unrelated to the
+ * app. They're noindexed, dropped from the sitemap, and not suggested as
+ * related reading. Delete the prefix here to bring them back.
+ */
+const NOINDEX_PREFIXES = ["cost-of-living-"];
+
+export function isNoindexPost(slug: string): boolean {
+  return NOINDEX_PREFIXES.some((prefix) => slug.startsWith(prefix));
+}
+
+const RELATED_COUNT = 4;
+/** Slug words that say nothing about the topic. */
+const SLUG_STOPWORDS = new Set(["how", "the", "and", "for", "your", "you", "what", "best", "with", "does", "make", "2026", "vs"]);
+
+const relatedCache = new Map<string, Map<string, string[]>>();
+
+/**
+ * Related slugs for every indexable post in a locale. Posts sharing rare tags
+ * and slug words score highest (IDF-weighted, so "personal finance" on every
+ * post counts for little). The first slots take the closest matches; the last
+ * slot goes to the closest post that has the fewest inbound related links so
+ * far — without it, most links pile onto a few hubs and dozens of posts end up
+ * reachable only from the /blog listing.
+ */
+function relatedMap(locale: string): Map<string, string[]> {
+  const cached = relatedCache.get(locale);
+  if (cached) return cached;
+
+  const slugs = getAllSlugs()
+    .filter((slug) => !isNoindexPost(slug) && hasTranslation(slug, locale))
+    .sort();
+  // Always the English frontmatter: tags are English keywords in every locale.
+  const tokens = new Map(
+    slugs.map((slug) => {
+      const { data } = matter(fs.readFileSync(path.join(BLOG_DIR, `${slug}.mdx`), "utf-8"));
+      const tags: string[] = (data.tags ?? []).map((t: string) => t.toLowerCase());
+      const words = slug.split("-").filter((w) => w.length > 2 && !SLUG_STOPWORDS.has(w));
+      return [slug, new Set([...tags, ...words])];
+    })
+  );
+  const df = new Map<string, number>();
+  for (const set of tokens.values()) for (const t of set) df.set(t, (df.get(t) ?? 0) + 1);
+  const idf = (t: string) => Math.log(slugs.length / (df.get(t) ?? 1));
+  const score = (a: string, b: string) => {
+    let s = 0;
+    for (const t of tokens.get(a)!) if (tokens.get(b)!.has(t)) s += idf(t);
+    return s;
+  };
+
+  const ranked = new Map(
+    slugs.map((slug) => [
+      slug,
+      slugs
+        .filter((other) => other !== slug)
+        .map((other) => ({ other, s: score(slug, other) }))
+        .sort((x, y) => y.s - x.s || x.other.localeCompare(y.other))
+        .map((x) => x.other),
+    ])
+  );
+
+  const inbound = new Map<string, number>(slugs.map((slug) => [slug, 0]));
+  const result = new Map<string, string[]>();
+  for (const slug of slugs) {
+    const picks = ranked.get(slug)!.slice(0, RELATED_COUNT - 1);
+    picks.forEach((p) => inbound.set(p, inbound.get(p)! + 1));
+    result.set(slug, picks);
+  }
+  // Least-linked first, so orphans claim discovery slots before hubs do.
+  const byNeed = [...slugs].sort((a, b) => inbound.get(a)! - inbound.get(b)! || a.localeCompare(b));
+  for (const target of byNeed) {
+    if (inbound.get(target)! > 0) break;
+    // Give the orphan to the post that ranks it highest and has a free slot.
+    const host = slugs
+      .filter((s) => s !== target && result.get(s)!.length < RELATED_COUNT)
+      .sort((a, b) => ranked.get(a)!.indexOf(target) - ranked.get(b)!.indexOf(target))[0];
+    if (!host) break;
+    result.get(host)!.push(target);
+    inbound.set(target, 1);
+  }
+  for (const slug of slugs) {
+    const picks = result.get(slug)!;
+    if (picks.length >= RELATED_COUNT) continue;
+    const candidates = ranked.get(slug)!.slice(RELATED_COUNT - 1, 30).filter((c) => !picks.includes(c));
+    const pick = candidates.sort((a, b) => inbound.get(a)! - inbound.get(b)!)[0];
+    if (pick) {
+      picks.push(pick);
+      inbound.set(pick, inbound.get(pick)! + 1);
+    }
+  }
+
+  relatedCache.set(locale, result);
+  return result;
+}
+
+/** Up to RELATED_COUNT related posts in `locale` (only real translations). */
+export function getRelatedPosts(slug: string, locale: string = "en"): BlogPost[] {
+  return (relatedMap(locale).get(slug) ?? []).map((s) => getPostBySlug(s, locale));
+}

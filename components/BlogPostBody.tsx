@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -6,9 +7,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppStoreButton from "@/components/AppStoreButton";
-import { APP_STORE_URL, BRAND_ENTITY_NAME, SITE_URL } from "@/lib/constants";
+import { APP_STORE_URL, BRAND_ENTITY_NAME, FOUNDER, FOUNDER_BYLINE, SITE_URL } from "@/lib/constants";
 import { translate, INTL_LOCALE, localePath, type Locale } from "@/lib/i18n";
-import { hasTranslation, type BlogPost } from "@/lib/blog";
+import { getRelatedPosts, hasTranslation, type BlogPost } from "@/lib/blog";
 
 function makeCta(label: string) {
   return function ArticleCTA() {
@@ -48,12 +49,12 @@ function Screenshots({ children }: { children: React.ReactNode }) {
 function Screenshot({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
   return (
     <figure className="m-0">
-      <img
+      <Image
         src={src}
         alt={alt}
         width={540}
         height={1168}
-        loading="lazy"
+        sizes="(max-width: 768px) 33vw, 240px"
         className="w-full rounded-2xl border border-black/5"
         style={{ aspectRatio: "540 / 1168", objectFit: "cover" }}
       />
@@ -70,6 +71,11 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
   const blogHref = locale === "en" ? "/blog" : `${localePath(locale)}/blog`;
   const canonicalPath = locale === "en" ? `/blog/${post.slug}` : `${localePath(locale)}/blog/${post.slug}`;
 
+  const isFounderPost = post.author === FOUNDER_BYLINE;
+  const related = getRelatedPosts(post.slug, locale);
+  const postHref = (slug: string) => (locale === "en" ? `/blog/${slug}` : `${localePath(locale)}/blog/${slug}`);
+  const formatDate = (d: string) => new Date(d).toLocaleDateString(intl, { year: "numeric", month: "long", day: "numeric" });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -78,7 +84,11 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
     inLanguage: locale,
-    author: { "@type": "Organization", name: post.author, url: SITE_URL },
+    // A named person where the founder wrote it (E-E-A-T); otherwise the
+    // organization, whose /about page names the people behind it.
+    author: isFounderPost
+      ? { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.jobTitle, url: FOUNDER.url, sameAs: FOUNDER.sameAs }
+      : { "@type": "Organization", name: post.author, url: `${SITE_URL}/about` },
     publisher: { "@type": "Organization", name: "Lumi", url: SITE_URL, logo: `${SITE_URL}/images/logo/logo-512.png` },
     // Same entity name as the root SoftwareApplication schema, so answer
     // engines resolve "Lumi" to this app rather than other products named Lumi.
@@ -111,13 +121,17 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
 
           <header className="mt-6">
             <div className="flex items-center gap-3 text-sm text-text-muted">
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString(intl, { year: "numeric", month: "long", day: "numeric" })}
-              </time>
+              {post.updated && post.updated !== post.date ? (
+                <span>
+                  {t("blog.updated")} <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                </span>
+              ) : (
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
+              )}
               <span>&middot;</span>
               <span>{post.readingTime}</span>
               <span>&middot;</span>
-              <span>{post.author}</span>
+              <Link href="/about" rel="author" className="hover:text-text transition-colors">{post.author}</Link>
             </div>
             <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl" style={{ letterSpacing: "-1px" }}>
               {post.title}
@@ -130,11 +144,13 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
           </header>
 
           {post.image && (
-            <img
+            <Image
               src={post.image}
               alt={post.title}
               width={1200}
               height={630}
+              priority
+              sizes="(max-width: 768px) 100vw, 720px"
               className="mt-8 w-full rounded-2xl border border-black/5"
               style={{ aspectRatio: "1200 / 630", objectFit: "cover" }}
             />
@@ -156,6 +172,25 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
           <div className="mt-12">
             <ArticleCTA />
           </div>
+
+          {related.length > 0 && (
+            <nav aria-labelledby="related-heading" className="mt-12">
+              <h2 id="related-heading" className="text-xl font-bold">{t("blog.related")}</h2>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {related.map((r) => (
+                  <li key={r.slug}>
+                    <Link
+                      href={postHref(r.slug)}
+                      className="block h-full rounded-2xl border border-black/5 bg-surface-2 p-4 transition-colors hover:border-primary/30"
+                    >
+                      <span className="font-semibold text-text">{r.title}</span>
+                      <span className="mt-1 line-clamp-2 block text-sm text-text-muted">{r.description}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           <aside className="mt-8 rounded-2xl border border-black/5 bg-surface-2 p-6 text-sm text-text-muted">
             <p className="mb-2 font-semibold text-text">{t("blog.aboutTitle")}</p>

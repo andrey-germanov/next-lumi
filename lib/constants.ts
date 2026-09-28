@@ -13,6 +13,17 @@ export const SOCIAL_LINKS = {
   threads: "https://www.threads.com/@andrey.germanov",
 };
 
+/** The person behind Lumi — author entity for Article schema (E-E-A-T) and the /about page. */
+export const FOUNDER = {
+  name: "Andrew",
+  jobTitle: "Founder of Lumi",
+  url: `${SITE_URL}/about`,
+  sameAs: [SOCIAL_LINKS.threads],
+};
+
+/** Byline used in blog frontmatter for posts the founder wrote personally. */
+export const FOUNDER_BYLINE = "Andrew, Founder of Lumi";
+
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },

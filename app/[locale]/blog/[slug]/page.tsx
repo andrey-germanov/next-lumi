@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostBody from "@/components/BlogPostBody";
-import { getPostBySlug, getAllSlugs, hasTranslation, translatedLocales } from "@/lib/blog";
+import { getPostBySlug, getAllSlugs, hasTranslation, isNoindexPost, translatedLocales } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 import { postLanguagesMap, PREFIXED_LOCALES, type Locale } from "@/lib/i18n";
 
@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[sl
       title: { absolute: metaTitle },
       description: post.description,
       authors: [{ name: post.author }],
-      openGraph: { type: "article", title: metaTitle, description: post.description, publishedTime: post.date, authors: [post.author], url, locale },
+      openGraph: { type: "article", title: metaTitle, description: post.description, publishedTime: post.date, modifiedTime: post.updated ?? post.date, authors: [post.author], url, locale },
       twitter: { card: "summary_large_image", title: metaTitle, description: post.description },
-      robots: translated ? undefined : { index: false, follow: true },
+      robots: translated && !isNoindexPost(slug) ? undefined : { index: false, follow: true },
       alternates: {
         canonical: translated ? url : `${SITE_URL}/blog/${slug}`,
         languages: postLanguagesMap(SITE_URL, slug, translatedLocales(slug)),

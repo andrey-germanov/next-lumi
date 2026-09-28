@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs, getPostBySlug, hasTranslation } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, hasTranslation, isNoindexPost } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 import { PREFIXED_LOCALES, landingLanguagesMap, pageLanguagesMap, postLanguagesMap } from "@/lib/i18n";
 import { TOOL_SLUGS } from "@/lib/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogSlugs = getAllSlugs();
+  const blogSlugs = getAllSlugs().filter((slug) => !isNoindexPost(slug));
   const blogEntries = blogSlugs.flatMap((slug) => {
     // Only locales with a real translation file. A missing translation still
     // renders (English fallback), but listing it here — and in hreflang — would
@@ -111,6 +111,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: blogLanguages },
     },
     ...blogLocaleEntries,
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date("2026-09-29"),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
     {
       url: `${SITE_URL}/privacy`,
       lastModified: new Date(),

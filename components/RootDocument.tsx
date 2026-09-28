@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Providers } from "./providers";
+import { Providers } from "@/components/Providers";
 import { LanguageProvider } from "@/components/dash/i18n";
 import { BRAND_ENTITY_NAME, SITE_URL } from "@/lib/constants";
-import "./globals.css";
+import type { Locale } from "@/lib/i18n";
+import "@/app/globals.css";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
-export const metadata: Metadata = {
+/** Site-wide defaults, exported by both root layouts ((site) and [locale]). */
+export const rootMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | Lumi",
@@ -61,13 +63,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+/**
+ * The <html> document shared by the two root layouts. There are two so that
+ * `lang` is correct in the server-rendered HTML: /de/... pages must not ship
+ * as lang="en" to crawlers that don't run JS.
+ * `locale` is set only on locale-prefixed routes, where the URL is authoritative.
+ */
+export default function RootDocument({
+  lang,
+  locale,
   children,
 }: {
+  lang: string;
+  locale?: Locale;
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang={lang} className={inter.className}>
       <head>
         <script
           type="application/ld+json"
@@ -119,7 +131,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <Providers>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider initialLocale={locale}>{children}</LanguageProvider>
         </Providers>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (

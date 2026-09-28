@@ -29,7 +29,7 @@ const features = [
     statKey: "lp.val0taps",
     statLabelKey: "lp2.featApplePayStatLabel",
     accent: "#0A8F5F",
-    image: "/images/demo-apple-pay/apple-pay-confirmation.png",
+    image: "/images/demo-apple-pay/apple-pay-confirmation.webp",
     large: true,
   },
   {

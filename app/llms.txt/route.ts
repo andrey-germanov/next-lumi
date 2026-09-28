@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, isNoindexPost } from "@/lib/blog";
 import { TOOLS } from "@/lib/tools";
 import { FAQ, SITE_URL, APP_STORE_URL, BRAND_ENTITY_NAME } from "@/lib/constants";
 import { translate } from "@/lib/i18n";
@@ -8,7 +8,7 @@ import { translate } from "@/lib/i18n";
 export const dynamic = "force-static";
 
 export async function GET() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().filter((p) => !isNoindexPost(p.slug));
 
   const blogLines = posts
     .map((p) => `- [${p.title}](${SITE_URL}/blog/${p.slug}): ${p.description}`)

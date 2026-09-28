@@ -46,6 +46,11 @@ export default function Footer() {
                   {t("lp2.footBlog")}
                 </Link>
               </li>
+              <li>
+                <Link href="/about" className="hover:text-text transition-colors">
+                  {t("lp2.footAbout")}
+                </Link>
+              </li>
             </ul>
           </div>
 

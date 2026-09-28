@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostBody from "@/components/BlogPostBody";
-import { getPostBySlug, getAllSlugs, translatedLocales } from "@/lib/blog";
+import { getPostBySlug, getAllSlugs, isNoindexPost, translatedLocales } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 import { postLanguagesMap } from "@/lib/i18n";
 
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: metaTitle,
         description: post.description,
         publishedTime: post.date,
+        modifiedTime: post.updated ?? post.date,
         authors: [post.author],
       },
       twitter: {
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: metaTitle,
         description: post.description,
       },
+      robots: isNoindexPost(slug) ? { index: false, follow: true } : undefined,
       alternates: {
         canonical: `${SITE_URL}/blog/${slug}`,
         languages: postLanguagesMap(SITE_URL, slug, translatedLocales(slug)),
