@@ -2,86 +2,14 @@
   "version": 1,
   "announcements": [
     {
-      "id": "data_issue_sep26",
-      "tag": "community",
-      "date": "2026-09-22",
-      "icon": "⚠️",
-      "action": {
-        "type": "url",
-        "value": "https://t.me/andrey_germanov"
-      },
-      "copy": {
-        "de": {
-          "title": "Wir prüfen ein Datenproblem",
-          "subtitle": "Ein paar Leute haben uns gemeldet, dass ihre Daten verschwunden sind.",
-          "body": "Viele von euch haben uns geschrieben, dass nach einem kürzlichen Update Daten verschwunden sind. Wir gehen dem bereits nach.\n\nSiehst du das auch bei dir? Melde dich bitte beim Support - wir kümmern uns darum und schicken dir einen Bonus.",
-          "cta": "Support kontaktieren"
-        },
-        "en": {
-          "title": "We're looking into a data issue",
-          "subtitle": "A few people have told us their data disappeared.",
-          "body": "Many of you have written in saying your data disappeared after a recent update. We're already looking into it.\n\nSeeing this too? Please contact support - we'll fix it and send you a bonus.",
-          "cta": "Contact support"
-        },
-        "es": {
-          "title": "Estamos revisando un problema de datos",
-          "subtitle": "Algunas personas nos han contado que sus datos desaparecieron.",
-          "body": "Muchos nos habéis escrito diciendo que los datos desaparecieron después de una actualización reciente. Ya lo estamos investigando.\n\n¿Te pasa también a ti? Por favor, contacta con soporte - lo arreglaremos y te enviaremos un bono.",
-          "cta": "Contactar con soporte"
-        },
-        "it": {
-          "title": "Stiamo verificando un problema con i dati",
-          "subtitle": "Alcune persone ci hanno segnalato che i loro dati sono spariti.",
-          "body": "Molti di voi ci hanno scritto dicendo che i dati sono spariti dopo un aggiornamento recente. Ci stiamo già lavorando.\n\nSuccede anche a te? Contatta il supporto - lo sistemeremo e ti invieremo un bonus.",
-          "cta": "Contatta il supporto"
-        },
-        "ja": {
-          "title": "データの問題を確認しています",
-          "subtitle": "数名の方から、データが消えたというご連絡をいただいています。",
-          "body": "最近のアップデート後にデータが消えたというご連絡を多くの方からいただいています。すでに調査を進めています。\n\n同じ症状が出ている方は、サポートまでご連絡ください。対応の上、ボーナスをお送りします。",
-          "cta": "サポートに連絡する"
-        },
-        "ka": {
-          "title": "ვამოწმებთ მონაცემების პრობლემას",
-          "subtitle": "რამდენიმე ადამიანმა შეგვატყობინა, რომ მონაცემები დაეკარგათ.",
-          "body": "ბევრმა თქვენგანმა მოგვწერა, რომ ბოლო განახლების შემდეგ მონაცემები გაქრა. უკვე ვმუშაობთ ამაზე.\n\nთქვენც ხედავთ ამას? გთხოვთ, დაუკავშირდით მხარდაჭერას - გამოვასწორებთ და გამოგიგზავნით ბონუსს.",
-          "cta": "მხარდაჭერასთან დაკავშირება"
-        },
-        "pl": {
-          "title": "Sprawdzamy problem z danymi",
-          "subtitle": "Kilka osób zgłosiło nam, że zniknęły im dane.",
-          "body": "Wiele osób napisało nam, że po ostatniej aktualizacji zniknęły dane. Już to sprawdzamy.\n\nTobie też się to przytrafiło? Napisz do wsparcia - naprawimy to i wyślemy Ci bonus.",
-          "cta": "Skontaktuj się ze wsparciem"
-        },
-        "ro": {
-          "title": "Verificăm o problemă cu datele",
-          "subtitle": "Câteva persoane ne-au spus că le-au dispărut datele.",
-          "body": "Mulți dintre voi ne-ați scris că datele au dispărut după o actualizare recentă. Deja investigăm.\n\nȚi se întâmplă și ție? Te rugăm să contactezi suportul - vom repara problema și îți vom trimite un bonus.",
-          "cta": "Contactează suportul"
-        },
-        "ru": {
-          "title": "Разбираемся с проблемой в данных",
-          "subtitle": "Нам сообщили, что у нескольких людей потерялись данные.",
-          "body": "Многие написали нам, что пропали данные после недавнего обновления. Мы уже разбираемся.\n\nУ вас тоже так? Пожалуйста, напишите в поддержку - для исправления и получения бонуса.",
-          "cta": "Написать в поддержку"
-        },
-        "uk": {
-          "title": "Розбираємося з проблемою в даних",
-          "subtitle": "Кілька людей повідомили нам, що в них зникли дані.",
-          "body": "Багато хто з вас написав нам, що дані зникли після недавнього оновлення. Ми вже розбираємося.\n\nУ вас теж так? Будь ласка, напишіть у підтримку - ми все виправимо і надішлемо вам бонус.",
-          "cta": "Написати в підтримку"
-        }
-      }
-    },
-    {
-      "id": "apple_pay_ios27",
+      "id": "apple_pay_ios_27",
       "tag": "improvement",
-      "date": "2026-09-20",
+      "date": "2026-10-03",
       "icon": "💳",
       "platform": "ios",
       "action": {
         "type": "url",
-        "value": "https://www.icloud.com/shortcuts/8d8984d098eb4899bce00c1506500fa8"
+        "value": "https://t.me/+UgCFGWh14DhkMTNi"
       },
       "copy": {
         "de": {
