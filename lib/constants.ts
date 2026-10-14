@@ -11,6 +11,7 @@ export const APP_STORE_URL =
 
 export const SOCIAL_LINKS = {
   threads: "https://www.threads.com/@andrey.germanov",
+  telegram: "https://t.me/lumi_app",
 };
 
 /** The person behind Lumi — author entity for Article schema (E-E-A-T) and the /about page. */
@@ -214,7 +215,7 @@ export const FAQ = [
   {
     question: "Is Lumi available on Android?",
     answer:
-      "No. Lumi is an iPhone app and there are no plans for an Android version. Back Tap, Apple Pay auto-import, and Shortcuts are iOS features, and Lumi is built around them.",
+      "Lumi is available on iPhone today, and an Android version is in closed beta on Google Play. It is built natively for Android with the same design and features; Back Tap and Apple Pay auto-import are iOS features, so they work differently or are not available there. Leave your Google account email on the [Android beta page](/android) to get early access.",
   },
   {
     question: "What currencies does Lumi support?",

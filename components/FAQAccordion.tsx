@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { faqSegments } from "@/lib/faqI18n";
 
 interface FAQEntry {
   question: string;
@@ -61,7 +63,15 @@ function FAQItem({ item, index }: { item: FAQEntry; index: number }) {
                 lineHeight: 1.7,
               }}
             >
-              {item.answer}
+              {faqSegments(item.answer).map((seg, i) =>
+                "text" in seg ? (
+                  seg.text
+                ) : (
+                  <Link key={i} href={seg.href} style={{ color: "#6C63FF", fontWeight: 600 }} className="underline underline-offset-2">
+                    {seg.label}
+                  </Link>
+                ),
+              )}
             </div>
           </motion.div>
         )}

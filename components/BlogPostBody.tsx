@@ -7,16 +7,17 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppStoreButton from "@/components/AppStoreButton";
+import AndroidBetaButton from "@/components/AndroidBetaButton";
 import { APP_STORE_URL, BRAND_ENTITY_NAME, FOUNDER, FOUNDER_BYLINE, SITE_URL } from "@/lib/constants";
 import { translate, INTL_LOCALE, localePath, type Locale } from "@/lib/i18n";
 import { getRelatedPosts, hasTranslation, type BlogPost } from "@/lib/blog";
 
-function makeCta(label: string) {
+function makeCta(label: string, android: boolean) {
   return function ArticleCTA() {
     return (
       <div className="surface-dark my-8 rounded-2xl p-6 text-center">
         <p className="mb-4 font-medium" style={{ color: "#FFFFFF" }}>{label}</p>
-        <AppStoreButton location="blog_inline" />
+        {android ? <AndroidBetaButton location="blog_inline" onDark /> : <AppStoreButton location="blog_inline" />}
       </div>
     );
   };
@@ -66,7 +67,7 @@ function Screenshot({ src, alt, caption }: { src: string; alt: string; caption?:
 export default function BlogPostBody({ post, locale }: { post: BlogPost; locale: Locale }) {
   const t = (k: string) => translate(locale, k);
   const intl = INTL_LOCALE[locale];
-  const ArticleCTA = makeCta(t("blog.cta"));
+  const ArticleCTA = makeCta(t(post.cta === "android" ? "blog.ctaAndroid" : "blog.cta"), post.cta === "android");
   const a = makeAnchor(locale);
   const blogHref = locale === "en" ? "/blog" : `${localePath(locale)}/blog`;
   const canonicalPath = locale === "en" ? `/blog/${post.slug}` : `${localePath(locale)}/blog/${post.slug}`;

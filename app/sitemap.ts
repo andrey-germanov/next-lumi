@@ -112,6 +112,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogLocaleEntries,
     {
+      url: `${SITE_URL}/android`,
+      lastModified: new Date("2026-10-14"),
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: pageLanguagesMap(SITE_URL, "android") },
+    },
+    ...PREFIXED_LOCALES.map((locale) => ({
+      url: `${SITE_URL}/${locale}/android`,
+      lastModified: new Date("2026-10-14"),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+      alternates: { languages: pageLanguagesMap(SITE_URL, "android") },
+    })),
+    {
       url: `${SITE_URL}/about`,
       lastModified: new Date("2026-09-29"),
       changeFrequency: "yearly",

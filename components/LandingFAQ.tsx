@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
-import { getLocalizedFaq } from "@/lib/faqI18n";
+import { getLocalizedFaq, faqPlainText } from "@/lib/faqI18n";
+import { SITE_URL } from "@/lib/constants";
 import { useLang } from "@/components/dash/i18n";
 import { localePath } from "@/lib/i18n";
 
@@ -24,7 +25,7 @@ export default function LandingFAQ() {
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
+      acceptedAnswer: { "@type": "Answer", text: faqPlainText(item.answer, SITE_URL) },
     })),
   };
 

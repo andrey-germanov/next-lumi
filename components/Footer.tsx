@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { SOCIAL_LINKS, APP_STORE_URL } from "@/lib/constants";
 import { useLang } from "@/components/dash/i18n";
+import { getAndroidBetaCopy } from "@/lib/androidBetaI18n";
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <footer className="border-t border-black/8 py-12 text-center">
       <div className="mx-auto max-w-7xl px-6">
@@ -44,6 +45,11 @@ export default function Footer() {
               <li>
                 <Link href="/blog" className="hover:text-text transition-colors">
                   {t("lp2.footBlog")}
+                </Link>
+              </li>
+              <li>
+                <Link href={locale === "en" ? "/android" : `/${locale}/android`} className="hover:text-text transition-colors">
+                  {getAndroidBetaCopy(locale).eyebrow}
                 </Link>
               </li>
               <li>

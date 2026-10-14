@@ -1,8 +1,8 @@
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
-import { getLocalizedFaq } from "@/lib/faqI18n";
+import { getLocalizedFaq, faqPlainText } from "@/lib/faqI18n";
 import { translate, localePath, type Locale } from "@/lib/i18n";
-import { APP_STORE_URL } from "@/lib/constants";
+import { APP_STORE_URL, SITE_URL } from "@/lib/constants";
 
 /**
  * Server-rendered FAQ content (shared by /faq and /[locale]/faq).
@@ -18,7 +18,7 @@ export default function FaqBody({ locale }: { locale: Locale }) {
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
+      acceptedAnswer: { "@type": "Answer", text: faqPlainText(item.answer, SITE_URL) },
     })),
   };
 

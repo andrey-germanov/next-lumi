@@ -21,6 +21,8 @@ export interface BlogPost {
   author: string;
   image: string;
   tags: string[];
+  /** Frontmatter `cta: "android"` swaps the App Store CTA for the Android beta signup. */
+  cta?: "android";
   readingTime: string;
   content: string;
 }
@@ -105,6 +107,7 @@ export function getPostBySlug(slug: string, locale?: string): BlogPost {
     author: data.author,
     image,
     tags: data.tags || [],
+    cta: data.cta === "android" ? "android" : undefined,
     readingTime: stats.text,
     content,
   };

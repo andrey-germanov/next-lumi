@@ -335,6 +335,7 @@ export const MESSAGES: Messages = {
   "blog.updated": { en: "Updated", ru: "Обновлено", uk: "Оновлено", ro: "Actualizat", de: "Aktualisiert", es: "Actualizado", it: "Aggiornato" },
   "blog.back": { en: "← Back to blog", ru: "← Назад в блог", uk: "← Назад до блогу", ro: "← Înapoi la blog", de: "← Zurück zum Blog", es: "← Volver al blog", it: "← Torna al blog" },
   "blog.cta": { en: "Ready to take control of your spending?", ru: "Готовы взять расходы под контроль?", uk: "Готові взяти витрати під контроль?", ro: "Gata să-ți controlezi cheltuielile?", de: "Bereit, deine Ausgaben in den Griff zu bekommen?", es: "¿Listo para controlar tus gastos?", it: "Pronto a prendere il controllo delle tue spese?" },
+  "blog.ctaAndroid": { en: "Lumi for Android is in closed beta. Want in early?", ru: "Lumi для Android сейчас в закрытой бете. Хотите попробовать первыми?", uk: "Lumi для Android зараз у закритій беті. Хочете спробувати першими?", ro: "Lumi pentru Android e în beta închisă. Vrei să-l încerci primul?", de: "Lumi für Android ist in der geschlossenen Beta. Willst du früh dabei sein?", es: "Lumi para Android está en beta cerrada. ¿Quieres probarlo antes?", it: "Lumi per Android è in beta chiusa. Vuoi provarlo in anteprima?" },
 
   // ── Tools / calculators ──
   "tools.eyebrow": { en: "Free tools", ru: "Бесплатные инструменты", uk: "Безкоштовні інструменти", ro: "Instrumente gratuite", de: "Kostenlose Tools", es: "Herramientas gratis", it: "Strumenti gratuiti" },

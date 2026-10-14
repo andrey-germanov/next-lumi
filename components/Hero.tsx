@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
 import AppQR from "./AppQR";
+import AndroidBetaButton from "./AndroidBetaButton";
 import PhoneFrame from "./PhoneFrame";
 import { useLang } from "@/components/dash/i18n";
 
@@ -68,7 +69,10 @@ export default function Hero() {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-              <AppStoreButton location="hero" />
+              <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+                <AppStoreButton location="hero" />
+                <AndroidBetaButton location="hero" />
+              </div>
               <AppQR location="hero" />
             </div>
           </motion.div>
