@@ -2,6 +2,78 @@
   "version": 1,
   "announcements": [
     {
+      "id": "android_launch",
+      "tag": "new",
+      "date": "2026-10-15",
+      "icon": "🤖",
+      "action": {
+        "type": "url",
+        "value": "https://t.me/lumi_app/23"
+      },
+      "copy": {
+        "de": {
+          "title": "Lumi kommt auf Android",
+          "subtitle": "Hast du Freunde mit Android? Lade sie ein!",
+          "body": "Lumi gibt es jetzt auch für Android - mit demselben Design und denselben Funktionen wie auf iOS.\n\nWenn deine Freunde oder deine Familie Android nutzen, schick ihnen den Link. Alle Details findest du in unserem Telegram-Kanal.",
+          "cta": "Mehr erfahren"
+        },
+        "en": {
+          "title": "Lumi is coming to Android",
+          "subtitle": "Have friends on Android? Invite them!",
+          "body": "Lumi now has an Android version - with the same design and features you know from iOS.\n\nIf your friends or family use Android, send them the link. All the details are in our Telegram channel.",
+          "cta": "Read more"
+        },
+        "es": {
+          "title": "Lumi llega a Android",
+          "subtitle": "¿Tienes amigos con Android? ¡Invítalos!",
+          "body": "Lumi ya tiene versión para Android, con el mismo diseño y las mismas funciones que en iOS.\n\nSi tus amigos o tu familia usan Android, envíales el enlace. Todos los detalles están en nuestro canal de Telegram.",
+          "cta": "Más información"
+        },
+        "it": {
+          "title": "Lumi arriva su Android",
+          "subtitle": "Hai amici con Android? Invitali!",
+          "body": "Lumi ora ha una versione per Android, con lo stesso design e le stesse funzioni di iOS.\n\nSe i tuoi amici o la tua famiglia usano Android, mandagli il link. Tutti i dettagli sono sul nostro canale Telegram.",
+          "cta": "Scopri di più"
+        },
+        "ja": {
+          "title": "LumiがAndroidに登場",
+          "subtitle": "Androidを使っている友だちがいたら、ぜひ誘ってください！",
+          "body": "LumiにAndroid版が登場しました。iOSと同じデザイン、同じ機能をそのままお使いいただけます。\n\nAndroidを使っているご友人やご家族がいれば、ぜひリンクを送ってください。詳しくはTelegramチャンネルでご案内しています。",
+          "cta": "詳しく見る"
+        },
+        "ka": {
+          "title": "Lumi Android-ზე გამოდის",
+          "subtitle": "გყავთ მეგობრები Android-ით? მოიწვიეთ!",
+          "body": "Lumi-ს ახლა Android-ის ვერსიაც აქვს - იგივე დიზაინითა და ფუნქციებით, რაც iOS-ზე.\n\nთუ თქვენი მეგობრები ან ოჯახის წევრები Android-ს იყენებენ, გაუგზავნეთ ბმული. ყველა დეტალი ჩვენს Telegram-არხზეა.",
+          "cta": "დაწვრილებით"
+        },
+        "pl": {
+          "title": "Lumi wchodzi na Androida",
+          "subtitle": "Masz znajomych z Androidem? Zaproś ich!",
+          "body": "Lumi ma teraz wersję na Androida - z tym samym designem i funkcjami, które znasz z iOS.\n\nJeśli Twoi znajomi lub bliscy korzystają z Androida, wyślij im link. Wszystkie szczegóły znajdziesz na naszym kanale na Telegramie.",
+          "cta": "Dowiedz się więcej"
+        },
+        "ro": {
+          "title": "Lumi vine pe Android",
+          "subtitle": "Ai prieteni cu Android? Invită-i!",
+          "body": "Lumi are acum și versiune pentru Android - cu același design și aceleași funcții ca pe iOS.\n\nDacă prietenii sau familia ta folosesc Android, trimite-le linkul. Toate detaliile sunt pe canalul nostru de Telegram.",
+          "cta": "Află mai multe"
+        },
+        "ru": {
+          "title": "Lumi выходит на Android",
+          "subtitle": "Если у вас есть друзья на Android - зовите!",
+          "body": "У Lumi появилась версия для Android - с тем же дизайном и функциями, что и на iOS.\n\nЕсли ваши друзья или близкие пользуются Android, отправьте им ссылку. Все подробности - в нашем Telegram-канале.",
+          "cta": "Подробнее"
+        },
+        "uk": {
+          "title": "Lumi виходить на Android",
+          "subtitle": "Якщо у вас є друзі на Android - кличте!",
+          "body": "У Lumi з'явилася версія для Android - з тим самим дизайном і функціями, що й на iOS.\n\nЯкщо ваші друзі чи близькі користуються Android, надішліть їм посилання. Усі подробиці - у нашому Telegram-каналі.",
+          "cta": "Детальніше"
+        }
+      }
+    },
+    {
       "id": "apple_pay_ios_27",
       "tag": "improvement",
       "date": "2026-10-03",
