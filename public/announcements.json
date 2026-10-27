@@ -2,6 +2,78 @@
   "version": 1,
   "announcements": [
     {
+      "id": "app_icon_vote",
+      "tag": "community",
+      "date": "2026-10-27",
+      "image": "https://lumi.herman-apps.com/news/app_icon_vote.png",
+      "action": {
+        "type": "url",
+        "value": "https://t.me/lumi_app"
+      },
+      "copy": {
+        "de": {
+          "title": "Hilf uns, das neue Lumi-Icon zu wählen",
+          "subtitle": "3 Optionen, eine Stimme - deine Meinung zählt.",
+          "body": "Wir erneuern das Lumi-App-Icon und können uns nicht zwischen drei Varianten entscheiden: Tresor, Geldbörse und Sparschwein.\n\nDeine Meinung ist uns besonders wichtig - du siehst das Icon jeden Tag auf deinem Home-Bildschirm. Öffne unseren Telegram-Kanal und stimme für deinen Favoriten ab.",
+          "cta": "In Telegram abstimmen"
+        },
+        "en": {
+          "title": "Help us pick Lumi's new icon",
+          "subtitle": "3 options, one vote - your opinion matters.",
+          "body": "We're updating the Lumi app icon and can't choose between three options: a safe, a wallet and a piggy bank.\n\nYour opinion matters most - you're the ones who see it on your home screen every day. Open our Telegram channel and vote for your favorite.",
+          "cta": "Vote in Telegram"
+        },
+        "es": {
+          "title": "Ayúdanos a elegir el nuevo icono de Lumi",
+          "subtitle": "3 opciones, un voto - tu opinión importa.",
+          "body": "Estamos renovando el icono de Lumi y no logramos decidirnos entre tres opciones: una caja fuerte, una cartera y una hucha.\n\nTu opinión es lo más importante - eres tú quien lo ve cada día en su pantalla de inicio. Abre nuestro canal de Telegram y vota por tu favorito.",
+          "cta": "Votar en Telegram"
+        },
+        "it": {
+          "title": "Aiutaci a scegliere la nuova icona di Lumi",
+          "subtitle": "3 opzioni, un voto - la tua opinione conta.",
+          "body": "Stiamo rinnovando l'icona di Lumi e non riusciamo a scegliere tra tre opzioni: una cassaforte, un portafoglio e un salvadanaio.\n\nLa tua opinione conta moltissimo - sei tu a vederla ogni giorno nella schermata Home. Apri il nostro canale Telegram e vota la tua preferita.",
+          "cta": "Vota su Telegram"
+        },
+        "ja": {
+          "title": "Lumiの新しいアイコンを選んでください",
+          "subtitle": "3案から1票 - あなたの意見が大切です。",
+          "body": "Lumiのアプリアイコンを刷新します。金庫、財布、貯金箱の3案で迷っています。\n\nホーム画面で毎日目にするのはあなたです。ぜひご意見をください。Telegramチャンネルを開いて、お気に入りに投票してください。",
+          "cta": "Telegramで投票する"
+        },
+        "ka": {
+          "title": "დაგვეხმარეთ Lumi-ის ახალი ხატულას არჩევაში",
+          "subtitle": "3 ვარიანტი, ერთი ხმა - თქვენი აზრი მნიშვნელოვანია.",
+          "body": "ვანახლებთ Lumi-ის აპლიკაციის ხატულას და სამ ვარიანტს შორის არჩევანს ვერ ვაკეთებთ: სეიფი, საფულე და ღორმუცელა.\n\nთქვენი აზრი ჩვენთვის ძალიან მნიშვნელოვანია - სწორედ თქვენ ხედავთ მას ყოველდღე მთავარ ეკრანზე. გახსენით ჩვენი Telegram არხი და მიეცით ხმა საყვარელ ვარიანტს.",
+          "cta": "ხმის მიცემა Telegram-ში"
+        },
+        "pl": {
+          "title": "Pomóż wybrać nową ikonę Lumi",
+          "subtitle": "3 opcje, jeden głos - Twoja opinia się liczy.",
+          "body": "Odświeżamy ikonę aplikacji Lumi i nie możemy wybrać między trzema wariantami: sejfem, portfelem i skarbonką.\n\nTwoja opinia jest dla nas bardzo ważna - to Ty widzisz ikonę codziennie na ekranie głównym. Wejdź na nasz kanał na Telegramie i zagłosuj na swoją ulubioną.",
+          "cta": "Zagłosuj na Telegramie"
+        },
+        "ro": {
+          "title": "Ajută-ne să alegem noua pictogramă Lumi",
+          "subtitle": "3 variante, un vot - părerea ta contează.",
+          "body": "Reînnoim pictograma aplicației Lumi și nu ne putem decide între trei variante: un seif, un portofel și un puișor.\n\nPărerea ta este cea mai importantă - tu o vezi zilnic pe ecranul principal. Deschide canalul nostru de Telegram și votează varianta preferată.",
+          "cta": "Votează pe Telegram"
+        },
+        "ru": {
+          "title": "Помогите выбрать новую иконку Lumi",
+          "subtitle": "3 варианта, один голос - ваше мнение важно.",
+          "body": "Мы обновляем иконку приложения Lumi и не можем выбрать между тремя вариантами: сейф, кошелёк и копилка.\n\nВаше мнение для нас очень важно - вы видите её на экране каждый день. Откройте наш Telegram-канал и проголосуйте за любимую.",
+          "cta": "Голосовать в Telegram"
+        },
+        "uk": {
+          "title": "Допоможіть обрати нову іконку Lumi",
+          "subtitle": "3 варіанти, один голос - ваша думка важлива.",
+          "body": "Ми оновлюємо іконку застосунку Lumi і не можемо обрати між трьома варіантами: сейф, гаманець і скарбничка.\n\nВаша думка для нас дуже важлива - ви бачите її на екрані щодня. Відкрийте наш Telegram-канал і проголосуйте за улюблену.",
+          "cta": "Голосувати в Telegram"
+        }
+      }
+    },
+    {
       "id": "android_launch",
       "tag": "new",
       "date": "2026-10-15",
