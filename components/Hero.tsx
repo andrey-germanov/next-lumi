@@ -1,68 +1,39 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AppStoreButton from "./AppStoreButton";
 import AppQR from "./AppQR";
 import AndroidBetaButton from "./AndroidBetaButton";
-import PhoneFrame from "./PhoneFrame";
+import MarkTitle from "./MarkTitle";
 import { useLang } from "@/components/dash/i18n";
-
-function PhoneMockup() {
-  return (
-    <div className="relative animate-phone-float" style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.18))" }}>
-      <PhoneFrame
-        src="/images/screenshots-of-app/home-dashboard.png"
-        alt="Lumi app home screen showing balance, month forecast, and recent transactions"
-        width={272}
-        sizes="272px"
-        priority
-      />
-    </div>
-  );
-}
-
-const stats = [
-  { valueKey: "lp.val2sec", labelKey: "lp.statBackTap" },
-  { valueKey: "lp.val0taps", labelKey: "lp.statApplePay" },
-  { value: "150+", labelKey: "lp.statCurrencies" },
-  { valueKey: "lp.val0banks", labelKey: "lp.statBanks" },
-] as { value?: string; valueKey?: string; labelKey: string }[];
 
 const trustTagKeys = ["lp.tagNoBank", "lp.tagOnDevice", "lp.tagOffline", "lp.tagFree"];
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
-    <section className="relative overflow-hidden pt-20">
-      {/* Ambient orb */}
-      <div className="hero-orb pointer-events-none absolute" style={{ top: -450, left: "50%", transform: "translateX(-50%)" }} />
-
-      <div className="relative mx-auto max-w-7xl px-6 w-full">
-
-        {/* ── Main grid ─────────────────────────────────── */}
-        <div className="grid items-center gap-12 grid-cols-1 lg:grid-cols-2" style={{ paddingTop: 32, paddingBottom: 32 }}>
-
+    <section className="relative overflow-hidden pt-20" style={{ background: "#F9F9FD" }}>
+      <div className="relative mx-auto max-w-6xl px-6 w-full">
+        <div className="grid items-center gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-[1.1fr_1fr]" style={{ paddingTop: 32 }}>
           {/* Copy */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <p className="label mb-5">{t("lp.heroLabel")}</p>
+            <p className="label mb-5" style={{ color: "#6C63FF" }}>{t("lp3.heroLabel")}</p>
 
             <h1
               className="font-extrabold"
-              style={{ fontSize: "clamp(32px, 8vw, 62px)", letterSpacing: "-0.035em", lineHeight: 1.05, color: "#0A0A0A", overflowWrap: "break-word", hyphens: "auto" }}
+              style={{ fontSize: "clamp(34px, 4.8vw, 58px)", letterSpacing: "-0.035em", lineHeight: 1.06, color: "#1B1A33", overflowWrap: "break-word" }}
             >
-              {t("lp.heroTitle1")}
-              <br />
-              <span style={{ color: "#6C63FF" }}>{t("lp.heroTitle2")}</span>
+              <MarkTitle text={t("lp3.title.applepay")} marker="#CFC8FF" />
             </h1>
 
-            <p style={{ fontSize: "clamp(15px, 2vw, 18px)", color: "#63636B", lineHeight: 1.7, maxWidth: 460, marginTop: 20, marginBottom: 28 }}>
-              {t("lp.heroSubtitle")}
+            <p style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#63636B", lineHeight: 1.6, maxWidth: 480, marginTop: 22, marginBottom: 26 }}>
+              {t("lp3.heroSub")}
             </p>
 
-            {/* Trust tags — horizontal scroll on mobile */}
-            <div style={{ display: "flex", gap: 8, marginBottom: 32, overflowX: "auto", paddingBottom: 2, WebkitOverflowScrolling: "touch" as "touch" }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 30, flexWrap: "wrap" }}>
               {trustTagKeys.map((key) => (
-                <span key={key} style={{ flexShrink: 0, fontSize: 12, fontWeight: 500, color: "#63636B", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8, padding: "5px 12px", whiteSpace: "nowrap" as "nowrap" }}>
+                <span key={key} style={{ fontSize: 13, fontWeight: 600, color: "#4B4A63", background: "#FFFFFF", borderRadius: 999, padding: "6px 14px", whiteSpace: "nowrap", boxShadow: "0 1px 2px rgba(50,36,120,0.06)" }}>
                   {t(key)}
                 </span>
               ))}
@@ -77,45 +48,24 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Phone — desktop only */}
+          {/* Apple Pay tap → Lumi logs it: the visual from App Store slide 1 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="hidden lg:flex justify-end"
+            className="flex justify-center lg:justify-end"
           >
-            <PhoneMockup />
+            <Image
+              src={`/images/landing/${locale}/applepay.webp`}
+              alt={t("lp3.heroSub")}
+              width={880}
+              height={1389}
+              sizes="(min-width: 1024px) 480px, 92vw"
+              priority
+              style={{ width: "100%", maxWidth: 480, height: "auto" }}
+            />
           </motion.div>
         </div>
-
-        {/* ── Stats — horizontal scroll on mobile, 4-col on desktop ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ paddingBottom: 32 }}
-        >
-          {/* Mobile: horizontal pills */}
-          <div className="flex lg:hidden gap-3 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" as "touch" }}>
-            {stats.map((s) => (
-              <div key={s.labelKey} className="surface rounded-2xl flex-shrink-0" style={{ padding: "16px 20px", minWidth: 120 }}>
-                <p style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A", lineHeight: 1 }}>{s.valueKey ? t(s.valueKey) : s.value}</p>
-                <p style={{ fontSize: 11, color: "#63636B", marginTop: 5, lineHeight: 1.3 }}>{t(s.labelKey)}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop: 4-col grid */}
-          <div className="hidden lg:grid grid-cols-4 gap-4">
-            {stats.map((s) => (
-              <div key={s.labelKey} className="surface rounded-2xl" style={{ padding: "20px 24px" }}>
-                <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", color: "#0A0A0A" }}>{s.valueKey ? t(s.valueKey) : s.value}</p>
-                <p style={{ fontSize: 13, color: "#63636B", marginTop: 4 }}>{t(s.labelKey)}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
       </div>
     </section>
   );
