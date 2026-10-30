@@ -2,6 +2,78 @@
   "version": 1,
   "announcements": [
     {
+      "id": "mcp_claude",
+      "tag": "new",
+      "date": "2026-10-30",
+      "image": "https://lumi.herman-apps.com/news/mcp_claude.png",
+      "action": {
+        "type": "url",
+        "value": "https://t.me/lumi_app"
+      },
+      "copy": {
+        "de": {
+          "title": "Lumi funktioniert jetzt mit Claude",
+          "subtitle": "Frag die KI nach deinem Geld - sie antwortet mit deinen echten Zahlen.",
+          "body": "Verbinde Lumi mit Claude und frag zum Beispiel: „Wie spare ich jeden Monat 15 % mehr?“ oder „Welche Abos kann ich kündigen?“. Claude sieht deine Ausgaben, Budgets und Ziele und antwortet mit deinen echten Zahlen.\n\nSo verbindest du es:\n1. Öffne in Claude Einstellungen → Konnektoren → Eigenen Konnektor hinzufügen\n2. Füge ein: https://lumi.herman-apps.com/api/mcp\n3. Melde dich mit deinem Lumi-Konto an und erlaube Lesezugriff\n\nNur Lesezugriff - nichts kann geändert werden. Funktioniert auch mit ChatGPT und jedem MCP-Agenten. Verfügbar in Lumi Pro.",
+          "cta": "In Telegram lesen"
+        },
+        "en": {
+          "title": "Lumi now works with Claude",
+          "subtitle": "Ask AI about your money - it answers with your real numbers.",
+          "body": "Connect Lumi to Claude and ask things like \"How can I save 15% more each month?\" or \"Which subscriptions can I cancel?\". Claude reads your spending, budgets and goals and answers with your actual numbers.\n\nHow to connect:\n1. In Claude, open Settings → Connectors → Add custom connector\n2. Paste: https://lumi.herman-apps.com/api/mcp\n3. Sign in with your Lumi account and allow read access\n\nRead-only - nothing can be changed. Also works with ChatGPT and any MCP agent. Available in Lumi Pro.",
+          "cta": "Read in Telegram"
+        },
+        "es": {
+          "title": "Lumi ya funciona con Claude",
+          "subtitle": "Pregúntale a la IA por tu dinero: responde con tus cifras reales.",
+          "body": "Conecta Lumi con Claude y pregunta, por ejemplo: «¿Cómo ahorro un 15 % más cada mes?» o «¿Qué suscripciones puedo cancelar?». Claude ve tus gastos, presupuestos y metas y responde con tus cifras reales.\n\nCómo conectarlo:\n1. En Claude, abre Ajustes → Conectores → Añadir conector personalizado\n2. Pega: https://lumi.herman-apps.com/api/mcp\n3. Inicia sesión con tu cuenta de Lumi y permite el acceso de lectura\n\nSolo lectura: no se puede cambiar nada. También funciona con ChatGPT y cualquier agente MCP. Disponible en Lumi Pro.",
+          "cta": "Leer en Telegram"
+        },
+        "it": {
+          "title": "Lumi ora funziona con Claude",
+          "subtitle": "Chiedi all'IA dei tuoi soldi: risponde con i tuoi numeri reali.",
+          "body": "Collega Lumi a Claude e chiedi, ad esempio: «Come risparmio il 15% in più ogni mese?» o «Quali abbonamenti posso disdire?». Claude vede spese, budget e obiettivi e risponde con i tuoi numeri reali.\n\nCome collegarlo:\n1. In Claude apri Impostazioni → Connettori → Aggiungi connettore personalizzato\n2. Incolla: https://lumi.herman-apps.com/api/mcp\n3. Accedi con il tuo account Lumi e consenti l'accesso in lettura\n\nSolo lettura: non si può modificare nulla. Funziona anche con ChatGPT e qualsiasi agente MCP. Disponibile in Lumi Pro.",
+          "cta": "Leggi su Telegram"
+        },
+        "ja": {
+          "title": "LumiがClaudeに対応しました",
+          "subtitle": "お金のことをAIに質問 - あなたの実際の数字で答えます。",
+          "body": "LumiをClaudeに接続して、「毎月15%多く貯金するには？」「解約できるサブスクは？」のように質問してみましょう。Claudeが支出・予算・目標を確認し、実際の数字で答えます。\n\n接続方法:\n1. Claudeで 設定 → コネクタ → カスタムコネクタを追加 を開く\n2. 次を貼り付け: https://lumi.herman-apps.com/api/mcp\n3. Lumiのアカウントでサインインし、読み取りアクセスを許可\n\n読み取り専用なので、データが変更されることはありません。ChatGPTや他のMCPエージェントにも対応。Lumi Proでご利用いただけます。",
+          "cta": "Telegramで読む"
+        },
+        "ka": {
+          "title": "Lumi ახლა Claude-თან მუშაობს",
+          "subtitle": "ჰკითხეთ AI-ს თქვენს ფულზე - ის თქვენი რეალური ციფრებით გიპასუხებთ.",
+          "body": "დააკავშირეთ Lumi Claude-თან და ჰკითხეთ, მაგალითად: „როგორ დავზოგო თვეში 15%-ით მეტი?“ ან „რომელი გამოწერების გაუქმება შემიძლია?“. Claude ხედავს თქვენს ხარჯებს, ბიუჯეტებსა და მიზნებს და რეალური ციფრებით პასუხობს.\n\nროგორ დავაკავშიროთ:\n1. Claude-ში გახსენით პარამეტრები → კონექტორები → საკუთარი კონექტორის დამატება\n2. ჩასვით: https://lumi.herman-apps.com/api/mcp\n3. შედით Lumi-ის ანგარიშით და დაუშვით წაკითხვის წვდომა\n\nმხოლოდ წაკითხვა - ვერაფერს შეცვლის. მუშაობს ChatGPT-თან და ნებისმიერ MCP აგენტთანაც. ხელმისაწვდომია Lumi Pro-ში.",
+          "cta": "წაიკითხეთ Telegram-ში"
+        },
+        "pl": {
+          "title": "Lumi działa teraz z Claude",
+          "subtitle": "Zapytaj AI o swoje pieniądze - odpowie Twoimi prawdziwymi liczbami.",
+          "body": "Połącz Lumi z Claude i pytaj na przykład: „Jak odkładać co miesiąc 15% więcej?” albo „Które subskrypcje mogę anulować?”. Claude widzi Twoje wydatki, budżety i cele i odpowiada prawdziwymi liczbami.\n\nJak połączyć:\n1. W Claude otwórz Ustawienia → Konektory → Dodaj własny konektor\n2. Wklej: https://lumi.herman-apps.com/api/mcp\n3. Zaloguj się kontem Lumi i zezwól na dostęp do odczytu\n\nTylko odczyt - nic nie można zmienić. Działa też z ChatGPT i każdym agentem MCP. Dostępne w Lumi Pro.",
+          "cta": "Czytaj na Telegramie"
+        },
+        "ro": {
+          "title": "Lumi funcționează acum cu Claude",
+          "subtitle": "Întreabă AI-ul despre banii tăi - răspunde cu cifrele tale reale.",
+          "body": "Conectează Lumi la Claude și întreabă, de exemplu: „Cum economisesc cu 15% mai mult pe lună?” sau „Ce abonamente pot anula?”. Claude vede cheltuielile, bugetele și obiectivele tale și răspunde cu cifrele tale reale.\n\nCum îl conectezi:\n1. În Claude deschide Setări → Conectori → Adaugă conector personalizat\n2. Lipește: https://lumi.herman-apps.com/api/mcp\n3. Autentifică-te cu contul Lumi și permite accesul de citire\n\nDoar citire - nu se poate modifica nimic. Funcționează și cu ChatGPT și orice agent MCP. Disponibil în Lumi Pro.",
+          "cta": "Citește pe Telegram"
+        },
+        "ru": {
+          "title": "Lumi теперь работает с Claude",
+          "subtitle": "Спросите ИИ о своих деньгах - он ответит вашими цифрами.",
+          "body": "Подключите Lumi к Claude и спрашивайте: «Как откладывать на 15% больше в месяц?» или «Какие подписки можно отменить?». Claude смотрит ваши траты, бюджеты и цели и отвечает реальными цифрами.\n\nКак подключить:\n1. В Claude откройте Настройки → Коннекторы → Добавить свой коннектор\n2. Вставьте: https://lumi.herman-apps.com/api/mcp\n3. Войдите в аккаунт Lumi и разрешите доступ на чтение\n\nТолько чтение - ничего нельзя изменить. Работает и с ChatGPT и любым MCP-агентом. Доступно в Lumi Pro.",
+          "cta": "Читать в Telegram"
+        },
+        "uk": {
+          "title": "Lumi тепер працює з Claude",
+          "subtitle": "Запитайте ШІ про свої гроші - він відповість вашими цифрами.",
+          "body": "Підключіть Lumi до Claude і питайте: «Як відкладати на 15% більше щомісяця?» або «Які підписки можна скасувати?». Claude бачить ваші витрати, бюджети й цілі та відповідає реальними цифрами.\n\nЯк підключити:\n1. У Claude відкрийте Налаштування → Конектори → Додати власний конектор\n2. Вставте: https://lumi.herman-apps.com/api/mcp\n3. Увійдіть в акаунт Lumi та дозвольте доступ на читання\n\nЛише читання - нічого не можна змінити. Працює також з ChatGPT і будь-яким MCP-агентом. Доступно в Lumi Pro.",
+          "cta": "Читати в Telegram"
+        }
+      }
+    },
+    {
       "id": "app_icon_vote",
       "tag": "community",
       "date": "2026-10-27",
