@@ -10,6 +10,7 @@
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "@next/third-parties": "^16.2.10",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
@@ -26,7 +27,8 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",

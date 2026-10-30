@@ -14,7 +14,7 @@ import type { CurrencyCode } from "@/utils/currencyUtils";
 
 const CACHE_KEY = "lumi-exchange-rates";
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24h
-const API_URL = "https://v6.exchangerate-api.com/v6/973a758b48f94bf77bb6dc71/latest/USD";
+export const EXCHANGE_RATE_API_URL = "https://v6.exchangerate-api.com/v6/973a758b48f94bf77bb6dc71/latest/USD";
 
 // Static fallback rates (amount of currency per 1 USD), copied verbatim from the app.
 export const STATIC_EXCHANGE_RATES: Record<string, number> = {
@@ -107,7 +107,7 @@ export async function refreshRates(currencies: CurrencyCode[]): Promise<void> {
       const timeout = setTimeout(() => controller.abort(), 10000);
       let res: Response;
       try {
-        res = await fetch(API_URL, { headers: { Accept: "application/json" }, signal: controller.signal });
+        res = await fetch(EXCHANGE_RATE_API_URL, { headers: { Accept: "application/json" }, signal: controller.signal });
       } finally {
         clearTimeout(timeout);
       }

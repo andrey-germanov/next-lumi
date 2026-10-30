@@ -16,6 +16,16 @@ const nextConfig: NextConfig = {
       { source: `/${locale}/:path*`, destination: "/:path*", permanent: true },
     ]);
   },
+  async rewrites() {
+    // OAuth discovery for the MCP connector (Claude, ChatGPT). Clients probe
+    // both the bare and the path-suffixed protected-resource URL.
+    return [
+      { source: "/.well-known/oauth-authorization-server", destination: "/api/oauth/metadata/authorization-server" },
+      { source: "/.well-known/oauth-authorization-server/:path*", destination: "/api/oauth/metadata/authorization-server" },
+      { source: "/.well-known/oauth-protected-resource", destination: "/api/oauth/metadata/protected-resource" },
+      { source: "/.well-known/oauth-protected-resource/:path*", destination: "/api/oauth/metadata/protected-resource" },
+    ];
+  },
   async headers() {
     return [
       {
