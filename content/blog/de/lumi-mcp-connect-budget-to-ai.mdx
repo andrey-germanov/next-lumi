@@ -1,0 +1,131 @@
+---
+title: "Lumi MCP: Verbinde dein Budget mit Claude, ChatGPT und jedem KI-Agenten"
+seoTitle: "Lumi MCP: Budget mit Claude & ChatGPT verbinden"
+description: "Mit dem MCP-Server von Lumi verbindest du dein Budget mit KI: Claude, ChatGPT & Co. lesen deine echten Ausgaben, Budgets und Ziele – nur lesend."
+date: "2026-10-31"
+author: "Andrew, Founder of Lumi"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["MCP", "MCP-Server Finanzen", "Claude", "ChatGPT", "Budget mit KI", "KI-Finanzassistent"]
+---
+
+Mit dem neuen MCP-Server von Lumi kannst du dein Budget mit KI verbinden: Claude, ChatGPT oder jeder andere MCP-fähige KI-Agent bekommt Zugriff auf deine Lumi-Daten, und du kannst Fragen stellen wie *„Wie kann ich jeden Monat 15 % mehr sparen?“* – der Assistent antwortet dann auf Basis deiner tatsächlichen Ausgaben, Einnahmen, Budgets und Sparziele statt mit allgemeinen Tipps. Der Zugriff ist rein lesend, funktioniert über eine einzige URL und ist Teil von Lumi Premium.
+
+Auf dieser Seite erfährst du, was der Connector macht, was die KI sehen kann und was nicht, wie du ihn in jedem Assistenten einrichtest und bei welchen Fragen er wirklich glänzt.
+
+## Was ist der Lumi-MCP-Server?
+
+Der Lumi-MCP-Server ist eine sichere, rein lesende Brücke zwischen deinem Lumi-Konto und KI-Assistenten. Er nutzt das [Model Context Protocol](/blog/what-is-mcp) – den offenen Standard, über den Claude, ChatGPT, Cursor, VS Code und viele andere KI-Tools externe Daten anbinden. Sobald er verbunden ist, kann der Assistent deine Ausgabenübersichten bei Bedarf abrufen, während er dir antwortet.
+
+Ohne ihn heißt eine Frage an den Chatbot zu deinem Budget: CSV exportieren, Zahlen in den Chat kopieren und das Ganze jeden Monat wiederholen. Mit ihm holt sich der Assistent selbst, was er braucht – genau in dem Moment, in dem du fragst.
+
+**Die Connector-URL:**
+
+```
+https://lumi.herman-apps.com/api/mcp
+```
+
+## Was kannst du fragen?
+
+Alles, was du beantworten könntest, wenn du eine Stunde lang auf deine Ausgabenhistorie starrst – nur in Sekunden. Ein paar echte Beispiele:
+
+| Du fragst | Was sich die KI ansieht |
+|---------|----------------------|
+| „Wie kann ich jeden Monat 15 % mehr sparen?“ | Monatliche Einnahmen und Ausgaben, größte Kategorien, Händler mit steigender Tendenz, Abos |
+| „Für welche Abos zahle ich noch?“ | Wiederkehrende Zahlungen, die du angelegt hast, plus sich wiederholende Abbuchungen in deiner Historie |
+| „Warum war der Oktober teurer als der September?“ | Kategoriesummen Monat für Monat, die einzelnen Transaktionen hinter dem Sprung |
+| „Liege ich bei meinem Urlaubsziel im Plan?“ | Zielfortschritt, Frist, nötiger Monatsbetrag vs. dein aktuelles Spartempo |
+| „Welches Budget sprenge ich diesen Monat?“ | Budgetlimits, bisher ausgegeben, Anteil des bereits vergangenen Monats |
+| „Wie viel habe ich dieses Jahr für Kaffee ausgegeben?“ | Transaktionen gefiltert nach Händler, Notiz und Kategorie |
+
+Eine lange Liste mit Fragen zum Kopieren findest du in [35 KI-Prompts fürs Budget für Claude und ChatGPT](/blog/ai-prompts-for-budgeting).
+
+So sieht eine typische Antwort aus. Fragst du *„Wie kann ich jeden Monat 15 % mehr sparen?“*, rechnet ein verbundener Assistent meist zuerst aus, was 15 % deines Einkommens sind, und baut den Plan dann aus deinen eigenen Kategorien – zum Beispiel: Essenslieferungen seit dem Sommer um 67 % gestiegen (−$240), 22 Fahrten im Monat (−$190), Essengehen (−$145) und drei Abos, die du nicht nutzt (−$58). Die Zahlen in diesem Beispiel dienen nur zur Veranschaulichung; deine kommen aus deinen Daten.
+
+## Welche Daten die KI sehen kann
+
+Der Connector stellt acht rein lesende Tools bereit. Welche davon der Assistent aufruft, entscheidet er anhand deiner Frage:
+
+| Tool | Was es liefert |
+|------|-----------------|
+| Finanzübersicht | Durchschnittliche monatliche Einnahmen und Ausgaben, Sparquote, Top-Kategorien, Tempo im aktuellen Monat |
+| Monatsübersicht | Einnahmen, Ausgaben, in Ziele verschobenes Geld und Saldo, Monat für Monat |
+| Ausgaben nach Kategorie | Summen, Anteil an den Ausgaben, durchschnittlicher Betrag pro Einkauf und Top-Händler je Kategorie |
+| Top-Händler | Wohin das Geld nach Empfänger fließt, wie oft und wie viel |
+| Wiederkehrende Zahlungen | Miete, Abos und Gehalt, die du angelegt hast, plus sich wiederholende Abbuchungen, die nach nicht erfassten Abos aussehen |
+| Budgets und Ziele | Limit und Fortschritt jedes Budgets, Fortschritt und nötiger Monatsbetrag jedes Sparziels |
+| Konten | Deine Karten, dein Bargeld und deine Konten mit aktuellen Salden |
+| Transaktionen | Einzelne Transaktionen, gefiltert nach Datum, Kategorie, Text oder Betrag |
+
+Alle Beträge werden in deine Hauptwährung umgerechnet (oder in jede Währung, die du verlangst), sodass auch Nutzer mit mehreren Währungen ein einheitliches Bild bekommen. Überweisungen auf Sparziele zählen als Sparen, nicht als Ausgaben – deine „Ausgaben“ werden also nicht durch Geld aufgebläht, das du zurückgelegt hast.
+
+## Was die KI nicht kann
+
+- **Sie kann nichts verändern.** Es gibt keine Schreib-Tools. Der Assistent kann keine Transaktionen, Budgets oder Ziele anlegen, bearbeiten oder löschen.
+- **Sie sieht deinen Bank-Login nicht.** Lumi verbindet sich gar nicht erst mit deiner Bank – lies dazu, [warum wir einen Ausgaben-Tracker ohne Bankkonto gebaut haben](/blog/expense-tracker-without-bank-account).
+- **Sie läuft nicht im Hintergrund.** Der Assistent liest deine Daten nur, wenn du ihn im Chat etwas fragst. Es gibt keine Überwachung und keine automatischen Nachrichten.
+
+## So verbindest du ihn
+
+Die Einrichtung dauert in jedem Assistenten, der Remote-MCP-Server mit Anmeldung (OAuth) unterstützt, etwa eine Minute. Der Ablauf ist überall gleich:
+
+1. Füge einen benutzerdefinierten Connector hinzu (manchmal auch MCP-Server oder App genannt) und füge `https://lumi.herman-apps.com/api/mcp` ein.
+2. Es öffnet sich eine Lumi-Anmeldeseite. Melde dich mit demselben Konto an, das du in der Lumi-App nutzt.
+3. Prüfe die Berechtigungsseite – Lesezugriff auf deine Lumi-Finanzen – und tippe auf **Zulassen** (*Allow*).
+
+Anleitungen für die einzelnen Assistenten:
+
+- **Claude** (Web, Desktop und Mobil): [So verbindest du Claude mit deinem Budget](/blog/how-to-connect-claude-to-your-budget)
+- **ChatGPT**: [ChatGPT fürs Budget nutzen – mit deinen echten Zahlen](/blog/how-to-use-chatgpt-for-budgeting)
+- **Claude Code** (Terminal): `claude mcp add --transport http lumi https://lumi.herman-apps.com/api/mcp`, danach `/mcp` ausführen und anmelden
+- **Cursor, VS Code und andere MCP-Clients**: Füge einen Remote-MCP-Server (HTTP) mit der URL oben hinzu; der Client öffnet beim ersten Einsatz die Lumi-Anmeldeseite
+
+<ArticleCTA />
+
+## Für wen ist das?
+
+Am meisten bringt der Connector, wenn du deine Ausgaben schon in Lumi erfasst – per [Apple-Pay-Auto-Import](/blog/how-to-track-apple-pay-spending), Sprache, Back Tap oder Belegscan – und über diese Daten *nachdenken* willst, statt sie nur anzuschauen. Diagramme zeigen dir, was passiert ist. In einem Gespräch kannst du fragen, warum, was wäre wenn und was als Nächstes zu tun ist:
+
+- „Wenn ich das Essengehen halbiere, wann erreiche ich mein Notgroschen-Ziel?“
+- „Vergleiche meine Ausgaben dieses Jahr mit dem letzten und sag mir, was sich verändert hat.“
+- „Erstelle mir ein [50/30/20-Budget](/blog/what-is-the-50-30-20-rule) aus meinen tatsächlichen letzten drei Monaten.“
+
+Außerdem kannst du damit schnell eine Entscheidung gegenchecken, bevor du sie triffst: „Kann ich mir im März eine Reise für $1.200 leisten, ohne ans Ersparte zu gehen?“
+
+## Voraussetzungen
+
+- **Lumi Premium** (in der App als Pro angezeigt): $4.99/Monat oder $39.99/Jahr. Der Connector liest die Cloud-Kopie deiner Daten, und die synchronisieren nur Premium-Konten.
+- **In der Lumi-App angemeldet**, damit deine Daten mit deinem Konto synchronisiert sind.
+- **Ein KI-Assistent, der benutzerdefinierte MCP-Connectoren unterstützt**: Claude (auch im kostenlosen Plan, der einen benutzerdefinierten Connector erlaubt), ChatGPT in Plänen mit benutzerdefinierten Connectoren bzw. Entwicklermodus, Claude Code, Cursor, VS Code und andere MCP-Clients.
+
+## Datenschutz und Sicherheit
+
+Wir haben den Connector so gebaut, dass du ihn bedenkenlos verbunden lassen kannst:
+
+- **Grundsätzlich nur lesend.** Jedes Tool ist als rein lesend gekennzeichnet; es gibt keinen Codepfad, der in deine Daten schreibt.
+- **Standard-Anmeldung per OAuth.** Der Assistent sieht dein Lumi-Passwort nie. Er erhält ein kurzlebiges Zugriffstoken (eine Stunde), das nur für diesen Connector gilt, und Tokens werden bei uns nur gehasht gespeichert.
+- **Nur deine Daten.** Jedes Token ist an dein Konto gebunden; der Server kann keine Datensätze anderer Personen zurückgeben.
+- **Einfach zu trennen.** Entferne den Lumi-Connector in den Einstellungen deines Assistenten, und er kommt nicht mehr an deine Daten.
+
+Ein ehrlicher Hinweis: Alles, was der Assistent liest, wird Teil dieses Chats und unterliegt damit den Datenschutzeinstellungen deines KI-Anbieters (zum Beispiel, ob Chats zum Training seiner Modelle genutzt werden). Wenn dir das wichtig ist, prüfe diese Einstellungen vor dem Verbinden – das gilt genauso für alle Daten, die du in einen Chatbot kopierst. Einen breiteren Blick auf das Thema bietet [Was deine Budget-App über dich weiß](/blog/what-your-budgeting-app-knows-about-you).
+
+## FAQ
+
+**Gibt es einen Lumi-MCP-Server für Claude und ChatGPT?**
+Ja. Der MCP-Server von Lumi ist unter `https://lumi.herman-apps.com/api/mcp` erreichbar. Füge ihn in Claude, ChatGPT oder einem anderen MCP-kompatiblen Client als benutzerdefinierten Connector hinzu, melde dich mit deinem Lumi-Konto an und erlaube den Lesezugriff.
+
+**Kann die KI meine Transaktionen oder Budgets ändern?**
+Nein. Der Connector stellt nur Lese-Tools bereit. Er kann deine Daten zusammenfassen, filtern und analysieren, aber nichts anlegen, bearbeiten oder löschen.
+
+**Funktioniert das im kostenlosen Lumi-Plan?**
+Noch nicht. Der Connector liest deine synchronisierten Cloud-Daten, und die sind eine Premium-Funktion – du brauchst also Lumi Premium. Verbindest du dich ohne, sagt dir der Assistent, dass ein Upgrade nötig ist.
+
+**Beobachtet die KI meine Ausgaben im Hintergrund?**
+Nein. Sie liest deine Daten nur, wenn du im Chat eine Frage stellst. Nichts läuft nach Zeitplan, und der Assistent schreibt dir nie von sich aus.
+
+**Welche Währung verwendet die KI?**
+Standardmäßig deine Hauptwährung. Du kannst jede andere Währung verlangen („zeig das in EUR“), und die Beträge werden umgerechnet.
+
+**Was ist, wenn mein Einkommen nicht in Lumi erfasst ist?**
+Der Assistent ist angewiesen, das zu bemerken und dich nach deinem Monatseinkommen zu fragen, statt zu raten – so bleiben Antworten zur Sparquote realistisch.
+
+Neu in dem Thema? Fang mit [MCP einfach erklärt](/blog/what-is-mcp) an und wähle dann deinen Assistenten: [Claude](/blog/how-to-connect-claude-to-your-budget) oder [ChatGPT](/blog/how-to-use-chatgpt-for-budgeting).

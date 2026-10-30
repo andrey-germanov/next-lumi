@@ -1,0 +1,99 @@
+---
+title: "Was ist MCP (Model Context Protocol)? Einfach erklärt"
+seoTitle: "Was ist MCP? Das Model Context Protocol einfach erklärt"
+description: "Was ist MCP? Das Model Context Protocol ist ein offener Standard, mit dem KI-Assistenten wie Claude und ChatGPT Daten aus Apps lesen. So funktioniert es."
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["MCP", "Model Context Protocol", "KI-Assistenten", "Claude", "ChatGPT", "persönliche Finanzen"]
+---
+
+Was ist MCP? MCP steht für **Model Context Protocol** und ist ein offener Standard, über den sich KI-Assistenten mit anderen Apps und Datenquellen verbinden. Stell es dir als Universalstecker vor: Eine App stellt einen „MCP-Server“ bereit, und jede KI, die MCP spricht – Claude, ChatGPT, Cursor, VS Code und viele mehr –, kann darüber Informationen nachschlagen oder in deinem Auftrag Aktionen ausführen, mit deiner Erlaubnis.
+
+Anthropic hat MCP Ende 2024 als offene Spezifikation vorgestellt, und die Branche hat es schnell übernommen, auch OpenAI. Heute ist es der gängigste Weg, einem KI-Assistenten Zugriff auf deine eigenen Daten zu geben – deinen Kalender, deine Dokumente oder, im Fall von Lumi, [dein Budget](/blog/lumi-mcp-connect-budget-to-ai).
+
+## Warum es MCP gibt
+
+Große Sprachmodelle wissen nur, womit sie trainiert wurden und was du in den Chat tippst. Deinen Terminkalender, deine Dateien oder deine Ausgaben kennen sie nicht. Vor MCP musste jedes KI-Produkt für jede App eine eigene Integration bauen – und jede App eine für jede KI. Das skaliert nicht.
+
+MCP ersetzt das durch eine gemeinsame Sprache. Eine App baut **einen** MCP-Server, und der funktioniert in jedem MCP-kompatiblen Assistenten. Ein Assistent unterstützt MCP **einmal** und kann dann Tausende Server nutzen. Oft wird das mit USB-C verglichen: ein Anschluss, viele Geräte.
+
+## Wie MCP funktioniert – einfach erklärt
+
+Es gibt drei Bausteine:
+
+| Baustein | Was das ist | Beispiel |
+|-------|-----------|---------|
+| **Host / Client** | Die KI-App, mit der du chattest | Claude, ChatGPT, Cursor |
+| **MCP-Server** | Ein kleiner Dienst, den eine App betreibt, um ihre Daten oder Aktionen bereitzustellen | Der Server von Lumi unter `lumi.herman-apps.com/api/mcp` |
+| **Tools** | Benannte Funktionen, die der Server anbietet, jeweils mit Beschreibung | „get spending by category“, „list transactions“ |
+
+Wenn du eine Frage stellst, liest die KI die Beschreibungen der verfügbaren Tools und entscheidet, welche sie aufruft. Der Server führt das Tool aus und gibt strukturierte Ergebnisse zurück. Die KI nutzt diese Ergebnisse, um ihre Antwort zu schreiben – und kann weitere Tools aufrufen, wenn sie tiefer graben muss.
+
+Fragst du zum Beispiel einen verbundenen Assistenten *„Warum habe ich im Oktober mehr ausgegeben?“*, könnte er:
+
+1. Ein Tool für die Monatsübersicht aufrufen, um den Oktober mit den Vormonaten zu vergleichen.
+2. Bemerken, dass das Essengehen stark gestiegen ist, und dann ein Kategorie-Tool für Oktober aufrufen.
+3. Ein Transaktions-Tool mit Filter auf Essengehen aufrufen, um zu sehen, welche Lokale das ausgelöst haben.
+4. Antworten: „Du hast $310 mehr ausgegeben, vor allem durch acht Restaurantbesuche in der zweiten Monatshälfte …“
+
+## Lokale vs. Remote-MCP-Server
+
+- **Lokale Server** laufen auf deinem eigenen Computer und werden vor allem von Entwicklern genutzt (zum Beispiel, um einer KI Zugriff auf die Dateien eines Projekts zu geben).
+- **Remote-Server** laufen im Internet, wie eine Website. Du fügst sie per URL hinzu, meldest dich per OAuth an, und sie funktionieren auf all deinen Geräten – auch in KI-Apps im Web und auf dem Handy. Connectoren für Endnutzer, auch der von Lumi, sind Remote-Server.
+
+## Ist MCP sicher?
+
+MCP selbst ist nur ein Protokoll; wie sicher es ist, hängt davon ab, wie der jeweilige Server gebaut ist und was du erlaubst. Darauf solltest du achten, bevor du einen MCP-Server mit persönlichen Daten verbindest:
+
+- **Lese- vs. Schreibzugriff.** Kann die KI nur lesen oder auch etwas verändern? Ein rein lesender Server ist deutlich risikoärmer. Der Finanz-Connector von Lumi ist rein lesend.
+- **Saubere Anmeldung.** Ein guter Remote-Server nutzt OAuth, sodass die KI ein begrenztes Token statt deines Passworts bekommt.
+- **Umfang.** Der Server sollte nur *deine* Daten liefern, und nur das, was für seinen Zweck nötig ist.
+- **Wer ihn betreibt.** Bevorzuge Server von dem Unternehmen, das deine Daten ohnehin schon hat, statt von unbekannten Dritten.
+- **Einfacher Widerruf.** Du solltest die Verbindung jederzeit in den Einstellungen der KI-App trennen können.
+
+Denk außerdem daran, dass alles, was die KI liest, Teil des Gesprächs wird und den Datenschutzeinstellungen des KI-Anbieters unterliegt. Das gilt für alles, was du mit einem Chatbot teilst, ob mit MCP oder ohne. Mehr zum Datenschutz bei Finanzdaten liest du in [Was deine Budget-App über dich weiß](/blog/what-your-budgeting-app-knows-about-you).
+
+<ArticleCTA />
+
+## Was MCP für deine persönlichen Finanzen bedeutet
+
+Beim Thema Geld wird MCP für ganz normale Menschen richtig nützlich. Budget-Apps sind gut im Erfassen und in Diagrammen; KI-Assistenten sind gut im Abwägen und Planen. MCP verbindet beides, sodass du ein Gespräch mit deiner eigenen Finanzhistorie führen kannst:
+
+- „Wie kann ich jeden Monat 15 % mehr sparen?“
+- „Für welche Abos zahle ich noch?“
+- „Wenn ich so weiter ausgebe, wann erreiche ich mein Notgroschen-Ziel?“
+
+Statt allgemeiner Tipps antwortet die KI mit deinen tatsächlichen Kategorien, Händlern und Beträgen. Genau das ist die Idee hinter dem Connector von Lumi – hier erfährst du, [wie er funktioniert und was er sehen kann](/blog/lumi-mcp-connect-budget-to-ai).
+
+## So probierst du MCP selbst aus
+
+Der schnellste Weg, MCP in Aktion zu sehen:
+
+1. Wähle einen Assistenten, der benutzerdefinierte Connectoren unterstützt – [Claude](/blog/how-to-connect-claude-to-your-budget) (der kostenlose Plan erlaubt einen) oder [ChatGPT](/blog/how-to-use-chatgpt-for-budgeting) in einem Plan mit Entwicklermodus.
+2. Füge einen Remote-MCP-Server per URL hinzu – für Lumi ist das `https://lumi.herman-apps.com/api/mcp`.
+3. Melde dich an, gib den Zugriff frei und stell eine Frage, für die deine Daten nötig sind.
+
+Probier danach ein paar dieser [KI-Prompts fürs Budget](/blog/ai-prompts-for-budgeting) aus.
+
+## FAQ
+
+**Wofür steht MCP?**
+Für Model Context Protocol. „Context“ meint die zusätzlichen Informationen – deine Daten –, die ein KI-Modell braucht, um eine nützliche Antwort zu geben.
+
+**Wer hat MCP entwickelt?**
+Anthropic, das Unternehmen hinter Claude, hat MCP im November 2024 als offenen Standard veröffentlicht. Inzwischen wird es von vielen KI-Anbietern und Entwickler-Tools unterstützt, darunter ChatGPT von OpenAI.
+
+**Ist MCP dasselbe wie eine API?**
+Nicht ganz. Eine API ist ein Weg, über den Programme mit einem bestimmten Dienst kommunizieren. MCP ist eine standardisierte *Hülle*, die Tools so beschreibt, dass KI-Modelle sie verstehen – so kann jeder MCP-kompatible Assistent jeden MCP-Server ohne eigenen Code nutzen.
+
+**Ist MCP kostenlos?**
+Das Protokoll ist offen und kostenlos. Einzelne Server können ein Konto oder ein Abo voraussetzen – der Connector von Lumi ist zum Beispiel Teil von Lumi Premium.
+
+**Muss ich Entwickler sein, um MCP zu nutzen?**
+Nein. Bei Remote-Servern fügst du einfach eine URL in die Connector-Einstellungen deiner KI-App ein und meldest dich an. Keine Installation, kein Code.
+
+**Was ist der Unterschied zwischen einem MCP-Connector und einem ChatGPT-Plugin?**
+Plugins waren ein früherer Ansatz, der nur in ChatGPT funktionierte. MCP ist ein offener Standard, der in vielen KI-Apps funktioniert – ein Connector bedient also Claude, ChatGPT und andere.
+
+Auch das Vokabular der Finanz-Apps ist neu für dich? Unser [Glossar für persönliche Finanzen](/blog/personal-finance-glossary) erklärt den Rest.

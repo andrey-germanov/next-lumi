@@ -1,0 +1,121 @@
+---
+title: "Cómo conectar Claude a tu presupuesto: guía MCP paso a paso"
+seoTitle: "Cómo conectar Claude a tu presupuesto (guía 2026)"
+description: "Usa Claude para tu presupuesto: conéctalo a tus gastos reales en un minuto con el conector MCP de Lumi. Pasos para web, escritorio, móvil y Claude Code."
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["Claude", "conector de Claude", "MCP", "presupuesto con IA", "finanzas personales", "Claude para presupuestos"]
+---
+
+Para conectar Claude a tu presupuesto, añade Lumi como conector personalizado en los ajustes de Claude con la URL `https://lumi.herman-apps.com/api/mcp`, inicia sesión con tu cuenta de Lumi y permite el acceso de solo lectura. A partir de ahí, Claude puede responder preguntas como «¿En qué se me fue el dinero el mes pasado?» usando tus transacciones, presupuestos y metas de ahorro reales. Toda la configuración lleva más o menos un minuto.
+
+A continuación: los pasos exactos para Claude en la web y en el escritorio, cómo se traslada a la app del iPhone, el comando de una línea para Claude Code y las primeras preguntas que vale la pena hacer.
+
+## ¿Por qué conectar Claude a tus datos de gastos?
+
+Claude razona bien sobre decisiones de dinero, pero de entrada no sabe nada de *tu* dinero. La gente lo soluciona pegando en el chat exportaciones del banco, algo lento, propenso a errores y que la semana siguiente ya está desactualizado.
+
+Un conector resuelve eso. Claude lee tus datos de [Lumi](/blog/lumi-mcp-connect-budget-to-ai) en el momento en que preguntas, a través del [Model Context Protocol (MCP)](/blog/what-is-mcp). Ve gastos categorizados, ingresos, pagos recurrentes, presupuestos y metas, ya ordenados y convertidos a una sola moneda, así que sus respuestas son concretas: comercios reales, importes reales, meses reales.
+
+## Qué necesitas
+
+| Requisito | Detalles |
+|-------------|---------|
+| Cuenta de Claude | Cualquier plan que admita conectores personalizados. Las cuentas gratuitas pueden añadir un conector personalizado; Pro, Max, Team y Enterprise pueden añadir más (en Team/Enterprise, puede que tenga que añadirlo un propietario). |
+| Lumi Premium | $4.99/mes o $39.99/año. El conector lee tus datos sincronizados, que son una función Premium. |
+| Datos de Lumi sincronizados | Abre la app de Lumi con la sesión iniciada para que tus últimas transacciones estén en tu cuenta. |
+| URL del conector | `https://lumi.herman-apps.com/api/mcp` |
+
+## Paso 1: añade Lumi como conector personalizado
+
+1. Abre [claude.ai](https://claude.ai) en el navegador o la app de escritorio de Claude.
+2. Ve a **Configuración → Conectores** (**Settings → Connectors**). (En algunas versiones recientes, la misma página está en **Personalizar → Conectores** (**Customize → Connectors**).)
+3. Haz clic en **Añadir conector personalizado** (**Add custom connector**); a veces está detrás de un botón **+**.
+4. Ponle de nombre **Lumi** y pega la URL:
+
+```
+https://lumi.herman-apps.com/api/mcp
+```
+
+5. Deja vacíos los campos avanzados de OAuth (Client ID / Secret): Lumi registra a Claude automáticamente.
+6. Haz clic en **Añadir** (**Add**).
+
+## Paso 2: inicia sesión y permite el acceso
+
+Claude muestra ahora Lumi en tu lista de conectores con un botón **Conectar** (**Connect**).
+
+1. Haz clic en **Conectar**. Se abre una página de Lumi.
+2. Inicia sesión con la misma cuenta que usas en la app de Lumi.
+3. Verás lo que Claude solicita: **acceso de solo lectura a tus finanzas de Lumi**. Haz clic en **Permitir** (**Allow**).
+4. Vuelves a Claude y el conector aparece como conectado.
+
+Claude nunca ve tu contraseña de Lumi: recibe un token que solo puede leer a través de este conector y que puedes revocar en cualquier momento eliminando el conector.
+
+## Paso 3: actívalo en un chat y pregunta
+
+En un chat nuevo, abre el menú de herramientas (el icono de controles deslizantes o **+** debajo del cuadro de mensaje) y comprueba que **Lumi** está activado. Después, simplemente pregunta:
+
+> ¿Cómo puedo ahorrar un 15 % más cada mes?
+
+Claude llamará a las herramientas de Lumi (verás aparecer pasos como «get financial overview» y «get spending by category») y después te responderá con un plan basado en tus categorías y comercios. La primera vez que se ejecute cada herramienta, puede que Claude te pida aprobarla; como son de solo lectura, puedes elegir permitir siempre las herramientas de Lumi.
+
+<ArticleCTA />
+
+## Usarlo en iPhone y Android
+
+Los conectores que añades en claude.ai se sincronizan con tu cuenta, así que Lumi también funciona en las apps móviles de Claude sin configuración adicional. Añádelo una vez en la web o en el escritorio y haz tus preguntas desde el móvil; por ejemplo, justo después de revisar un [presupuesto en Lumi](/blog/how-to-make-a-monthly-budget).
+
+## Conectar Lumi a Claude Code
+
+Si vives en la terminal, añade Lumi a Claude Code con un solo comando:
+
+```
+claude mcp add --transport http lumi https://lumi.herman-apps.com/api/mcp
+```
+
+Después inicia Claude Code, ejecuta `/mcp`, elige **lumi** e inicia sesión en la ventana del navegador que se abre. Añade `--scope user` al comando si quieres que Lumi esté disponible en todos tus proyectos, no solo en la carpeta actual.
+
+## Buenas primeras preguntas para Claude
+
+Empieza por lo general y luego profundiza; Claude maneja bien las preguntas de seguimiento porque puede seguir llamando a herramientas:
+
+- «Dame un resumen honesto de mis finanzas de los últimos tres meses.»
+- «¿Cuáles son mis cinco categorías de gasto más grandes y cuáles están creciendo?»
+- «Encuentra suscripciones o cargos repetidos que quizá haya olvidado.» (combina bien con nuestra guía para [encontrar suscripciones olvidadas](/blog/how-to-find-forgotten-subscriptions))
+- «¿Qué presupuestos tengo más probabilidades de superar este mes?»
+- «¿Voy bien encaminado con mis metas de ahorro? ¿Qué tendría que cambiar?»
+- «Hazme un presupuesto mensual realista basado en lo que gasto de verdad.»
+
+Más ideas: [35 prompts de IA para tu presupuesto con Claude y ChatGPT](/blog/ai-prompts-for-budgeting).
+
+## Solución de problemas
+
+**«The Lumi connector needs an active Lumi Pro subscription.»** (El conector de Lumi necesita una suscripción activa a Lumi Pro.) Tu cuenta de Lumi no tiene Premium. Mejora tu plan en la app y vuelve a preguntar; no hace falta volver a conectar.
+
+**«No synced transactions found.»** (No se encontraron transacciones sincronizadas.) Abre la app de Lumi con la sesión iniciada, dale un momento para sincronizar y vuelve a intentarlo. Asegúrate de haber iniciado sesión en el conector con la misma cuenta que en la app.
+
+**Claude responde sin usar Lumi.** Comprueba que el conector de Lumi esté activado en el menú de herramientas de ese chat, o menciónalo explícitamente: «Usando mis datos de Lumi, …».
+
+**Los números salen en la moneda equivocada.** Dile a Claude cuál quieres: «Muéstralo todo en EUR». Lumi convierte los importes al momento.
+
+**Los meses parecen desplazados un día.** Dile a Claude tu zona horaria («Estoy en Europe/Madrid») para que los límites de cada mes coincidan con la app.
+
+**Quiero desconectarlo.** Ve a Configuración → Conectores (o Personalizar → Conectores) en Claude, abre Lumi y elimínalo.
+
+## Preguntas frecuentes
+
+**¿Es seguro conectar Claude a mi presupuesto?**
+El conector es de solo lectura, usa el inicio de sesión OAuth estándar y cada token solo funciona con tu propia cuenta. Claude puede analizar tus datos, pero no cambiarlos. Ten en cuenta que lo que Claude lee pasa a formar parte del chat, así que queda sujeto a tu configuración de privacidad de Claude.
+
+**¿Claude obtiene acceso a mi banco?**
+No. Lumi no se conecta a ningún banco: tus datos vienen de lo que registras en Lumi (importación automática de Apple Pay, voz, tickets, entradas manuales). Claude solo ve eso.
+
+**¿Puedo usar el plan gratuito de Claude?**
+Sí. El plan gratuito de Claude permite un conector personalizado, suficiente para Lumi. Eso sí, en Lumi sigues necesitando Lumi Premium.
+
+**¿Claude recuerda mis finanzas entre chats?**
+No a través del conector. Cada vez que preguntas, Claude obtiene datos frescos de Lumi, así que las respuestas reflejan tus últimas transacciones.
+
+**¿Esto también funciona con ChatGPT?**
+Sí: la misma URL funciona en ChatGPT en los planes que admiten conectores personalizados. Mira [cómo usar ChatGPT para tu presupuesto](/blog/how-to-use-chatgpt-for-budgeting).

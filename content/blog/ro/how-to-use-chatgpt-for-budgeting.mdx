@@ -1,0 +1,97 @@
+---
+title: "Cum folosești ChatGPT pentru buget cu cifrele tale reale"
+description: "Folosește ChatGPT pentru buget cu cheltuielile tale reale, nu cu estimări. Date lipite vs. CSV vs. conector MCP live — comparație și pași de configurare."
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["ChatGPT", "ChatGPT pentru buget", "MCP", "buget cu AI", "finanțe personale", "conector ChatGPT"]
+---
+
+ChatGPT pentru buget este un asistent foarte capabil — atâta timp cât îți poate vedea cifrele reale. Cel mai bun mod de a folosi ChatGPT pentru buget este să-l conectezi direct la aplicația în care îți notezi cheltuielile, ca să poată citi, atunci când întrebi, cheltuielile pe categorii, veniturile, bugetele și obiectivele tale. Cu Lumi, asta se face printr-un conector MCP, la `https://lumi.herman-apps.com/api/mcp`. Poți și să lipești cifre sau să încarci un CSV, dar ambele variante se învechesc repede.
+
+Ghidul acesta compară cele trei abordări, te duce pas cu pas prin conectarea Lumi la ChatGPT și îți arată întrebările care aduc cele mai utile răspunsuri.
+
+## Trei moduri de a-i da lui ChatGPT datele despre cheltuieli
+
+| Metodă | Efort | Precizie | Rămâne la zi? |
+|--------|--------|----------|-------------------|
+| Scrii sau lipești cifre în chat | Mic o dată, mare de fiecare dată | Doar atât de bună cât îți amintești | Nu |
+| Încarci un CSV sau un extras bancar | Mediu — exporți, cureți, încarci | Bună, dar descrierile brute din bancă sunt haotice | Nu — reîncarci în fiecare lună |
+| Îți conectezi aplicația de cheltuieli prin MCP | O singură dată, cam un minut | Mare — pe categorii, fără duplicate, într-o singură monedă | Da — citește date proaspete la fiecare întrebare |
+
+**Lipirea cifrelor** merge pentru un scenariu rapid („Câștig $4.000 și cheltuiesc $3.600, cum pun deoparte $500?”), dar ChatGPT poate fi doar atât de precis cât e rezumatul tău.
+
+**Încărcarea unui CSV** îi dă lui ChatGPT tranzacții reale, iar analiza lui de date e puternică. Problema e pregătirea: exporturile bancare au nume de comercianți criptice, nu au categorii, iar transferurile arată ca niște cheltuieli. Și luna viitoare o iei de la capăt. Dacă alegi varianta asta, exportă dintr-o aplicație de cheltuieli, nu din bancă — de exemplu, prin exportul Lumi din Setări.
+
+**Conectarea prin MCP** îi permite lui ChatGPT să ia exact ce are nevoie, exact când are nevoie. [MCP (Model Context Protocol)](/blog/what-is-mcp) este standardul deschis pe care ChatGPT îl folosește pentru conectorii personalizați.
+
+## Cum conectezi Lumi la ChatGPT
+
+ChatGPT adaugă serverele MCP la distanță ca conectori personalizați (OpenAI le mai numește și aplicații). Disponibilitatea depinde de planul tău, iar OpenAI tot mută meniurile, așa că dacă o etichetă de mai jos nu se potrivește, caută pe pagina de ajutor OpenAI „developer mode” sau „custom connectors”.
+
+1. Deschide [chatgpt.com](https://chatgpt.com) într-un browser — conectorii personalizați se configurează pe web.
+2. Mergi la **Setări → Aplicații și conectori** (**Settings → Apps & Connectors**), deschide **Setări avansate** (**Advanced settings**) și activează **Modul dezvoltator** (**Developer mode**) dacă planul tău o cere. În spațiile de lucru Business și Enterprise, s-ar putea ca un administrator să trebuiască mai întâi să permită conectorii personalizați.
+3. Apasă **Creează** (**Create**) (sau butonul **+**) ca să adaugi un conector nou.
+4. Denumește-l **Lumi** și lipește URL-ul serverului:
+
+```
+https://lumi.herman-apps.com/api/mcp
+```
+
+5. Alege **OAuth** ca metodă de autentificare și salvează. ChatGPT se înregistrează automat la Lumi — nu ai nevoie de client ID sau secret.
+6. Se deschide o pagină de autentificare Lumi. Autentifică-te cu contul Lumi și apasă **Permite** (**Allow**) pe ecranul de permisiuni doar în citire.
+7. Într-un chat nou, deschide meniul **+**, alege **Lumi** din conectorii tăi (sau din instrumentele modului dezvoltator) și pune întrebarea.
+
+Ai nevoie de **Lumi Premium** ($4.99/lună sau $39.99/an) ca să primești date prin conector, pentru că acesta citește datele tale sincronizate în cloud.
+
+<ArticleCTA />
+
+## Ce să-l întrebi pe ChatGPT despre buget
+
+Cele mai bune prompturi îi dau lui ChatGPT un obiectiv, nu doar o întrebare. Câteva care merg bine cu o aplicație de cheltuieli conectată:
+
+- **Plan de economisire:** „Folosind datele mele din Lumi, cum pot economisi cu 15% mai mult în fiecare lună? Numește categorii și sume concrete.”
+- **Analiza cheltuielilor:** „Ce s-a schimbat în cheltuielile mele în ultimele trei luni și ce stă în spatele schimbării?”
+- **Abonamente:** „Listează-mi plățile recurente și orice plăți repetate care arată a abonamente. Pe care le-aș putea anula?”
+- **Bugetul, pus la încercare:** „Compară bugetele mele cu ce cheltuiesc de fapt. Ce limite sunt nerealiste?”
+- **Planificarea obiectivelor:** „Când îmi ating obiectivul de economisire în ritmul actual? Dar dacă adaug $100 pe lună?”
+- **Buget de la zero:** „Creează un [buget bazat pe zero](/blog/what-is-zero-based-budgeting) pentru luna viitoare, pornind de la mediile mele reale.”
+
+Mai găsești 35 în lista noastră de [prompturi AI pentru buget](/blog/ai-prompts-for-budgeting).
+
+## ChatGPT vs. Claude pentru buget
+
+Ambele funcționează cu același conector Lumi și ambele dau răspunsuri solide, bazate pe cifre. Diferențele practice țin de configurare:
+
+| | ChatGPT | Claude |
+|---|---------|--------|
+| Unde adaugi conectorul | Setări → Aplicații și conectori (web) | Setări → Conectori (Settings → Connectors) (web sau desktop) |
+| Planuri cu conectori personalizați | Variază — verifică lista actuală de planuri OpenAI | Free (1 conector personalizat), Pro, Max, Team, Enterprise |
+| Funcționează pe mobil după configurare | Depinde de plan și de mod | Da |
+| Ghid de configurare | Pagina aceasta | [Conectează Claude la bugetul tău](/blog/how-to-connect-claude-to-your-budget) |
+
+Dacă deja plătești pentru unul dintre ele, folosește-l pe acela. Dacă abia alegi, planul gratuit Claude este cea mai ieftină cale de a încerca.
+
+## Limite pe care e bine să le știi
+
+- **ChatGPT nu face înregistrarea.** Analizează date care există deja. Ai nevoie în continuare de obiceiul de a-ți nota cheltuielile — Lumi automatizează mare parte din asta cu [importul automat din Apple Pay](/blog/how-to-track-apple-pay-spending), voce și scanarea bonurilor.
+- **Doar în citire.** Conectorul Lumi nu poate adăuga sau edita tranzacții. Cere-i lui ChatGPT sfaturi, apoi acționează în aplicație.
+- **Nu este un consilier financiar.** ChatGPT e excelent la identificarea tiparelor și la simularea scenariilor, dar verifică orice ține de taxe, datorii sau investiții cu un specialist calificat.
+- **Venitul contează.** Dacă nu îți înregistrezi venitul în Lumi, răspunsurile despre rata de economisire vor fi greșite. În acest caz, conectorul îi spune AI-ului să te întrebe care îți este venitul — răspunde-i.
+
+## Întrebări frecvente
+
+**Este sigur să-i dau lui ChatGPT acces la bugetul meu?**
+Cu conectorul Lumi, ChatGPT primește acces doar în citire prin OAuth standard și nu îți vede niciodată parola sau datele de autentificare bancară. Nu îți poate modifica datele. Ce citește devine parte din chat, așa că verifică setările de control al datelor din ChatGPT (de exemplu, cele privind antrenarea modelelor) dacă asta te îngrijorează.
+
+**Se poate conecta ChatGPT direct la contul meu bancar?**
+Nu prin Lumi — Lumi nu se conectează la bănci. ChatGPT vede ce înregistrezi în Lumi. Tocmai de aceea funcționează în orice țară și cu orice bancă.
+
+**Am nevoie de ChatGPT Plus ca să folosesc conectorul Lumi?**
+Ai nevoie de un plan ChatGPT care acceptă conectori MCP personalizați, iar OpenAI schimbă ce planuri îi includ. Verifică secțiunea despre modul dezvoltator sau conectori din centrul de ajutor OpenAI pentru lista actuală.
+
+**Pot folosi un CSV în loc de conector?**
+Da. Exportă-ți datele din Lumi (Setări → Export) și încarcă fișierul în ChatGPT. Doar că va trebui să repeți asta ori de câte ori vrei cifre proaspete.
+
+**Funcționează conectorul și în alte instrumente AI?**
+Da. Este un server MCP standard, așa că merge și în Claude, Claude Code, Cursor, VS Code și alți clienți MCP. Prezentare generală: [Lumi MCP pentru Claude, ChatGPT și agenți AI](/blog/lumi-mcp-connect-budget-to-ai).

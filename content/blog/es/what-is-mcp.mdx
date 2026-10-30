@@ -1,0 +1,99 @@
+---
+title: "¿Qué es MCP (Model Context Protocol)? Guía explicada de forma sencilla"
+seoTitle: "¿Qué es MCP? El Model Context Protocol, explicado fácil"
+description: "Qué es MCP (Model Context Protocol): el estándar abierto que permite a Claude, ChatGPT y otras IA leer datos de otras apps. Cómo funciona y si es seguro."
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["MCP", "Model Context Protocol", "qué es MCP", "asistentes de IA", "Claude", "ChatGPT", "finanzas personales"]
+---
+
+¿Qué es MCP? MCP, abreviatura de **Model Context Protocol** («protocolo de contexto del modelo»), es un estándar abierto que permite a los asistentes de IA conectarse a otras apps y fuentes de datos. Piensa en él como un enchufe universal: una app ofrece un «servidor MCP», y cualquier IA que hable MCP (Claude, ChatGPT, Cursor, VS Code y muchas más) puede usarlo para consultar información o realizar acciones en tu nombre, con tu permiso.
+
+Anthropic presentó MCP a finales de 2024 como especificación abierta, y el sector lo adoptó rápidamente, incluida OpenAI. Hoy es la forma más habitual de dar a un asistente de IA acceso a tus propios datos: tu calendario, tus documentos o, en el caso de Lumi, [tu presupuesto](/blog/lumi-mcp-connect-budget-to-ai).
+
+## Por qué existe MCP
+
+Los modelos de lenguaje grandes solo saben aquello con lo que fueron entrenados y lo que escribes en el chat. No conocen tu agenda, tus archivos ni tus gastos. Antes de MCP, cada producto de IA tenía que crear una integración a medida para cada app, y cada app tenía que crear una para cada IA. Eso no escala.
+
+MCP lo sustituye por un idioma común. Una app crea **un** servidor MCP y funciona en todos los asistentes compatibles con MCP. Un asistente admite MCP **una vez** y puede usar miles de servidores. A menudo se compara con el USB-C: un solo puerto, muchos dispositivos.
+
+## Cómo funciona MCP, explicado de forma sencilla
+
+Hay tres piezas:
+
+| Pieza | Qué es | Ejemplo |
+|-------|-----------|---------|
+| **Host / cliente** | La app de IA con la que chateas | Claude, ChatGPT, Cursor |
+| **Servidor MCP** | Un pequeño servicio que una app ejecuta para ofrecer sus datos o acciones | El servidor de Lumi en `lumi.herman-apps.com/api/mcp` |
+| **Herramientas** | Funciones con nombre que ofrece el servidor, cada una con su descripción | «get spending by category», «list transactions» |
+
+Cuando haces una pregunta, la IA lee las descripciones de las herramientas que tiene disponibles y decide a cuáles llamar. El servidor ejecuta la herramienta y devuelve resultados estructurados. La IA usa después esos resultados para redactar su respuesta, y puede llamar a más herramientas si necesita profundizar.
+
+Por ejemplo, si le preguntas a un asistente conectado *«¿Por qué gasté más en octubre?»*, podría:
+
+1. Llamar a una herramienta de resumen mensual para comparar octubre con los meses anteriores.
+2. Detectar que el gasto en comer fuera se disparó y llamar a una herramienta de categorías para octubre.
+3. Llamar a una herramienta de transacciones filtrada por comer fuera para ver qué sitios lo provocaron.
+4. Responder: «Gastaste $310 más, sobre todo por ocho visitas a restaurantes en la segunda mitad del mes…»
+
+## Servidores MCP locales vs. remotos
+
+- **Los servidores locales** se ejecutan en tu propio ordenador y los usan sobre todo desarrolladores (por ejemplo, para dar a una IA acceso a los archivos de un proyecto).
+- **Los servidores remotos** se ejecutan en internet, como una página web. Los añades con una URL, inicias sesión con OAuth y funcionan en todos tus dispositivos, también en las apps de IA web y móviles. Los conectores para consumidores, incluido el de Lumi, son remotos.
+
+## ¿Es seguro MCP?
+
+MCP en sí es solo un protocolo; la seguridad depende de cómo esté construido cada servidor y de lo que permitas. Qué revisar antes de conectar cualquier servidor MCP a datos personales:
+
+- **Acceso de solo lectura vs. de escritura.** ¿La IA solo puede leer, o también puede cambiar cosas? Un servidor de solo lectura implica mucho menos riesgo. El conector financiero de Lumi es de solo lectura.
+- **Inicio de sesión adecuado.** Un buen servidor remoto usa OAuth, de modo que la IA recibe un token limitado en lugar de tu contraseña.
+- **Alcance.** El servidor solo debería devolver *tus* datos, y solo lo necesario para su propósito.
+- **Quién lo gestiona.** Mejor los servidores de la empresa que ya tiene tus datos que los de terceros desconocidos.
+- **Revocación fácil.** Deberías poder desconectarlo en cualquier momento desde los ajustes de la app de IA.
+
+Recuerda también que todo lo que lee la IA pasa a formar parte de la conversación y queda sujeto a la configuración de privacidad del proveedor de IA. Eso vale para cualquier cosa que compartas con un chatbot, haya MCP o no. Para saber más sobre la privacidad de los datos financieros, lee [lo que tu app de presupuesto sabe sobre ti](/blog/what-your-budgeting-app-knows-about-you).
+
+<ArticleCTA />
+
+## Qué significa MCP para las finanzas personales
+
+El dinero es donde MCP se vuelve realmente útil para cualquier persona. Las apps de presupuesto son buenas registrando y haciendo gráficos; los asistentes de IA son buenos razonando y planificando. MCP une las dos cosas, así que puedes conversar con tu propio historial financiero:
+
+- «¿Cómo puedo ahorrar un 15 % más cada mes?»
+- «¿Qué suscripciones sigo pagando?»
+- «Si sigo gastando así, ¿cuándo alcanzaré mi meta del fondo de emergencia?»
+
+En lugar de consejos genéricos, la IA responde con tus categorías, comercios e importes reales. Esa es la idea detrás del conector de Lumi; aquí tienes [cómo funciona y qué puede ver](/blog/lumi-mcp-connect-budget-to-ai).
+
+## Cómo probar MCP tú mismo
+
+La forma más rápida de ver MCP en acción:
+
+1. Elige un asistente que admita conectores personalizados: [Claude](/blog/how-to-connect-claude-to-your-budget) (el plan gratuito permite uno) o [ChatGPT](/blog/how-to-use-chatgpt-for-budgeting) en un plan con modo de desarrollador.
+2. Añade un servidor MCP remoto con su URL; para Lumi es `https://lumi.herman-apps.com/api/mcp`.
+3. Inicia sesión, aprueba el acceso y haz una pregunta que necesite tus datos.
+
+Después prueba algunos de estos [prompts de IA para tu presupuesto](/blog/ai-prompts-for-budgeting).
+
+## Preguntas frecuentes
+
+**¿Qué significan las siglas MCP?**
+Model Context Protocol (protocolo de contexto del modelo). El «contexto» se refiere a la información adicional, tus datos, que un modelo de IA necesita para dar una respuesta útil.
+
+**¿Quién creó MCP?**
+Anthropic, la empresa detrás de Claude, publicó MCP como estándar abierto en noviembre de 2024. Hoy lo admiten muchos proveedores de IA y herramientas para desarrolladores, incluido ChatGPT de OpenAI.
+
+**¿MCP es lo mismo que una API?**
+No exactamente. Una API es una forma de que los programas se comuniquen con un servicio concreto. MCP es una *capa* estándar que describe herramientas de forma que los modelos de IA las entiendan, así que cualquier asistente compatible con MCP puede usar cualquier servidor MCP sin código a medida.
+
+**¿MCP es gratis?**
+El protocolo es abierto y gratuito. Algunos servidores pueden requerir una cuenta o una suscripción; por ejemplo, el conector de Lumi forma parte de Lumi Premium.
+
+**¿Tengo que ser desarrollador para usar MCP?**
+No. Con los servidores remotos, solo pegas una URL en los ajustes de conectores de tu app de IA e inicias sesión. Sin instalar nada ni escribir código.
+
+**¿Qué diferencia hay entre un conector MCP y un plugin de ChatGPT?**
+Los plugins fueron un enfoque anterior, exclusivo de ChatGPT. MCP es un estándar abierto que funciona en muchas apps de IA, así que un mismo conector sirve para Claude, ChatGPT y otros.
+
+¿También te resulta nuevo el vocabulario de las apps de dinero? Nuestro [glosario de finanzas personales](/blog/personal-finance-glossary) cubre el resto.

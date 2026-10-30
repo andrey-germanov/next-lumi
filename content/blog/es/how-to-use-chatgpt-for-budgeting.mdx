@@ -1,0 +1,97 @@
+---
+title: "Cómo usar ChatGPT para tu presupuesto con tus números reales"
+description: "Usa ChatGPT para tu presupuesto con tus gastos reales, no con suposiciones. Pegar datos, subir un CSV o un conector MCP en vivo: comparativa y configuración."
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["ChatGPT", "ChatGPT para presupuestos", "MCP", "presupuesto con IA", "finanzas personales", "conector de ChatGPT"]
+---
+
+Usar ChatGPT para tu presupuesto funciona muy bien, siempre que pueda ver tus números reales. La mejor forma de hacerlo es conectarlo directamente a tu app de gastos para que lea tus gastos categorizados, ingresos, presupuestos y metas cuando le preguntas. Con Lumi, eso se hace mediante un conector MCP en `https://lumi.herman-apps.com/api/mcp`. También puedes pegar números o subir un CSV, pero ambas opciones se quedan desactualizadas enseguida.
+
+Esta guía compara los tres enfoques, te lleva paso a paso para conectar Lumi a ChatGPT y recoge las preguntas que dan las respuestas más útiles.
+
+## Tres formas de darle a ChatGPT tus datos de gastos
+
+| Método | Esfuerzo | Precisión | ¿Se mantiene al día? |
+|--------|--------|----------|-------------------|
+| Escribir o pegar números en el chat | Bajo una vez, alto cada vez | Tan buena como lo que recuerdes | No |
+| Subir un CSV o un extracto bancario | Medio: exportar, limpiar, subir | Buena, pero las descripciones del banco en bruto son un lío | No: hay que volver a subirlo cada mes |
+| Conectar tu app de gastos por MCP | Una sola vez, más o menos un minuto | Alta: categorizado, sin duplicados, en una sola moneda | Sí: se lee de nuevo en cada pregunta |
+
+**Pegar números** sirve para una simulación rápida («Gano $4,000 y gasto $3,600, ¿cómo ahorro $500?»), pero ChatGPT solo puede ser tan preciso como tu resumen.
+
+**Subir un CSV** le da a ChatGPT transacciones reales, y su análisis de datos es potente. El problema es la preparación: las exportaciones del banco tienen nombres de comercios crípticos, no tienen categorías e incluyen transferencias que parecen gastos. Y al mes siguiente vuelves a empezar. Si eliges esta vía, exporta desde una app de gastos en lugar del banco; por ejemplo, con la exportación de Lumi en Ajustes.
+
+**Conectar por MCP** permite que ChatGPT obtenga exactamente lo que necesita, cuando lo necesita. [MCP (Model Context Protocol)](/blog/what-is-mcp) es el estándar abierto que ChatGPT usa para los conectores personalizados.
+
+## Cómo conectar Lumi a ChatGPT
+
+ChatGPT añade servidores MCP remotos como conectores personalizados (OpenAI también los llama apps). La disponibilidad depende de tu plan y OpenAI cambia los menús con frecuencia, así que si alguna etiqueta de abajo no coincide, busca «developer mode» o «custom connectors» en la página de ayuda de OpenAI.
+
+1. Abre [chatgpt.com](https://chatgpt.com) en el navegador: los conectores personalizados se configuran en la web.
+2. Ve a **Configuración → Aplicaciones y conectores** (**Settings → Apps & Connectors**), abre **Configuración avanzada** (**Advanced settings**) y activa el **Modo de desarrollador** (**Developer mode**) si tu plan lo requiere. En los espacios de trabajo Business y Enterprise, puede que un administrador tenga que permitir primero los conectores personalizados.
+3. Haz clic en **Crear** (**Create**) (o en el botón **+**) para añadir un conector nuevo.
+4. Ponle de nombre **Lumi** y pega la URL del servidor:
+
+```
+https://lumi.herman-apps.com/api/mcp
+```
+
+5. Elige **OAuth** como método de autenticación y guarda. ChatGPT se registra en Lumi automáticamente: no necesitas un client ID ni un secret.
+6. Se abre una página de inicio de sesión de Lumi. Entra con tu cuenta de Lumi y haz clic en **Permitir** (**Allow**) en la pantalla de permisos de solo lectura.
+7. En un chat nuevo, abre el menú **+**, elige **Lumi** entre tus conectores (o en las herramientas del modo de desarrollador) y haz tu pregunta.
+
+Necesitas **Lumi Premium** ($4.99/mes o $39.99/año) para que el conector devuelva datos, porque lee tus datos sincronizados en la nube.
+
+<ArticleCTA />
+
+## Qué preguntarle a ChatGPT sobre tu presupuesto
+
+Los mejores prompts le dan a ChatGPT un objetivo, no solo una pregunta. Algunos que funcionan bien con una app de gastos conectada:
+
+- **Plan de ahorro:** «Usando mis datos de Lumi, ¿cómo puedo ahorrar un 15 % más cada mes? Dime categorías e importes concretos.»
+- **Auditoría de gastos:** «¿Qué ha cambiado en mis gastos en los últimos tres meses y qué lo está provocando?»
+- **Suscripciones:** «Haz una lista de mis pagos recurrentes y de cualquier cargo repetido que parezca una suscripción. ¿Cuáles podría cancelar?»
+- **Baño de realidad del presupuesto:** «Compara mis presupuestos con lo que gasto de verdad. ¿Qué límites no son realistas?»
+- **Planificación de metas:** «¿Cuándo alcanzaré mi meta de ahorro a mi ritmo actual? ¿Y si añado $100 al mes?»
+- **Presupuesto desde cero:** «Crea un [presupuesto de base cero](/blog/what-is-zero-based-budgeting) para el mes que viene a partir de mis promedios reales.»
+
+Hay 35 más en nuestra lista de [prompts de IA para tu presupuesto](/blog/ai-prompts-for-budgeting).
+
+## ChatGPT vs. Claude para hacer tu presupuesto
+
+Ambos funcionan con el mismo conector de Lumi y ambos dan respuestas sólidas basadas en números. Las diferencias prácticas tienen que ver con la configuración:
+
+| | ChatGPT | Claude |
+|---|---------|--------|
+| Dónde añadir el conector | Configuración → Aplicaciones y conectores (web) | Configuración → Conectores (**Settings → Connectors**) (web o escritorio) |
+| Planes con conectores personalizados | Varía: consulta la lista de planes actual de OpenAI | Free (1 conector personalizado), Pro, Max, Team, Enterprise |
+| Funciona en el móvil tras configurarlo | Depende del plan y del modo | Sí |
+| Guía de configuración | Esta página | [Conecta Claude a tu presupuesto](/blog/how-to-connect-claude-to-your-budget) |
+
+Si ya pagas uno de los dos, usa ese. Si estás eligiendo, el plan gratuito de Claude es la forma más barata de probarlo.
+
+## Límites que conviene conocer
+
+- **ChatGPT no registra los gastos.** Analiza datos que ya existen. Sigues necesitando el hábito de apuntar tus gastos; Lumi automatiza la mayor parte con la [importación automática de Apple Pay](/blog/how-to-track-apple-pay-spending), la voz y el escaneo de tickets.
+- **Solo lectura.** El conector de Lumi no puede añadir ni editar transacciones. Pídele consejo a ChatGPT y luego actúa en la app.
+- **No es un asesor financiero.** ChatGPT es muy bueno detectando patrones y simulando escenarios, pero verifica con un profesional cualificado todo lo que tenga que ver con impuestos, deudas o inversiones.
+- **Los ingresos importan.** Si no registras tus ingresos en Lumi, las respuestas sobre tu tasa de ahorro no serán correctas. En ese caso, el conector le indica a la IA que te pregunte tus ingresos: respóndele.
+
+## Preguntas frecuentes
+
+**¿Es seguro darle a ChatGPT acceso a mi presupuesto?**
+Con el conector de Lumi, ChatGPT obtiene acceso de solo lectura mediante OAuth estándar y nunca ve tu contraseña ni tus credenciales bancarias. No puede cambiar tus datos. Lo que lee pasa a formar parte del chat, así que revisa los controles de datos de ChatGPT (por ejemplo, la configuración de entrenamiento de modelos) si eso te preocupa.
+
+**¿Puede ChatGPT conectarse directamente a mi cuenta bancaria?**
+No a través de Lumi: Lumi no se conecta a bancos. ChatGPT ve lo que registras en Lumi. Por eso también funciona en cualquier país y con cualquier banco.
+
+**¿Necesito ChatGPT Plus para usar el conector de Lumi?**
+Necesitas un plan de ChatGPT que admita conectores MCP personalizados, y OpenAI cambia qué planes los incluyen. Consulta la sección de modo de desarrollador o de conectores del centro de ayuda de OpenAI para ver la lista actual.
+
+**¿Puedo usar un CSV en lugar del conector?**
+Sí. Exporta tus datos desde Lumi (Ajustes → Exportar) y sube el archivo a ChatGPT. Solo tendrás que repetirlo cada vez que quieras números actualizados.
+
+**¿El conector funciona en otras herramientas de IA?**
+Sí. Es un servidor MCP estándar, así que también funciona en Claude, Claude Code, Cursor, VS Code y otros clientes MCP. Visión general: [Lumi MCP para Claude, ChatGPT y agentes de IA](/blog/lumi-mcp-connect-budget-to-ai).

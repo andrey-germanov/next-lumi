@@ -1,0 +1,99 @@
+---
+title: "Ce este MCP (Model Context Protocol)? Ghid pe înțelesul tuturor"
+seoTitle: "Ce este MCP? Model Context Protocol explicat simplu"
+description: "Ce este MCP? Model Context Protocol e standardul deschis prin care Claude, ChatGPT și alți asistenți AI citesc date din alte aplicații. Cum merge și e sigur?"
+date: "2026-10-31"
+author: "Lumi Team"
+image: "/images/blog/lumi-mcp-claude-chatgpt.png"
+tags: ["MCP", "Model Context Protocol", "ce este MCP", "asistenți AI", "Claude", "ChatGPT", "finanțe personale"]
+---
+
+Ce este MCP? MCP, prescurtarea de la **Model Context Protocol**, este un standard deschis care le permite asistenților AI să se conecteze la alte aplicații și surse de date. Gândește-te la el ca la o priză universală: o aplicație expune un „server MCP”, iar orice AI care vorbește MCP — Claude, ChatGPT, Cursor, VS Code și multe altele — îl poate folosi ca să caute informații sau să facă acțiuni în numele tău, cu permisiunea ta.
+
+Anthropic a lansat MCP la sfârșitul lui 2024 ca specificație deschisă, iar standardul a fost adoptat rapid în toată industria, inclusiv de OpenAI. Astăzi este cel mai răspândit mod de a-i da unui asistent AI acces la propriile tale date — calendarul, documentele sau, în cazul Lumi, [bugetul tău](/blog/lumi-mcp-connect-budget-to-ai).
+
+## De ce există MCP
+
+Modelele lingvistice mari știu doar ce au învățat la antrenare și ce scrii tu în chat. Nu îți cunosc programul, fișierele sau cheltuielile. Înainte de MCP, fiecare produs AI trebuia să construiască o integrare separată pentru fiecare aplicație — și fiecare aplicație trebuia să construiască una pentru fiecare AI. Așa ceva nu se poate scala.
+
+MCP înlocuiește toate acestea cu un singur limbaj comun. O aplicație construiește **un singur** server MCP și acesta funcționează în orice asistent compatibil cu MCP. Un asistent adaugă suport pentru MCP **o singură dată** și poate folosi mii de servere. Comparația care se face des este cu USB-C: un singur port, multe dispozitive.
+
+## Cum funcționează MCP, pe înțelesul tuturor
+
+Sunt trei piese:
+
+| Piesă | Ce este | Exemplu |
+|-------|-----------|---------|
+| **Gazdă / client** | Aplicația AI cu care conversezi | Claude, ChatGPT, Cursor |
+| **Server MCP** | Un mic serviciu pe care o aplicație îl rulează ca să-și expună datele sau acțiunile | Serverul Lumi de la `lumi.herman-apps.com/api/mcp` |
+| **Instrumente** | Funcții cu nume oferite de server, fiecare cu o descriere | „get spending by category”, „list transactions” |
+
+Când pui o întrebare, AI-ul citește descrierile instrumentelor pe care le are la dispoziție și decide pe care să le apeleze. Serverul rulează instrumentul și returnează rezultate structurate. Apoi AI-ul folosește aceste rezultate ca să-și formuleze răspunsul — și poate apela și alte instrumente dacă are nevoie să sape mai adânc.
+
+De exemplu, dacă întrebi un asistent conectat *„De ce am cheltuit mai mult în octombrie?”*, acesta ar putea:
+
+1. Să apeleze un instrument de rezumat lunar ca să compare octombrie cu lunile anterioare.
+2. Să observe că mesele în oraș au crescut brusc, apoi să apeleze un instrument pe categorii pentru octombrie.
+3. Să apeleze un instrument de tranzacții filtrat pe mesele în oraș, ca să vadă ce localuri au dus la creștere.
+4. Să răspundă: „Ai cheltuit cu $310 mai mult, în mare parte din cauza a opt vizite la restaurant în a doua jumătate a lunii…”
+
+## Servere MCP locale vs. la distanță
+
+- **Serverele locale** rulează pe propriul calculator și sunt folosite mai ales de dezvoltatori (de exemplu, ca să-i dea unui AI acces la fișierele dintr-un proiect).
+- **Serverele la distanță** rulează pe internet, ca un site web. Le adaugi prin URL, te autentifici prin OAuth și funcționează pe toate dispozitivele tale — inclusiv în aplicațiile AI web și mobile. Conectorii pentru utilizatori obișnuiți, inclusiv cel al Lumi, sunt la distanță.
+
+## Este MCP sigur?
+
+MCP în sine este doar un protocol; siguranța depinde de felul în care e construit fiecare server și de ce permiți tu. Iată ce merită verificat înainte să conectezi orice server MCP la date personale:
+
+- **Acces doar în citire vs. acces de scriere.** AI-ul poate doar să citească sau poate și să modifice lucruri? Un server doar în citire are un risc mult mai mic. Conectorul financiar Lumi este doar în citire.
+- **Autentificare corectă.** Un server la distanță bine făcut folosește OAuth, așa că AI-ul primește un token limitat, nu parola ta.
+- **Domeniu de acces.** Serverul ar trebui să returneze doar datele *tale* și doar ce e necesar pentru scopul lui.
+- **Cine îl operează.** Preferă serverele companiei care îți deține deja datele în locul unor terți necunoscuți.
+- **Revocare ușoară.** Ar trebui să te poți deconecta oricând din setările aplicației AI.
+
+Ține minte și că tot ce citește AI-ul devine parte din conversație și intră sub incidența setărilor de confidențialitate ale furnizorului de AI. Asta e valabil pentru orice împărtășești cu un chatbot, cu sau fără MCP. Pentru mai multe despre confidențialitatea datelor financiare, vezi [ce știe aplicația ta de buget despre tine](/blog/what-your-budgeting-app-knows-about-you).
+
+<ArticleCTA />
+
+## Ce înseamnă MCP pentru finanțele personale
+
+Banii sunt domeniul în care MCP devine cu adevărat util pentru oamenii obișnuiți. Aplicațiile de buget se pricep să înregistreze și să facă grafice; asistenții AI se pricep să raționeze și să planifice. MCP le leagă pe cele două, așa că poți purta o conversație cu propriul istoric financiar:
+
+- „Cum pot economisi cu 15% mai mult în fiecare lună?”
+- „Pentru ce abonamente încă plătesc?”
+- „Dacă tot cheltuiesc așa, când îmi ating obiectivul pentru fondul de urgență?”
+
+În loc de sfaturi generice, AI-ul răspunde cu categoriile, comercianții și sumele tale reale. Asta e ideea din spatele conectorului Lumi — iată [cum funcționează și ce poate vedea](/blog/lumi-mcp-connect-budget-to-ai).
+
+## Cum încerci MCP chiar tu
+
+Cea mai rapidă cale de a vedea MCP în acțiune:
+
+1. Alege un asistent care acceptă conectori personalizați — [Claude](/blog/how-to-connect-claude-to-your-budget) (planul gratuit permite unul) sau [ChatGPT](/blog/how-to-use-chatgpt-for-budgeting) pe un plan cu mod dezvoltator.
+2. Adaugă un server MCP la distanță prin URL — pentru Lumi este `https://lumi.herman-apps.com/api/mcp`.
+3. Autentifică-te, aprobă accesul și pune o întrebare care are nevoie de datele tale.
+
+Apoi încearcă câteva dintre aceste [prompturi AI pentru buget](/blog/ai-prompts-for-budgeting).
+
+## Întrebări frecvente
+
+**Ce înseamnă MCP?**
+Model Context Protocol. „Context” se referă la informațiile suplimentare — datele tale — de care un model AI are nevoie ca să dea un răspuns util.
+
+**Cine a creat MCP?**
+Anthropic, compania din spatele lui Claude, a lansat MCP ca standard deschis în noiembrie 2024. Acum este acceptat de mulți furnizori de AI și de multe instrumente pentru dezvoltatori, inclusiv de ChatGPT de la OpenAI.
+
+**Este MCP același lucru cu un API?**
+Nu chiar. Un API este o modalitate prin care programele comunică cu un anumit serviciu. MCP este un *înveliș* standard care descrie instrumentele într-un mod pe care modelele AI îl înțeleg, astfel încât orice asistent compatibil cu MCP poate folosi orice server MCP fără cod personalizat.
+
+**Este MCP gratuit?**
+Protocolul este deschis și gratuit. Unele servere pot cere un cont sau un abonament — de exemplu, conectorul Lumi face parte din Lumi Premium.
+
+**Trebuie să fiu dezvoltator ca să folosesc MCP?**
+Nu. Cu serverele la distanță, doar lipești un URL în setările de conectori ale aplicației AI și te autentifici. Fără instalare și fără cod.
+
+**Care e diferența dintre un conector MCP și un plugin ChatGPT?**
+Pluginurile au fost o abordare mai veche, exclusiv pentru ChatGPT. MCP este un standard deschis care funcționează în multe aplicații AI, așa că un singur conector servește Claude, ChatGPT și altele.
+
+Ești nou și în vocabularul aplicațiilor de bani? [Glosarul nostru de finanțe personale](/blog/personal-finance-glossary) acoperă restul.
