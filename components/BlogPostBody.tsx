@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppStoreButton from "@/components/AppStoreButton";
 import AndroidBetaButton from "@/components/AndroidBetaButton";
+import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 import { APP_STORE_URL, BRAND_ENTITY_NAME, FOUNDER, FOUNDER_BYLINE, SITE_URL } from "@/lib/constants";
 import { translate, INTL_LOCALE, localePath, type Locale } from "@/lib/i18n";
 import { getRelatedPosts, hasTranslation, type BlogPost } from "@/lib/blog";
@@ -172,6 +173,10 @@ export default function BlogPostBody({ post, locale }: { post: BlogPost; locale:
 
           <div className="mt-12">
             <ArticleCTA />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <PreferredSourceBadge label={t("blog.preferredSource")} />
           </div>
 
           {related.length > 0 && (
