@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/tools/[s
     alternates: {
       canonical: url,
       languages: pageLanguagesMap(SITE_URL, `tools/${slug}`),
+        types: { "text/markdown": [{ url: `${SITE_URL}/tools/${slug}.md`, title: "Markdown version" }] },
     },
     openGraph: { title, description, url, locale: l, type: "website", siteName: "Lumi" },
   };

@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[sl
       alternates: {
         canonical: translated ? url : `${SITE_URL}/blog/${slug}`,
         languages: postLanguagesMap(SITE_URL, slug, translatedLocales(slug)),
+        types: { "text/markdown": [{ url: `${SITE_URL}/blog/${slug}.md`, title: "Markdown version" }] },
       },
     };
   } catch {

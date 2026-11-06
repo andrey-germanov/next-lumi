@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `${SITE_URL}/tools/${slug}`,
       languages: pageLanguagesMap(SITE_URL, `tools/${slug}`),
+        types: { "text/markdown": [{ url: `${SITE_URL}/tools/${slug}.md`, title: "Markdown version" }] },
     },
     openGraph: { title, description, url: `${SITE_URL}/tools/${slug}`, type: "website", siteName: "Lumi" },
   };
