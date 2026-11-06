@@ -1,4 +1,5 @@
-import { markdownSegments, postMarkdown, toolMarkdown } from "@/lib/markdown";
+import { faqMarkdown, markdownSegments, postMarkdown, toolMarkdown } from "@/lib/markdown";
+import { PREFIXED_LOCALES, type Locale } from "@/lib/i18n";
 
 // Internal target of the rewrites in proxy.ts: `/blog/<slug>.md` and
 // `Accept: text/markdown` requests land here. Prerendered at build time, so
@@ -14,7 +15,11 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
   const [first, second, third] = path;
 
   let body: string | null = null;
-  if (first === "tools" && second) {
+  if (first === "faq" && !second) {
+    body = faqMarkdown("en");
+  } else if (PREFIXED_LOCALES.includes(first as Locale) && second === "faq" && !third) {
+    body = faqMarkdown(first as Locale);
+  } else if (first === "tools" && second) {
     body = toolMarkdown(second);
   } else if (first === "blog" && second) {
     body = postMarkdown(second);
