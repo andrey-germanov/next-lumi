@@ -93,6 +93,12 @@ export const MESSAGES: Messages = {
   // ── Common ──
   "common.language": { en: "Language", ru: "Язык", uk: "Мова", ro: "Limbă", de: "Sprache", es: "Idioma", it: "Lingua" },
   "common.close": { en: "Close", ru: "Закрыть", uk: "Закрити", ro: "Închide", de: "Schließen", es: "Cerrar", it: "Chiudi" },
+
+  // ── Cookie banner ──
+  "consent.text": { en: "We use cookies to understand how visitors use this site (Google Analytics, PostHog). The Lumi app's data is never part of it.", ru: "Мы используем cookie, чтобы понимать, как посетители пользуются сайтом (Google Analytics, PostHog). Данные из приложения Lumi сюда не попадают.", uk: "Ми використовуємо cookie, щоб розуміти, як відвідувачі користуються сайтом (Google Analytics, PostHog). Дані з застосунку Lumi сюди не потрапляють.", ro: "Folosim cookie-uri ca să înțelegem cum este folosit site-ul (Google Analytics, PostHog). Datele din aplicația Lumi nu fac parte din asta.", de: "Wir nutzen Cookies, um zu verstehen, wie diese Website genutzt wird (Google Analytics, PostHog). Daten aus der Lumi-App gehören nicht dazu.", es: "Usamos cookies para entender cómo se usa este sitio (Google Analytics, PostHog). Los datos de la app Lumi nunca forman parte de esto.", it: "Usiamo i cookie per capire come viene usato questo sito (Google Analytics, PostHog). I dati dell'app Lumi non ne fanno parte." },
+  "consent.accept": { en: "Accept", ru: "Принять", uk: "Прийняти", ro: "Accept", de: "Akzeptieren", es: "Aceptar", it: "Accetta" },
+  "consent.decline": { en: "Decline", ru: "Отклонить", uk: "Відхилити", ro: "Refuz", de: "Ablehnen", es: "Rechazar", it: "Rifiuta" },
+  "consent.settings": { en: "Cookies", ru: "Cookie", uk: "Cookie", ro: "Cookie-uri", de: "Cookies", es: "Cookies", it: "Cookie" },
   "common.of": { en: "of", ru: "из", uk: "з", ro: "din", de: "von", es: "de", it: "di" },
   "common.monthly": { en: "Monthly", ru: "Ежемесячно", uk: "Щомісяця", ro: "Lunar", de: "Monatlich", es: "Mensual", it: "Mensile" },
   "common.weekly": { en: "Weekly", ru: "Еженедельно", uk: "Щотижня", ro: "Săptămânal", de: "Wöchentlich", es: "Semanal", it: "Settimanale" },

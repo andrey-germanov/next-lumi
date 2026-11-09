@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SOCIAL_LINKS, APP_STORE_URL } from "@/lib/constants";
 import { useLang } from "@/components/dash/i18n";
 import { getAndroidBetaCopy } from "@/lib/androidBetaI18n";
+import { openConsent } from "@/lib/consent";
 
 export default function Footer() {
   const { t, locale } = useLang();
@@ -78,6 +79,11 @@ export default function Footer() {
                 <Link href="/refund-policy" className="hover:text-text transition-colors">
                   {t("lp2.footRefund")}
                 </Link>
+              </li>
+              <li>
+                <button type="button" onClick={openConsent} className="hover:text-text transition-colors">
+                  {t("consent.settings")}
+                </button>
               </li>
             </ul>
           </div>
