@@ -2,6 +2,79 @@
   "version": 1,
   "announcements": [
     {
+      "id": "kurso_friend",
+      "tag": "community",
+      "date": "2026-11-10",
+      "image": "https://lumi.herman-apps.com/news/kurso_friend.png",
+      "platform": "ios",
+      "action": {
+        "type": "url",
+        "value": "https://apps.apple.com/app/id6821469023?ct=lumi_friend"
+      },
+      "copy": {
+        "de": {
+          "title": "Ein Freund von Lumi: Kurso",
+          "subtitle": "Eine App vom Lumi-Team",
+          "body": "Erinnerungen an die Einnahme und ein Tagebuch zum Befinden während der Behandlung, auch mit Antidepressiva. Vor dem Arzttermin lässt sich der Verlauf zusammenstellen.",
+          "cta": "Im App Store ansehen"
+        },
+        "en": {
+          "title": "A friend of Lumi: Kurso",
+          "subtitle": "An app from the Lumi team",
+          "body": "Medication reminders and a wellbeing journal during your course, including antidepressants. Before a doctor's visit, you can put together your course history.",
+          "cta": "View in App Store"
+        },
+        "es": {
+          "title": "Un amigo de Lumi: Kurso",
+          "subtitle": "Una app del equipo de Lumi",
+          "body": "Recordatorios de medicación y un diario de bienestar durante el tratamiento, incluidos los antidepresivos. Antes de ir al médico, puedes reunir el historial del tratamiento.",
+          "cta": "Ver en App Store"
+        },
+        "it": {
+          "title": "Un amico di Lumi: Kurso",
+          "subtitle": "Un'app del team di Lumi",
+          "body": "Promemoria per i farmaci e un diario del benessere durante la terapia, anche con antidepressivi. Prima della visita dal medico puoi raccogliere lo storico della terapia.",
+          "cta": "Vedi su App Store"
+        },
+        "ja": {
+          "title": "Lumiの仲間：Kurso",
+          "subtitle": "Lumiチームのアプリ",
+          "body": "服薬リマインダーと、抗うつ薬を含む治療期間中の体調記録。受診前には治療の経過をまとめられます。",
+          "cta": "App Storeで見る"
+        },
+        "ka": {
+          "title": "Lumi-ს მეგობარი: Kurso",
+          "subtitle": "აპი Lumi-ს გუნდისგან",
+          "body": "შეხსენებები წამლების მიღების შესახებ და თვითგრძნობის დღიური კურსის განმავლობაში, მათ შორის ანტიდეპრესანტების. ექიმთან ვიზიტამდე შეგიძლიათ შეაგროვოთ კურსის ისტორია.",
+          "cta": "ნახვა App Store-ში"
+        },
+        "pl": {
+          "title": "Przyjaciel Lumi: Kurso",
+          "subtitle": "Aplikacja od zespołu Lumi",
+          "body": "Przypomnienia o lekach i dziennik samopoczucia w trakcie terapii, także lekami przeciwdepresyjnymi. Przed wizytą u lekarza możesz zebrać historię terapii.",
+          "cta": "Zobacz w App Store"
+        },
+        "ro": {
+          "title": "Un prieten al Lumi: Kurso",
+          "subtitle": "O aplicație de la echipa Lumi",
+          "body": "Memento-uri pentru medicamente și un jurnal al stării de bine pe durata tratamentului, inclusiv cu antidepresive. Înainte de vizita la medic, poți aduna istoricul tratamentului.",
+          "cta": "Vezi în App Store"
+        },
+        "ru": {
+          "title": "Друг Lumi: Kurso",
+          "subtitle": "Приложение от команды Lumi",
+          "body": "Напоминания о приёме лекарств и дневник самочувствия во время курса, в том числе антидепрессантов. Перед визитом к врачу можно собрать историю курса.",
+          "cta": "Посмотреть в App Store"
+        },
+        "uk": {
+          "title": "Друг Lumi: Kurso",
+          "subtitle": "Застосунок від команди Lumi",
+          "body": "Нагадування про прийом ліків і щоденник самопочуття під час курсу, зокрема антидепресантів. Перед візитом до лікаря можна зібрати історію курсу.",
+          "cta": "Переглянути в App Store"
+        }
+      }
+    },
+    {
       "id": "mcp_claude",
       "tag": "new",
       "date": "2026-10-30",
