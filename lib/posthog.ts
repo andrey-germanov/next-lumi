@@ -46,7 +46,8 @@ function getTrafficSource(): Record<string, string> {
 }
 
 export function initPostHog() {
-  if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+  // Called on load when consent exists and again when the banner is accepted; start once.
+  if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_POSTHOG_KEY && !posthog.__loaded) {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
       api_host:
         process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com",
