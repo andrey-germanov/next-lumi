@@ -2,6 +2,82 @@
   "version": 1,
   "announcements": [
     {
+      "id": "bank_notifications_ios27_2026_11",
+      "published": true,
+      "tag": "new",
+      "icon": "🔔",
+      "date": "2026-11-12",
+      "platform": "ios",
+      "minVersion": "3.02.7",
+      "image": "https://lumi.herman-apps.com/news/bank_notifications_ios27.png",
+      "action": {
+        "type": "app",
+        "value": "lumi://settings"
+      },
+      "copy": {
+        "en": {
+          "title": "iOS 27: expenses from bank notifications",
+          "subtitle": "Any card, logged by itself. Delete the old Apple Pay automation first.",
+          "body": "On iOS 27 Lumi logs an expense as soon as your bank's purchase notification arrives — any card, not just Apple Pay. Set it up in Settings → Bank notifications.\n\nImportant: first delete the old Lumi automation for Apple Pay — the one that runs when you pay with Wallet, whatever iOS version you set it up on (Shortcuts → Automation → swipe left → Delete). The new one replaces it, otherwise Apple Pay purchases will be logged twice. Leave Back Tap as it is.",
+          "cta": "Set up"
+        },
+        "ru": {
+          "title": "iOS 27: расходы из уведомлений банка",
+          "subtitle": "Любая карта, без ручного ввода. Сначала удалите старую автоматизацию Apple Pay.",
+          "body": "На iOS 27 Lumi сам записывает расход, как только приходит уведомление банка о покупке — с любой карты, не только Apple Pay. Настроить: Настройки → Уведомления банка.\n\nВажно: сначала удалите старую автоматизацию Lumi для Apple Pay — ту, что срабатывает при оплате через Wallet, неважно, на какой версии iOS вы её ставили (Команды → Автоматизация → смахните влево → Удалить). Новая её заменяет, иначе покупки через Apple Pay запишутся дважды. Back Tap трогать не нужно.",
+          "cta": "Настроить"
+        },
+        "uk": {
+          "title": "iOS 27: витрати зі сповіщень банку",
+          "subtitle": "Будь-яка картка, без ручного вводу. Спершу видаліть стару автоматизацію Apple Pay.",
+          "body": "На iOS 27 Lumi сам записує витрату, щойно приходить сповіщення банку про покупку — з будь-якої картки, не лише Apple Pay. Налаштувати: Налаштування → Сповіщення банку.\n\nВажливо: спершу видаліть стару автоматизацію Lumi для Apple Pay — ту, що спрацьовує під час оплати через Wallet, незалежно від версії iOS, на якій ви її ставили (Команди → Автоматизація → змахніть ліворуч → Видалити). Нова її замінює, інакше покупки через Apple Pay запишуться двічі. Back Tap чіпати не потрібно.",
+          "cta": "Налаштувати"
+        },
+        "de": {
+          "title": "iOS 27: Ausgaben aus Bank-Mitteilungen",
+          "subtitle": "Jede Karte, ganz automatisch. Vorher die alte Apple-Pay-Automation löschen.",
+          "body": "Auf iOS 27 erfasst Lumi eine Ausgabe, sobald die Kaufmitteilung deiner Bank eintrifft — mit jeder Karte, nicht nur Apple Pay. Einrichten: Einstellungen → Bank-Mitteilungen.\n\nWichtig: Lösche zuerst die alte Lumi-Automation für Apple Pay — die, die beim Bezahlen mit Wallet startet, egal unter welcher iOS-Version du sie eingerichtet hast (Kurzbefehle → Automation → nach links wischen → Löschen). Die neue ersetzt sie, sonst werden Apple-Pay-Käufe doppelt erfasst. Back Tap bleibt, wie es ist.",
+          "cta": "Einrichten"
+        },
+        "es": {
+          "title": "iOS 27: gastos desde avisos del banco",
+          "subtitle": "Cualquier tarjeta, sin teclear. Borra antes la automatización antigua de Apple Pay.",
+          "body": "En iOS 27 Lumi registra un gasto en cuanto llega el aviso de compra de tu banco: con cualquier tarjeta, no solo Apple Pay. Configúralo en Ajustes → Notificaciones del banco.\n\nImportante: borra primero la automatización antigua de Lumi para Apple Pay, la que se activa al pagar con Wallet, sin importar en qué versión de iOS la configuraste (Atajos → Automatización → desliza a la izquierda → Eliminar). La nueva la sustituye; si no, las compras con Apple Pay se registrarán dos veces. Back Tap puedes dejarlo como está.",
+          "cta": "Configurar"
+        },
+        "it": {
+          "title": "iOS 27: spese dalle notifiche della banca",
+          "subtitle": "Qualsiasi carta, senza digitare. Elimina prima la vecchia automazione Apple Pay.",
+          "body": "Su iOS 27 Lumi registra una spesa appena arriva la notifica d'acquisto della tua banca: con qualsiasi carta, non solo Apple Pay. Configura in Impostazioni → Notifiche della banca.\n\nImportante: elimina prima la vecchia automazione Lumi per Apple Pay, quella che parte quando paghi con Wallet, su qualunque versione di iOS l'abbia impostata (Comandi → Automazione → scorri a sinistra → Elimina). La nuova la sostituisce, altrimenti gli acquisti con Apple Pay verranno registrati due volte. Back Tap resta com'è.",
+          "cta": "Configura"
+        },
+        "ja": {
+          "title": "iOS 27:銀行の通知から支出を記録",
+          "subtitle": "どのカードも自動で記録。先に古い Apple Pay オートメーションを削除。",
+          "body": "iOS 27 では、銀行から購入通知が届くとすぐに Lumi が支出を記録します。Apple Pay だけでなく、どのカードでも使えます。設定:設定 → 銀行の通知。\n\n重要:先に Apple Pay 用の古い Lumi オートメーション(ウォレットで支払うと動くもの)を削除してください。設定した iOS のバージョンは問いません(ショートカット → オートメーション → 左にスワイプ → 削除)。新しいものがそれを置き換えます。削除しないと Apple Pay の購入が二重に記録されます。背面タップはそのままで大丈夫です。",
+          "cta": "設定する"
+        },
+        "ka": {
+          "title": "iOS 27: ხარჯები ბანკის შეტყობინებებიდან",
+          "subtitle": "ნებისმიერი ბარათი, ავტომატურად. ჯერ წაშალეთ Apple Pay-ის ძველი ავტომატიზაცია.",
+          "body": "iOS 27-ზე Lumi ხარჯს წერს, როგორც კი ბანკის შეტყობინება შესყიდვაზე მოვა — ნებისმიერი ბარათით, არა მხოლოდ Apple Pay-ით. დაყენება: პარამეტრები → ბანკის შეტყობინებები.\n\nმნიშვნელოვანია: ჯერ წაშალეთ Lumi-ს ძველი ავტომატიზაცია Apple Pay-სთვის — ის, რომელიც Wallet-ით გადახდისას ირთვება, iOS-ის რომელ ვერსიაზეც არ უნდა დაგეყენებინათ (Shortcuts → Automation → გადაფურცლეთ მარცხნივ → Delete). ახალი მას ცვლის, თორემ Apple Pay-ით შესყიდვები ორჯერ ჩაიწერება. Back Tap-ს ნუ შეეხებით.",
+          "cta": "დაყენება"
+        },
+        "pl": {
+          "title": "iOS 27: wydatki z powiadomień banku",
+          "subtitle": "Każda karta, bez wpisywania. Najpierw usuń starą automatyzację Apple Pay.",
+          "body": "Na iOS 27 Lumi zapisuje wydatek, gdy tylko przyjdzie powiadomienie banku o zakupie — dowolną kartą, nie tylko Apple Pay. Ustawisz to w Ustawienia → Powiadomienia banku.\n\nWażne: najpierw usuń starą automatyzację Lumi dla Apple Pay — tę, która uruchamia się przy płatności Wallet, niezależnie od wersji iOS, na której ją ustawiono (Skróty → Automatyzacja → przesuń w lewo → Usuń). Nowa ją zastępuje, inaczej zakupy Apple Pay zapiszą się dwa razy. Back Tap zostaw bez zmian.",
+          "cta": "Ustaw"
+        },
+        "ro": {
+          "title": "iOS 27: cheltuieli din notificările băncii",
+          "subtitle": "Orice card, fără tastare. Șterge întâi automatizarea veche Apple Pay.",
+          "body": "Pe iOS 27 Lumi înregistrează o cheltuială imediat ce sosește notificarea de plată a băncii — cu orice card, nu doar Apple Pay. Configurează din Setări → Notificări bancare.\n\nImportant: șterge întâi automatizarea veche Lumi pentru Apple Pay — cea care pornește când plătești cu Wallet, indiferent pe ce versiune iOS ai configurat-o (Scurtături → Automatizare → glisează la stânga → Șterge). Cea nouă o înlocuiește, altfel plățile cu Apple Pay se vor înregistra de două ori. Back Tap rămâne cum este.",
+          "cta": "Configurează"
+        }
+      }
+    },
+    {
       "id": "kurso_friend",
       "tag": "community",
       "date": "2026-11-10",
