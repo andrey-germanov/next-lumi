@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/faq`,
     languages: pageLanguagesMap(SITE_URL, "faq"),
+    types: { "text/markdown": [{ url: `${SITE_URL}/faq.md`, title: "Markdown version" }] },
   },
 };
 

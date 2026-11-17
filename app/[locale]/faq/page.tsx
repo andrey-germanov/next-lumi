@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/faq">): 
     alternates: {
       canonical: `${SITE_URL}/${locale}/faq`,
       languages: pageLanguagesMap(SITE_URL, "faq"),
+      types: { "text/markdown": [{ url: `${SITE_URL}/${locale}/faq.md`, title: "Markdown version" }] },
     },
     openGraph: { title, description, url: `${SITE_URL}/${locale}/faq`, locale: l, type: "website", siteName: "Lumi" },
     twitter: { card: "summary_large_image", title, description },

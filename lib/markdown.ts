@@ -5,8 +5,8 @@
 
 import { getAllSlugs, getPostBySlug, hasTranslation, isNoindexPost } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
-import { faqPlainText } from "@/lib/faqI18n";
-import { PREFIXED_LOCALES, translate } from "@/lib/i18n";
+import { PREFIXED_LOCALES, translate, type Locale } from "@/lib/i18n";
+import { faqPlainText, getLocalizedFaq } from "@/lib/faqI18n";
 import { TOOLS, getTool } from "@/lib/tools";
 import { getToolFaq } from "@/lib/toolsFaq";
 
@@ -80,7 +80,23 @@ export function toolMarkdown(slug: string): string | null {
   ].join("\n");
 }
 
-/** Every Markdown route segment set: `blog/<slug>`, `<locale>/blog/<slug>`, `tools/<slug>`. */
+export function faqMarkdown(locale: Locale = "en"): string {
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const lines = [
+    `# ${translate(locale, "faq.title")}`,
+    "",
+    `> ${translate(locale, "faq.subtitle")}`,
+    "",
+    `Canonical URL: ${SITE_URL}${prefix}/faq`,
+    "",
+  ];
+  for (const item of getLocalizedFaq(locale)) {
+    lines.push(`### ${item.question}`, "", faqPlainText(item.answer, SITE_URL), "");
+  }
+  return lines.join("\n");
+}
+
+/** Every Markdown route segment set: `blog/<slug>`, `<locale>/blog/<slug>`, `tools/<slug>`, `faq`, `<locale>/faq`. */
 export function markdownSegments(): string[][] {
   const blogSlugs = getAllSlugs().filter((slug) => !isNoindexPost(slug));
   const blog = blogSlugs.flatMap((slug) => [
@@ -88,7 +104,8 @@ export function markdownSegments(): string[][] {
     ...PREFIXED_LOCALES.filter((locale) => hasTranslation(slug, locale)).map((locale) => [locale, "blog", slug]),
   ]);
   const tools = TOOLS.map((t) => ["tools", t.slug]);
-  return [...blog, ...tools];
+  const faq = [["faq"], ...PREFIXED_LOCALES.map((locale) => [locale, "faq"])];
+  return [...blog, ...tools, ...faq];
 }
 
 /** Full English corpus for /llms-full.txt. */
