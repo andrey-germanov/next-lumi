@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ConsentAnalytics } from "@/components/ConsentAnalytics";
-import { CookieBanner } from "@/components/CookieBanner";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Providers } from "@/components/Providers";
 import { LanguageProvider } from "@/components/dash/i18n";
 import { BRAND_ENTITY_NAME, SITE_URL } from "@/lib/constants";
@@ -132,14 +131,11 @@ export default function RootDocument({
       </head>
       <body className="antialiased">
         <Providers>
-          <LanguageProvider initialLocale={locale}>
-            {children}
-            <CookieBanner />
-          </LanguageProvider>
+          <LanguageProvider initialLocale={locale}>{children}</LanguageProvider>
         </Providers>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
-        <ConsentAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       )}
     </html>
   );
