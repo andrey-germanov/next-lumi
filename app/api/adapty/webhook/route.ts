@@ -10,6 +10,7 @@ import { handle, json, HttpError } from "@/lib/server/http";
 import { invalidatePremium, isPremium } from "@/lib/server/premium";
 import { applyOwnerPremiumPolicy } from "@/lib/server/groups";
 import { saveAdaptyEvent, type AdaptyWebhookEvent } from "@/lib/server/adaptyEvents";
+import { runAdaptyTrigger } from "@/lib/server/messaging/triggers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -40,6 +41,8 @@ export async function POST(req: Request) {
 
     // Throws on failure → non-2xx → Adapty retries; the doc id is deterministic.
     await saveAdaptyEvent(body);
+    // Triggered emails (pro_started, trial_cancelled). Never throws.
+    await runAdaptyTrigger(body);
 
     if (typeof uid !== "string" || !uid) return json({ ok: true });
 
