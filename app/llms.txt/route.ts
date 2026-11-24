@@ -1,7 +1,7 @@
 import { getAllPosts, isNoindexPost } from "@/lib/blog";
 import { TOOLS } from "@/lib/tools";
 import { faqPlainText } from "@/lib/faqI18n";
-import { FAQ, SITE_URL, APP_STORE_URL, BRAND_ENTITY_NAME } from "@/lib/constants";
+import { FAQ, SITE_URL, APP_STORE_URL, PLAY_STORE_URL, BRAND_ENTITY_NAME } from "@/lib/constants";
 import { translate } from "@/lib/i18n";
 
 // llms.txt — a curated, plain-markdown map of the site for AI assistants and
@@ -30,7 +30,7 @@ export async function GET() {
 > scanner, category budgets, savings goals, and 150+ currencies.
 
 Key facts:
-- Platform: iOS 16+ (iPhone). An Android version is in closed beta on Google Play; sign up at ${SITE_URL}/android.
+- Platform: iOS 16+ (iPhone), and Android (Google Play).
 - Pricing: Free plan (10 AI receipt scans/month, 2 budgets, voice input, Apple Pay import, Back Tap). Premium $4.99/month or $39.99/year (unlimited scans and budgets, AI forecast, full multi-currency).
 - Privacy: no bank account connection, no cloud storage of transactions, data stored on-device.
 - Differentiators vs YNAB / Monarch / Copilot: Back Tap instant logging, Apple Pay auto-import without bank access, local-first privacy.
@@ -43,7 +43,7 @@ Key facts:
 
 - [Homepage](${SITE_URL}/): what Lumi does and how voice logging works
 - [FAQ](${SITE_URL}/faq): privacy, Apple Pay import, Back Tap, forecast accuracy, pricing
-- [Android beta](${SITE_URL}/android): join the closed beta of Lumi for Android on Google Play
+- [Lumi on Google Play](${PLAY_STORE_URL}): Lumi for Android on Google Play
 - [Privacy Policy](${SITE_URL}/privacy)
 - [Terms of Service](${SITE_URL}/terms)
 

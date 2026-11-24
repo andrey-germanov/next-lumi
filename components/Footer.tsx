@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { SOCIAL_LINKS, APP_STORE_URL } from "@/lib/constants";
+import { SOCIAL_LINKS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 import { useLang } from "@/components/dash/i18n";
 import { getAndroidBetaCopy } from "@/lib/androidBetaI18n";
 
@@ -48,9 +48,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={locale === "en" ? "/android" : `/${locale}/android`} className="hover:text-text transition-colors">
-                  {getAndroidBetaCopy(locale).eyebrow}
-                </Link>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors">
+                  {getAndroidBetaCopy(locale).heroCta}
+                </a>
               </li>
               <li>
                 <Link href="/about" className="hover:text-text transition-colors">

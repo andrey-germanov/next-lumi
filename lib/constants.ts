@@ -4,10 +4,13 @@ export const SITE_NAME = "Lumi";
 export const BRAND_ENTITY_NAME = "Lumi: Budget & Expense Tracker";
 export const SITE_TITLE = "Lumi — Expense Tracker & Spending Forecast";
 export const SITE_DESCRIPTION =
-  "Lumi logs expenses the moment you pay — via Apple Pay or a Back Tap on your iPhone. AI forecasts your month-end balance before you overspend. Receipt scanner, budgets, savings goals. No bank login. Privacy-first.";
+  "Lumi logs every card purchase from your bank notifications on iOS 27 (or from Apple Wallet on earlier iOS). Add as many banks as you have, and no expense gets lost. AI forecasts your month-end balance before you overspend. No bank login. Privacy-first.";
 
 export const APP_STORE_URL =
   "https://apps.apple.com/app/lumi-bills-spending-log/id6754805457";
+
+export const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.andrey5454germanov.moneytracker";
 
 export const SOCIAL_LINKS = {
   threads: "https://www.threads.com/@andrey.germanov",
@@ -215,7 +218,7 @@ export const FAQ = [
   {
     question: "Is Lumi available on Android?",
     answer:
-      "Lumi is available on iPhone today, and an Android version is in closed beta on Google Play. It is built natively for Android with the same design and features; Back Tap and Apple Pay auto-import are iOS features, so they work differently or are not available there. Leave your Google account email on the [Android beta page](/android) to get early access.",
+      "Yes. Lumi is available on iPhone and Android — get the Android app on [Google Play](https://play.google.com/store/apps/details?id=com.andrey5454germanov.moneytracker). It is built natively for Android with the same design and features; Back Tap and Apple Pay auto-import are iOS features, so they work differently or are not available there.",
   },
   {
     question: "What currencies does Lumi support?",

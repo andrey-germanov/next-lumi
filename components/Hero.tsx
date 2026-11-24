@@ -56,10 +56,10 @@ export default function Hero() {
             className="flex justify-center lg:justify-end"
           >
             <Image
-              src={`/images/landing/${locale}/applepay.webp`}
+              src="/news/bank_notifications_ios27.png"
               alt={t("lp3.heroSub")}
-              width={880}
-              height={1389}
+              width={1200}
+              height={675}
               sizes="(min-width: 1024px) 480px, 92vw"
               priority
               style={{ width: "100%", maxWidth: 480, height: "auto" }}

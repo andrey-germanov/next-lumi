@@ -46,7 +46,7 @@ export interface AndroidBetaCopy {
 }
 
 const en: AndroidBetaCopy = {
-  heroCta: "Join the Android beta",
+  heroCta: "Get Lumi for Android",
   metaTitle: "Lumi for Android — join the beta",
   metaDescription:
     "Lumi is coming to Android. Leave your Google account email to get early access to the closed beta on Google Play and help shape the app.",
@@ -134,7 +134,7 @@ const en: AndroidBetaCopy = {
 };
 
 const ru: AndroidBetaCopy = {
-  heroCta: "Бета для Android",
+  heroCta: "Скачать Lumi для Android",
   metaTitle: "Lumi для Android — бета-тест",
   metaDescription:
     "Lumi выходит на Android. Оставьте почту Google-аккаунта, чтобы получить ранний доступ к закрытой бете в Google Play и повлиять на приложение.",
@@ -219,7 +219,7 @@ const ru: AndroidBetaCopy = {
 };
 
 const uk: AndroidBetaCopy = {
-  heroCta: "Бета для Android",
+  heroCta: "Завантажити Lumi для Android",
   metaTitle: "Lumi для Android — бета-тест",
   metaDescription:
     "Lumi виходить на Android. Залиште пошту Google-акаунта, щоб отримати ранній доступ до закритої бети в Google Play і вплинути на застосунок.",
@@ -304,7 +304,7 @@ const uk: AndroidBetaCopy = {
 };
 
 const ro: AndroidBetaCopy = {
-  heroCta: "Beta pentru Android",
+  heroCta: "Descarcă Lumi pentru Android",
   metaTitle: "Lumi pentru Android — înscrie-te în beta",
   metaDescription:
     "Lumi vine pe Android. Lasă emailul contului Google pentru acces timpuriu la beta închisă din Google Play și ajută-ne să modelăm aplicația.",
@@ -389,7 +389,7 @@ const ro: AndroidBetaCopy = {
 };
 
 const de: AndroidBetaCopy = {
-  heroCta: "Android-Beta testen",
+  heroCta: "Lumi für Android laden",
   metaTitle: "Lumi für Android — jetzt an der Beta teilnehmen",
   metaDescription:
     "Lumi kommt auf Android. Hinterlasse die E-Mail deines Google-Kontos, um früh Zugang zur geschlossenen Beta bei Google Play zu bekommen und die App mitzugestalten.",
@@ -474,7 +474,7 @@ const de: AndroidBetaCopy = {
 };
 
 const es: AndroidBetaCopy = {
-  heroCta: "Beta de Android",
+  heroCta: "Descarga Lumi para Android",
   metaTitle: "Lumi para Android — únete a la beta",
   metaDescription:
     "Lumi llega a Android. Deja el email de tu cuenta de Google para tener acceso anticipado a la beta cerrada en Google Play y ayudar a dar forma a la app.",
@@ -559,7 +559,7 @@ const es: AndroidBetaCopy = {
 };
 
 const it: AndroidBetaCopy = {
-  heroCta: "Beta per Android",
+  heroCta: "Scarica Lumi per Android",
   metaTitle: "Lumi per Android — partecipa alla beta",
   metaDescription:
     "Lumi arriva su Android. Lascia l'email del tuo account Google per avere accesso anticipato alla beta chiusa su Google Play e aiutarci a migliorare l'app.",

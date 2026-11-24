@@ -18,13 +18,13 @@ export default function SetupOnce() {
           viewport={{ once: true }}
           className="order-2 lg:order-1 flex justify-center"
         >
-          <div style={{ maxWidth: 460, width: "100%" }}>
+          <div style={{ maxWidth: 560, width: "100%" }}>
             <Image
-              src={`/images/landing/${locale}/setup.webp`}
+              src="/images/landing/shared/bank-notifications-shortcut.jpg"
               alt={t("lp3.setupStep1Desc")}
-              width={880}
-              height={1524}
-              sizes="(min-width: 1024px) 460px, 92vw"
+              width={1284}
+              height={866}
+              sizes="(min-width: 1024px) 560px, 92vw"
               style={{ width: "100%", height: "auto" }}
             />
           </div>
