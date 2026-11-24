@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { INTL_LOCALE, type Locale } from "@/lib/i18n";
 import { fromMinor } from "@/lib/groupMath";
+import { PLAY_STORE_URL } from "@/lib/constants";
 import { APP_STORE_URL, CATEGORY_EMOJI, GROUPS_INTL, fill, groupsCopy, type GroupsLocale } from "@/lib/groupsWebI18n";
 
 export interface PublicTrip {
@@ -283,6 +284,9 @@ export default function LiveTrip({
         <div className="flex gap-3">
           <a href={APP_STORE_URL} className="btn-violet" style={{ flex: 1, textAlign: "center", padding: "12px 14px", fontSize: 14 }}>
             {copy.appStore}
+          </a>
+          <a href={PLAY_STORE_URL} className="btn-violet" style={{ flex: 1, textAlign: "center", padding: "12px 14px", fontSize: 14 }}>
+            Google Play
           </a>
         </div>
       </div>

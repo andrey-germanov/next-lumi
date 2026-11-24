@@ -2,7 +2,7 @@ import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
 import { getLocalizedFaq, faqPlainText } from "@/lib/faqI18n";
 import { translate, localePath, type Locale } from "@/lib/i18n";
-import { APP_STORE_URL, SITE_URL } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, SITE_URL } from "@/lib/constants";
 
 /**
  * Server-rendered FAQ content (shared by /faq and /[locale]/faq).
@@ -80,6 +80,15 @@ export default function FaqBody({ locale }: { locale: Locale }) {
                 <path d="M11.2 5c-.7.9-1.9 1.6-3 1.5-.1-1.2.4-2.4 1.1-3.2.7-.9 2-1.5 3-1.5.1 1.3-.4 2.5-1.1 3.2zm1 1.7c-1.7-.1-3.1.9-3.9.9-.8 0-2-.9-3.3-.8-1.7 0-3.3 1-4.1 2.5-1.8 3-.5 7.4 1.3 9.8.8 1.2 1.8 2.5 3.1 2.5 1.2 0 1.7-.8 3.2-.8 1.5 0 1.9.8 3.2.7 1.3 0 2.2-1.2 3-2.4.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.7 0-2.3 1.9-3.4 2-3.5-.9-1.5-2.5-1.5-3.3-1.5z"/>
               </svg>
               {t("faq.downloadCta")}
+            </a>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-violet inline-flex items-center gap-2"
+              style={{ padding: "13px 24px", fontSize: 14, marginLeft: 12 }}
+            >
+              Google Play
             </a>
           </div>
         </div>

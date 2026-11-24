@@ -6,8 +6,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AppStoreButton from "@/components/AppStoreButton";
-import AndroidBetaButton from "@/components/AndroidBetaButton";
+import StoreButtons from "@/components/StoreButtons";
 import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 import { APP_STORE_URL, BRAND_ENTITY_NAME, FOUNDER, FOUNDER_BYLINE, SITE_URL } from "@/lib/constants";
 import { translate, INTL_LOCALE, localePath, type Locale } from "@/lib/i18n";
@@ -18,9 +17,8 @@ function makeCta(label: string) {
     return (
       <div className="surface-dark my-8 rounded-2xl p-6 text-center">
         <p className="mb-4 font-medium" style={{ color: "#FFFFFF" }}>{label}</p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <AppStoreButton location="blog_inline" />
-          <AndroidBetaButton location="blog_inline" onDark />
+        <div className="flex justify-center">
+          <StoreButtons location="blog_inline" />
         </div>
       </div>
     );

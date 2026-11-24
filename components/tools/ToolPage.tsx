@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AppStoreButton from "@/components/AppStoreButton";
+import StoreButtons from "@/components/StoreButtons";
 import FAQAccordion from "@/components/FAQAccordion";
 import { AppIcon } from "@/components/dash/AppIcon";
 import { useLang } from "@/components/dash/i18n";
@@ -87,7 +87,7 @@ export default function ToolPage({ slug, locale, faq }: { slug: string; locale: 
                 {t("tools.ctaBody")}
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-                <AppStoreButton location="tools_cta" />
+                <StoreButtons location="tools_cta" />
                 <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>{t("lp.ctaFootnote")}</p>
               </div>
             </div>

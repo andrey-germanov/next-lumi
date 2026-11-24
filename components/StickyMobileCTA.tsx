@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { APP_STORE_URL } from "@/lib/constants";
-import { trackAppStoreClick } from "@/lib/posthog";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
+import { trackAppStoreClick, trackEvent } from "@/lib/posthog";
 import { useLang } from "@/components/dash/i18n";
 
 /**
@@ -35,6 +35,7 @@ export default function StickyMobileCTA() {
         pointerEvents: visible ? "auto" : "none",
       }}
     >
+      <div style={{ display: "flex", gap: 8 }}>
       <a
         href={APP_STORE_URL}
         target="_blank"
@@ -60,6 +61,28 @@ export default function StickyMobileCTA() {
         </svg>
         {t("lp2.stickyCta")}
       </a>
+      <a
+        href={PLAY_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackEvent("play_store_click", { location: "sticky_mobile" })}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 8,
+          flex: 1,
+          padding: "15px 12px",
+          borderRadius: 14,
+          background: "#0A0A0A",
+          color: "#fff",
+          fontSize: 15,
+          fontWeight: 700,
+        }}
+      >
+        Google Play
+      </a>
+      </div>
     </div>
   );
 }

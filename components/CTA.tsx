@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AppStoreButton from "./AppStoreButton";
+import StoreButtons from "./StoreButtons";
 import AppQR from "./AppQR";
 import { useLang } from "@/components/dash/i18n";
 
@@ -39,7 +39,7 @@ export default function CTA() {
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-            <AppStoreButton location="final_cta" />
+            <StoreButtons location="final_cta" />
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>{t("lp.ctaFootnote")}</p>
             <div style={{ marginTop: 12 }}>
               <AppQR location="final_cta" onLight={false} />

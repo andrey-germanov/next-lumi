@@ -124,7 +124,7 @@
   "lp2.familyDisclaimer": "Illustrative figures, not guaranteed results.",
   "lp2.familyCta": "See Premium plans",
   "lp3.heroLabel": "Expense tracker for iPhone",
-  "lp3.heroSub": "Your bank sends a notification for every purchase, and Lumi logs it as an expense: merchant, amount and an AI-picked category. Add as many banks and cards as you have: any bank, in any country. No expense gets lost: on iOS 27 it works from bank notifications, and on older iOS from Apple Wallet. No bank login, no typing.",
+  "lp3.heroSub": "Card purchases from your bank notifications are logged for you. Add any bank, in any country. No expense gets lost. No bank login.",
   "lp3.setupStep1Title": "Add all your banks",
   "lp3.setupStep1Desc": "Settings → Bank notifications. Add as many banks and cards as you have, from any bank in any country. A video guide is inside the app.",
   "lp3.setupStep2Title": "Pay as usual",

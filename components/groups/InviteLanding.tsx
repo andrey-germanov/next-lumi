@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { PLAY_STORE_URL } from "@/lib/constants";
 import { APP_STORE_URL, fill, groupsCopy, type GroupsLocale } from "@/lib/groupsWebI18n";
 
 export interface InvitePreview {
@@ -39,6 +40,9 @@ function StoreButtons({ locale }: { locale: GroupsLocale }) {
     <div className="flex gap-3">
       <a href={APP_STORE_URL} style={style}>
          {copy.appStore}
+      </a>
+      <a href={PLAY_STORE_URL} style={style}>
+         Google Play
       </a>
     </div>
   );

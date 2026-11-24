@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AppStoreButton from "./AppStoreButton";
+import StoreButtons from "./StoreButtons";
 import AppQR from "./AppQR";
-import AndroidBetaButton from "./AndroidBetaButton";
 import MarkTitle from "./MarkTitle";
 import { useLang } from "@/components/dash/i18n";
 
@@ -40,10 +39,7 @@ export default function Hero() {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-                <AppStoreButton location="hero" />
-                <AndroidBetaButton location="hero" />
-              </div>
+              <StoreButtons location="hero" />
               <AppQR location="hero" />
             </div>
           </motion.div>
@@ -56,10 +52,10 @@ export default function Hero() {
             className="flex justify-center lg:justify-end"
           >
             <Image
-              src="/news/bank_notifications_ios27.png"
+              src="/images/landing/shared/hero-bank.webp"
               alt={t("lp3.heroSub")}
-              width={1200}
-              height={675}
+              width={1320}
+              height={2868}
               sizes="(min-width: 1024px) 480px, 92vw"
               priority
               style={{ width: "100%", maxWidth: 480, height: "auto" }}

@@ -112,6 +112,14 @@ export default function Footer() {
           >
             {t("lp2.footDownload")} &rarr;
           </a>
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold text-text hover:text-primary transition-colors"
+          >
+            Google Play &rarr;
+          </a>
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-6 mt-8 flex flex-wrap items-center justify-center gap-4">

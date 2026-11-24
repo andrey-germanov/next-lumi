@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { NAV_LINKS, APP_STORE_URL } from "@/lib/constants";
-import { trackAppStoreClick } from "@/lib/posthog";
+import { NAV_LINKS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
+import { trackAppStoreClick, trackEvent } from "@/lib/posthog";
 import { useLang } from "@/components/dash/i18n";
 import { Select } from "@/components/dash/Select";
 import { LOCALES, localePath, type Locale } from "@/lib/i18n";
@@ -102,6 +102,24 @@ export default function Header() {
             className="hover:bg-primary-dark"
           >
             {t("lp.download")}
+          </a>
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("play_store_click", { location: "header" })}
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: "#fff",
+              background: "#0A0A0A",
+              borderRadius: 10,
+              padding: "8px 16px",
+              transition: "background 0.15s",
+            }}
+            className="hover:opacity-80"
+          >
+            Google Play
           </a>
         </div>
       </nav>

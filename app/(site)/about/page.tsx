@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AppStoreButton from "@/components/AppStoreButton";
+import StoreButtons from "@/components/StoreButtons";
 import { APP_STORE_URL, BRAND_ENTITY_NAME, FOUNDER, SITE_URL, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -88,7 +88,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12">
-            <AppStoreButton location="about" />
+            <StoreButtons location="about" />
           </div>
         </div>
       </main>

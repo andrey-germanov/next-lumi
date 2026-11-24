@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AppStoreButton from "./AppStoreButton";
+import StoreButtons from "./StoreButtons";
 import { useLang } from "@/components/dash/i18n";
 
 const FREE_FEATURE_KEYS = [
@@ -67,7 +67,7 @@ export default function Pricing() {
               ))}
             </ul>
             <div className="mt-8">
-              <AppStoreButton location="pricing_free" variant="secondary" className="w-full justify-center" />
+              <StoreButtons location="pricing_free" variant="secondary" className="w-full justify-center" stack />
             </div>
           </motion.div>
 
@@ -113,7 +113,7 @@ export default function Pricing() {
               ))}
             </ul>
             <div className="mt-8">
-              <AppStoreButton location="pricing_premium" className="w-full justify-center" />
+              <StoreButtons location="pricing_premium" className="w-full justify-center" stack />
             </div>
           </motion.div>
         </div>
